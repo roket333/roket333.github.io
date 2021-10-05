@@ -21,7 +21,8 @@ body {
 .splashtext {
     font-size: 120%;
     color:#ffff55;
-    
+    min-height: 30px;
+
     animation: scale 1.25s ease-in-out;
     animation-iteration-count: infinite;
 
