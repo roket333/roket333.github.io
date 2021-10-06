@@ -1,24 +1,34 @@
 html {
+    /*set the background color to a nice grey*/
     background:#3b3b3b;
 }
 
 body {
+    /*set the font and it's size, alignment, and color*/
     font-family:prototype;
     font-size:120%;
     text-align:center;
     color:#e5e5e5;
+
+    /*also align everything to the center*/
+    align-items:center;
+    display:flex;
+    flex-direction:column;
 }
 
 .maintext {
+    /*size of anything marked "maintext"*/
     font-size:150%;
 }
 
 .mainimg {
+    /*main image's width and rounding radius*/
     width:250px;
     border-radius:10%;
 }
 
 .splashtext {
+    /*various stuff for the splash text*/
     font-size: 120%;
     color:#ffff55;
     min-height: 30px;
@@ -29,7 +39,27 @@ body {
 }
 
 @keyframes scale {
-    0%{transform: scale(1.0);}
-    50%{transform: scale(1.2);}
-    100%{transform: scale(1.0);}
+    /*keyframes for the splash text animation*/
+    0%{transform: scale(0.8);}
+    50%{transform: scale(1.0);}
+    100%{transform: scale(0.8);}
+}
+
+.splash {
+    /*container for the splash box*/
+    border: 5px solid #e5e5e5;
+    border-radius: 30px;
+    min-width: 30%;
+    max-width: 30%;
+    padding: 10px;
+    margin: 0.5em;
+}
+
+.icon {
+    /*container for the icon*/
+    border: 5px solid #e5e5e5;
+    border-radius: 10%;
+    min-width: 260px;
+    padding: 10px;
+    margin: 0.5em;
 }
