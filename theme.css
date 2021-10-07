@@ -3,6 +3,16 @@ html {
     background:#3b3b3b;
 }
 
+@font-face {
+    font-family: "prototype"; /*really cool font if someone doesn't have it*/
+    src: url("./assets/fonts/prototype.ttf");
+}
+
+@font-face {
+    font-family: "minecraftmodern"; /*splash font*/
+    src: url("./assets/fonts/minecraft-modern.ttf");
+}
+
 body {
     /*set the font and it's size, alignment, and color*/
     font-family:prototype;
@@ -14,6 +24,14 @@ body {
     align-items:center;
     display:flex;
     flex-direction:column;
+}
+
+a:link, a:active {
+    color:#ffff55
+}
+
+a:visited, a:hover {
+    color:#ffaa00
 }
 
 .maintext {
@@ -29,7 +47,8 @@ body {
 
 .splashtext {
     /*various stuff for the splash text*/
-    font-size: 120%;
+    font-size: 140%;
+    font-family: minecraftmodern;
     color:#ffff55;
     min-height: 30px;
 
@@ -49,9 +68,10 @@ body {
     /*container for the splash box*/
     border: 5px solid #e5e5e5;
     border-radius: 30px;
-    min-width: 30%;
-    max-width: 30%;
-    padding: 10px;
+    min-width: 230px;
+    max-width: 70%;
+    padding-left: 30px;
+    padding-right: 30px;
     margin: 0.5em;
 }
 
@@ -62,4 +82,13 @@ body {
     min-width: 260px;
     padding: 10px;
     margin: 0.5em;
+}
+
+.footer {
+    /*container for the footer*/
+    border: 5px solid #e5e5e5;
+    border-radius: 30px;
+    min-width: 260px;
+    max-width: 70%;
+    padding: 10px;
 }
