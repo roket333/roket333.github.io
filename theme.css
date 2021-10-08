@@ -45,6 +45,15 @@ a:visited, a:hover {
     border-radius:10%;
 }
 
+.refresh {
+    width: 64px;
+}
+
+.refresh.spinning {
+    animation: rotate 5s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
 .splashtext {
     /*various stuff for the splash text*/
     font-size: 140%;
@@ -62,6 +71,12 @@ a:visited, a:hover {
     0%{transform: scale(0.8);}
     50%{transform: scale(1.0);}
     100%{transform: scale(0.8);}
+}
+
+@keyframes rotate {
+    /*rotating the splash refresh button*/
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(18000deg);}
 }
 
 .splash {
@@ -91,4 +106,42 @@ a:visited, a:hover {
     min-width: 260px;
     max-width: 70%;
     padding: 10px;
+}
+
+.tablist {
+    margin: 0.25em;
+}
+
+.tablist button {
+    /*change how the buttons on the tabs look*/
+    background-color: inherit;
+    border: 5px solid #e5e5e5;
+    border-radius: 5%;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+
+    /*for some reason you need to re-define the font stuff on buttons, so here's that*/
+    font-family:prototype;
+    font-size:120%;
+    text-align:center;
+    color:#e5e5e5;
+}
+
+.tablist button.active {
+    color: #ffaa00;
+}
+
+.tablist button:hover {
+    background-color: #707070;
+}
+
+.tablist button:active{
+    background-color: #e5e5e5;
+    color: #ffaa00;
+    border-color: #ffaa00;
+}
+
+.tabcontent {
+    display: none;
 }

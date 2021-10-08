@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Roket's Site</title>
     <link rel="stylesheet" href="./theme.css">
-    <script src="./splashes.js"></script>
+    <script src="./script.js"></script>
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <!-- Open Graph Data stuff -->
@@ -20,9 +21,45 @@
       <h1>Roket's Hub</h1>
       <a href="./index.html"> <img class="mainimg" src="./assets/images/icon.gif" alt="Roket's icon" title="This bird won't leave me alone!"> </a>
     </div>
+
+    <!-- Tabs -->
+    <div class="tablist">
+      <button class="tablinks" id="default" onclick="openTab(event, 'tabhome')">Home</button>
+      <button class="tablinks" onclick="openTab(event, 'tabinfo')">Info</button>
+      <button class="tablinks" onclick="openTab(event, 'tabprojects')">Projects</button>
+      <button class="tablinks" onclick="openTab(event, 'tabworks')">Works</button>
+    </div>
+    <!-- End of tabs -->
+
     <div class="splash">
       <p class="splashtext" id="splash"></p>
+      <hr style="border: 3px solid #e5e5e5;">
+      <a onclick="splashes()"><img class="refresh" src="./assets/images/refresh.png"></a>
     </div>
+
+    <!-- Tab content -->
+    <!-- Home tab -->
+    <div class="tabcontent" id="tabhome">
+      Welcome to my website!
+    </div>
+
+    <!-- Info tab -->
+    <div class="tabcontent" id="tabinfo">
+      Info
+    </div>
+
+    <!-- Projects tab -->
+    <div class="tabcontent" id="tabprojects">
+      Projects
+    </div>
+
+    <!-- Works tab -->
+    <div class="tabcontent" id="tabworks">
+      Works
+    </div>
+
+    <!-- End of tab content-->
+
     <div class="bottom container">
       <object type="text/html" data="./footer.html"></object>
     </div>
