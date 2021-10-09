@@ -25,6 +25,7 @@ body {
     align-items:center;
     display:flex;
     flex-direction:column;
+    justify-content: center;
 }
 
 a:link, a:active {
@@ -191,12 +192,12 @@ a:visited, a:hover {
 }
 
 .showcasecontainer {
-    /*container for info boxes*/
+    /*container for works showcases*/
     border: 5px solid #e5e5e5;
     border-radius: 30px;
     padding: 10px;
     margin: 1em;
-    max-width: 90%;
+    justify-content: center;
 }
 
 .showimage {
