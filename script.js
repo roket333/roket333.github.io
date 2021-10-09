@@ -47,7 +47,6 @@ function loadblogposts() {
     if (data.length == 0) {
       let postdiv = document.createElement("div");
       postdiv.classList.add("blogpost");
-      //make the actual post div and add the class "blogpost" to it
       weird = document.createElement("p");
       weird.classList.add("maintext");
       weird.innerHTML = "This is weird and shouldn't be happening<br>There's either no blog posts or something has gone wrong"
@@ -56,9 +55,6 @@ function loadblogposts() {
       //so, somehow something weird happened and posts aren't working, so let's display this message in that case
     } else {
       data.forEach(post => {
-        let postdiv = document.createElement("div");
-        postdiv.classList.add("blogpost");
-        //make the actual post div and add the class "blogpost" to it
 
         postTitle = post.title; //title
         postDate = post.date; //date it was posted
@@ -67,34 +63,43 @@ function loadblogposts() {
         postContent = post.content; //actual content of the post
         //for each post, get the title, date, weather or not it's been edited, edit date, and content
 
-        if (postEdited) {
-          postDateString = "Posted on " + postDate + ", edited on " + postEditDate
+        if (postTitle != undefined && postDate != undefined && postEdited != undefined && postContent != undefined) {
+
+          let postdiv = document.createElement("div");
+          postdiv.classList.add("blogpost");
+          //make the actual post div and add the class "blogpost" to it
+
+          if (postEdited) {
+            postDateString = "Posted on " + postDate + ", edited on " + postEditDate
+          } else {
+            postDateString = "Posted on " + postDate
+          }
+          //get the post date ready, if it's been editied add that too
+
+          title = document.createElement("p");
+          title.classList.add("postitle");
+          title.innerHTML = postTitle;
+          date = document.createElement("p");
+          date.classList.add("postdate");
+          date.innerHTML = postDateString;
+          splitter = document.createElement("hr");
+          splitter.style.cssText += "border: 3px solid #e5e5e5;max-width:95%";
+          content = document.createElement("p");
+          content.classList.add("postcontent");
+          content.innerHTML = postContent;
+          //create all the text and assign it
+
+          postdiv.appendChild(title);
+          postdiv.appendChild(date);
+          postdiv.appendChild(splitter);
+          postdiv.appendChild(content);
+          //add all the text we just made to the div
+
+          document.getElementById("blogposts").appendChild(postdiv);
+          //add the post to div where they will all live happily ever after the end :)
         } else {
-          postDateString = "Posted on " + postDate
+          console.error("There was a problem with one of the posts, so it is not displayed")
         }
-        //get the post date ready, if it's been editied add that too
-
-        title = document.createElement("p");
-        title.classList.add("postitle");
-        title.innerHTML = postTitle;
-        date = document.createElement("p");
-        date.classList.add("postdate");
-        date.innerHTML = postDateString;
-        splitter = document.createElement("hr");
-        splitter.style.cssText += "border: 3px solid #e5e5e5;max-width:95%";
-        content = document.createElement("p");
-        content.classList.add("postcontent");
-        content.innerHTML = postContent;
-        //create all the text and assign it
-
-        postdiv.appendChild(title);
-        postdiv.appendChild(date);
-        postdiv.appendChild(splitter);
-        postdiv.appendChild(content);
-        //add all the text we just made to the div
-
-        document.getElementById("blogposts").appendChild(postdiv);
-        //add the post to div where they will all live happily ever after the end :)
       });
     }
   });
