@@ -83,7 +83,7 @@ function loadblogposts() {
           date.classList.add("postdate");
           date.innerHTML = postDateString;
           splitter = document.createElement("hr");
-          splitter.style.cssText += "border: 3px solid #e5e5e5;max-width:95%";
+          splitter.style.cssText += "border: 3px solid #e5e5e5;";
           content = document.createElement("p");
           content.classList.add("postcontent");
           content.innerHTML = postContent;
