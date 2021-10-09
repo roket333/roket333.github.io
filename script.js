@@ -26,16 +26,18 @@ function openTab(event, tab) {
 
 function splashes() {
   fetch("./splashes.json").then((splashes) => { return splashes.json(); }).then((data) => {
-    var random = Math.floor(Math.random() * (data.length));
+    var random = Math.floor(Math.random() * (data.length + 1));
     //get the json, then with the data, make a random number up to it's length, then set the HTML element with the id "splash" as a random line from the json data
-    if (random == 357) {
+    if (random == (data.length)) {
+      document.getElementById("splash").innerHTML = "Featuring " + (data.length + 1) + " splashes!"
+      //this was a total pain to get working right
+    } else if (random == 357) {
       console.error("nope, there's an error now!");
-      document.getElementById('splash').innerHTML = data[random];
+      document.getElementById("splash").innerHTML = data[random];
     } else if (random != 313) {
-      document.getElementById('splash').innerHTML = data[random];
+      document.getElementById("splash").innerHTML = data[random];
     } else splashes();
-    //if the splash is the one that shouldn't appear, try again
-    //document.getElementById('splash').innerHTML = data[313]; //debug the non-appearing splash
+    //special cases for splashes
   });
 }
 
@@ -95,8 +97,9 @@ function loadblogposts() {
           postdiv.appendChild(content);
           //add all the text we just made to the div
 
-          document.getElementById("blogposts").appendChild(postdiv);
-          //add the post to div where they will all live happily ever after the end :)
+          document.getElementById("blogposts").prepend(postdiv);
+          //using prepend instead of append allows me to build posts.json in a way that makes sense
+          //add the post to the top of the div where they will all live happily ever after the end :)
         } else {
           console.error("There was a problem with one of the posts, so it is not displayed")
         }
