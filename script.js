@@ -47,7 +47,6 @@ function loadblogposts() {
     if (data.length == 0) {
       let postdiv = document.createElement("div");
       postdiv.classList.add("blogpost");
-      //make the actual post div and add the class "blogpost" to it
       weird = document.createElement("p");
       weird.classList.add("maintext");
       weird.innerHTML = "This is weird and shouldn't be happening<br>There's either no blog posts or something has gone wrong"
