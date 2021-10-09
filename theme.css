@@ -19,6 +19,7 @@ body {
     font-size:120%;
     text-align:center;
     color:#e5e5e5;
+    margin: 0.5em;
 
     /*also align everything to the center*/
     align-items:center;
@@ -53,6 +54,7 @@ a:visited, a:hover {
     font-size: 250%;
     animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
+    margin: 0.5em;
 }
 
 .splashtext {
@@ -162,4 +164,43 @@ a:visited, a:hover {
     max-width: 95%;
     padding: 10px;
     margin: 1em;
+}
+
+.aboutcontainer {
+    /*container for info boxes*/
+    border: 5px solid #e5e5e5;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 1em;
+}
+
+.bigtext, .postitle {
+    font-size: 120%;
+    animation: colors 2s ease-in-out;
+    animation-iteration-count: infinite;
+    margin: 0.5em;
+}
+
+.postitle {
+    font-size: 150%;
+}
+
+.postdate {
+    font-size: 130%;
+    margin: 0.5em;
+}
+
+.showcasecontainer {
+    /*container for info boxes*/
+    border: 5px solid #e5e5e5;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 1em;
+    max-width: 90%;
+}
+
+.showimage {
+    border: 5px solid #e5e5e5;
+    border-radius: 30px;
+    max-width: 300px;
 }
