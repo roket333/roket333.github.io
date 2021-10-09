@@ -49,8 +49,9 @@ a:visited, a:hover {
     width: 64px;
 }
 
-.refresh.spinning {
-    animation: rotate 5s ease-in-out;
+.titletext {
+    font-size: 250%;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -77,6 +78,13 @@ a:visited, a:hover {
     /*rotating the splash refresh button*/
     0%{transform: rotate(0deg);}
     100%{transform: rotate(18000deg);}
+}
+
+@keyframes colors {
+    /*making text go from amber to gold and back*/
+    0%{color: #ffc100;}
+    50%{color: #ffaa00;}
+    100%{color: #ffc100;}
 }
 
 .splash {
@@ -118,12 +126,12 @@ a:visited, a:hover {
     border: 5px solid #e5e5e5;
     border-radius: 5%;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 4px 8px;
     transition: 0.3s;
 
     /*for some reason you need to re-define the font stuff on buttons, so here's that*/
     font-family:prototype;
-    font-size:120%;
+    font-size:150%;
     text-align:center;
     color:#e5e5e5;
 }
@@ -144,4 +152,14 @@ a:visited, a:hover {
 
 .tabcontent {
     display: none;
+}
+
+.blogpost {
+    /*container for blog posts*/
+    border: 5px solid #e5e5e5;
+    border-radius: 30px;
+    min-width: 260px;
+    max-width: 95%;
+    padding: 10px;
+    margin: 1em;
 }

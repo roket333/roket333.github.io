@@ -18,16 +18,17 @@
   </head>
   <body>
     <div class="icon">
-      <h1>Roket's Hub</h1>
+      <p class="titletext">Roket's Hub</p>
       <a href="./index.html"> <img class="mainimg" src="./assets/images/icon.gif" alt="Roket's icon" title="This bird won't leave me alone!"> </a>
     </div>
 
     <!-- Tabs -->
     <div class="tablist">
-      <button class="tablinks" id="default" onclick="openTab(event, 'tabhome')">Home</button>
+      <button class="tablinks" onclick="openTab(event, 'tabhome')">Home</button>
       <button class="tablinks" onclick="openTab(event, 'tabinfo')">Info</button>
       <button class="tablinks" onclick="openTab(event, 'tabprojects')">Projects</button>
       <button class="tablinks" onclick="openTab(event, 'tabworks')">Works</button>
+      <button class="tablinks" id="default" onclick="openTab(event, 'tabblog')">Blog</button>
     </div>
     <!-- End of tabs -->
 
@@ -40,7 +41,9 @@
     <!-- Tab content -->
     <!-- Home tab -->
     <div class="tabcontent" id="tabhome">
-      Welcome to my website!
+      <div class="maintext">
+        Welcome to my site!
+      </div>
     </div>
 
     <!-- Info tab -->
@@ -58,10 +61,19 @@
       Works
     </div>
 
+    <div class="tabcontent" id="tabblog">
+      <div class="maintext">
+        My blog<br>Here is where I will post stuff I want and keep people updated on what's happening
+      </div>
+      <div id="blogposts">
+      </div>
+    </div>
+
     <!-- End of tab content-->
 
-    <div class="bottom container">
-      <object type="text/html" data="./footer.html"></object>
+    <div class="footer">
+      Proudly made by Roket 🏳‍🌈<br>
+      <a href="https://github.com/roket333/roket333.github.io">Source code</a>
     </div>
   </body>
 </html>
