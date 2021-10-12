@@ -211,4 +211,35 @@ table, th, td {
     border-radius: 5px;
     padding: 5px;
     font-weight: 400;
-  }
+}
+
+.patbg {
+    animation: pat 9s linear, patscroll 6s linear;
+    animation-iteration-count: infinite;
+    transition: 0.3s;
+    background-image: url("./assets/images/patbg.png");
+    background-blend-mode:lighten;
+}
+
+.pattext {
+    transition: 0.3s;
+    text-shadow: -5px -5px #FF3838AA, 5px 5px #8383FFAA;
+    color: #ffffff;
+}
+
+@keyframes pat {
+    /*Peace and Tranquility*/
+    0%{background-color: #ff0000;}
+    16.6%{background-color: #ffff00;}
+    33.2%{background-color: #00ff00;}
+    49.8%{background-color: #00ffff;}
+    66.4%{background-color: #0000ff;}
+    83%{background-color: #ff00ff;}
+    100%{background-color: #ff0000;}
+}
+
+@keyframes patscroll {
+    /*Peace and Tranquility background scroll*/
+    0%{background-position: 0 0;}
+    100%{background-position: 0 512px;}
+}

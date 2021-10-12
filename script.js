@@ -27,13 +27,23 @@ function openTab(event, tab) {
 function splashes() {
   fetch("./splashes.json").then((splashes) => { return splashes.json(); }).then((data) => {
     var random = Math.floor(Math.random() * (data.length + 1));
+    //var random = 417;
     //get the json, then with the data, make a random number up to it's length, then set the HTML element with the id "splash" as a random line from the json data
+    document.getElementById("splashbg").classList.remove("patbg");
+    document.getElementById("splash").classList.remove("pattext");
+    //remove the Peace and Tranquility stuff when getting a new splash
     if (random == (data.length)) {
       document.getElementById("splash").innerHTML = "Featuring " + (data.length + 1) + " splashes!"
       //this was a total pain to get working right
     } else if (random == 357) {
       console.error("nope, there's an error now!");
       document.getElementById("splash").innerHTML = data[random];
+      //add an error if the splash is "no errors in console"
+    } else if (random == 417) {
+      document.getElementById("splashbg").classList.add("patbg");
+      document.getElementById("splash").classList.add("pattext");
+      document.getElementById("splash").innerHTML = data[random];
+      //activate Peace and Tranquility background and text
     } else if (random != 313) {
       document.getElementById("splash").innerHTML = data[random];
     } else splashes();
