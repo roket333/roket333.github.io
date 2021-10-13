@@ -25,7 +25,6 @@ body {
     align-items:center;
     display:flex;
     flex-direction:column;
-    justify-content: center;
 }
 
 a:link, a:active {
@@ -98,7 +97,6 @@ a:visited, a:hover {
     max-width: 70%;
     padding-left: 30px;
     padding-right: 30px;
-    margin: 0.5em;
 }
 
 .icon {
@@ -162,9 +160,11 @@ a:visited, a:hover {
     border: 5px solid #e5e5e5;
     border-radius: 30px;
     min-width: 260px;
-    max-width: 95%;
+    max-width: 90%;
     padding: 10px;
     margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .aboutcontainer {
@@ -206,7 +206,7 @@ a:visited, a:hover {
     max-width: 300px;
 }
 
-table, th, td {
+th, td {
     border: 5px solid #e5e5e5;
     border-radius: 5px;
     padding: 5px;
@@ -242,4 +242,26 @@ table, th, td {
     /*Peace and Tranquility background scroll*/
     0%{background-position: 0 0;}
     100%{background-position: 0 512px;}
+}
+
+.center {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.bigimg {
+ max-width: 512px;
+}
+
+.medimg {
+ max-width: 256px;
+}
+
+.smallimg {
+ max-width: 128px;
+}
+
+.colortext {
+    animation: colors 2s ease-in-out;
+    animation-iteration-count: infinite;
 }
