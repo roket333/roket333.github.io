@@ -93,7 +93,7 @@ a:visited, a:hover {
     /*container for the splash box*/
     border: 5px solid #e5e5e5;
     border-radius: 30px;
-    min-width: 230px;
+    min-width: 40%;
     max-width: 70%;
     padding-left: 30px;
     padding-right: 30px;
