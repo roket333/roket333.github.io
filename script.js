@@ -4,6 +4,15 @@ window.onload = function() {
   loadblogposts();
 }
 
+function myFunction() {
+  var x = document.getElementById("navbar");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
 function openTab(event, tab) {
   var i,tabcont,tablinks
 
@@ -42,6 +51,10 @@ function splashes() {
     } else if (random == 417) {
       document.getElementById("splashbg").classList.add("patbg");
       document.getElementById("splash").classList.add("pattext");
+      console.log("No one is around to help");
+      console.log("Life is hard, life is stressful");
+      console.log("I need peace and tranquility");
+      console.log("I don't have to prove myself to anyone");
       document.getElementById("splash").innerHTML = data[random];
       //activate Peace and Tranquility background and text
     } else if (random != 313) {
@@ -49,6 +62,11 @@ function splashes() {
     } else splashes();
     //special cases for splashes
   });
+}
+
+function lowerVolume() {
+  var patmusic = document.getElementById("patmusic");
+  patmusic.volume = 0.3;
 }
 
 function loadblogposts() {
@@ -111,7 +129,7 @@ function loadblogposts() {
           //using prepend instead of append allows me to build posts.json in a way that makes sense
           //add the post to the top of the div where they will all live happily ever after the end :)
         } else {
-          console.error("There was a problem with one of the posts, so it is not displayed")
+          console.error("There was a problem with one of the posts, so it is not displayed");
         }
       });
     }
