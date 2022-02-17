@@ -2,6 +2,10 @@ window.onload = function() {
   splashes();
   document.getElementById("default").click();
   loadblogposts();
+
+  //hide the loading screen and show the actual site
+  document.getElementById("site").style.display = "block";
+  document.getElementById("loading").style.display = "none";
 }
 
 function myFunction() {
@@ -31,6 +35,17 @@ function openTab(event, tab) {
   //show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tab).style.display = "block";
   event.currentTarget.className += " active";
+}
+
+function newsplash() {
+  //when the new splash button is pressed, remove any "spinning" that might be on it, ask for a new splash, then make it speen
+  document.getElementById("refreshbutton").classList.remove("spinning");
+  splashes();
+  document.getElementById("refreshbutton").classList.add("spinning");
+  //now wait 250ms for the animation to finish and remove "spinning" so it can spin again when next clicked
+  setTimeout(function undospin() {
+    document.getElementById("refreshbutton").classList.remove("spinning");
+  },250);
 }
 
 function splashes() {
@@ -130,6 +145,7 @@ function loadblogposts() {
           //add the post to the top of the div where they will all live happily ever after the end :)
         } else {
           console.error("There was a problem with one of the posts, so it is not displayed");
+          //some vital part of the blog post was not filled out, so instead of showing a broken post, let's just not show it and print this error to console
         }
       });
     }

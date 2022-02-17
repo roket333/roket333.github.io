@@ -1,6 +1,12 @@
 html {
     /*set the background color to a nice grey*/
     background:#3b3b3b;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 @font-face {
@@ -20,11 +26,6 @@ body {
     text-align:center;
     color:#e5e5e5;
     margin: 0.5em;
-
-    /*also align everything to the center*/
-    align-items:center;
-    display:flex;
-    flex-direction:column;
 }
 
 a:link, a:active {
@@ -76,10 +77,15 @@ a:visited, a:hover {
     100%{transform: scale(0.8);}
 }
 
+.spinning {
+    animation: rotate 0.25s ease-in-out;
+    animation-iteration-count: 1;
+}
+
 @keyframes rotate {
     /*rotating the splash refresh button*/
     0%{transform: rotate(0deg);}
-    100%{transform: rotate(18000deg);}
+    100%{transform: rotate(360deg);}
 }
 
 @keyframes colors {
@@ -93,10 +99,11 @@ a:visited, a:hover {
     /*container for the splash box*/
     border: 5px solid #e5e5e5;
     border-radius: 30px;
-    min-width: 40%;
-    max-width: 70%;
+    min-width: 550px;
+    max-width: 90%;
     padding-left: 30px;
     padding-right: 30px;
+    display:inline-block;
 }
 
 .icon {
@@ -106,6 +113,7 @@ a:visited, a:hover {
     min-width: 260px;
     padding: 10px;
     margin: 0.5em;
+    display:inline-block;
 }
 
 .footer {
@@ -113,8 +121,9 @@ a:visited, a:hover {
     border: 5px solid #e5e5e5;
     border-radius: 30px;
     min-width: 260px;
-    max-width: 70%;
+    max-width: 90%;
     padding: 10px;
+    display:inline-block;
 }
 
 .tablist {
@@ -159,12 +168,13 @@ a:visited, a:hover {
     /*container for blog posts*/
     border: 5px solid #e5e5e5;
     border-radius: 30px;
-    min-width: 260px;
+    min-width: 90%;
     max-width: 90%;
     padding: 10px;
     margin: 1em;
     margin-left: auto;
     margin-right: auto;
+    display:inline-block;
 }
 
 .aboutcontainer {
@@ -173,6 +183,9 @@ a:visited, a:hover {
     border-radius: 30px;
     padding: 10px;
     margin: 1em;
+    min-width: 60%;
+    display:inline-block;
+    max-width: 90%;
 }
 
 .bigtext, .postitle {
@@ -198,6 +211,18 @@ a:visited, a:hover {
     padding: 10px;
     margin: 1em;
     justify-content: center;
+    display:inline-block;
+    max-width: 90%;
+}
+
+.genericcontainer {
+    border: 5px solid #e5e5e5;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 1em;
+    justify-content: center;
+    display:inline-block;
+    max-width: 90%;
 }
 
 .showimage {
@@ -264,4 +289,34 @@ th, td {
 .colortext {
     animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
+}
+
+.loadingspinthing {
+    width: 10%;
+    animation: loadingspin 20s ease-in-out, colors2 2s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loadingspin {
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(-36000deg);}
+    100%{transform: rotate( 36000deg);}
+}
+
+@keyframes colors2 {
+    /*making text go from amber to gold and back*/
+    0%{filter: invert(68%) sepia(83%) saturate(1080%) hue-rotate(359deg) brightness(103%) contrast(106%);}
+    50%{filter: invert(81%) sepia(36%) saturate(6365%) hue-rotate(359deg) brightness(102%) contrast(106%);}
+    100%{filter: invert(68%) sepia(83%) saturate(1080%) hue-rotate(359deg) brightness(103%) contrast(106%);}
+}
+
+.longloading {
+    animation: loadfadein 21s linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes loadfadein {
+    0%{filter: opacity(0%);}
+    95.2%{filter: opacity(0%);}
+    100%{filter: opacity(100%);}
 }

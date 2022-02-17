@@ -1,0 +1,72 @@
+{
+    "positive": {
+        "generic": [
+            "+%np damage bonus",
+            "+%np clip size",
+            "+%np faster firing speed",
+            "+%np max overheal",
+            "+%np longer overheal time",
+            "Overheal doesn't decay",
+            "+%np critical hit vs burning players",
+            "+%np critical hit vs wet players",
+            "+%np critical hits from behind",
+            "+%np critical hits from in front",
+            "+%np max health on wearer"
+        ],
+        "medigun": [
+            "+%np healing rate",
+            "+%np faster movement speed on target",
+            "+%np faster firing speed on target",
+            "+%np max overheal on target",
+            "Move at the speed of your heal target"
+        ],
+        "flamethrower": [
+            "+%np flame density"
+        ],
+        "projectile": [
+            "+%np faster projectile speed"
+        ],
+        "explosive": [
+            "%np larger explosion radius"
+        ],
+        "melee": [
+            "Throws your weapon, which returns after %nr seconds",
+            "Throws your weapon"
+        ],
+        "shield": [
+            "+%np charge time",
+            "+%np charge speed",
+            "+%np shield bash damage"
+        ],
+        "minigun": [
+
+        ],
+        "rifle": [
+            "+%np faster charge time",
+            "+%np headshot damage bonus"
+        ],
+        "knife": [
+            "Backstabbing an enemy instantly disguises you as them",
+            "Silent killer"
+        ],
+        "engineer": [
+            "+%np metal capacity",
+            "%np faster building time"
+        ],
+        "medic": [
+            "+%nr health regenerated per second"
+        ],
+        "sniper": [
+            "No flinching when scoped in",
+            "No flinching when fully charged"
+        ],
+        "spy": [
+            "+%np longer cloak time",
+            "+%np cloak regen rate",
+            "Bumping enemies does not reveal you when cloaked"
+        ]
+    },
+    "negative": {
+
+    }
+}

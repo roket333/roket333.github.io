@@ -2,24 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Roket's Site</title>
+    <title>Roket's Hub</title>
     <link rel="stylesheet" href="./theme.css">
     <script src="./script.js"></script>
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <!-- Open Graph Data stuff -->
-    <meta property="og:title" content="Roket's Site">
+    <meta property="og:title" content="Roket's Hub">
     <meta property="og:description" content="A pretty cool website">
     <!-- Twitter stuff -->
-    <meta name="twitter:title" content="Roket's Site">
+    <meta name="twitter:title" content="Roket's Hub">
     <!-- Hopefully your browser supports png icons, else too bad, you don't get to see it -->
     <!-- I'm not doing all that other icon stuff, screw Apple and their nonsense yet again -->
     <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
   </head>
   <body>
+    <div class="loading center" style="display: block;"id="loading">
+        <div class="center">
+            <p class="titletext">Roket's Hub</p>
+            <img class="loadingspinthing" src="./assets/images/loadingcircle.png">
+            <p class="titletext">Loading Page...</p>
+            <p class="titletext longloading">This is taking longer than usual</p>
+        </div>
+    </div>
+    <div class="site center"style="display: none;"id="site">
     <div class="icon center">
       <p class="titletext">Roket's Hub</p>
-      <a href="./index.html"> <img class="mainimg" src="./assets/images/icon.gif" alt="Roket's icon" title="This bird won't leave me alone!"> </a>
+      <a href="./index.html"> <img loading="lazy" class="mainimg" src="./assets/images/icon.gif" alt="Roket's icon" title="This bird won't leave me alone!"> </a>
     </div>
 
     <!-- Tabs -->
@@ -28,6 +37,7 @@
       <button class="tablinks" onclick="openTab(event, 'tabinfo')">Info</button>
       <button class="tablinks" onclick="openTab(event, 'tabprojects')">Projects</button>
       <button class="tablinks" onclick="openTab(event, 'tabworks')">Works</button>
+      <!--<button class="tablinks" onclick="openTab(event, 'tabtfgen')">TF2 Gen</button>-->
       <button class="tablinks" onclick="openTab(event, 'tabblog')">Blog</button>
     </div>
     <!-- End of tabs -->
@@ -35,7 +45,7 @@
     <div class="splash center" id="splashbg">
       <p class="splashtext center" id="splash"></p>
       <hr style="border: 3px solid #e5e5e5;">
-      <a onclick="splashes()"><img class="refresh" src="./assets/images/refresh.png" alt="get new splash"></a>
+      <a onclick="newsplash()"><img class="refresh" id="refreshbutton" src="./assets/images/refresh.png" alt="get new splash"></a>
     </div>
 
     <!-- Tab content -->
@@ -54,16 +64,19 @@
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">Who are you?</p>
+        <hr style="border: 3px solid #e5e5e5;">
         i'm roket<br>
         i come from the Grand Canyon State, Arizona
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">What do you do?</p>
+        <hr style="border: 3px solid #e5e5e5;">
         i do a fair bit of stuff<br>
         programming, 3d modeling, game modding, and asset ripping are mostly it
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">What do you know?</p>
+        <hr style="border: 3px solid #e5e5e5;">
         a bit about space<br>
         a bit about cars/vehicles<br>
         some programming (C#, Java, Javascript, HTML, HLSL, CSS, Lua, Python, and more i probably forgot)<br>
@@ -71,26 +84,31 @@
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">How do you do this stuff?</p>
+        <hr style="border: 3px solid #e5e5e5;">
         a wide variety of tools, but mostly...<br>
         Blender, Paint.net, Visual Studio Code, Brackets, Fusion 360, Aseprite, Unreal Engine, Unity<br>
         plus more
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">What games do you play?</p>
+        <hr style="border: 3px solid #e5e5e5;">
         tons of them, but mainly...<br>
         Team Fortress 2, The Legend of Zelda: Breath of the Wild, Minecraft Java Edition, Pavlov VR, Hot Wheels Unleashed, and more
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">How did you make this site?</p>
+        <hr style="border: 3px solid #e5e5e5;">
         GitHub and coding knowledge, plus inspiration from a friend of mine who <a href="https://def-sa.github.io" target="_blank" rel="noopener noreferrer">also has a site you should check out</a><br>
         just searching up stuff online also helped miles
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">Why do you do this stuff?</p>
+        <hr style="border: 3px solid #e5e5e5;">
         because i want to and that's really it
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">A jack of all trades is a master of none</p>
+        <hr style="border: 3px solid #e5e5e5;">
         lots of people have forgotten the second part of that phrase, so here it is<br>
         <i>...but oftentimes better than a master of one</i><br>
         i may do a lot of stuff and im not perfect at any of them, but it feels good to be able to help people with multiple things if need be
@@ -102,7 +120,7 @@
       <div class="maintext">
         Projects
       </div>
-      <div class="aboutcontainer">
+      <div class="genericcontainer">
         <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2425352188" target="_blank" rel="noopener noreferrer">collection of Pavlov VR maps i've made</a><br>
         <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1565655484" target="_blank" rel="noopener noreferrer">Steam VR backround of Null Space</a><br>
         <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1602680042" target="_blank" rel="noopener noreferrer">Kaleidoscopic Collision war paint on the TF2 workshop</a>
@@ -116,13 +134,21 @@
       </div>
       <div class="showcasecontainer">
         <p>Note: these are old renders, new works coming soon-ish</p>
-        <img class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769461708185610/botwswordrender.png">
-        <img class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769475402588180/testofstrengthshrine.png">
-        <img class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769491684880464/nullspace.png">
-        <img class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769504800448582/minecraft.png">
+        <img loading="lazy" class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769461708185610/botwswordrender.png">
+        <img loading="lazy" class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769475402588180/testofstrengthshrine.png">
+        <img loading="lazy" class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769491684880464/nullspace.png">
+        <img loading="lazy" class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769504800448582/minecraft.png">
+      </div>
+    </div>
+    
+    <!-- TF2 weapon gen tab -->
+    <div class="tabcontent" id="tabtfgen">
+      <div class="maintext">
+        Placeholder
       </div>
     </div>
 
+    <!-- Blog tab -->
     <div class="tabcontent" id="tabblog">
       <div class="maintext">
         My blog<br>Here is where I will post stuff I want and keep people updated on what's happening
@@ -133,9 +159,10 @@
 
     <!-- End of tab content-->
 
-    <div class="footer">
+    <div class="footer center">
       Proudly made by Roket 🏳‍🌈<br>
       <a href="https://github.com/roket333/roket333.github.io" target="_blank" rel="noopener noreferrer">Source code</a>
+    </div>
     </div>
   </body>
 </html>
