@@ -86,7 +86,9 @@ function lowerVolume() {
 
 function loadblogposts() {
   var postDateString;
-  fetch("./blog/posts.json").then((posts) => { return posts.json(); }).then((data) => {
+  fetch("./blog/posts.json")
+  .then((posts) => { return posts.json(); })
+  .then((data) => {
     //get the json of blog posts
 
     if (data.length == 0) {
