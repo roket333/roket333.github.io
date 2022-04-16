@@ -274,6 +274,10 @@ th, td {
     margin-right:auto;
 }
 
+.hugeimg {
+    max-width: 1024px;
+}
+
 .bigimg {
  max-width: 512px;
 }
