@@ -108,13 +108,18 @@ function loadblogposts() {
         postEdited = post.edited; //was it edited?
         postEditDate = post.edited_date; //date it was edited
         postContent = post.content; //actual content of the post
+        postPinned = post.pinned; //is the post pinned to the top?
         //for each post, get the title, date, weather or not it's been edited, edit date, and content
 
         if (postTitle != undefined && postDate != undefined && postEdited != undefined && postContent != undefined) {
 
           let postdiv = document.createElement("div");
-          postdiv.classList.add("blogpost");
-          //make the actual post div and add the class "blogpost" to it
+          if (postPinned) {
+            postdiv.classList.add("pinnedblogpost");
+          } else {
+            postdiv.classList.add("blogpost");
+          }
+          //make the actual post div and add the class "blogpost" to it unless it's pinned, then add "pinnedblogpost" so it can be colored
 
           if (postEdited) {
             postDateString = "Posted on " + postDate + ", edited on " + postEditDate
@@ -123,6 +128,12 @@ function loadblogposts() {
           }
           //get the post date ready, if it's been editied add that too
 
+          //if the post is pinned, add the text for it
+          if (postPinned) {
+            pinned = document.createElement("p");
+            pinned.classList.add("postdate");
+            pinned.innerHTML = "Pinned Post";
+          }
           title = document.createElement("p");
           title.classList.add("postitle");
           title.innerHTML = postTitle;
@@ -136,13 +147,21 @@ function loadblogposts() {
           content.innerHTML = postContent;
           //create all the text and assign it
 
+          //add the pinned text
+          if (postPinned) {
+            postdiv.appendChild(pinned); 
+          }
           postdiv.appendChild(title);
           postdiv.appendChild(date);
           postdiv.appendChild(splitter);
           postdiv.appendChild(content);
           //add all the text we just made to the div
 
-          document.getElementById("blogposts").prepend(postdiv);
+          if (postPinned) {
+            document.getElementById("pinnedposts").prepend(postdiv); 
+          } else {
+            document.getElementById("blogposts").prepend(postdiv);
+          }
           //using prepend instead of append allows me to build posts.json in a way that makes sense
           //add the post to the top of the div where they will all live happily ever after the end :)
         } else {
