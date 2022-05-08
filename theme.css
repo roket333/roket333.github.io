@@ -315,6 +315,11 @@ th, td {
     animation-iteration-count: infinite;
 }
 
+.colorimage {
+    animation: colors2 2s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
 .loadingspinthing {
     width: 10%;
     animation: loadingspin 20s ease-in-out, colors2 2s linear;
