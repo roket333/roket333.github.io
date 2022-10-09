@@ -134,7 +134,7 @@ a:visited, a:hover {
     /*change how the buttons on the tabs look*/
     background-color: inherit;
     border: 5px solid #e5e5e5;
-    border-radius: 5%;
+    border-radius: 10px;
     cursor: pointer;
     padding: 4px 8px;
     transition: 0.3s;
@@ -348,4 +348,96 @@ th, td {
     0%{filter: opacity(0%);}
     95.2%{filter: opacity(0%);}
     100%{filter: opacity(100%);}
+}
+
+.linklist button {
+    /*change how the buttons in the list look*/
+    background-color: inherit;
+    border: 5px solid #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.3s;
+    margin: 0.1em;
+    min-width: 30%;
+
+    /*for some reason you need to re-define the font stuff on buttons, so here's that*/
+    font-family:prototype;
+    font-size:150%;
+    text-align:center;
+    color:#e5e5e5;
+}
+
+.linklist button:hover {
+    background-color: #707070;
+}
+
+.linklist button:active {
+    background-color: #e5e5e5;
+    color: #ffaa00;
+    border-color: #ffaa00;
+}
+
+/*Telegram button*/
+.tgbutton button {
+    border: 5px solid #0084ff;
+    color:#0084ff;
+}
+
+.tgbutton button:hover {
+    background-color: #707070;
+}
+
+.tgbutton button:active {
+    background-color: #0084ff;
+    color: #ffaa00;
+    border-color: #ffaa00;
+}
+
+/*Twitter button*/
+.twbutton button {
+    border: 5px solid #00ddff;
+    color:#00ddff;
+}
+
+.twbutton button:hover {
+    background-color: #707070;
+}
+
+.twbutton button:active {
+    background-color: #00ddff;
+    color: #ffaa00;
+    border-color: #ffaa00;
+}
+
+/*Youtube button*/
+.ytbutton button {
+    border: 5px solid #ff0000;
+    color:#ff0000;
+}
+
+.ytbutton button:hover {
+    background-color: #707070;
+}
+
+.ytbutton button:active {
+    background-color: #ff0000;
+    color: #ffaa00;
+    border-color: #ffaa00;
+}
+
+/*Steam button*/
+.stbutton button {
+    border: 5px solid #002a52;
+    color:#002a52;
+}
+
+.stbutton button:hover {
+    background-color: #707070;
+}
+
+.stbutton button:active {
+    background-color: #002a52;
+    color: #ffaa00;
+    border-color: #ffaa00;
 }
