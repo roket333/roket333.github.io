@@ -108,5 +108,13 @@
         "edited": false,
         "edited_date": null,
         "pinned":false
+    },
+    {
+        "title": "FireFox",
+        "date": "October 25th, 2022",
+        "content": "Gonna keep this short, anyone who uses Chrome or a Chromium-based browser (Opera, Edge, Brave, etc) should know that in 2023, Google is going to effectively ban ad blockers, and if anyone has been on YouTube lately without an ad blocker, you would know that right now, they're getting incredibly out of hand with the ads.<br>If you haven't already, I recommend migrating to FireFox. Of course, with migrating platforms, it's gonna be annoying, but thankfully you can import most saved items from Chrome into FireFox, which will lessen the annoyance.<br>Lastly, I have released a theme for FireFox that expands the theme on this site to the rest of your browser, which you can get at <a href=\"https://addons.mozilla.org/en-US/firefox/addon/roket-s-hub-theme\" target=\"_blank\" rel=\"noopener noreferrer\">this link</a>",
+        "edited":false,
+        "edited_date":null,
+        "pinned":false
     }
 ]
