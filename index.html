@@ -38,6 +38,7 @@
       <button class="tablinks" onclick="openTab(event, 'tabprojects')">Projects</button>
       <button class="tablinks" onclick="openTab(event, 'tabworks')">Works</button>
       <button class="tablinks" onclick="openTab(event, 'tabblog')">Blog</button>
+      <button class="tablinks" onclick="openTab(event, 'tabtools')">Tools</button>
     </div>
     <!-- End of tabs -->
 
@@ -147,6 +148,21 @@
       </div>
       <div id="pinnedposts" class="center"></div>
       <div id="blogposts" class="center"></div>
+    </div>
+
+    <!-- Tools tab -->
+    <div class="tabcontent" id="tabtools">
+      <div class="maintext">
+        Various tools i've made<br>
+        <div class="center straybutton showcasecontainer">
+        VIN Checker
+        <br>
+        <input class="field" id="vininput" value="" maxlength="17">
+        <button class="tgbutton" onclick="vincheck()">Check VIN</button>
+        <p id="vinresult">Result Here</p>
+        </div>
+        <div></div>
+      </div>
     </div>
 
     <!-- End of tab content-->

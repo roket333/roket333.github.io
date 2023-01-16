@@ -441,3 +441,42 @@ th, td {
     color: #ffc100;
     border-color: #ffc100;
 }
+
+.straybutton button {
+    /*change how the buttons in the list look*/
+    background-color: inherit;
+    border: 5px solid #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.3s;
+    margin: 0.1em;
+    min-width: 30%;
+
+    /*for some reason you need to re-define the font stuff on buttons, so here's that*/
+    font-family:prototype;
+    font-size: 100%;
+    text-align:center;
+    color:#e5e5e5;
+}
+
+.straybutton button:hover {
+    background-color: #707070;
+}
+
+.straybutton button:active {
+    background-color: #e5e5e5;
+    color: #ffc100;
+    border-color: #ffc100;
+}
+
+.field {
+    border: 5px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 4px 8px;
+    background-color: inherit;
+    font-family:prototype;
+    font-size: 100%;
+    text-align:center;
+    color:#e5e5e5;
+}

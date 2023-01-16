@@ -172,3 +172,54 @@ function loadblogposts() {
     }
   });
 }
+
+function vincheck() {
+  var vintext = document.getElementById("vininput").value.toUpperCase();
+  var vinvalue = 0;
+  var checkchar = "";
+  var resultvin = "";
+  var badvin = false;
+  if(vintext.length < 17) badvin = true;
+  for(let i in vintext) {
+    let multiplier = 1;
+    if(i != 8) {
+      //what's the multiplier?
+      if(i == 0 || i == 10) multiplier = 8
+      else if (i == 1 || i == 11) multiplier = 7
+      else if (i == 2 || i == 12) multiplier = 6
+      else if (i == 3 || i == 13) multiplier = 5
+      else if (i == 4 || i == 14) multiplier = 4
+      else if (i == 5 || i == 15) multiplier = 3
+      else if (i == 6 || i == 16) multiplier = 2
+      else if (i == 7) multiplier = 10
+      else if (i == 9) multiplier = 9
+      //check the letters
+      if(vintext[i] == "A" || vintext[i] == "J") vinvalue += 1 * multiplier
+      else if(vintext[i] == "B" || vintext[i] == "K" || vintext[i] == "S") vinvalue += 2 * multiplier
+      else if(vintext[i] == "C" || vintext[i] == "L" || vintext[i] == "T") vinvalue += 3 * multiplier
+      else if(vintext[i] == "D" || vintext[i] == "M" || vintext[i] == "U") vinvalue += 4 * multiplier
+      else if(vintext[i] == "E" || vintext[i] == "N" || vintext[i] == "V") vinvalue += 5 * multiplier
+      else if(vintext[i] == "F" || vintext[i] == "W") vinvalue += 6 * multiplier
+      else if(vintext[i] == "G" || vintext[i] == "P" || vintext[i] == "X") vinvalue += 7 * multiplier
+      else if(vintext[i] == "H" || vintext[i] == "Y") vinvalue += 8 * multiplier
+      else if(vintext[i] == "R" || vintext[i] == "Z") vinvalue += 9 * multiplier
+      else if(!isNaN(vintext[i]))vinvalue += vintext[i] * multiplier
+      else badvin = true;
+    }
+  }
+  checkchar = vinvalue % 11
+  if(checkchar == 10) checkchar = "X"
+  for(let i in vintext) {
+    if(i != 8) resultvin += vintext[i]
+    else resultvin += checkchar
+  }
+  if(badvin) {
+    document.getElementById("vinresult").innerHTML = "Invalid VIN"
+  }
+  else if(resultvin === vintext) {
+    document.getElementById("vinresult").innerHTML = "VIN is correct!"
+  }
+  else if(resultvin != vintext) {
+    document.getElementById("vinresult").innerHTML = "Check bit invalid, corrected VIN<br>" + resultvin;
+  }
+}
