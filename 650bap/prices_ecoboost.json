@@ -1,0 +1,273 @@
+[
+    {
+        "group_name": "paint",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "AE",
+                "type":"paint",
+                "name":"Grabber Blue Metallic",
+                "nocost": true
+            },
+            {
+                "id": "B3",
+                "type":"paint",
+                "name":"Atlas Blue Metallic",
+                "nocost":true
+            },
+            {
+                "id": "D4",
+                "type": "paint",
+                "name": "Rapid Red Metallic Tinted Clearcoat",
+                "i_cost": 465,
+                "r_cost": 495
+            },
+            {
+                "id":"G1",
+                "type":"paint",
+                "name":"Shadow Black",
+                "nocost":true
+            },
+            {
+                "id":"HY",
+                "type":"paint",
+                "name":"Dark Matter Grey Metallic",
+                "nocost":true
+            },
+            {
+                "id":"JS",
+                "type":"paint",
+                "name":"Iconic Silver Metallic",
+                "nocost":true
+            },
+            {
+                "id":"M7",
+                "type":"paint",
+                "name":"Carbonized Grey Metallic",
+                "nocost":true
+            },
+            {
+                "id":"RH",
+                "type":"paint",
+                "name":"Splash Yellow Metallic",
+                "nocost":true
+            },
+            {
+                "id":"PQ",
+                "type":"paint",
+                "name":"Race Red",
+                "nocost":true
+            },
+            {
+                "id":"YZ",
+                "type":"paint",
+                "name":"Oxford White",
+                "nocost":true,
+                "default":true
+            }
+        ]
+    },
+    {
+        "group_name": "stripes",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "N85",
+                "type": "stripe",
+                "name": "Less Stripes",
+                "nocost": true,
+                "default": true
+            }
+        ]
+    },
+    {
+        "group_name": "equipgroup",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "100A",
+                "type": "equip",
+                "name": "100A Equipment Group",
+                "cost_func": "base",
+                "i_cost": 29683,
+                "r_cost": 30920,
+                "defualt": true
+            },
+            {
+                "id": "101A",
+                "type": "equip",
+                "name": "101A Equipment Group",
+                "cost_func": "add",
+                "cost_base": "100A",
+                "i_cost": 2444,
+                "r_cost": 2600
+            },
+            {
+                "id": "200A",
+                "type": "equip",
+                "name": "200A Equipment Group",
+                "cost_func": "base",
+                "i_cost": 34623,
+                "r_cost": 36445
+            },
+            {
+                "id": "201A",
+                "type": "equip",
+                "name": "201A Equipment Group",
+                "cost_func": "add",
+                "cost_base": "200A",
+                "i_cost": 2820,
+                "r_cost": 3000
+            },
+            {
+                "id": "200AC",
+                "type": "equip",
+                "name": "200A Equipment Group (Convertible)",
+                "cost_func": "base",
+                "i_cost": 39848,
+                "r_cost": 41945
+            },
+            {
+                "id": "201AC",
+                "type": "equip",
+                "name": "201A Equipment Group (Convertible)",
+                "cost_func": "add",
+                "cost_base": "200AC",
+                "i_cost": 2820,
+                "r_cost": 3000
+            }
+        ]
+    },
+    {
+        "group_name": "engines",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "99H",
+                "type": "engine",
+                "name": "2.3L Turbocharged Ecoboost Inline 4",
+                "cost_func":"base",
+                "nocost": true,
+                "default": true
+            }
+        ]
+    },
+    {
+        "group_name": "trans",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "44U",
+                "type": "trans",
+                "name": "10R80 10-Speed Automatic Transmission",
+                "cost_func":"base",
+                "nocost": true,
+                "default": true
+            }
+        ]
+    },
+    {
+        "group_name": "wheels",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "64M",
+                "type": "wheel",
+                "name": "20\" Premium Painted Wheels",
+                "requires": [["200A","201A","200AC","201AC"]],
+                "i_cost": 1269,
+                "r_cost": 1350
+            },
+            {
+                "id": "64Y",
+                "type":"wheel",
+                "name": "17\" Sparkle Silver Wheels",
+                "requires": [["100A"]],
+                "nocost": true,
+                "default": true
+            },
+            {
+                "id": "64F",
+                "type":"wheel",
+                "name": "18\" Machined-face Aluminum with High gloss Ebony Black-painted pockets",
+                "requires": [["101A","200A","200AC","201A","201AC"]],
+                "nocost": true
+            },
+            {
+                "id": "64S",
+                "type":"wheel",
+                "name": "19\" Sinister Bronze Wheels",
+                "requires": [["201A"],["60L"]],
+                "nocost": true
+            },
+            {
+                "id": "641",
+                "type":"wheel",
+                "name": "19\" Ebony Black Wheels",
+                "requires": [["60G"]],
+                "nocost": true
+            },
+            {
+                "id": "642",
+                "type": "wheel",
+                "name": "19\" Polished Aluminum Wheels",
+                "i_cost": 841,
+                "r_cost": 895
+            },
+            {
+                "id": "64N",
+                "type":"wheel",
+                "name": "19\" Carbonized Grey Wheels",
+                "requires": [["67B"]],
+                "nocost": true
+            },
+            {
+                "id": "64X",
+                "type":"wheel",
+                "name":"19\" Machined-face Aluminum with Tarnished Dark-painted pockets Wheels",
+                "requires":[["605"]],
+                "nocost":true
+            }
+        ]
+    },
+    {
+        "group_name": "options",
+        "one_choice": false,
+        "group_data": [
+            {
+                "id": "67B",
+                "type": "option",
+                "name": "2.3L High Performance Package",
+                "incomp": ["642","60G","605","51W"],
+                "requires": [["64N"]],
+                "i_cost": 3267,
+                "r_cost": 3475
+            },
+            {
+                "id": "19W",
+                "type": "option",
+                "name": "Active Exhaust",
+                "requires": [["101A","200A","201A","200AC","201AC"]],
+                "i_cost": 1152,
+                "r_cost": 1225
+            },
+            {
+                "id": "605",
+                "type": "option",
+                "name": "Wheel and Stripe Package",
+                "incomp": ["47B","60G","67B","642"],
+                "requires":[["64X"]],
+                "i_cost":841,
+                "r_cost":895
+            },
+            {
+                "id": "AZ8",
+                "type": "option",
+                "name": "Test Subtraction Package",
+                "cost_mod": {"modid": "200AC", "i_cost": 3000, "r_cost": 4000},
+                "i_cost":5000,
+                "r_cost":6000
+            }
+        ]
+    }
+]
