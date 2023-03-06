@@ -59,6 +59,7 @@ fetch(json)
             if(item.requires != undefined) {item.requires = JSON.stringify(item.requires);itemdiv.setAttribute("requires", item.requires)};
             if(item.includes != undefined) {item.includes = JSON.stringify(item.includes);itemdiv.setAttribute("includes", item.includes)};
             if(item.inclstrict != undefined) {itemdiv.setAttribute("inclstrict", item.inclstrict)};
+            if(item.cost_mod != undefined) {itemdiv.setAttribute("cost_mod", item.cost_mod)};
             if(!item.nocost) {itemdiv.setAttribute("i_cost", item.i_cost);itemdiv.setAttribute("r_cost", item.r_cost)};
 
             //if we only allow one choice, make it a "radio" button, and set the name to the group id so it can communicate with other radio buttons
@@ -96,6 +97,7 @@ fetch(json)
             let iname = document.createTextNode(item.name);
             let brk = document.createElement("br");
             let costs = document.createTextNode("Invoice: $" + item.i_cost + " MSRP: $" + item.r_cost);
+            costs.setAttribute("id", "costs");
             label.appendChild(iname);
             if(!item.nocost) {
                 label.appendChild(brk);
@@ -203,13 +205,14 @@ fetch(json)
   }
 
   function addedbytest() {
-    allthings.forEach(box => {
+    allthings.every(box => {
 
         //see if this item that was set by a package still has the origin package selected
         let boxroot = box.parentElement.parentElement.getAttribute("addedby");
         if(!selectedthings.includes(boxroot)) {
             box.click(); box.checked = false;
             box.parentElement.parentElement.setAttribute("addedby", "");
+    
         }
     })
   }
@@ -230,8 +233,24 @@ fetch(json)
     }
   }
 
+  //we're gonna update the cost of some things, mainly in the event of a cost mod due to another item being selected
   function updatecosts(boxid) {
-    
+    let costString = document.getElementById(boxid).parentElement.parentElement.getAttribute("cost_mod");
+    let costArray = costString ? JSON.parse(costString) : [];
+    if(costArray.length > 0) {
+        costArray.forEach(costs => {
+            costs.some(costtest => {
+                modid = costtest.modid; newi_cost = costtest.i_cost; newr_cost = costtest.r_cost;
+                oldi_cost = boxid.i_cost; oldr_cost = boxid.r_cost;
+                if(selectedthings.includes(boxid.parentElement.parentElement.getAttribute("id"))) {
+                    if(oldi_cost != newi_cost && oldr_cost != newi_cost) {
+                        oldi_cost = newi_cost; oldr_cost = newr_cost;
+                    } 
+                }
+                
+            })
+        })
+    }
   }
   
   updateboxes();
