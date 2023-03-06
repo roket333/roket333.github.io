@@ -1,6 +1,7 @@
 [
     {
-        "group_name": "paint",
+        "group_name": "Paint Colors",
+        "group_id": "paint",
         "one_choice": true,
         "group_data": [
             {
@@ -68,37 +69,78 @@
         ]
     },
     {
-        "group_name": "stripes",
+        "group_name": "Stripes",
+        "group_id": "stripes",
         "one_choice": true,
         "group_data": [
             {
                 "id": "N85",
                 "type": "stripe",
                 "name": "Less Stripes",
+                "incomp": ["605"],
                 "nocost": true,
                 "default": true
+            },
+            {
+                "id": "85D",
+                "type": "stripe",
+                "name": "Gloss Grey/Semi-Gloss Black",
+                "nocost":true,
+                "incomp": ["200AC", "201AC", "605"]
+            },
+            {
+                "id": "85X",
+                "type": "stripe",
+                "name": "Matte Black/Red Accent",
+                "nocost": true,
+                "incomp": ["RH", "PQ", "200AC", "201AC", "605"]
+            },
+            {
+                "id": "85V",
+                "type": "stripe",
+                "name": "Opacity Fade",
+                "nocost": true,
+                "incomp": ["G1", "200AC", "201AC", "605"]
+            },
+            {
+                "id": "85R/90D",
+                "type": "stripe",
+                "name": "Black Step Opacity Fade",
+                "nocost": true,
+                "requires": [["605"]],
+                "incomp": ["G1"]
+            },
+            {
+                "id": "85N/90K",
+                "type": "stripe",
+                "name": "Grey Scale Opacity Fade",
+                "nocost": true,
+                "requires": [["605"], ["G1"]]
             }
         ]
     },
     {
-        "group_name": "equipgroup",
+        "group_name": "Equipment Groups",
+        "group_id": "equipgroup",
         "one_choice": true,
         "group_data": [
             {
                 "id": "100A",
                 "type": "equip",
                 "name": "100A Equipment Group",
-                "cost_func": "base",
+                "includes":[["64Y"]],
+                "inclstrict": false,
                 "i_cost": 29683,
                 "r_cost": 30920,
-                "defualt": true
+                "default": true
             },
             {
                 "id": "101A",
                 "type": "equip",
                 "name": "101A Equipment Group",
-                "cost_func": "add",
                 "cost_base": "100A",
+                "includes":[["64F"]],
+                "inclstrict": false,
                 "i_cost": 2444,
                 "r_cost": 2600
             },
@@ -106,7 +148,8 @@
                 "id": "200A",
                 "type": "equip",
                 "name": "200A Equipment Group",
-                "cost_func": "base",
+                "includes":[["64F"]],
+                "inclstrict": false,
                 "i_cost": 34623,
                 "r_cost": 36445
             },
@@ -114,7 +157,8 @@
                 "id": "201A",
                 "type": "equip",
                 "name": "201A Equipment Group",
-                "cost_func": "add",
+                "includes": [["50C"],["64F"]],
+                "inclstrict": false,
                 "cost_base": "200A",
                 "i_cost": 2820,
                 "r_cost": 3000
@@ -123,7 +167,8 @@
                 "id": "200AC",
                 "type": "equip",
                 "name": "200A Equipment Group (Convertible)",
-                "cost_func": "base",
+                "includes":[["64F"]],
+                "inclstrict": false,
                 "i_cost": 39848,
                 "r_cost": 41945
             },
@@ -131,7 +176,8 @@
                 "id": "201AC",
                 "type": "equip",
                 "name": "201A Equipment Group (Convertible)",
-                "cost_func": "add",
+                "includes": [["50C"],["64F"]],
+                "inclstrict": false,
                 "cost_base": "200AC",
                 "i_cost": 2820,
                 "r_cost": 3000
@@ -139,7 +185,8 @@
         ]
     },
     {
-        "group_name": "engines",
+        "group_name": "Engines",
+        "group_id": "engine",
         "one_choice": true,
         "group_data": [
             {
@@ -153,7 +200,8 @@
         ]
     },
     {
-        "group_name": "trans",
+        "group_name": "Transmissions",
+        "group_id": "trans",
         "one_choice": true,
         "group_data": [
             {
@@ -167,17 +215,10 @@
         ]
     },
     {
-        "group_name": "wheels",
+        "group_name": "Wheels",
+        "group_id": "wheel",
         "one_choice": true,
         "group_data": [
-            {
-                "id": "64M",
-                "type": "wheel",
-                "name": "20\" Premium Painted Wheels",
-                "requires": [["200A","201A","200AC","201AC"]],
-                "i_cost": 1269,
-                "r_cost": 1350
-            },
             {
                 "id": "64Y",
                 "type":"wheel",
@@ -197,7 +238,7 @@
                 "id": "64S",
                 "type":"wheel",
                 "name": "19\" Sinister Bronze Wheels",
-                "requires": [["201A"],["60L"]],
+                "requires": [["60L"]],
                 "nocost": true
             },
             {
@@ -227,21 +268,48 @@
                 "name":"19\" Machined-face Aluminum with Tarnished Dark-painted pockets Wheels",
                 "requires":[["605"]],
                 "nocost":true
+            },
+            {
+                "id": "64M",
+                "type": "wheel",
+                "name": "20\" Premium Painted Wheels",
+                "requires": [["200A","201A","200AC","201AC"]],
+                "i_cost": 1269,
+                "r_cost": 1350
             }
         ]
     },
     {
-        "group_name": "options",
+        "group_name": "Options",
+        "group_id": "options",
         "one_choice": false,
         "group_data": [
+            {
+                "id": "50C",
+                "type": "option",
+                "name": "Ford Co-Pilot360 Assist+",
+                "requires": [["201A", "201AC", "200A", "200AC"]],
+                "cost_mod": [{"modid": "201A", "i_cost": 0, "r_cost": 0}, {"modid": "201AC", "i_cost":0, "r_cost":0}],
+                "i_cost":1217,
+                "r_cost":1295
+            },
             {
                 "id": "67B",
                 "type": "option",
                 "name": "2.3L High Performance Package",
-                "incomp": ["642","60G","605","51W"],
-                "requires": [["64N"]],
+                "incomp": ["642","60G","605","51W","60L"],
+                "includes": [["64N"]],
+                "inclstrict": true,
                 "i_cost": 3267,
                 "r_cost": 3475
+            },
+            {
+                "id": "96D",
+                "type": "option",
+                "name": "MagneRide Damping System",
+                "requires": [["200A", "200AC", "201A", "201AC"],["67B"]],
+                "i_cost":1645,
+                "r_cost":1750
             },
             {
                 "id": "19W",
@@ -255,18 +323,117 @@
                 "id": "605",
                 "type": "option",
                 "name": "Wheel and Stripe Package",
-                "incomp": ["47B","60G","67B","642"],
-                "requires":[["64X"]],
+                "incomp": ["47B","60G","67B","642","60L"],
+                "includes":[["64X"],["85R/90D", "85N/90K"]],
+                "inclstrict": true,
                 "i_cost":841,
                 "r_cost":895
             },
             {
-                "id": "AZ8",
+                "id": "60G",
                 "type": "option",
-                "name": "Test Subtraction Package",
-                "cost_mod": {"modid": "200AC", "i_cost": 3000, "r_cost": 4000},
-                "i_cost":5000,
-                "r_cost":6000
+                "name": "Nite Pony Package",
+                "incomp": ["605", "67B", "642", "85V", "60L"],
+                "includes": [["641"]],
+                "inclstrict": true,
+                "i_cost": 1123,
+                "r_cost": 1195
+            },
+            {
+                "id": "60L",
+                "type": "option",
+                "name": "Bronze Appearance Package",
+                "incomp": ["60G", "605", "67B", "64M", "642"],
+                "requires": [["201A", "201AC"]],
+                "includes": [["64S"]],
+                "inclstrict": true,
+                "i_cost": 935,
+                "r_cost": 995
+            },
+            {
+                "id": "51W",
+                "type": "option",
+                "name": "Mini Spare Wheel and Tire",
+                "incomp": ["67B"],
+                "i_cost": 390,
+                "r_cost": 415
+            },
+            {
+                "id": "18F",
+                "type": "option",
+                "name": "Red Painted w/ White Logo Calipers",
+                "requires": [["67B"]],
+                "incomp": ["18W"],
+                "i_cost": 465,
+                "r_cost": 495
+            },
+            {
+                "id": "18W",
+                "type": "option",
+                "name": "Grabber Blue Painted w/ White Logo Calipers",
+                "requires": [["67B"]],
+                "incomp": ["18F"],
+                "i_cost": 465,
+                "r_cost": 495
+            },
+            {
+                "id": "13A",
+                "type": "option",
+                "name": "Spoiler Delete",
+                "requires": [["60G"]],
+                "nocost":true
+            },
+            {
+                "id": "41H",
+                "type": "option",
+                "name": "Engine Block Heater",
+                "i_cost":94,
+                "r_cost":100
+            },
+            {
+                "id": "153",
+                "type": "option",
+                "name": "Front License Plate Bracket",
+                "nocost":true
+            }
+        ]
+    },
+    {
+        "group_name": "Interior",
+        "group_id": "interior",
+        "one_choice": false,
+        "group_data": [
+            {
+                "id": "59A",
+                "type": "option",
+                "name": "Seat Belt - Red",
+                "requires": [["67B"]],
+                "i_cost": 277,
+                "r_cost": 295
+            },
+            {
+                "id": "12B",
+                "type": "option",
+                "name": "Premium Floor Liners Front and Rear (w/ Carpet Mats)",
+                "incomp": ["12C"],
+                "i_cost": 188,
+                "r_cost": 200
+            },
+            {
+                "id": "12C",
+                "type": "option",
+                "name": "Premium Floor Liners Front and Rear (w/o Carpet Mats)",
+                "incomp": ["12B"],
+                "i_cost": 159,
+                "r_cost": 170
+            },
+            {
+                "id": "21N",
+                "type": "option",
+                "name": "Recaro Leather-Trimmed Sport Seats",
+                "requires": [["200A", "201A"],["67B"]],
+                "i_cost":1551,
+                "r_cost":1650
             }
         ]
     }

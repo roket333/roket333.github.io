@@ -480,3 +480,12 @@ th, td {
     text-align:center;
     color:#e5e5e5;
 }
+
+.bapitem {
+    padding: 5px;
+}
+
+.bapitem input {
+    height: 20px;
+    width: 20px;
+}
