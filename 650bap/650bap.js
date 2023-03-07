@@ -54,13 +54,14 @@ fetch(json)
             itemdiv.setAttribute("id", item.id);
             let box = document.createElement("input");
             let label = document.createElement("label");
+            //set some (actually a lot) of attributes that we may need so we don't have to keep re-reading the json over and over and over and over and over and over and over and over and over and over and over and over and over again
             if(item.default) {itemdiv.setAttribute("default", true)}
             if(item.incomp != undefined) {item.incomp = JSON.stringify(item.incomp);itemdiv.setAttribute("incomp", item.incomp)};
             if(item.requires != undefined) {item.requires = JSON.stringify(item.requires);itemdiv.setAttribute("requires", item.requires)};
             if(item.includes != undefined) {item.includes = JSON.stringify(item.includes);itemdiv.setAttribute("includes", item.includes)};
             if(item.inclstrict != undefined) {itemdiv.setAttribute("inclstrict", item.inclstrict)};
-            if(item.cost_mod != undefined) {itemdiv.setAttribute("cost_mod", item.cost_mod)};
-            if(!item.nocost) {itemdiv.setAttribute("i_cost", item.i_cost);itemdiv.setAttribute("r_cost", item.r_cost)};
+            if(item.cost_mod != undefined) {item.cost_mod = JSON.stringify(item.cost_mod);itemdiv.setAttribute("cost_mod", item.cost_mod)};
+            if(!item.nocost) {itemdiv.setAttribute("i_cost", item.i_cost);itemdiv.setAttribute("r_cost", item.r_cost);itemdiv.setAttribute("true_i_cost", item.i_cost);itemdiv.setAttribute("true_r_cost", item.r_cost)};
 
             //if we only allow one choice, make it a "radio" button, and set the name to the group id so it can communicate with other radio buttons
             if(one_choice)
@@ -94,15 +95,15 @@ fetch(json)
             }
 
             //set the label
+            let costdiv = document.createElement("div");
+            costdiv.classList.add("itemcosts");
             let iname = document.createTextNode(item.name);
-            let brk = document.createElement("br");
             let costs = document.createTextNode("Invoice: $" + item.i_cost + " MSRP: $" + item.r_cost);
-            costs.setAttribute("id", "costs");
             label.appendChild(iname);
             if(!item.nocost) {
-                label.appendChild(brk);
-                label.appendChild(costs);
+                costdiv.appendChild(costs);
             }
+            label.appendChild(costdiv);
             itemdiv.appendChild(label);
             groupdiv.appendChild(itemdiv);
         })
@@ -139,12 +140,6 @@ fetch(json)
   function updateboxes() {
     allthings.forEach(box => {
 
-        //see if this item that was set by a package still has the origin package selected
-        /*let boxroot = box.parentElement.parentElement.getAttribute("addedby");
-        if(!selectedthings.includes(boxroot)) {
-            box.click(); box.checked = false;
-        }*/
-
         //various validity checks
         let incompPass = true;
         let requiresPass = true;
@@ -161,12 +156,11 @@ fetch(json)
         }
 
         //check if the selected checkboxes meet the required things to allow some items to be selected
-        const isDisabled = requiresArray.every(requiredArray => {
+        requiresPass = requiresArray.every(requiredArray => {
             return requiredArray.some(requiredItem => {
-              return document.getElementById(requiredItem + "box").checked;
+                return document.getElementById(requiredItem + "box").checked;
             });
-          });
-          requiresPass = isDisabled;
+        });
 
 
         //final check, is this box disabled? the council will now decide your fate
@@ -184,14 +178,6 @@ fetch(json)
                 let groupid = box.parentElement.parentElement.parentElement.getAttribute("id");
                 let childrenofdiv = Array.from(document.getElementById(groupid).children);
                 childrenofdiv.reverse().some(item => {
-                    let boxofdiv = item.firstChild.firstChild;
-                    if(boxofdiv != null){
-                        if(!boxofdiv.disabled) {
-                            boxofdiv.click(); boxofdiv.checked = true;
-                        }
-                    }
-                })
-                childrenofdiv.some(item => {
                     let boxofdiv = item.firstChild.firstChild;
                     if(boxofdiv != null){
                         if(!boxofdiv.disabled) {
@@ -234,23 +220,42 @@ fetch(json)
   }
 
   //we're gonna update the cost of some things, mainly in the event of a cost mod due to another item being selected
-  function updatecosts(boxid) {
-    let costString = document.getElementById(boxid).parentElement.parentElement.getAttribute("cost_mod");
-    let costArray = costString ? JSON.parse(costString) : [];
-    if(costArray.length > 0) {
-        costArray.forEach(costs => {
-            costs.some(costtest => {
+  function updatecosts() {
+    allthings.forEach(box => {
+        let boxid = box.getAttribute("id");
+        let boxiddiv = document.getElementById(boxid).parentElement.parentElement;
+        let costString = boxiddiv.getAttribute("cost_mod");
+        let costArray = costString ? JSON.parse(costString) : [];
+        let boxidparent = boxiddiv.getAttribute("id");
+        //if the cost mod array has a greater length than 0, there's something there to account for
+        if(costArray.length > 0) {
+            costArray.forEach(costtest => {
                 modid = costtest.modid; newi_cost = costtest.i_cost; newr_cost = costtest.r_cost;
                 oldi_cost = boxid.i_cost; oldr_cost = boxid.r_cost;
-                if(selectedthings.includes(boxid.parentElement.parentElement.getAttribute("id"))) {
-                    if(oldi_cost != newi_cost && oldr_cost != newi_cost) {
+                //if at least one of the cost mod things are true, change the costs
+                let hascostmod = costArray.some(costitem => {
+                    return selectedthings.some(selectedItem => {
+                        return selectedItem === costitem.modid;
+                    });
+                });
+                if(hascostmod) {
+                    if(oldi_cost != newi_cost && oldr_cost != newr_cost) {
                         oldi_cost = newi_cost; oldr_cost = newr_cost;
+                        if(oldi_cost == 0 && oldr_cost == 0) {
+                            document.getElementById(boxidparent).querySelector(".itemcosts").innerHTML = "";
+                            boxiddiv.setAttribute("true_i_cost", 0);boxiddiv.setAttribute("true_r_cost", 0);
+                        } else {
+                            document.getElementById(boxidparent).querySelector(".itemcosts").innerHTML = "Invoice: $" + oldi_cost + " MSRP: $" + oldr_cost;
+                            boxiddiv.setAttribute("true_i_cost", oldi_cost);boxiddiv.setAttribute("true_r_cost", oldr_cost);
+                        }
                     } 
-                }
-                
+                } else {
+                    document.getElementById(boxidparent).querySelector(".itemcosts").innerHTML = "Invoice: $" + costtest.i_cost + " MSRP: $" + costtest.r_cost;
+                    boxiddiv.setAttribute("true_i_cost", costtest.i_cost);boxiddiv.setAttribute("true_r_cost", costtest.r_cost);
+                }                    
             })
-        })
-    }
+        }
+    })
   }
   
   updateboxes();
