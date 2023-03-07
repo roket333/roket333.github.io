@@ -231,7 +231,7 @@ fetch(json)
         if(costArray.length > 0) {
             costArray.forEach(costtest => {
                 modid = costtest.modid; newi_cost = costtest.i_cost; newr_cost = costtest.r_cost;
-                oldi_cost = boxid.i_cost; oldr_cost = boxid.r_cost;
+                oldi_cost = boxiddiv.getAttribute("i_cost"); oldr_cost = boxiddiv.getAttribute("r_cost");
                 //if at least one of the cost mod things are true, change the costs
                 let hascostmod = costArray.some(costitem => {
                     return selectedthings.some(selectedItem => {
@@ -250,8 +250,8 @@ fetch(json)
                         }
                     } 
                 } else {
-                    document.getElementById(boxidparent).querySelector(".itemcosts").innerHTML = "Invoice: $" + costtest.i_cost + " MSRP: $" + costtest.r_cost;
-                    boxiddiv.setAttribute("true_i_cost", costtest.i_cost);boxiddiv.setAttribute("true_r_cost", costtest.r_cost);
+                    document.getElementById(boxidparent).querySelector(".itemcosts").innerHTML = "Invoice: $" + boxiddiv.getAttribute("i_cost") + " MSRP: $" + boxiddiv.getAttribute("r_cost");
+                    boxiddiv.setAttribute("true_i_cost", boxiddiv.getAttribute("i_cost"));boxiddiv.setAttribute("true_r_cost", boxiddiv.getAttribute("r_cost"));
                 }                    
             })
         }
