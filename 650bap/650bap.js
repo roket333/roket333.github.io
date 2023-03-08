@@ -3,6 +3,8 @@
 setInterval(boxlist, 10);
 setInterval(updateboxes, 10);
 setInterval(updatecosts, 10);
+//setInterval(addedbytest, 10);
+setInterval(finalCosts, 10);
 getOptions("./650bap/prices_ecoboost.json", "checkbox_container") //debug and testing purposes
 
 var boxes = document.querySelectorAll("input[type=\"checkbox\"]");
@@ -26,8 +28,10 @@ radios.forEach(input => {
 
 function clickfunc(boxid) {
     updateboxes();
+    //addedbytest();
     selectpackages(boxid);
     updatecosts(boxid);
+    finalCosts();
 }
 
 //load all the options from the specified json file to the specified location div
@@ -59,9 +63,9 @@ fetch(json)
             if(item.incomp != undefined) {item.incomp = JSON.stringify(item.incomp);itemdiv.setAttribute("incomp", item.incomp)};
             if(item.requires != undefined) {item.requires = JSON.stringify(item.requires);itemdiv.setAttribute("requires", item.requires)};
             if(item.includes != undefined) {item.includes = JSON.stringify(item.includes);itemdiv.setAttribute("includes", item.includes)};
+            if(item.option_code != undefined) {itemdiv.setAttribute("option_code", item.option_code)};
             if(item.inclstrict != undefined) {itemdiv.setAttribute("inclstrict", item.inclstrict)};
             if(item.cost_mod != undefined) {item.cost_mod = JSON.stringify(item.cost_mod);itemdiv.setAttribute("cost_mod", item.cost_mod)};
-            if(!item.nocost) {itemdiv.setAttribute("i_cost", item.i_cost);itemdiv.setAttribute("r_cost", item.r_cost);itemdiv.setAttribute("true_i_cost", item.i_cost);itemdiv.setAttribute("true_r_cost", item.r_cost)};
 
             //if we only allow one choice, make it a "radio" button, and set the name to the group id so it can communicate with other radio buttons
             if(one_choice)
@@ -93,6 +97,7 @@ fetch(json)
                     item.r_cost = item.r_cost + newr_cost
                 }
             }
+            if(!item.nocost) {itemdiv.setAttribute("i_cost", item.i_cost);itemdiv.setAttribute("r_cost", item.r_cost);itemdiv.setAttribute("true_i_cost", item.i_cost);itemdiv.setAttribute("true_r_cost", item.r_cost);itemdiv.setAttribute("nocost", false)} else {itemdiv.setAttribute("nocost", true)};
 
             //set the label
             let costdiv = document.createElement("div");
@@ -110,6 +115,22 @@ fetch(json)
 
         document.getElementById(locationdiv).append(groupdiv);
     })
+
+    //display the costs and option codes
+    let finalcostsdiv = document.getElementById("final_costs");
+    cname = document.createElement("p");
+    cname.innerHTML = "Final Costs"
+    cname.classList.add("bigtext");
+    fclayer1 = document.createElement("p");
+    fclayer1.setAttribute("id","fc1");
+    fclayer2 = document.createElement("p");
+    fclayer2.setAttribute("id","fc2");
+    fclayer3 = document.createElement("p");
+    fclayer3.setAttribute("id","fc3");
+    fclayer4 = document.createElement("p");
+    fclayer4.setAttribute("id","fc4");
+    finalcostsdiv.append(cname,fclayer1,fclayer2,fclayer3,fclayer4);
+
   })
 }
 
@@ -191,14 +212,15 @@ fetch(json)
   }
 
   function addedbytest() {
-    allthings.every(box => {
-
+    allthings.some(box => {
         //see if this item that was set by a package still has the origin package selected
         let boxroot = box.parentElement.parentElement.getAttribute("addedby");
-        if(!selectedthings.includes(boxroot)) {
-            box.click(); box.checked = false;
-            box.parentElement.parentElement.setAttribute("addedby", "");
-    
+        //i was debugging this FOREVER because for some reason using this function would cause the browser to freeze and everything to be deselected, turns out i forgot to check if addedby was a blank string
+        if(boxroot.length > 0) {
+            if(!selectedthings.includes(boxroot)) {
+                box.click(); box.checked = false;
+                box.parentElement.parentElement.setAttribute("addedby", "");
+            }
         }
     })
   }
@@ -256,6 +278,30 @@ fetch(json)
             })
         }
     })
+  }
+
+  //let's see how much your wallet is gonna hurt
+  function finalCosts() {
+    let finalicost = 0;
+    let finalrcost = 0;
+    let dad = 1595;
+    let ordercodes = [];
+    selectedthings.forEach(item => {
+        let itemactual = document.getElementById(item)
+            if(!isNaN(parseInt(itemactual.getAttribute("true_i_cost"))))
+                finalicost += parseInt(itemactual.getAttribute("true_i_cost"));
+            if(!isNaN(parseInt(itemactual.getAttribute("true_r_cost"))))
+                finalrcost += parseInt(itemactual.getAttribute("true_r_cost"));
+        ordercodes.unshift(itemactual.getAttribute("option_code"));
+    })
+
+    //convert the array of order codes to a string, with the separator being forward slash, then update all the "fc" items with the proper information
+    ordercodes = ordercodes.filter(code => code.length > 0).join("/");
+    document.getElementById("fc1").innerHTML = "Invoice: $" + finalicost + ", MSRP: $" + finalrcost
+    document.getElementById("fc2").innerHTML = "Destination and Delivery cost: $" + dad
+    document.getElementById("fc3").innerHTML = "Final Cost: $" + (finalrcost + dad)
+    //fun fact, you can probably give this list of option codes to your salesperson and that will be your order
+    document.getElementById("fc4").innerHTML = "Option Codes: " + ordercodes
   }
   
   updateboxes();

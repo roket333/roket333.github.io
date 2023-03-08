@@ -8,63 +8,73 @@
                 "id": "AE",
                 "type":"paint",
                 "name":"Grabber Blue Metallic",
-                "nocost": true
+                "nocost": true,
+                "option_code": "AE"
             },
             {
                 "id": "B3",
                 "type":"paint",
                 "name":"Atlas Blue Metallic",
-                "nocost":true
+                "nocost":true,
+                "option_code": "B3"
             },
             {
                 "id": "D4",
                 "type": "paint",
                 "name": "Rapid Red Metallic Tinted Clearcoat",
                 "i_cost": 465,
-                "r_cost": 495
+                "r_cost": 495,
+                "option_code": "D4"
             },
             {
                 "id":"G1",
                 "type":"paint",
                 "name":"Shadow Black",
-                "nocost":true
+                "nocost":true,
+                "option_code": "G1"
             },
             {
                 "id":"HY",
                 "type":"paint",
                 "name":"Dark Matter Grey Metallic",
-                "nocost":true
+                "nocost":true,
+                "option_code": "HY"
             },
             {
                 "id":"JS",
                 "type":"paint",
                 "name":"Iconic Silver Metallic",
-                "nocost":true
+                "nocost":true,
+                "option_code": "JS"
             },
             {
                 "id":"M7",
                 "type":"paint",
                 "name":"Carbonized Grey Metallic",
-                "nocost":true
+                "nocost":true,
+                "option_code": "M7"
             },
             {
                 "id":"RH",
                 "type":"paint",
                 "name":"Splash Yellow Metallic",
-                "nocost":true
+                "nocost":true,
+                "option_code": "RH"
             },
             {
                 "id":"PQ",
                 "type":"paint",
                 "name":"Race Red",
-                "nocost":true
+                "nocost":true,
+                "option_code": "PQ"
             },
             {
                 "id":"YZ",
                 "type":"paint",
                 "name":"Oxford White",
                 "nocost":true,
-                "default":true
+                "default":true,
+                "option_code": "YZ"
             }
         ]
     },
@@ -79,28 +89,32 @@
                 "name": "Less Stripes",
                 "incomp": ["605"],
                 "nocost": true,
-                "default": true
+                "default": true,
+                "option_code": ""
             },
             {
                 "id": "85D",
                 "type": "stripe",
                 "name": "Gloss Grey/Semi-Gloss Black",
                 "nocost":true,
-                "incomp": ["200AC", "201AC", "605"]
+                "incomp": ["200AC", "201AC", "605"],
+                "option_code": "85D"
             },
             {
                 "id": "85X",
                 "type": "stripe",
                 "name": "Matte Black/Red Accent",
                 "nocost": true,
-                "incomp": ["RH", "PQ", "200AC", "201AC", "605"]
+                "incomp": ["RH", "PQ", "200AC", "201AC", "605"],
+                "option_code": "85X"
             },
             {
                 "id": "85V",
                 "type": "stripe",
                 "name": "Opacity Fade",
                 "nocost": true,
-                "incomp": ["G1", "200AC", "201AC", "605"]
+                "incomp": ["G1", "200AC", "201AC", "605"],
+                "option_code": "85V"
             },
             {
                 "id": "85R/90D",
@@ -108,14 +122,16 @@
                 "name": "Black Step Opacity Fade",
                 "nocost": true,
                 "requires": [["605"]],
-                "incomp": ["G1"]
+                "incomp": ["G1"],
+                "option_code": "85R/90D"
             },
             {
                 "id": "85N/90K",
                 "type": "stripe",
                 "name": "Grey Scale Opacity Fade",
                 "nocost": true,
-                "requires": [["605"], ["G1"]]
+                "requires": [["605"], ["G1"]],
+                "option_code": "85N/90K"
             }
         ]
     },
@@ -132,7 +148,8 @@
                 "inclstrict": false,
                 "i_cost": 29683,
                 "r_cost": 30920,
-                "default": true
+                "default": true,
+                "option_code": "P8C/100A"
             },
             {
                 "id": "101A",
@@ -142,7 +159,8 @@
                 "includes":[["64F"]],
                 "inclstrict": false,
                 "i_cost": 2444,
-                "r_cost": 2600
+                "r_cost": 2600,
+                "option_code": "P8C/101A"
             },
             {
                 "id": "200A",
@@ -151,7 +169,8 @@
                 "includes":[["64F"]],
                 "inclstrict": false,
                 "i_cost": 34623,
-                "r_cost": 36445
+                "r_cost": 36445,
+                "option_code": "P8C/200A"
             },
             {
                 "id": "201A",
@@ -161,7 +180,8 @@
                 "inclstrict": false,
                 "cost_base": "200A",
                 "i_cost": 2820,
-                "r_cost": 3000
+                "r_cost": 3000,
+                "option_code": "P8C/201A"
             },
             {
                 "id": "200AC",
@@ -170,7 +190,8 @@
                 "includes":[["64F"]],
                 "inclstrict": false,
                 "i_cost": 39848,
-                "r_cost": 41945
+                "r_cost": 41945,
+                "option_code": "P8F/200A"
             },
             {
                 "id": "201AC",
@@ -180,7 +201,8 @@
                 "inclstrict": false,
                 "cost_base": "200AC",
                 "i_cost": 2820,
-                "r_cost": 3000
+                "r_cost": 3000,
+                "option_code": "P8F/201A"
             }
         ]
     },
@@ -195,7 +217,8 @@
                 "name": "2.3L Turbocharged Ecoboost Inline 4",
                 "cost_func":"base",
                 "nocost": true,
-                "default": true
+                "default": true,
+                "option_code": "99H"
             }
         ]
     },
@@ -210,7 +233,8 @@
                 "name": "10R80 10-Speed Automatic Transmission",
                 "cost_func":"base",
                 "nocost": true,
-                "default": true
+                "default": true,
+                "option_code": "44U"
             }
         ]
     },
@@ -225,49 +249,56 @@
                 "name": "17\" Sparkle Silver Wheels",
                 "requires": [["100A"]],
                 "nocost": true,
-                "default": true
+                "default": true,
+                "option_code": "64Y"
             },
             {
                 "id": "64F",
                 "type":"wheel",
                 "name": "18\" Machined-face Aluminum with High gloss Ebony Black-painted pockets",
                 "requires": [["101A","200A","200AC","201A","201AC"]],
-                "nocost": true
+                "nocost": true,
+                "option_code": "64F"
             },
             {
                 "id": "64S",
                 "type":"wheel",
                 "name": "19\" Sinister Bronze Wheels",
                 "requires": [["60L"]],
-                "nocost": true
+                "nocost": true,
+                "option_code": "645"
             },
             {
                 "id": "641",
                 "type":"wheel",
                 "name": "19\" Ebony Black Wheels",
                 "requires": [["60G"]],
-                "nocost": true
+                "nocost": true,
+                "option_code": "641"
             },
             {
                 "id": "642",
                 "type": "wheel",
                 "name": "19\" Polished Aluminum Wheels",
                 "i_cost": 841,
-                "r_cost": 895
+                "r_cost": 895,
+                "option_code": "642"
             },
             {
                 "id": "64N",
                 "type":"wheel",
                 "name": "19\" Carbonized Grey Wheels",
                 "requires": [["67B"]],
-                "nocost": true
+                "nocost": true,
+                "option_code": "64N"
             },
             {
                 "id": "64X",
                 "type":"wheel",
                 "name":"19\" Machined-face Aluminum with Tarnished Dark-painted pockets Wheels",
                 "requires":[["605"]],
-                "nocost":true
+                "nocost":true,
+                "option_code": "64X"
             },
             {
                 "id": "64M",
@@ -275,7 +306,8 @@
                 "name": "20\" Premium Painted Wheels",
                 "requires": [["200A","201A","200AC","201AC"]],
                 "i_cost": 1269,
-                "r_cost": 1350
+                "r_cost": 1350,
+                "option_code": "64M"
             }
         ]
     },
@@ -291,7 +323,8 @@
                 "requires": [["201A", "201AC", "200A", "200AC"]],
                 "cost_mod": [{"modid": "201A", "i_cost": 0, "r_cost": 0}, {"modid": "201AC", "i_cost":0, "r_cost":0}],
                 "i_cost":1217,
-                "r_cost":1295
+                "r_cost":1295,
+                "option_code": "50C"
             },
             {
                 "id": "67B",
@@ -301,7 +334,8 @@
                 "includes": [["64N"]],
                 "inclstrict": true,
                 "i_cost": 3267,
-                "r_cost": 3475
+                "r_cost": 3475,
+                "option_code": "67B"
             },
             {
                 "id": "96D",
@@ -309,7 +343,8 @@
                 "name": "MagneRide Damping System",
                 "requires": [["200A", "200AC", "201A", "201AC"],["67B"]],
                 "i_cost":1645,
-                "r_cost":1750
+                "r_cost":1750,
+                "option_code": "96D"
             },
             {
                 "id": "19W",
@@ -317,7 +352,8 @@
                 "name": "Active Exhaust",
                 "requires": [["101A","200A","201A","200AC","201AC"]],
                 "i_cost": 1152,
-                "r_cost": 1225
+                "r_cost": 1225,
+                "option_code": "19W"
             },
             {
                 "id": "605",
@@ -327,7 +363,8 @@
                 "includes":[["64X"],["85R/90D", "85N/90K"]],
                 "inclstrict": true,
                 "i_cost":841,
-                "r_cost":895
+                "r_cost":895,
+                "option_code": "605"
             },
             {
                 "id": "60G",
@@ -337,7 +374,8 @@
                 "includes": [["641"]],
                 "inclstrict": true,
                 "i_cost": 1123,
-                "r_cost": 1195
+                "r_cost": 1195,
+                "option_code": "60G"
             },
             {
                 "id": "60L",
@@ -348,7 +386,8 @@
                 "includes": [["64S"]],
                 "inclstrict": true,
                 "i_cost": 935,
-                "r_cost": 995
+                "r_cost": 995,
+                "option_code": "60L"
             },
             {
                 "id": "51W",
@@ -356,7 +395,8 @@
                 "name": "Mini Spare Wheel and Tire",
                 "incomp": ["67B"],
                 "i_cost": 390,
-                "r_cost": 415
+                "r_cost": 415,
+                "option_code": "51W"
             },
             {
                 "id": "18F",
@@ -365,7 +405,8 @@
                 "requires": [["67B"]],
                 "incomp": ["18W"],
                 "i_cost": 465,
-                "r_cost": 495
+                "r_cost": 495,
+                "option_code": "18F"
             },
             {
                 "id": "18W",
@@ -374,27 +415,31 @@
                 "requires": [["67B"]],
                 "incomp": ["18F"],
                 "i_cost": 465,
-                "r_cost": 495
+                "r_cost": 495,
+                "option_code": "18W"
             },
             {
                 "id": "13A",
                 "type": "option",
                 "name": "Spoiler Delete",
                 "requires": [["60G"]],
-                "nocost":true
+                "nocost":true,
+                "option_code": "13A"
             },
             {
                 "id": "41H",
                 "type": "option",
                 "name": "Engine Block Heater",
                 "i_cost":94,
-                "r_cost":100
+                "r_cost":100,
+                "option_code": "41H"
             },
             {
                 "id": "153",
                 "type": "option",
                 "name": "Front License Plate Bracket",
-                "nocost":true
+                "nocost":true,
+                "option_code": "153"
             }
         ]
     },
@@ -409,7 +454,8 @@
                 "name": "Seat Belt - Red",
                 "requires": [["67B"]],
                 "i_cost": 277,
-                "r_cost": 295
+                "r_cost": 295,
+                "option_code": "59A"
             },
             {
                 "id": "12B",
@@ -417,7 +463,8 @@
                 "name": "Premium Floor Liners Front and Rear (w/ Carpet Mats)",
                 "incomp": ["12C"],
                 "i_cost": 188,
-                "r_cost": 200
+                "r_cost": 200,
+                "option_code": "12B"
             },
             {
                 "id": "12C",
@@ -425,7 +472,8 @@
                 "name": "Premium Floor Liners Front and Rear (w/o Carpet Mats)",
                 "incomp": ["12B"],
                 "i_cost": 159,
-                "r_cost": 170
+                "r_cost": 170,
+                "option_code": "12C"
             },
             {
                 "id": "21N",
@@ -433,7 +481,8 @@
                 "name": "Recaro Leather-Trimmed Sport Seats",
                 "requires": [["200A", "201A"],["67B"]],
                 "i_cost":1551,
-                "r_cost":1650
+                "r_cost":1650,
+                "option_code": "21N"
             }
         ]
     }
