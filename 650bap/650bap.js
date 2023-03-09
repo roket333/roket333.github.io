@@ -3,32 +3,18 @@
 setInterval(boxlist, 10);
 setInterval(updateboxes, 10);
 setInterval(updatecosts, 10);
-//setInterval(addedbytest, 10);
 setInterval(finalCosts, 10);
 getOptions("./650bap/prices_ecoboost.json", "checkbox_container") //debug and testing purposes
 
 var boxes = document.querySelectorAll("input[type=\"checkbox\"]");
 var radios = document.querySelectorAll("input[type=\"radio\"]");
 var selectedthings = [];
+var oldselectedthings = [];
 var allthings = [];
-
-boxes.forEach(input => {
-    if(input.checked) {
-        selectedthings.push(input.parentElement.parentElement.getAttribute("id"));
-    }
-    allthings.push(input);
-})
-
-radios.forEach(input => {
-    if(input.checked) {
-        selectedthings.push(input.parentElement.parentElement.getAttribute("id"));
-    }
-    allthings.push(input);
-})
+var ready = false;
 
 function clickfunc(boxid) {
     updateboxes();
-    //addedbytest();
     selectpackages(boxid);
     updatecosts(boxid);
     finalCosts();
@@ -42,6 +28,7 @@ fetch(json)
   .then((data) => { 
     //for each group of data, make it in a new div
     data.forEach(group => {
+        let hackno = 0;
         let groupdiv = document.createElement("div"); //make the div that contains the group of options
         groupdiv.classList.add("bapgroup");
         groupdiv.setAttribute("id", group.group_id);
@@ -55,6 +42,7 @@ fetch(json)
         group.group_data.forEach(item => {
             let itemdiv = document.createElement("div"); //make the div that contains this specific item
             itemdiv.classList.add("bapitem");
+            itemdiv.setAttribute("hackno", hackno); //stupid hack to make later stuff work in the right order, it's supremely stupid and i hate it
             itemdiv.setAttribute("id", item.id);
             let box = document.createElement("input");
             let label = document.createElement("label");
@@ -66,6 +54,8 @@ fetch(json)
             if(item.option_code != undefined) {itemdiv.setAttribute("option_code", item.option_code)};
             if(item.inclstrict != undefined) {itemdiv.setAttribute("inclstrict", item.inclstrict)};
             if(item.cost_mod != undefined) {item.cost_mod = JSON.stringify(item.cost_mod);itemdiv.setAttribute("cost_mod", item.cost_mod)};
+            if(group.group_id != undefined) {itemdiv.setAttribute("parentdiv", group.group_id)};
+            hackno = hackno + 1;
 
             //if we only allow one choice, make it a "radio" button, and set the name to the group id so it can communicate with other radio buttons
             if(one_choice)
@@ -76,12 +66,13 @@ fetch(json)
             box.setAttribute("id", item.id + "box");
             box.setAttribute("defaultbox", item.default);
             itemdiv.setAttribute("addedby", "");
-            box.addEventListener("click", function(boxid) {clickfunc(box.getAttribute("id"))})
+            box.addEventListener("change", function(boxid) {clickfunc(box.getAttribute("id"))});
             label.appendChild(box);
 
             //if this is a default item, set it to be checked
-            if(item.default)
-                box.setAttribute("checked", true)
+            if(item.default) {
+                box.setAttribute("checked", true);
+            }
 
             //check the cost, is this a nocost item or one that references a base cost?
             if(!item.nocost) {
@@ -131,6 +122,7 @@ fetch(json)
     fclayer4.setAttribute("id","fc4");
     finalcostsdiv.append(cname,fclayer1,fclayer2,fclayer3,fclayer4);
 
+    ready = true;
   })
 }
 
@@ -155,7 +147,38 @@ fetch(json)
         }
         allthings.push(input);
     })
+
+    if(oldselectedthings.length === 0) {oldselectedthings = selectedthings;}
+
+    //because for some reason the "changed" listener doesn't fire when a radio box is deselected, we have to do a workaround, and it's kinda hack-y. thankfully, we don't need the box id like originally thought, we can use the differences in the old and current selected items to get them
+    //the "added" stuff is unused, maybe i'll use it later but for now i'm just using the "removed" for the above reason
+    let addedthings = selectedthings.filter(item => !oldselectedthings.includes(item));
+    let removedthings = oldselectedthings.filter(item => !selectedthings.includes(item));
+    if(addedthings.length > 0) {packagecheck(addedthings);oldselectedthings = selectedthings};
+    if(removedthings.length > 0) {packagecheck(removedthings); oldselectedthings = selectedthings};
   }
+
+  //when a checkbox is modified, see if it was added by another item, and if so uncheck that one too
+  function packagecheck(removedidsarray) {
+    removedidsarray.every(boxid => {
+        let boxaddedby = document.getElementById(boxid).getAttribute("addedby");
+        if(boxaddedby.length > 0) {
+            //console.log(boxid + " was added by " + boxaddedby)
+            let strictinclude = document.getElementById(boxaddedby).getAttribute("inclstrict");
+            if(strictinclude === "true") {
+                let targetbox = document.getElementById(boxaddedby + "box");
+                targetbox.click(); targetbox.checked = false;
+                document.getElementById(boxid).setAttribute("addedby", "");
+            }
+        }
+    })
+    allthings.every(box => {
+        let addedbycheck = box.parentElement.parentElement.getAttribute("addedby");
+        if(addedbycheck.length > 0 && !box.checked) {
+            box.parentElement.parentElement.setAttribute("addedby", "");
+        }
+    })
+}
 
   //updating whether or not a box/button can be used
   function updateboxes() {
@@ -191,38 +214,25 @@ fetch(json)
             box.disabled = true;
         }
 
-        //if a box that was checked is disabled, revert to the default value if it's a radio, and if we can't, get a random one instead. if there's no options to choose, it'll just deselect all of them and have no option chosen
-        if(box.disabled && box.checked) {
-            box.click(); box.checked = false;
-            //only look for a new box to check if it's a "Radio" box
-            if(box.getAttribute("type") == "radio") {
-                let groupid = box.parentElement.parentElement.parentElement.getAttribute("id");
-                let childrenofdiv = Array.from(document.getElementById(groupid).children);
-                childrenofdiv.reverse().some(item => {
-                    let boxofdiv = item.firstChild.firstChild;
-                    if(boxofdiv != null){
-                        if(!boxofdiv.disabled) {
-                            boxofdiv.click(); boxofdiv.checked = true;
-                        }
-                    }
-                })
-            }
-        }
-      });
-  }
 
-  function addedbytest() {
-    allthings.some(box => {
-        //see if this item that was set by a package still has the origin package selected
-        let boxroot = box.parentElement.parentElement.getAttribute("addedby");
-        //i was debugging this FOREVER because for some reason using this function would cause the browser to freeze and everything to be deselected, turns out i forgot to check if addedby was a blank string
-        if(boxroot.length > 0) {
-            if(!selectedthings.includes(boxroot)) {
-                box.click(); box.checked = false;
-                box.parentElement.parentElement.setAttribute("addedby", "");
-            }
-        }
-    })
+        //if a box that was checked is disabled, revert to the default value if it's a radio. if there's no options to choose, it'll just deselect all of them and have no option chosen
+        if (box.disabled && box.checked) {
+            box.checked = false;
+            let parentdivvalue = box.parentElement.parentElement.getAttribute("parentdiv");
+            let parentdiv = document.getElementById(parentdivvalue);
+            let alldivs = [...parentdiv.getElementsByClassName("bapitem")];
+            let hacknocheck = 0;
+            console.log(alldivs);
+            alldivs.some(div => {
+                if (!div.firstChild.firstChild.disabled == true && div.getAttribute("hackno") == hacknocheck) {
+                    div.firstChild.firstChild.checked = true;
+                    div.firstChild.firstChild.click();
+                    return;
+                }
+                hacknocheck++;
+            })
+          }                               
+      });
   }
 
   function selectpackages(boxid) {
@@ -233,9 +243,15 @@ fetch(json)
         toSelectArray.forEach(require => {
             require.some(options => {
                 let optbox = document.getElementById(options + "box");
-                optbox.click(); optbox.checked = true;
-                let boxiddivid = document.getElementById(boxid).parentElement.parentElement.getAttribute("id");
-                optbox.parentElement.parentElement.setAttribute("addedby", boxiddivid);
+                let getaddedby = document.getElementById(options).getAttribute("addedby");
+                if(getaddedby.length > 0) {
+                    let isstrictlyadded = document.getElementById(options).getAttribute("inclstrict");
+                    if(!optbox.disabled && isstrictlyadded != "true") {
+                        optbox.click(); optbox.checked = true;
+                        let boxiddivid = document.getElementById(boxid).parentElement.parentElement.getAttribute("id");
+                        optbox.parentElement.parentElement.setAttribute("addedby", boxiddivid);
+                    }
+                }
             })
         })
     }
@@ -282,6 +298,7 @@ fetch(json)
 
   //let's see how much your wallet is gonna hurt
   function finalCosts() {
+    if(ready){
     let finalicost = 0;
     let finalrcost = 0;
     let dad = 1595;
@@ -302,6 +319,6 @@ fetch(json)
     document.getElementById("fc3").innerHTML = "Final Cost: $" + (finalrcost + dad)
     //fun fact, you can probably give this list of option codes to your salesperson and that will be your order
     document.getElementById("fc4").innerHTML = "Option Codes: " + ordercodes
-  }
+    }}
   
   updateboxes();
