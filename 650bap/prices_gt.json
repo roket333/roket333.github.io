@@ -97,7 +97,7 @@
                 "type": "stripe",
                 "name": "Gloss Grey/Semi-Gloss Black",
                 "nocost":true,
-                "incomp": ["400AC", "401AC", "605"],
+                "incomp": ["400AC", "401AC"],
                 "option_code": "85D"
             },
             {
@@ -105,7 +105,7 @@
                 "type": "stripe",
                 "name": "Matte Black/Red Accent",
                 "nocost": true,
-                "incomp": ["RH", "PQ", "200AC", "201AC", "605"],
+                "incomp": ["RH", "PQ", "400AC", "201AC"],
                 "option_code": "85X"
             },
             {
@@ -113,7 +113,7 @@
                 "type": "stripe",
                 "name": "Opacity Fade",
                 "nocost": true,
-                "incomp": ["G1", "200AC", "201AC", "605", "60G"],
+                "incomp": ["G1", "400AC", "401AC", "60G"],
                 "option_code": "85V"
             }
         ]
@@ -415,7 +415,7 @@
                 "id": "60G",
                 "type": "option",
                 "name": "Nite Pony Package",
-                "incomp": ["605", "67B", "642", "85V", "60L"],
+                "incomp": ["60L"],
                 "includes": [["641","64K"]],
                 "inclstrict": true,
                 "i_cost": 1123,
