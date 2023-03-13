@@ -97,7 +97,7 @@
                 "type": "stripe",
                 "name": "Gloss Grey/Semi-Gloss Black",
                 "nocost":true,
-                "incomp": ["200AC", "201AC", "605"],
+                "incomp": ["400AC", "401AC", "605"],
                 "option_code": "85D"
             },
             {
@@ -115,23 +115,6 @@
                 "nocost": true,
                 "incomp": ["G1", "200AC", "201AC", "605", "60G"],
                 "option_code": "85V"
-            },
-            {
-                "id": "85R/90D",
-                "type": "stripe",
-                "name": "Black Step Opacity Fade",
-                "nocost": true,
-                "requires": [["605"]],
-                "incomp": ["G1"],
-                "option_code": "85R/90D"
-            },
-            {
-                "id": "85N/90K",
-                "type": "stripe",
-                "name": "Grey Scale Opacity Fade",
-                "nocost": true,
-                "requires": [["605"], ["G1"]],
-                "option_code": "85N/90K"
             }
         ]
     },
@@ -141,68 +124,68 @@
         "one_choice": true,
         "group_data": [
             {
-                "id": "100A",
+                "id": "300A",
                 "type": "equip",
-                "name": "100A Equipment Group",
-                "includes":[["64Y"]],
+                "name": "300A Equipment Group",
+                "includes":[["64T"]],
                 "inclstrict": false,
-                "i_cost": 29683,
-                "r_cost": 30920,
+                "i_cost": 39420,
+                "r_cost": 41495,
                 "default": true,
-                "option_code": "P8C/100A"
+                "option_code": "P8C/300A"
             },
             {
-                "id": "101A",
+                "id": "301A",
                 "type": "equip",
-                "name": "101A Equipment Group",
-                "cost_base": "100A",
-                "includes":[["64F"]],
+                "name": "301A Equipment Group",
+                "cost_base": "300A",
+                "includes":[["64T"]],
                 "inclstrict": false,
-                "i_cost": 2444,
-                "r_cost": 2600,
-                "option_code": "P8C/101A"
+                "i_cost": 1880,
+                "r_cost": 2000,
+                "option_code": "P8C/301A"
             },
             {
-                "id": "200A",
+                "id": "400A",
                 "type": "equip",
-                "name": "200A Equipment Group",
-                "includes":[["64F"]],
+                "name": "400A Equipment Group",
+                "includes":[["64V"]],
                 "inclstrict": false,
-                "i_cost": 34623,
-                "r_cost": 36445,
-                "option_code": "P8C/200A"
+                "i_cost": 43714,
+                "r_cost": 46015,
+                "option_code": "P8C/400A"
             },
             {
-                "id": "201A",
+                "id": "401A",
                 "type": "equip",
-                "name": "201A Equipment Group",
-                "includes": [["50C"],["64F"]],
+                "name": "401A Equipment Group",
+                "includes": [["50C"],["64V"]],
                 "inclstrict": false,
-                "cost_base": "200A",
-                "i_cost": 2820,
-                "r_cost": 3000,
-                "option_code": "P8C/201A"
+                "cost_base": "400A",
+                "i_cost": 2726,
+                "r_cost": 2900,
+                "option_code": "P8C/401A"
             },
             {
-                "id": "200AC",
+                "id": "400AC",
                 "type": "equip",
-                "name": "200A Equipment Group (Convertible)",
-                "includes":[["64F"]],
+                "name": "400A Equipment Group (Convertible)",
+                "includes":[["64T"]],
                 "inclstrict": false,
-                "i_cost": 39848,
-                "r_cost": 41945,
-                "option_code": "P8F/200A"
+                "i_cost": 48939,
+                "r_cost": 51515,
+                "option_code": "P8F/400A"
             },
             {
-                "id": "201AC",
+                "id": "401AC",
                 "type": "equip",
-                "name": "201A Equipment Group (Convertible)",
-                "includes": [["50C"],["64F"]],
+                "name": "401A Equipment Group (Convertible)",
+                "includes": [["50C"],["64V"]],
                 "inclstrict": false,
-                "cost_base": "200AC",
-                "i_cost": 2820,
-                "r_cost": 3000,
-                "option_code": "P8F/201A"
+                "cost_base": "400AC",
+                "i_cost": 2726,
+                "r_cost": 2900,
+                "option_code": "P8F/401A"
             }
         ]
     },
@@ -212,13 +195,13 @@
         "one_choice": true,
         "group_data": [
             {
-                "id": "99H",
+                "id": "99F",
                 "type": "engine",
-                "name": "2.3L Turbocharged Ecoboost Inline 4",
+                "name": "5.0L 4th Generation Coyote V8",
                 "cost_func":"base",
                 "nocost": true,
                 "default": true,
-                "option_code": "99H"
+                "option_code": "99F"
             }
         ]
     },
@@ -228,12 +211,22 @@
         "one_choice": true,
         "group_data": [
             {
+                "id": "44X",
+                "type":"trans",
+                "name": "Getreg MT-82 6-Speed Manual Transmission w/ Rev Matching",
+                "cost_func":"base",
+                "default": true,
+                "nocost":true,
+                "option_code":"44X"
+            },
+            {
                 "id": "44U",
                 "type": "trans",
                 "name": "10R80 10-Speed Automatic Transmission",
-                "cost_func":"base",
-                "nocost": true,
-                "default": true,
+                "cost_base":"44X",
+                "includes": [["A45"]],
+                "i_cost": 1499,
+                "r_cost": 1595,
                 "option_code": "44U"
             }
         ]
@@ -247,19 +240,37 @@
                 "id": "A45",
                 "type": "diff",
                 "name": "3.15 Limited-Slip",
-                "cost_func":"base",
-                "incomp": ["67B"],
+                "incomp": ["67J", "44X"],
                 "nocost": true,
                 "default": true,
                 "option_code": ""
             },
             {
+                "id": "45D",
+                "type": "diff",
+                "name": "3.55 Limited-Slip",
+                "incomp": ["67J"],
+                "i_cost": 935,
+                "r_cost": 995,
+                "cost_mod": [{"modid": "44X", "i_cost": 0, "r_cost": 0}],
+                "default": true,
+                "option_code": "45D"
+            },
+            {
                 "id": "B45",
                 "type": "diff",
                 "name": "3.55 TORSEN",
-                "requires": [["67B"]],
-                "cost_func":"base",
+                "requires": [["67J"], ["44U"]],
                 "nocost": true,
+                "option_code": ""
+            },
+            {
+                "id": "C45",
+                "type": "diff",
+                "name": "3.75 TORSEN",
+                "requires":[["67J"], ["44X"]],
+                "nocost": true,
+                "default": true,
                 "option_code": ""
             }
         ]
@@ -270,37 +281,73 @@
         "one_choice": true,
         "group_data": [
             {
-                "id": "64Y",
+                "id": "64T",
                 "type":"wheel",
-                "name": "17\" X 7.5\" Sparkle Silver Wheels",
-                "requires": [["100A"]],
+                "name": "18\" X 8.5\" Ebony Black Aluminum Wheels",
+                "requires": [["300A", "301A"]],
+                "default":true,
                 "nocost": true,
-                "default": true,
-                "option_code": "64Y"
+                "option_code": "64T"
             },
             {
-                "id": "64F",
+                "id": "64V",
                 "type":"wheel",
-                "name": "18\" X 8\" Machined-face Aluminum Wheels with High gloss Ebony Black pockets",
-                "requires": [["101A","200A","200AC","201A","201AC"]],
+                "name": "19\" X 8.5\" Shadow Silver Aluminum Wheels",
+                "requires": [["400A", "400AC", "401A", "401AC"]],
+                "nocost":true,
+                "option_code":"64V"
+            },
+            {
+                "id": "64G",
+                "type":"wheel",
+                "name": "19\" X 9\" F, 19\" X 9.5\" R Carbonized Grey Aluminum Wheels",
+                "requires": [["67J"]],
+                "incomp":["60L","60G"],
                 "nocost": true,
-                "option_code": "64F"
+                "option_code": "64G"
+            },
+            {
+                "id": "644",
+                "type":"wheel",
+                "name": "19\" X 9\" F, 19\" X 9.5\" R Machined with Tarnished Dark Aluminum Wheels",
+                "requires": [["67J"]],
+                "incomp":["60L","60G"],
+                "nocost": true,
+                "option_code": "644"
             },
             {
                 "id": "64S",
                 "type":"wheel",
                 "name": "19\" X 8.5\" Sinister Bronze Wheels",
                 "requires": [["60L"]],
+                "incomp":["67J"],
                 "nocost": true,
                 "option_code": "64S"
+            },
+            {
+                "id": "64Z",
+                "type":"wheel",
+                "name": "19\" X 9\" F, 19\" X 9.5\" R Sinister Bronze Wheels",
+                "requires": [["60L"],["67J"]],
+                "nocost": true,
+                "option_code": "64Z"
             },
             {
                 "id": "641",
                 "type":"wheel",
                 "name": "19\" X 8.5\" Ebony Black Wheels",
                 "requires": [["60G"]],
+                "incomp":["67J"],
                 "nocost": true,
                 "option_code": "641"
+            },
+            {
+                "id": "64K",
+                "type":"wheel",
+                "name": "19\" X 9\" F, 19\" X 9.5\" R Ebony Black Wheels",
+                "requires": [["60G"],["67J"]],
+                "nocost": true,
+                "option_code": "64K"
             },
             {
                 "id": "642",
@@ -311,26 +358,10 @@
                 "option_code": "642"
             },
             {
-                "id": "64N",
-                "type":"wheel",
-                "name": "19\" X 9\" Carbonized Grey Wheels",
-                "requires": [["67B"]],
-                "nocost": true,
-                "option_code": "64N"
-            },
-            {
-                "id": "64X",
-                "type":"wheel",
-                "name":"19\" X 8.5\" Machined-face Aluminum Wheels with Tarnished Dark pockets",
-                "requires":[["605"]],
-                "nocost":true,
-                "option_code": "64X"
-            },
-            {
                 "id": "64M",
                 "type": "wheel",
                 "name": "20\" X 9\" Premium Painted Wheels",
-                "requires": [["200A","201A","200AC","201AC"]],
+                "requires": [["400A","401A","400AC","401AC"]],
                 "i_cost": 1269,
                 "r_cost": 1350,
                 "option_code": "64M"
@@ -346,89 +377,93 @@
                 "id": "50C",
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
-                "requires": [["201A", "201AC", "200A", "200AC"]],
-                "cost_mod": [{"modid": "201A", "i_cost": 0, "r_cost": 0}, {"modid": "201AC", "i_cost":0, "r_cost":0}],
-                "i_cost":1217,
-                "r_cost":1295,
+                "requires": [["401A", "401AC", "400A", "400AC"]],
+                "cost_mod": [{"modid": "401A", "i_cost": 0, "r_cost": 0}, {"modid": "401AC", "i_cost":0, "r_cost":0}],
+                "i_cost":1029,
+                "r_cost":1095,
                 "option_code": "50C"
             },
             {
-                "id": "67B",
+                "id": "67J",
                 "type": "option",
-                "name": "2.3L High Performance Package",
-                "incomp": ["642","60G","605","51W","60L"],
-                "includes": [["64N"],["B45"]],
+                "name": "GT Performance Package",
+                "incomp": ["642","64M"],
+                "includes": [["64G","644","64Z","64K"],["B45", "C45"],["63V"]],
                 "inclstrict": true,
-                "i_cost": 3267,
-                "r_cost": 3475,
-                "option_code": "67B"
+                "i_cost": 4695,
+                "r_cost": 4995,
+                "option_code": "67J"
             },
             {
                 "id": "96D",
                 "type": "option",
                 "name": "MagneRide Damping System",
-                "requires": [["200A", "200AC", "201A", "201AC"],["67B"]],
+                "requires": [["400A", "400AC", "401A", "401AC"],["67B"]],
                 "i_cost":1645,
                 "r_cost":1750,
                 "option_code": "96D"
             },
             {
-                "id": "19W",
+                "id": "19X",
                 "type": "option",
                 "name": "Active Exhaust",
-                "requires": [["101A","200A","201A","200AC","201AC"]],
                 "i_cost": 1152,
                 "r_cost": 1225,
-                "option_code": "19W"
-            },
-            {
-                "id": "605",
-                "type": "option",
-                "name": "Wheel and Stripe Package",
-                "incomp": ["47B","60G","67B","642","60L"],
-                "includes":[["64X"],["85R/90D", "85N/90K"]],
-                "inclstrict": true,
-                "i_cost":841,
-                "r_cost":895,
-                "option_code": "605"
+                "option_code": "19X"
             },
             {
                 "id": "60G",
                 "type": "option",
                 "name": "Nite Pony Package",
                 "incomp": ["605", "67B", "642", "85V", "60L"],
-                "includes": [["641"]],
+                "includes": [["641","64K"]],
                 "inclstrict": true,
                 "i_cost": 1123,
                 "r_cost": 1195,
+                "cost_mod": [{"modid": "67J", "i_cost": 1029, "r_cost": 1095}],
                 "option_code": "60G"
             },
             {
-                "id": "60L",
+                "id": "60LA",
                 "type": "option",
                 "name": "Bronze Appearance Package",
-                "incomp": ["60G", "605", "67B", "64M", "642"],
-                "requires": [["201A", "201AC"]],
-                "includes": [["64S"]],
+                "incomp": ["60G"],
+                "requires": [["401A", "401AC", "400A", "400AC"]],
+                "includes": [["64S","64Z"]],
                 "inclstrict": true,
                 "i_cost": 935,
                 "r_cost": 995,
+                "hidden": ["300A","301A","400A","400AC"],
                 "option_code": "60L"
             },
             {
-                "id": "51W",
+                "id": "60LB",
                 "type": "option",
-                "name": "Mini Spare Wheel and Tire",
-                "incomp": ["67B"],
-                "i_cost": 390,
-                "r_cost": 415,
-                "option_code": "51W"
+                "name": "Bronze Appearance Package",
+                "incomp": ["60G"],
+                "requires": [["401A", "401AC", "400A", "400AC"],["67J"]],
+                "includes": [["64S","64Z"]],
+                "inclstrict": true,
+                "i_cost": 935,
+                "r_cost": 995,
+                "hidden": ["401A","401AC"],
+                "option_code": "60L"
+            },
+            {
+                "id": "63V",
+                "type":"option",
+                "name":"19\" Brembo Brake System w/ Performance Linings",
+                "requires":[["60G","67J"]],
+                "cost_mod": [{"modid": "67J", "i_cost": 0, "r_cost": 0}],
+                "i_cost":1593,
+                "r_cost":1695,
+                "option_code":"63V"
             },
             {
                 "id": "18F",
                 "type": "option",
                 "name": "Red Painted w/ White Logo Calipers",
-                "requires": [["67B"]],
+                "requires": [["63V"]],
                 "incomp": ["18W"],
                 "i_cost": 465,
                 "r_cost": 495,
@@ -438,7 +473,7 @@
                 "id": "18W",
                 "type": "option",
                 "name": "Grabber Blue Painted w/ White Logo Calipers",
-                "requires": [["67B"]],
+                "requires": [["63V"]],
                 "incomp": ["18F"],
                 "i_cost": 465,
                 "r_cost": 495,
@@ -448,9 +483,9 @@
                 "id": "13A",
                 "type": "option",
                 "name": "Spoiler Delete",
-                "requires": [["60G"]],
-                "hidden":["100A","101A", "200AC", "201AC"],
+                "requires": [["67J"], ["400AC", "401AC"]],
                 "foreverselected": true,
+                "hidden":["300A","301A"],
                 "nocost":true,
                 "option_code": "13A"
             },
@@ -458,20 +493,7 @@
                 "id": "13A",
                 "type": "option",
                 "name": "Spoiler Delete",
-                "requires": [["60G"]],
-                "hidden":["200A","201A","67B"],
-                "show":["60G"],
-                "foreverselected": true,
-                "nocost":true,
-                "option_code": "13A"
-            },
-            {
-                "id": "13A",
-                "type": "option",
-                "name": "Spoiler Delete",
-                "requires": [["67B"], ["200AC", "201AC"]],
-                "foreverselected": true,
-                "hidden":["200A","201A","60G"],
+                "hidden":["400A","401A", "400AC", "401AC"],
                 "nocost":true,
                 "option_code": "13A"
             },
@@ -479,6 +501,7 @@
                 "id": "41H",
                 "type": "option",
                 "name": "Engine Block Heater",
+                "incomp": ["67J"],
                 "i_cost":94,
                 "r_cost":100,
                 "option_code": "41H"
@@ -501,7 +524,7 @@
                 "id": "DW",
                 "type": "interiorcolor",
                 "name": "Black Onyx Cloth",
-                "requires": [["100A"]],
+                "requires": [["300A"]],
                 "nocost":true,
                 "default":true,
                 "option_code":"DW"
@@ -510,7 +533,7 @@
                 "id": "DH",
                 "type": "interiorcolor",
                 "name": "Space Grey Cloth",
-                "requires": [["100A"]],
+                "requires": [["300A"]],
                 "nocost":true,
                 "option_code":"DH"
             },
@@ -518,7 +541,7 @@
                 "id": "2W",
                 "type": "interiorcolor",
                 "name": "Black Onyx Cloth/Vinyl Trim",
-                "requires": [["101A"]],
+                "requires": [["301A"]],
                 "nocost":true,
                 "option_code":"2W"
             },
@@ -526,7 +549,7 @@
                 "id":"2H",
                 "type":"interiorcolor",
                 "name":"Space Grey Cloth/Vinyl Trim",
-                "requires":[["101A"]],
+                "requires":[["301A"]],
                 "nocost":true,
                 "option_code":"2H"
             },
@@ -534,7 +557,7 @@
                 "id":"3W",
                 "type":"interiorcolor",
                 "name":"Black Onyx ActiveX",
-                "requires":[["200A", "200AC"]],
+                "requires":[["400A", "400AC"]],
                 "incomp": ["21N"],
                 "nocost":true,
                 "option_code":"3W"
@@ -543,7 +566,7 @@
                 "id":"3H",
                 "type":"interiorcolor",
                 "name":"Space Grey ActiveX",
-                "requires":[["200A", "200AC"]],
+                "requires":[["400A", "400AC"]],
                 "incomp": ["21N"],
                 "nocost":true,
                 "option_code":"3H"
@@ -552,7 +575,7 @@
                 "id":"3J",
                 "type":"interiorcolor",
                 "name":"Emberglo ActiveX",
-                "requires":[["200A", "200AC"]],
+                "requires":[["400A", "400AC"]],
                 "incomp":["59A", "21N"],
                 "nocost":true,
                 "option_code":"3J"
@@ -561,7 +584,7 @@
                 "id":"5W",
                 "type":"interiorcolor",
                 "name":"Black Onyx Leather-Trimmed",
-                "requires":[["201A", "201AC"]],
+                "requires":[["401A", "401AC"]],
                 "incomp": ["21N"],
                 "nocost":true,
                 "option_code":"5W"
@@ -570,7 +593,7 @@
                 "id":"5H",
                 "type":"interiorcolor",
                 "name":"Space Grey Leather-Trimmed",
-                "requires":[["201A", "201AC"]],
+                "requires":[["401A", "401AC"]],
                 "incomp": ["21N"],
                 "nocost":true,
                 "option_code":"5H"
@@ -579,7 +602,7 @@
                 "id":"53",
                 "type":"interiorcolor",
                 "name":"Carmine Red Leather-Trimmed",
-                "requires":[["201A", "201AC"]],
+                "requires":[["401A", "401AC"]],
                 "incomp":["59A", "AE", "RH", "21N"],
                 "nocost":true,
                 "option_code":"53"
@@ -588,7 +611,7 @@
                 "id":"SW",
                 "type":"interiorcolor",
                 "name":"Black Onyx RECARO",
-                "requires":[["200A", "200AC", "201A", "201AC"],["21N"]],
+                "requires":[["400A", "400AC", "401A", "401AC"],["21N"]],
                 "nocost":true,
                 "option_code":"SW"
             },
@@ -596,7 +619,7 @@
                 "id":"SH",
                 "type":"interiorcolor",
                 "name":"Space Grey RECARO",
-                "requires":[["201A", "201AC"],["21N"]],
+                "requires":[["401A", "401AC"],["21N"]],
                 "nocost":true,
                 "option_code":"SH"
             }
