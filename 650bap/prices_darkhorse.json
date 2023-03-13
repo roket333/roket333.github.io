@@ -1,0 +1,87 @@
+[
+    {
+        "group_name": "Paint Colors",
+        "group_id": "paint",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "AE",
+                "type":"paint",
+                "name":"Grabber Blue Metallic",
+                "nocost": true,
+                "option_code": "AE"
+            },
+            {
+                "id": "E1",
+                "type":"paint",
+                "name":"Blue Ember Metallic",
+                "nocost": true,
+                "option_code": "E1"
+            },
+            {
+                "id": "B3",
+                "type":"paint",
+                "name":"Atlas Blue Metallic",
+                "nocost":true,
+                "option_code": "B3"
+            },
+            {
+                "id":"G1",
+                "type":"paint",
+                "name":"Shadow Black",
+                "nocost":true,
+                "option_code": "G1"
+            },
+            {
+                "id":"HY",
+                "type":"paint",
+                "name":"Dark Matter Grey Metallic",
+                "nocost":true,
+                "option_code": "HY"
+            },
+            {
+                "id":"M7",
+                "type":"paint",
+                "name":"Carbonized Grey Metallic",
+                "nocost":true,
+                "option_code": "M7"
+            },
+            {
+                "id":"K1",
+                "type":"paint",
+                "name":"Vapor Blue",
+                "nocost":true,
+                "option_code":"K1"
+            },
+            {
+                "id":"PQ",
+                "type":"paint",
+                "name":"Race Red",
+                "nocost":true,
+                "option_code": "PQ"
+            },
+            {
+                "id":"YZ",
+                "type":"paint",
+                "name":"Oxford White",
+                "nocost":true,
+                "default":true,
+                "option_code": "YZ"
+            }
+        ]
+    },
+    {
+        "group_name": "Stripes",
+        "group_id": "stripes",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "858",
+                "type": "stripe",
+                "name": "Tarnish Dark Low Gloss/Gloss Black w/ Pattern",
+                "nocost":true,
+                "option_code":"858"
+            }
+        ]
+    }
+]

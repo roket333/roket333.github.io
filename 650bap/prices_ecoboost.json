@@ -62,6 +62,13 @@
                 "option_code": "RH"
             },
             {
+                "id":"K1",
+                "type":"paint",
+                "name":"Vapor Blue",
+                "nocost":true,
+                "option_code":"K1"
+            },
+            {
                 "id":"PQ",
                 "type":"paint",
                 "name":"Race Red",

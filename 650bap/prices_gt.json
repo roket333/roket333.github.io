@@ -62,6 +62,13 @@
                 "option_code": "RH"
             },
             {
+                "id":"K1",
+                "type":"paint",
+                "name":"Vapor Blue",
+                "nocost":true,
+                "option_code":"K1"
+            },
+            {
                 "id":"PQ",
                 "type":"paint",
                 "name":"Race Red",
@@ -93,28 +100,28 @@
                 "option_code": ""
             },
             {
-                "id": "85D",
+                "id": "85K",
                 "type": "stripe",
                 "name": "Gloss Grey/Semi-Gloss Black",
                 "nocost":true,
                 "incomp": ["400AC", "401AC"],
-                "option_code": "85D"
+                "option_code": "85K"
             },
             {
-                "id": "85X",
+                "id": "85F",
                 "type": "stripe",
                 "name": "Matte Black/Red Accent",
                 "nocost": true,
-                "incomp": ["RH", "PQ", "400AC", "201AC"],
-                "option_code": "85X"
+                "incomp": ["RH", "PQ", "400AC", "401AC"],
+                "option_code": "85F"
             },
             {
-                "id": "85V",
+                "id": "85S",
                 "type": "stripe",
                 "name": "Opacity Fade",
                 "nocost": true,
                 "incomp": ["G1", "400AC", "401AC", "60G"],
-                "option_code": "85V"
+                "option_code": "85S"
             }
         ]
     },
@@ -223,8 +230,9 @@
                 "id": "44U",
                 "type": "trans",
                 "name": "10R80 10-Speed Automatic Transmission",
-                "cost_base":"44X",
+                "cost_func":"base",
                 "includes": [["A45"]],
+                "inclstrict": false,
                 "i_cost": 1499,
                 "r_cost": 1595,
                 "option_code": "44U"
@@ -253,14 +261,14 @@
                 "i_cost": 935,
                 "r_cost": 995,
                 "cost_mod": [{"modid": "44X", "i_cost": 0, "r_cost": 0}],
-                "default": true,
                 "option_code": "45D"
             },
             {
                 "id": "B45",
                 "type": "diff",
                 "name": "3.55 TORSEN",
-                "requires": [["67J"], ["44U"]],
+                "requires": [["67J"]],
+                "incomp":["44X"],
                 "nocost": true,
                 "option_code": ""
             },
@@ -268,7 +276,8 @@
                 "id": "C45",
                 "type": "diff",
                 "name": "3.75 TORSEN",
-                "requires":[["67J"], ["44X"]],
+                "requires":[["67J"]],
+                "incomp":["44U"],
                 "nocost": true,
                 "default": true,
                 "option_code": ""
@@ -387,8 +396,8 @@
                 "id": "67J",
                 "type": "option",
                 "name": "GT Performance Package",
+                "includes": [["64Z","64K","644","64G"],["B45","C45"],["63V"]],
                 "incomp": ["642","64M"],
-                "includes": [["64G","644","64Z","64K"],["B45", "C45"],["63V"]],
                 "inclstrict": true,
                 "i_cost": 4695,
                 "r_cost": 4995,
@@ -398,7 +407,7 @@
                 "id": "96D",
                 "type": "option",
                 "name": "MagneRide Damping System",
-                "requires": [["400A", "400AC", "401A", "401AC"],["67B"]],
+                "requires": [["400A", "400AC", "401A", "401AC"],["67J"]],
                 "i_cost":1645,
                 "r_cost":1750,
                 "option_code": "96D"
@@ -424,7 +433,7 @@
                 "option_code": "60G"
             },
             {
-                "id": "60LA",
+                "id": "60L",
                 "type": "option",
                 "name": "Bronze Appearance Package",
                 "incomp": ["60G"],
@@ -433,27 +442,13 @@
                 "inclstrict": true,
                 "i_cost": 935,
                 "r_cost": 995,
-                "hidden": ["300A","301A","400A","400AC"],
-                "option_code": "60L"
-            },
-            {
-                "id": "60LB",
-                "type": "option",
-                "name": "Bronze Appearance Package",
-                "incomp": ["60G"],
-                "requires": [["401A", "401AC", "400A", "400AC"],["67J"]],
-                "includes": [["64S","64Z"]],
-                "inclstrict": true,
-                "i_cost": 935,
-                "r_cost": 995,
-                "hidden": ["401A","401AC"],
                 "option_code": "60L"
             },
             {
                 "id": "63V",
                 "type":"option",
                 "name":"19\" Brembo Brake System w/ Performance Linings",
-                "requires":[["60G","67J"]],
+                "requires":[["67J", "60G"]],
                 "cost_mod": [{"modid": "67J", "i_cost": 0, "r_cost": 0}],
                 "i_cost":1593,
                 "r_cost":1695,
@@ -634,7 +629,7 @@
                 "id": "59A",
                 "type": "option",
                 "name": "Seat Belt - Red",
-                "requires": [["67B"]],
+                "requires": [["67J"]],
                 "i_cost": 277,
                 "r_cost": 295,
                 "option_code": "59A"
@@ -661,7 +656,7 @@
                 "id": "21N",
                 "type": "option",
                 "name": "RECARO Leather-Trimmed Sport Seats",
-                "requires": [["200A", "201A"],["67B"]],
+                "requires": [["400A", "401A"],["67J"]],
                 "i_cost":1551,
                 "r_cost":1650,
                 "option_code": "21N"

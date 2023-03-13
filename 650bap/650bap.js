@@ -6,7 +6,7 @@ setInterval(boxlist, 10);
 setInterval(updateboxes, 10);
 setInterval(updatecosts, 10);
 setInterval(finalCosts, 10);
-getOptions("./650bap/prices_gt.json", "checkbox_container") //debug and testing purposes
+getOptions("./650bap/prices_darkhorse.json", "checkbox_container") //debug and testing purposes
 
 //define some global variables
 var boxes = document.querySelectorAll("input[type=\"checkbox\"]");
@@ -273,6 +273,10 @@ function removeitems(boxid) {
         //check if the selected checkboxes meet the required things to allow some items to be selected
         requiresPass = requiresArray.every(requiredArray => {
             return requiredArray.some(requiredItem => {
+                //see if i missed something in the data and it's requiring an item that doesn't exist
+                if(document.getElementById(requiredItem) == null){
+                    console.log(requiredItem)
+                }
                 return document.getElementById(requiredItem + "box").checked;
             });
         });
