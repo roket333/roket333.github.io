@@ -331,6 +331,7 @@
                 "type":"interiorcolor",
                 "name":"Deep Indigo Cloth/Vinyl",
                 "requires":[["600A"]],
+                "incomp":["21N"],
                 "nocost":true,
                 "default":true,
                 "option_code":"2A"
@@ -340,6 +341,7 @@
                 "type":"interiorcolor",
                 "name":"Deep Indigo Dinamica",
                 "requires":[["700A"]],
+                "incomp":["21N"],
                 "nocost":true,
                 "option_code":"AA"
             },
