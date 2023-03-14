@@ -13,6 +13,7 @@ var selectedthings = [];
 var oldselectedthings = [];
 var allthings = [];
 var ready = false;
+var finalcostsset = false;
 
 function repeat() {
     if(ready == true) {
@@ -128,6 +129,7 @@ function getOptions(json, locationdiv) {
 
     //display the costs and option codes
     let finalcostsdiv = document.getElementById("final_costs");
+    finalcostsdiv.innerHTML = "";
     cname = document.createElement("p");
     cname.innerHTML = "Final Costs"
     cname.classList.add("bigtext");
