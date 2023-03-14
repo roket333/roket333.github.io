@@ -124,5 +124,13 @@
         "edited":false,
         "edited_date":null,
         "pinned":false
+    },
+    {
+        "title": "2024 Mustang Build and Price!",
+        "date": "March 14th, 2023",
+        "content": "First, i just want to say sorry about being wrong about the dates, blame Ford for that<br>anyways, i have big news! I have made and released my own 2024 Mustang build and price tool! You can access it from the \"Tools\" tab",
+        "edited":false,
+        "edited_date":null,
+        "pinned":true
     }
 ]
