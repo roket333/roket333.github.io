@@ -392,8 +392,8 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["401A", "401AC", "400A", "400AC"]],
-                "hidden":["401","401AC"],
-                "incomp":["401","401AC"],
+                "hidden":["401A","401AC"],
+                "incomp":["401A","401AC"],
                 "i_cost":1029,
                 "r_cost":1095,
                 "option_code": "50C"
@@ -403,8 +403,9 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["401A", "401AC", "400A", "400AC"]],
-                "show":["401","401AC"],
-                "incomp":["400","400AC"],
+                "show":["401A","401AC"],
+                "incomp":["400A","400AC"],
+                "foreverselected":true,
                 "nocost":true,
                 "option_code": "50C"
             },
