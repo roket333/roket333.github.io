@@ -8,22 +8,25 @@
                 "id": "AE",
                 "type":"paint",
                 "name":"Grabber Blue Metallic",
+                "incomp":["54C"],
                 "nocost": true,
                 "option_code": "AE"
+            },
+            {
+                "id": "B3",
+                "type":"paint",
+                "name":"Atlas Blue Metallic",
+                "incomp":["54C"],
+                "nocost":true,
+                "option_code": "B3"
             },
             {
                 "id": "E1",
                 "type":"paint",
                 "name":"Blue Ember Metallic",
                 "nocost": true,
+                "requires":[["54C"]],
                 "option_code": "E1"
-            },
-            {
-                "id": "B3",
-                "type":"paint",
-                "name":"Atlas Blue Metallic",
-                "nocost":true,
-                "option_code": "B3"
             },
             {
                 "id":"G1",
@@ -36,15 +39,9 @@
                 "id":"HY",
                 "type":"paint",
                 "name":"Dark Matter Grey Metallic",
+                "incomp":["54C"],
                 "nocost":true,
                 "option_code": "HY"
-            },
-            {
-                "id":"M7",
-                "type":"paint",
-                "name":"Carbonized Grey Metallic",
-                "nocost":true,
-                "option_code": "M7"
             },
             {
                 "id":"K1",
@@ -54,9 +51,18 @@
                 "option_code":"K1"
             },
             {
+                "id":"M7",
+                "type":"paint",
+                "name":"Carbonized Grey Metallic",
+                "incomp":["54C"],
+                "nocost":true,
+                "option_code": "M7"
+            },
+            {
                 "id":"PQ",
                 "type":"paint",
                 "name":"Race Red",
+                "incomp":["54C"],
                 "nocost":true,
                 "option_code": "PQ"
             },
@@ -64,6 +70,7 @@
                 "id":"YZ",
                 "type":"paint",
                 "name":"Oxford White",
+                "incomp":["54C"],
                 "nocost":true,
                 "default":true,
                 "option_code": "YZ"
@@ -78,9 +85,294 @@
             {
                 "id": "858",
                 "type": "stripe",
-                "name": "Tarnish Dark Low Gloss/Gloss Black w/ Pattern",
+                "name": "Vinyl - Tarnish Dark Low Gloss/Gloss Black w/ Pattern",
+                "default":true,
+                "incomp":["E1","54C"],
                 "nocost":true,
                 "option_code":"858"
+            },
+            {
+                "id": "85A",
+                "type": "stripe",
+                "name": "Vinyl - Gloss Black w/ Pattern and Tarnish Dark Anodized Accent",
+                "requires":[["700A"],["E1","K1","G1"],["54C"]],
+                "nocost":true,
+                "option_code":"85A"
+            },
+            {
+                "id":"47W/85W",
+                "type":"stripe",
+                "name":"Painted - Tarnish Dark High Gloss/Shadow Black",
+                "incomp":["G1"],
+                "i_cost":5165,
+                "r_cost":5495,
+                "option_code":"47W/85W"
+            },
+            {
+                "id":"47W/85C",
+                "type":"stripe",
+                "name":"Painted - Tarnish Dark High Gloss/Tuxedo Black",
+                "requires":[["G1"]],
+                "i_cost":5165,
+                "r_cost":5495,
+                "option_code":"47W/85C"
+            }
+        ]
+    },
+    {
+        "group_name": "Equipment Groups",
+        "group_id": "equipgroup",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "600A",
+                "type": "equip",
+                "name": "600A Equipment Group",
+                "i_cost": 55071,
+                "r_cost": 57970,
+                "default": true,
+                "option_code": "P8R/600A"
+            },
+            {
+                "id": "700A",
+                "type": "equip",
+                "name": "700A Equipment Group",
+                "cost_base": "600A",
+                "includes":[["97B"]],
+                "i_cost": 2439,
+                "r_cost": 2595,
+                "option_code": "P8R/700A"
+            }
+        ]
+    },
+    {
+        "group_name": "Engines",
+        "group_id": "engine",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "990",
+                "type": "engine",
+                "name": "Modified 5.0L 4th Generation Coyote V8",
+                "cost_func":"base",
+                "nocost": true,
+                "default": true,
+                "option_code": "990"
+            }
+        ]
+    },
+    {
+        "group_name": "Transmissions",
+        "group_id": "trans",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "44E",
+                "type":"trans",
+                "name": "Tremec TR-3160 6-Speed Manual Transmission w/ Rev Matching",
+                "cost_func":"base",
+                "default": true,
+                "nocost":true,
+                "option_code":"44E"
+            },
+            {
+                "id": "44U",
+                "type": "trans",
+                "name": "10R80 10-Speed Automatic Transmission",
+                "cost_func":"base",
+                "includes": [["B45"]],
+                "inclstrict": false,
+                "i_cost": 1499,
+                "r_cost": 1595,
+                "option_code": "44U"
+            }
+        ]
+    },
+    {
+        "group_name": "Differentials",
+        "group_id": "diffs",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "B45",
+                "type": "diff",
+                "name": "3.55 TORSEN",
+                "incomp":["44E"],
+                "nocost": true,
+                "option_code": ""
+            },
+            {
+                "id": "C45",
+                "type": "diff",
+                "name": "3.73 TORSEN",
+                "incomp":["44U"],
+                "nocost": true,
+                "default": true,
+                "option_code": ""
+            }
+        ]
+    },
+    {
+        "group_name": "Wheels",
+        "group_id": "wheel",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id": "64R",
+                "type": "wheel",
+                "name": "19\" X 9.5\" F, 19\" X 10\" R Tarnished Dark Low Gloss Aluminum Wheels",
+                "nocost":true,
+                "default":true,
+                "incomp":["67P"],
+                "option_code": "64R"
+            },
+            {
+                "id": "645",
+                "type": "wheel",
+                "name": "19\" X 10.5\" F, 19\" X 11\" R Tarnished Dark Low Gloss Aluminum Wheels",
+                "nocost":true,
+                "requires":[["67P"]],
+                "option_code": "645"
+            },
+            {
+                "id": "64P",
+                "type": "wheel",
+                "name": "19\" X 10.5\" F, 19\" X 11\" R Carbon Fiber Wheels",
+                "i_cost": 7985,
+                "r_cost": 8495,
+                "requires":[["67P"]],
+                "option_code": "64P"
+            }
+        ]
+    },
+    {
+        "group_name": "Options",
+        "group_id": "options",
+        "one_choice": false,
+        "group_data": [
+            {
+                "id":"97B",
+                "type":"option",
+                "name":"Security Package",
+                "i_cost":470,
+                "r_cost":500,
+                "incomp":["700A"],
+                "hidden":["700A"],
+                "option_code":"97B"
+            },
+            {
+                "id":"97B",
+                "type":"option",
+                "name":"Security Package",
+                "nocost":true,
+                "incomp":["600A"],
+                "show":["700A"],
+                "foreverselected":true,
+                "option_code":"97B"
+            },
+            {
+                "id":"67P",
+                "type":"option",
+                "name":"Dark Horse Handling Package",
+                "i_cost":4230,
+                "r_cost":4500,
+                "includes":[["64P","645"]],
+                "option_code":"67P"
+            },
+            {
+                "id":"54C",
+                "type":"option",
+                "name":"Dark Horse Appearance Package",
+                "requires":[["700A"]],
+                "includes":[["K1","G1","E1"]],
+                "inclstrict":true,
+                "i_cost":1175,
+                "r_cost":1250,
+                "option_code":"54C"
+            },
+            {
+                "id": "A99",
+                "type":"option",
+                "name":"Black Painted Roof",
+                "foreverselected":true,
+                "requires":[["54C"]],
+                "incomp":["G1"],
+                "nocost":true,
+                "option_code":""
+            },
+            {
+                "id": "18W",
+                "type": "option",
+                "name": "Grabber Blue Painted w/ White Logo Calipers",
+                "incomp": ["99B","54C"],
+                "i_cost": 465,
+                "r_cost": 495,
+                "option_code": "18W"
+            },
+            {
+                "id": "99B",
+                "type": "option",
+                "name": "Notorious Blue Painted w/ Grabber Blue Logo Calipers",
+                "incomp": ["18W"],
+                "requires":[["54C"]],
+                "foreverselected":true,
+                "nocost":true,
+                "option_code": ""
+            }
+        ]
+    },
+    {
+        "group_name": "Interior Color and Seating",
+        "group_id": "intcolor",
+        "one_choice": true,
+        "group_data": [
+            {
+                "id":"2A",
+                "type":"interiorcolor",
+                "name":"Deep Indigo Cloth/Vinyl",
+                "requires":[["600A"]],
+                "nocost":true,
+                "default":true,
+                "option_code":"2A"
+            },
+            {
+                "id":"AA",
+                "type":"interiorcolor",
+                "name":"Deep Indigo Dinamica",
+                "requires":[["700A"]],
+                "nocost":true,
+                "option_code":"AA"
+            },
+            {
+                "id":"WA",
+                "type":"interiorcolor",
+                "name":"Deep Indigo RECARO",
+                "requires":[["21N"]],
+                "nocost":true,
+                "option_code":"WA"
+            }
+        ]
+    },
+    {
+        "group_name": "Interior",
+        "group_id": "interior",
+        "one_choice": false,
+        "group_data": [
+            {
+                "id": "12B",
+                "type": "option",
+                "name": "Premium Floor Liners Front and Rear (w/ Carpet Mats)",
+                "i_cost": 188,
+                "r_cost": 200,
+                "option_code": "12B"
+            },
+            {
+                "id": "21N",
+                "type": "option",
+                "name": "RECARO Micro Suede/Vinyl Sport Seats",
+                "i_cost":1551,
+                "r_cost":1650,
+                "option_code": "21N"
             }
         ]
     }

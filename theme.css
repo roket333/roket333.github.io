@@ -551,3 +551,23 @@ th, td {
 .hidden {
     display: none;
 }
+
+.topbar {
+    font-size:250%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 5px;
+    border: 5px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.reallybig {
+    font-size: 300%;
+}

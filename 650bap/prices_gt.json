@@ -48,6 +48,13 @@
                 "option_code": "JS"
             },
             {
+                "id":"K1",
+                "type":"paint",
+                "name":"Vapor Blue",
+                "nocost":true,
+                "option_code":"K1"
+            },
+            {
                 "id":"M7",
                 "type":"paint",
                 "name":"Carbonized Grey Metallic",
@@ -60,13 +67,6 @@
                 "name":"Splash Yellow Metallic",
                 "nocost":true,
                 "option_code": "RH"
-            },
-            {
-                "id":"K1",
-                "type":"paint",
-                "name":"Vapor Blue",
-                "nocost":true,
-                "option_code":"K1"
             },
             {
                 "id":"PQ",
@@ -103,7 +103,8 @@
                 "id": "85K",
                 "type": "stripe",
                 "name": "Gloss Grey/Semi-Gloss Black",
-                "nocost":true,
+                "i_cost": 447,
+                "r_cost": 475,
                 "incomp": ["400AC", "401AC"],
                 "option_code": "85K"
             },
@@ -111,7 +112,8 @@
                 "id": "85F",
                 "type": "stripe",
                 "name": "Matte Black/Red Accent",
-                "nocost": true,
+                "i_cost": 447,
+                "r_cost": 475,
                 "incomp": ["RH", "PQ", "400AC", "401AC"],
                 "option_code": "85F"
             },
@@ -119,7 +121,8 @@
                 "id": "85S",
                 "type": "stripe",
                 "name": "Opacity Fade",
-                "nocost": true,
+                "i_cost": 447,
+                "r_cost": 475,
                 "incomp": ["G1", "400AC", "401AC", "60G"],
                 "option_code": "85S"
             }
@@ -275,7 +278,7 @@
             {
                 "id": "C45",
                 "type": "diff",
-                "name": "3.75 TORSEN",
+                "name": "3.73 TORSEN",
                 "requires":[["67J"]],
                 "incomp":["44U"],
                 "nocost": true,
@@ -293,6 +296,7 @@
                 "id": "64T",
                 "type":"wheel",
                 "name": "18\" X 8.5\" Ebony Black Aluminum Wheels",
+                "incomp":["67J","60L","60G"],
                 "requires": [["300A", "301A"]],
                 "default":true,
                 "nocost": true,
@@ -302,6 +306,7 @@
                 "id": "64V",
                 "type":"wheel",
                 "name": "19\" X 8.5\" Shadow Silver Aluminum Wheels",
+                "incomp":["67J","60L","60G"],
                 "requires": [["400A", "400AC", "401A", "401AC"]],
                 "nocost":true,
                 "option_code":"64V"
@@ -321,7 +326,7 @@
                 "name": "19\" X 9\" F, 19\" X 9.5\" R Machined with Tarnished Dark Aluminum Wheels",
                 "requires": [["67J"]],
                 "incomp":["60L","60G"],
-                "nocost": true,
+                "nocost":true,
                 "option_code": "644"
             },
             {
@@ -387,16 +392,27 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["401A", "401AC", "400A", "400AC"]],
-                "cost_mod": [{"modid": "401A", "i_cost": 0, "r_cost": 0}, {"modid": "401AC", "i_cost":0, "r_cost":0}],
+                "hidden":["401","401AC"],
+                "incomp":["401","401AC"],
                 "i_cost":1029,
                 "r_cost":1095,
+                "option_code": "50C"
+            },
+            {
+                "id": "50C",
+                "type": "option",
+                "name": "Ford Co-Pilot360 Assist+",
+                "requires": [["401A", "401AC", "400A", "400AC"]],
+                "show":["401","401AC"],
+                "incomp":["400","400AC"],
+                "nocost":true,
                 "option_code": "50C"
             },
             {
                 "id": "67J",
                 "type": "option",
                 "name": "GT Performance Package",
-                "includes": [["64Z","64K","644","64G"],["B45","C45"],["63V"]],
+                "includes": [["64K","64Z","644","64G"],["B45","C45"],["63V"]],
                 "incomp": ["642","64M"],
                 "inclstrict": true,
                 "i_cost": 4695,
@@ -425,7 +441,7 @@
                 "type": "option",
                 "name": "Nite Pony Package",
                 "incomp": ["60L"],
-                "includes": [["641","64K"]],
+                "includes": [["64K","641"]],
                 "inclstrict": true,
                 "i_cost": 1123,
                 "r_cost": 1195,
@@ -438,7 +454,7 @@
                 "name": "Bronze Appearance Package",
                 "incomp": ["60G"],
                 "requires": [["401A", "401AC", "400A", "400AC"]],
-                "includes": [["64S","64Z"]],
+                "includes": [["64Z","64S"]],
                 "inclstrict": true,
                 "i_cost": 935,
                 "r_cost": 995,
@@ -460,6 +476,19 @@
                 "name": "Red Painted w/ White Logo Calipers",
                 "requires": [["63V"]],
                 "incomp": ["18W"],
+                "show":["60G"],
+                "cost_mod": [{"modid": "67J", "i_cost": 465, "r_cost": 495}],
+                "i_cost":0,
+                "r_cost":0,
+                "option_code": "18F"
+            },
+            {
+                "id": "18F",
+                "type": "option",
+                "name": "Red Painted w/ White Logo Calipers",
+                "requires": [["63V"]],
+                "incomp": ["18W"],
+                "hidden":["60G"],
                 "i_cost": 465,
                 "r_cost": 495,
                 "option_code": "18F"
@@ -491,6 +520,16 @@
                 "hidden":["400A","401A", "400AC", "401AC"],
                 "nocost":true,
                 "option_code": "13A"
+            },
+            {
+                "id": "A99",
+                "type":"option",
+                "name":"Black Painted Roof",
+                "foreverselected":true,
+                "requires":[["60G"]],
+                "incomp":["G1"],
+                "nocost":true,
+                "option_code":""
             },
             {
                 "id": "41H",

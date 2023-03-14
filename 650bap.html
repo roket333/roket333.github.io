@@ -18,7 +18,18 @@
   </head>
   <body>
     <script src="./650bap/650bap.js"></script>
-    <div id="checkbox_container"></div>
+    <div class="topbar">
+      <div class="center straybutton">
+        <button onclick="getOptions('./650bap/prices_ecoboost.json','checkbox_container')">2024 Mustang EcoBoost</button>  
+      </div>
+      <div class="center straybutton">
+        <button onclick="getOptions('./650bap/prices_gt.json','checkbox_container')">2024 Mustang GT</button>  
+      </div>
+      <div class="center straybutton">
+        <button onclick="getOptions('./650bap/prices_darkhorse.json','checkbox_container')">2024 Mustang Dark Horse</button>  
+      </div>
+    </div>
+    <div id="checkbox_container"><p class="bigtext reallybig">Welcome! Select a button at the top to get started!</p></div>
     <div id="final_costs" class="costarea"></div>
   </body>
 </html>

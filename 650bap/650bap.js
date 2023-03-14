@@ -2,11 +2,9 @@
 //Note to other developers reading these comments, ALWAYS COMMENT YOUR CODE, it helps prevent confusion later, as i have found out first hand
 
 //update these every 10ms
-setInterval(boxlist, 10);
-setInterval(updateboxes, 10);
-setInterval(updatecosts, 10);
-setInterval(finalCosts, 10);
-getOptions("./650bap/prices_darkhorse.json", "checkbox_container") //debug and testing purposes
+setInterval(repeat, 10)
+
+//getOptions("./650bap/prices_darkhorse.json", "checkbox_container") //debug and testing purposes
 
 //define some global variables
 var boxes = document.querySelectorAll("input[type=\"checkbox\"]");
@@ -16,20 +14,33 @@ var oldselectedthings = [];
 var allthings = [];
 var ready = false;
 
+function repeat() {
+    if(ready == true) {
+        boxlist();
+        updateboxes();
+        updatecosts();
+        finalCosts();
+    }
+}
+
 //setting up the listener function here because it's easier to edit
 function clickfunc(boxid) {
-    updateboxes();
-    updatecosts(boxid);
-    boxlist();
-    finalCosts();
+    if(ready == true) {
+        updateboxes();
+        updatecosts(boxid);
+        boxlist();
+        finalCosts();
+    }
 }
 
 //load all the options from the specified json file to the specified location div
 function getOptions(json, locationdiv) {
+
+    //set "ready" to false to stop execution of everything, then clear out the location div to make sure everything will work right
+    ready = false;
+    document.getElementById(locationdiv).innerHTML = "";
 //get the json
-fetch(json)
-  .then((jsondata) => { return jsondata.json(); })
-  .then((data) => { 
+    fetch(json).then((jsondata) => { return jsondata.json(); }).then((data) => { 
     //for each group of data, make it in a new div
     data.forEach(group => {
         let hackno = 0;
@@ -363,8 +374,13 @@ function removeitems(boxid) {
                         }
                     } 
                 } else {
-                    document.getElementById(boxidparent).querySelector(".itemcosts").innerHTML = "Invoice: $" + boxiddiv.getAttribute("i_cost") + " MSRP: $" + boxiddiv.getAttribute("r_cost");
-                    boxiddiv.setAttribute("true_i_cost", boxiddiv.getAttribute("i_cost"));boxiddiv.setAttribute("true_r_cost", boxiddiv.getAttribute("r_cost"));
+                    if(boxiddiv.getAttribute("i_cost") == 0 && boxiddiv.getAttribute("r_cost") == 0) {
+                        document.getElementById(boxidparent).querySelector(".itemcosts").innerHTML = "";
+                        boxiddiv.setAttribute("true_i_cost", 0);boxiddiv.setAttribute("true_r_cost", 0);
+                    } else {
+                        document.getElementById(boxidparent).querySelector(".itemcosts").innerHTML = "Invoice: $" + boxiddiv.getAttribute("i_cost") + " MSRP: $" + boxiddiv.getAttribute("r_cost");
+                        boxiddiv.setAttribute("true_i_cost", boxiddiv.getAttribute("i_cost"));boxiddiv.setAttribute("true_r_cost", boxiddiv.getAttribute("r_cost"));
+                    }
                 }                    
             })
         }
