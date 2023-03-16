@@ -459,6 +459,16 @@
                 "option_code": "51W"
             },
             {
+                "id":"99C",
+                "type":"option",
+                "name": "Black Painted w/ White Logo Calipers",
+                "incomp": ["18F", "18W"],
+                "requires":[["67B"]],
+                "nocost":true,
+                "foreverselected":true,
+                "option_code":""
+            },
+            {
                 "id": "18F",
                 "type": "option",
                 "name": "Red Painted w/ White Logo Calipers",

@@ -301,6 +301,15 @@
                 "option_code":""
             },
             {
+                "id":"99C",
+                "type":"option",
+                "name": "Black Painted w/ White Logo Calipers",
+                "incomp": ["18W", "99B"],
+                "nocost":true,
+                "foreverselected":true,
+                "option_code":""
+            },
+            {
                 "id": "18W",
                 "type": "option",
                 "name": "Grabber Blue Painted w/ White Logo Calipers",

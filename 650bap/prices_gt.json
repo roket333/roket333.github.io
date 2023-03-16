@@ -472,6 +472,16 @@
                 "option_code":"63V"
             },
             {
+                "id":"99C",
+                "type":"option",
+                "name": "Black Painted w/ White Logo Calipers",
+                "incomp": ["18F", "99B"],
+                "requires":[["63V"]],
+                "nocost":true,
+                "foreverselected":true,
+                "option_code":""
+            },
+            {
                 "id": "18F",
                 "type": "option",
                 "name": "Red Painted w/ White Logo Calipers",
