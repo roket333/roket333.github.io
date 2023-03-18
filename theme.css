@@ -531,10 +531,6 @@ th, td {
     transition: 0.3s;
 }
 
-.selecteditem > label {
-    color:#e5e5e5;
-}
-
 .notalloweditem {
     border:5px solid #ff0000;
     transition: 0.3s;
@@ -570,4 +566,30 @@ th, td {
 
 .reallybig {
     font-size: 300%;
+}
+
+.buttoncc {
+    cursor:pointer;
+}
+
+.bapitem > label,.bapitem > label > input {
+    cursor: pointer;
+}
+
+.bapitem:hover {
+    background-color: #707070;
+}
+
+.bapitem:active {
+    background-color: #e5e5e5;
+    color: #ffc100;
+    border-color: #ffc100;
+}
+
+.selecteditem > label {
+    color:#e5e5e5;
+}
+
+.selecteditem:active > label {
+    color: #ffc100;
 }

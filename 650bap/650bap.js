@@ -57,6 +57,7 @@ function getOptions(json, locationdiv) {
         groupdiv.appendChild(gname)
 
         group.group_data.forEach(item => {
+            let biglabel = document.createElement("label");
             let itemdiv = document.createElement("div"); //make the div that contains this specific item
             itemdiv.classList.add("bapitem");
             itemdiv.setAttribute("hackno", hackno); //stupid hack to make later stuff work in the right order, it's supremely stupid and i hate it
@@ -84,6 +85,9 @@ function getOptions(json, locationdiv) {
                 box.setAttribute("type", "checkbox");
             box.setAttribute("name", group.group_id);
             box.setAttribute("id", item.id + "box");
+            biglabel.setAttribute("for", box.id);
+            biglabel.classList.add("buttoncc");
+            itemdiv.setAttribute("for", box.id);
             box.setAttribute("defaultbox", item.default);
             itemdiv.setAttribute("addedby", "");
             box.addEventListener("change", function(boxid) {clickfunc(box.getAttribute("id"))}); //the function itself is actually above this whole code block, just so it's easier to add and remove things from
@@ -121,7 +125,8 @@ function getOptions(json, locationdiv) {
             }
             label.appendChild(costdiv);
             itemdiv.appendChild(label);
-            groupdiv.appendChild(itemdiv);
+            biglabel.appendChild(itemdiv);
+            groupdiv.appendChild(biglabel);
         })
 
         document.getElementById(locationdiv).append(groupdiv);
@@ -255,7 +260,7 @@ function removeitems(boxid) {
         });
 
         //if a box that was checked is disabled, revert to the default value if it's a radio. if there's no options to choose, it'll just deselect all of them and have no option chosen
-        let one_choice = box.parentElement.parentElement.parentElement.getAttribute("one_choice")
+        let one_choice = box.parentElement.parentElement.parentElement.parentElement.getAttribute("one_choice")
         if (box.disabled && box.checked) {
             box.checked = false;
             let parentdivvalue = box.parentElement.parentElement.getAttribute("parentdiv");
@@ -320,9 +325,9 @@ function removeitems(boxid) {
         let hideString = box.parentElement.parentElement.getAttribute("hidden");
         let hideArray = hideString ? JSON.parse(hideString) : [];
         if ((hideArray.some(item => selectedthings.includes(item))) || (showString && !showArray.some(item => selectedthings.includes(item)))) {
-            box.parentElement.parentElement.classList.add("hidden");
+            box.parentElement.parentElement.parentElement.classList.add("hidden");
         } else {
-            box.parentElement.parentElement.classList.remove("hidden");
+            box.parentElement.parentElement.parentElement.classList.remove("hidden");
         }
 
     });
@@ -330,7 +335,7 @@ function removeitems(boxid) {
 
   function selectpackages(boxid) {
     //if the user selects something that includes another thing, let's select that too, all the other things should catch if a package includes an incompatible item
-    let originalBox = document.getElementById(boxid).parentElement.parentElement.getAttribute("id");
+    let originalBox = document.getElementById(boxid).parentElement.parentElement.getAttribute("id"); //i have no clue why, but changing what you're building causes this line to throw an error if a box id is not shared with the thing you're switching to, but there are no serious issues with this so it's whatever i guess
     let toSelectString = document.getElementById(boxid).parentElement.parentElement.getAttribute("includes");
     let toSelectArray = toSelectString ? JSON.parse(toSelectString) : [];
     if(toSelectArray.length > 0) {
