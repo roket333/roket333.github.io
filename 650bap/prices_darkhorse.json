@@ -46,7 +46,7 @@
             {
                 "id":"K1",
                 "type":"paint",
-                "name":"Vapor Blue",
+                "name":"Vapor Blue Metallic",
                 "nocost":true,
                 "option_code":"K1"
             },
@@ -267,7 +267,7 @@
                 "i_cost":470,
                 "r_cost":500,
                 "incomp":["700A"],
-                "hidden":["700A"],
+                "hidden":[["700A"]],
                 "option_code":"97B"
             },
             {
@@ -276,7 +276,7 @@
                 "name":"Security Package",
                 "nocost":true,
                 "incomp":["600A"],
-                "show":["700A"],
+                "show":[["700A"]],
                 "foreverselected":true,
                 "option_code":"97B"
             },

@@ -324,10 +324,12 @@ function removeitems(boxid) {
         let showArray = showString ? JSON.parse(showString) : [];
         let hideString = box.parentElement.parentElement.getAttribute("hidden");
         let hideArray = hideString ? JSON.parse(hideString) : [];
-        if ((hideArray.some(item => selectedthings.includes(item))) || (showString && !showArray.some(item => selectedthings.includes(item)))) {
-            box.parentElement.parentElement.parentElement.classList.add("hidden");
-        } else {
-            box.parentElement.parentElement.parentElement.classList.remove("hidden");
+        if((hideArray && hideArray.length > 0) || (showArray && showArray.length > 0)) {
+            if ((hideArray.every(entry => entry.some(item => selectedthings.includes(item)))) || (!showArray.every(entry => entry.some(item => selectedthings.includes(item))))) {
+                box.parentElement.parentElement.parentElement.classList.add("hidden");
+            } else {
+                box.parentElement.parentElement.parentElement.classList.remove("hidden");
+            }
         }
 
     });

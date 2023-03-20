@@ -50,7 +50,7 @@
             {
                 "id":"K1",
                 "type":"paint",
-                "name":"Vapor Blue",
+                "name":"Vapor Blue Metallic",
                 "nocost":true,
                 "option_code":"K1"
             },
@@ -392,7 +392,7 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["401A", "401AC", "400A", "400AC"]],
-                "hidden":["401A","401AC"],
+                "hidden":[["401A","401AC"]],
                 "incomp":["401A","401AC"],
                 "i_cost":1029,
                 "r_cost":1095,
@@ -403,7 +403,7 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["401A", "401AC", "400A", "400AC"]],
-                "show":["401A","401AC"],
+                "show":[["401A","401AC"]],
                 "incomp":["400A","400AC"],
                 "foreverselected":true,
                 "nocost":true,
@@ -472,9 +472,18 @@
                 "option_code":"63V"
             },
             {
+                "id": "D99",
+                "type":"option",
+                "name": "4-Piston F, 1-Piston R Silver Painted w/ Black Logo Calipers",
+                "incomp":["63V"],
+                "nocost":true,
+                "foreverselected":true,
+                "option_code":""
+            },
+            {
                 "id":"99C",
                 "type":"option",
-                "name": "Black Painted w/ White Logo Calipers",
+                "name": "6-Piston F, 4-Piston R Black Painted w/ White Logo Calipers",
                 "incomp": ["18F", "99B"],
                 "requires":[["63V"]],
                 "nocost":true,
@@ -484,10 +493,10 @@
             {
                 "id": "18F",
                 "type": "option",
-                "name": "Red Painted w/ White Logo Calipers",
+                "name": "6-Piston F, 4-Piston R Red Painted w/ White Logo Calipers",
                 "requires": [["63V"]],
                 "incomp": ["18W"],
-                "show":["60G"],
+                "show":[["60G"]],
                 "cost_mod": [{"modid": "67J", "i_cost": 465, "r_cost": 495}],
                 "i_cost":0,
                 "r_cost":0,
@@ -496,10 +505,10 @@
             {
                 "id": "18F",
                 "type": "option",
-                "name": "Red Painted w/ White Logo Calipers",
+                "name": "6-Piston F, 4-Piston R Red Painted w/ White Logo Calipers",
                 "requires": [["63V"]],
                 "incomp": ["18W"],
-                "hidden":["60G"],
+                "hidden":[["60G"]],
                 "i_cost": 465,
                 "r_cost": 495,
                 "option_code": "18F"
@@ -507,7 +516,7 @@
             {
                 "id": "18W",
                 "type": "option",
-                "name": "Grabber Blue Painted w/ White Logo Calipers",
+                "name": "6-Piston F, 4-Piston R Grabber Blue Painted w/ White Logo Calipers",
                 "requires": [["63V"]],
                 "incomp": ["18F"],
                 "i_cost": 465,
@@ -520,7 +529,7 @@
                 "name": "Spoiler Delete",
                 "requires": [["67J"], ["400AC", "401AC"]],
                 "foreverselected": true,
-                "hidden":["300A","301A"],
+                "hidden":[["300A","301A"]],
                 "nocost":true,
                 "option_code": "13A"
             },
@@ -528,7 +537,7 @@
                 "id": "13A",
                 "type": "option",
                 "name": "Spoiler Delete",
-                "hidden":["400A","401A", "400AC", "401AC"],
+                "hidden":[["400A","401A", "400AC", "401AC"]],
                 "nocost":true,
                 "option_code": "13A"
             },

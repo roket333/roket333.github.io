@@ -50,7 +50,7 @@
             {
                 "id":"K1",
                 "type":"paint",
-                "name":"Vapor Blue",
+                "name":"Vapor Blue Metallic",
                 "nocost":true,
                 "option_code":"K1"
             },
@@ -369,7 +369,7 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["201A", "201AC", "200A", "200AC"]],
-                "hidden":["201A","201AC"],
+                "hidden":[["201A","201AC"]],
                 "incomp":["201A","201AC"],
                 "i_cost":1217,
                 "r_cost":1295,
@@ -380,7 +380,7 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["201A", "201AC", "200A", "200AC"]],
-                "show":["201A","201AC"],
+                "show":[["201A","201AC"]],
                 "incomp":["200A","200AC"],
                 "foreverselected":true,
                 "nocost":true,
@@ -493,7 +493,7 @@
                 "type": "option",
                 "name": "Spoiler Delete",
                 "requires": [["60G"]],
-                "hidden":["100A","101A", "200AC", "201AC","101AC"],
+                "hidden":[["100A","101A", "200AC", "201AC","101AC"]],
                 "foreverselected": true,
                 "nocost":true,
                 "option_code": "13A"
@@ -504,7 +504,7 @@
                 "name": "Spoiler Delete",
                 "requires": [["60G"]],
                 "hidden":["200A","201A","67B"],
-                "show":["60G"],
+                "show":[["60G"]],
                 "foreverselected": true,
                 "nocost":true,
                 "option_code": "13A"
@@ -515,7 +515,7 @@
                 "name": "Spoiler Delete",
                 "requires": [["67B"], ["200AC", "201AC", "101AC"]],
                 "foreverselected": true,
-                "hidden":["200A","201A","60G"],
+                "hidden":[["200A","201A","60G"]],
                 "nocost":true,
                 "option_code": "13A"
             },
