@@ -661,7 +661,7 @@
                 "type":"interiorcolor",
                 "name":"Emberglo ActiveX",
                 "requires":[["400A", "400AC"]],
-                "incomp":["59AA", "21N"],
+                "incomp":["59A", "21N"],
                 "nocost":true,
                 "option_code":"3J"
             },
@@ -688,7 +688,7 @@
                 "type":"interiorcolor",
                 "name":"Carmine Red Leather-Trimmed",
                 "requires":[["401A", "401AC"]],
-                "incomp":["59AA", "AE", "RH", "21N"],
+                "incomp":["59A", "AE", "RH", "21N"],
                 "nocost":true,
                 "option_code":"53"
             },

@@ -337,6 +337,14 @@
                 "foreverselected":true,
                 "nocost":true,
                 "option_code": ""
+            },
+            {
+                "id": "17V",
+                "type":"option",
+                "name":"B&O Sound System Reduced Capacity Amplifier",
+                "i_cost":-94,
+                "r_cost":-100,
+                "option_code":"17V"
             }
         ]
     },
