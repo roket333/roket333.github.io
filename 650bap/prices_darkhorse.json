@@ -380,6 +380,14 @@
         "one_choice": false,
         "group_data": [
             {
+                "id":"A70",
+                "type":"option",
+                "name":"Seat Belt - Deep Indigo",
+                "nocost":true,
+                "foreverselected":true,
+                "option_code":""
+            },
+            {
                 "id": "12B",
                 "type": "option",
                 "name": "Premium Floor Liners Front and Rear (w/ Carpet Mats)",

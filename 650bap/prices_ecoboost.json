@@ -181,7 +181,7 @@
                 "inclstrict": false,
                 "i_cost": 0,
                 "r_cost": 0,
-                "hidden":["99H"],
+                "hidden":[["99H"]],
                 "option_code": "P8U/101A"
             },
             {
@@ -503,7 +503,7 @@
                 "type": "option",
                 "name": "Spoiler Delete",
                 "requires": [["60G"]],
-                "hidden":["200A","201A","67B"],
+                "hidden":[["200A","201A","67B"]],
                 "show":[["60G"]],
                 "foreverselected": true,
                 "nocost":true,

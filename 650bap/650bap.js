@@ -324,13 +324,16 @@ function removeitems(boxid) {
         let showArray = showString ? JSON.parse(showString) : [];
         let hideString = box.parentElement.parentElement.getAttribute("hidden");
         let hideArray = hideString ? JSON.parse(hideString) : [];
-        if((hideArray && hideArray.length > 0) || (showArray && showArray.length > 0)) {
-            if ((hideArray.every(entry => entry.some(item => selectedthings.includes(item)))) || (!showArray.every(entry => entry.some(item => selectedthings.includes(item))))) {
-                box.parentElement.parentElement.parentElement.classList.add("hidden");
-            } else {
-                box.parentElement.parentElement.parentElement.classList.remove("hidden");
-            }
+
+        let hideConditionsMet = hideArray.every(entry => entry.some(item => selectedthings.includes(item)));
+        let showConditionsMet = showArray.every(entry => entry.some(item => selectedthings.includes(item)));
+
+        if ((hideArray.length > 0 && hideConditionsMet) || (showArray.length > 0 && !showConditionsMet)) {
+            box.parentElement.parentElement.parentElement.classList.add("hidden");
+        } else {
+            box.parentElement.parentElement.parentElement.classList.remove("hidden");
         }
+
 
     });
 }
@@ -416,7 +419,7 @@ function removeitems(boxid) {
     ordercodes = ordercodes.filter(code => code.length > 0).join("/");
     document.getElementById("fc1").innerHTML = "Invoice: $" + finalicost + ", MSRP: $" + finalrcost
     document.getElementById("fc2").innerHTML = "Destination and Delivery cost: $" + dad
-    document.getElementById("fc3").innerHTML = "Dealer Profit: $" + (finalrcost-finalicost) + ", Final Cost: $" + (finalrcost + dad)
+    document.getElementById("fc3").innerHTML = "Dealer Profit: $" + (finalrcost-finalicost) + ", Final Cost: $" + (finalrcost + dad) + ", X-Plan Cost: $" + Math.ceil(finalicost - (finalicost * 0.04) + 275)
     //fun fact, you can probably give this list of option codes to your salesperson and that will be your order
     //update, i've asked a few of my dealer's salespeople, and 3 out of 4 says you can
     document.getElementById("fc4").innerHTML = "Option Codes: " + ordercodes
