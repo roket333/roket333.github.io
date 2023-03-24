@@ -46,7 +46,7 @@
             {
                 "id":"K1",
                 "type":"paint",
-                "name":"Vapor Blue",
+                "name":"Vapor Blue Metallic",
                 "nocost":true,
                 "option_code":"K1"
             },
@@ -267,7 +267,7 @@
                 "i_cost":470,
                 "r_cost":500,
                 "incomp":["700A"],
-                "hidden":["700A"],
+                "hidden":[["700A"]],
                 "option_code":"97B"
             },
             {
@@ -276,7 +276,7 @@
                 "name":"Security Package",
                 "nocost":true,
                 "incomp":["600A"],
-                "show":["700A"],
+                "show":[["700A"]],
                 "foreverselected":true,
                 "option_code":"97B"
             },
@@ -337,6 +337,14 @@
                 "foreverselected":true,
                 "nocost":true,
                 "option_code": ""
+            },
+            {
+                "id": "17V",
+                "type":"option",
+                "name":"B&O Sound System Reduced Capacity Amplifier",
+                "i_cost":-94,
+                "r_cost":-100,
+                "option_code":"17V"
             }
         ]
     },
@@ -379,6 +387,14 @@
         "group_id": "interior",
         "one_choice": false,
         "group_data": [
+            {
+                "id":"A70",
+                "type":"option",
+                "name":"Seat Belt - Deep Indigo",
+                "nocost":true,
+                "foreverselected":true,
+                "option_code":""
+            },
             {
                 "id": "12B",
                 "type": "option",

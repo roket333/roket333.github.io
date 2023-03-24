@@ -50,7 +50,7 @@
             {
                 "id":"K1",
                 "type":"paint",
-                "name":"Vapor Blue",
+                "name":"Vapor Blue Metallic",
                 "nocost":true,
                 "option_code":"K1"
             },
@@ -181,7 +181,7 @@
                 "inclstrict": false,
                 "i_cost": 0,
                 "r_cost": 0,
-                "hidden":["99H"],
+                "hidden":[["99H"]],
                 "option_code": "P8U/101A"
             },
             {
@@ -369,7 +369,7 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["201A", "201AC", "200A", "200AC"]],
-                "hidden":["201A","201AC"],
+                "hidden":[["201A","201AC"]],
                 "incomp":["201A","201AC"],
                 "i_cost":1217,
                 "r_cost":1295,
@@ -380,7 +380,7 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["201A", "201AC", "200A", "200AC"]],
-                "show":["201A","201AC"],
+                "show":[["201A","201AC"]],
                 "incomp":["200A","200AC"],
                 "foreverselected":true,
                 "nocost":true,
@@ -493,7 +493,7 @@
                 "type": "option",
                 "name": "Spoiler Delete",
                 "requires": [["60G"]],
-                "hidden":["100A","101A", "200AC", "201AC","101AC"],
+                "hidden":[["100A","101A", "200AC", "201AC","101AC"]],
                 "foreverselected": true,
                 "nocost":true,
                 "option_code": "13A"
@@ -503,8 +503,8 @@
                 "type": "option",
                 "name": "Spoiler Delete",
                 "requires": [["60G"]],
-                "hidden":["200A","201A","67B"],
-                "show":["60G"],
+                "hidden":[["200A","201A","67B"]],
+                "show":[["60G"]],
                 "foreverselected": true,
                 "nocost":true,
                 "option_code": "13A"
@@ -515,7 +515,7 @@
                 "name": "Spoiler Delete",
                 "requires": [["67B"], ["200AC", "201AC", "101AC"]],
                 "foreverselected": true,
-                "hidden":["200A","201A","60G"],
+                "hidden":[["200A","201A","60G"]],
                 "nocost":true,
                 "option_code": "13A"
             },
@@ -533,6 +533,26 @@
                 "name": "Front License Plate Bracket",
                 "nocost":true,
                 "option_code": "153"
+            },
+            {
+                "id": "17V",
+                "type":"option",
+                "name":"B&O Sound System Reduced Capacity Amplifier",
+                "requires":[["50C"],["200A","200AC"]],
+                "hidden":[["201A","201AC"]],
+                "i_cost":-94,
+                "r_cost":-100,
+                "option_code":"17V"
+            },
+            {
+                "id": "17V",
+                "type":"option",
+                "name":"B&O Sound System Reduced Capacity Amplifier",
+                "requires":[["201A","201AC"]],
+                "show":[["201A","201AC"]],
+                "i_cost":-94,
+                "r_cost":-100,
+                "option_code":"17V"
             }
         ]
     },
@@ -652,13 +672,45 @@
         "one_choice": false,
         "group_data": [
             {
+                "id": "B70",
+                "type":"option",
+                "name":"Seat Belt - Black",
+                "foreverselected":true,
+                "incomp":["59A","A70","59AA"],
+                "requires":[["DW","2W","SW","5W","3W"]],
+                "nocost":true,
+                "option_code":""
+            },
+            {
                 "id": "59A",
                 "type": "option",
-                "name": "Seat Belt - Red",
+                "name": "Seat Belt - Red w/ Black Stripe",
+                "cost_mod": [{"modid": "3J", "i_cost": 0, "r_cost": 0},{"modid":"53","i_cost":0,"r_cost":0}],
                 "requires": [["67B"]],
+                "hidden":[["53","3J"]],
                 "i_cost": 277,
                 "r_cost": 295,
                 "option_code": "59A"
+            },
+            {
+                "id": "59AA",
+                "type":"option",
+                "name":"Seat Belt - Red w/ Black Stripe",
+                "requires":[["53","3J"]],
+                "foreverselected":true,
+                "show":[["53","3J"]],
+                "nocost":true,
+                "option_code":""
+            },
+            {
+                "id": "A70",
+                "type": "option",
+                "name": "Seat Belt - Black w/ Space Grey Stripe",
+                "foreverselected":true,
+                "incomp":["59A","59AA"],
+                "requires": [["DH","2H","3H","5H","SH"]],
+                "nocost":true,
+                "option_code": ""
             },
             {
                 "id": "12B",

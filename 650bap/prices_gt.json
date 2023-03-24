@@ -50,7 +50,7 @@
             {
                 "id":"K1",
                 "type":"paint",
-                "name":"Vapor Blue",
+                "name":"Vapor Blue Metallic",
                 "nocost":true,
                 "option_code":"K1"
             },
@@ -392,7 +392,7 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["401A", "401AC", "400A", "400AC"]],
-                "hidden":["401A","401AC"],
+                "hidden":[["401A","401AC"]],
                 "incomp":["401A","401AC"],
                 "i_cost":1029,
                 "r_cost":1095,
@@ -403,7 +403,7 @@
                 "type": "option",
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["401A", "401AC", "400A", "400AC"]],
-                "show":["401A","401AC"],
+                "show":[["401A","401AC"]],
                 "incomp":["400A","400AC"],
                 "foreverselected":true,
                 "nocost":true,
@@ -462,11 +462,32 @@
                 "option_code": "60L"
             },
             {
+                "id": "D99",
+                "type":"option",
+                "name": "4-Piston F, 1-Piston R Silver Painted w/ Black Logo Calipers",
+                "incomp":["63V","63VA"],
+                "nocost":true,
+                "foreverselected":true,
+                "option_code":""
+            },
+            {
                 "id": "63V",
                 "type":"option",
                 "name":"19\" Brembo Brake System w/ Performance Linings",
                 "requires":[["67J", "60G"]],
                 "cost_mod": [{"modid": "67J", "i_cost": 0, "r_cost": 0}],
+                "show":[["67J"]],
+                "i_cost":1593,
+                "r_cost":1695,
+                "option_code":"63V"
+            },
+            {
+                "id": "63VA",
+                "type":"option",
+                "name":"19\" Brembo Brake System w/ Performance Linings",
+                "requires":[["67J", "60G"]],
+                "cost_mod": [{"modid": "67J", "i_cost": 0, "r_cost": 0}],
+                "hidden":[["67J"]],
                 "i_cost":1593,
                 "r_cost":1695,
                 "option_code":"63V"
@@ -474,8 +495,8 @@
             {
                 "id":"99C",
                 "type":"option",
-                "name": "Black Painted w/ White Logo Calipers",
-                "incomp": ["18F", "99B"],
+                "name": "6-Piston F, 4-Piston R Black Painted w/ White Logo Calipers",
+                "incomp": ["18F", "99B", "18W"],
                 "requires":[["63V"]],
                 "nocost":true,
                 "foreverselected":true,
@@ -484,31 +505,30 @@
             {
                 "id": "18F",
                 "type": "option",
-                "name": "Red Painted w/ White Logo Calipers",
-                "requires": [["63V"]],
+                "name": "6-Piston F, 4-Piston R Red Painted w/ White Logo Calipers",
+                "requires": [["63V","63VA"]],
                 "incomp": ["18W"],
-                "show":["60G"],
-                "cost_mod": [{"modid": "67J", "i_cost": 465, "r_cost": 495}],
-                "i_cost":0,
-                "r_cost":0,
-                "option_code": "18F"
-            },
-            {
-                "id": "18F",
-                "type": "option",
-                "name": "Red Painted w/ White Logo Calipers",
-                "requires": [["63V"]],
-                "incomp": ["18W"],
-                "hidden":["60G"],
+                "hidden":[["63VA"]],
                 "i_cost": 465,
                 "r_cost": 495,
                 "option_code": "18F"
             },
             {
+                "id": "18FA",
+                "type": "option",
+                "name": "6-Piston F, 4-Piston R Red Painted w/ White Logo Calipers",
+                "requires": [["63VA"]],
+                "incomp": ["18W"],
+                "show":[["63VA"]],
+                "foreverselected":true,
+                "nocost":true,
+                "option_code": "18F"
+            },
+            {
                 "id": "18W",
                 "type": "option",
-                "name": "Grabber Blue Painted w/ White Logo Calipers",
-                "requires": [["63V"]],
+                "name": "6-Piston F, 4-Piston R Grabber Blue Painted w/ White Logo Calipers",
+                "requires": [["63V","63VA"]],
                 "incomp": ["18F"],
                 "i_cost": 465,
                 "r_cost": 495,
@@ -520,7 +540,7 @@
                 "name": "Spoiler Delete",
                 "requires": [["67J"], ["400AC", "401AC"]],
                 "foreverselected": true,
-                "hidden":["300A","301A"],
+                "hidden":[["300A","301A"]],
                 "nocost":true,
                 "option_code": "13A"
             },
@@ -528,7 +548,7 @@
                 "id": "13A",
                 "type": "option",
                 "name": "Spoiler Delete",
-                "hidden":["400A","401A", "400AC", "401AC"],
+                "hidden":[["400A","401A", "400AC", "401AC"]],
                 "nocost":true,
                 "option_code": "13A"
             },
@@ -557,6 +577,26 @@
                 "name": "Front License Plate Bracket",
                 "nocost":true,
                 "option_code": "153"
+            },
+            {
+                "id": "17V",
+                "type":"option",
+                "name":"B&O Sound System Reduced Capacity Amplifier",
+                "requires":[["50C"],["400A","400AC"]],
+                "hidden":[["401A","401AC"]],
+                "i_cost":-94,
+                "r_cost":-100,
+                "option_code":"17V"
+            },
+            {
+                "id": "17V",
+                "type":"option",
+                "name":"B&O Sound System Reduced Capacity Amplifier",
+                "requires":[["401A","401AC"]],
+                "show":[["401A","401AC"]],
+                "i_cost":-94,
+                "r_cost":-100,
+                "option_code":"17V"
             }
         ]
     },
@@ -676,13 +716,45 @@
         "one_choice": false,
         "group_data": [
             {
+                "id": "B70",
+                "type":"option",
+                "name":"Seat Belt - Black",
+                "foreverselected":true,
+                "incomp":["59A","A70","59AA"],
+                "requires":[["DW","2W","SW","5W","3W"]],
+                "nocost":true,
+                "option_code":""
+            },
+            {
                 "id": "59A",
                 "type": "option",
-                "name": "Seat Belt - Red",
+                "name": "Seat Belt - Red w/ Black Stripe",
+                "cost_mod": [{"modid": "3J", "i_cost": 0, "r_cost": 0},{"modid":"53","i_cost":0,"r_cost":0}],
                 "requires": [["67J"]],
+                "hidden":[["53","3J"]],
                 "i_cost": 277,
                 "r_cost": 295,
                 "option_code": "59A"
+            },
+            {
+                "id": "59AA",
+                "type":"option",
+                "name":"Seat Belt - Red w/ Black Stripe",
+                "requires":[["53","3J"]],
+                "foreverselected":true,
+                "show":[["53","3J"]],
+                "nocost":true,
+                "option_code":""
+            },
+            {
+                "id": "A70",
+                "type": "option",
+                "name": "Seat Belt - Black w/ Space Grey Stripe",
+                "foreverselected":true,
+                "incomp":["59A","59AA"],
+                "requires": [["DH","2H","3H","5H","SH"]],
+                "nocost":true,
+                "option_code": ""
             },
             {
                 "id": "12B",
