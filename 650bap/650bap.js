@@ -14,6 +14,7 @@ var oldselectedthings = [];
 var allthings = [];
 var ready = false;
 var finalcostsset = false;
+var optioncodeslist = "";
 
 function repeat() {
     if(ready == true) {
@@ -424,11 +425,11 @@ function removeitems(boxid) {
     //fun fact, you can probably give this list of option codes to your salesperson and that will be your order
     //update, i've asked a few of my dealer's salespeople, and 3 out of 4 says you can
     document.getElementById("fc4").innerHTML = "Option Codes: " + ordercodes
+    optioncodeslist = ordercodes;
     }}
   
 
 function copycodes() {
-    codeslist = selectedthings.filter(code => code.length > 0).join("/");
-    navigator.clipboard.writeText(codeslist)
+    navigator.clipboard.writeText(optioncodeslist)
 }
   updateboxes();
