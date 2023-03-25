@@ -264,6 +264,7 @@
                 "id":"97B",
                 "type":"option",
                 "name":"Security Package",
+                "cost_mod": [{"modid": "700A", "i_cost": 0, "r_cost": 0}],
                 "i_cost":470,
                 "r_cost":500,
                 "incomp":["700A"],

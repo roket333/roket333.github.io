@@ -370,6 +370,7 @@
                 "name": "Ford Co-Pilot360 Assist+",
                 "requires": [["201A", "201AC", "200A", "200AC"]],
                 "hidden":[["201A","201AC"]],
+                "cost_mod": [{"modid": "201A", "i_cost": 0, "r_cost": 0},{"modid": "201AC", "i_cost": 0, "r_cost": 0}],
                 "incomp":["201A","201AC"],
                 "i_cost":1217,
                 "r_cost":1295,

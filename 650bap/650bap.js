@@ -146,6 +146,7 @@ function getOptions(json, locationdiv) {
     fclayer3.setAttribute("id","fc3");
     fclayer4 = document.createElement("p");
     fclayer4.setAttribute("id","fc4");
+    fclayer4.setAttribute("onClick","copycodes()")
     finalcostsdiv.append(cname,fclayer1,fclayer2,fclayer3,fclayer4);
 
     ready = true;
@@ -425,4 +426,9 @@ function removeitems(boxid) {
     document.getElementById("fc4").innerHTML = "Option Codes: " + ordercodes
     }}
   
+
+function copycodes() {
+    codeslist = selectedthings.filter(code => code.length > 0).join("/");
+    navigator.clipboard.writeText(codeslist)
+}
   updateboxes();
