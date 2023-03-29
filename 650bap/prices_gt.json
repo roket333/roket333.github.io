@@ -326,7 +326,8 @@
                 "name": "19\" X 9\" F, 19\" X 9.5\" R Machined with Tarnished Dark Aluminum Wheels",
                 "requires": [["67J"]],
                 "incomp":["60L","60G"],
-                "nocost":true,
+                "i_cost":799,
+                "r_cost":850,
                 "option_code": "644"
             },
             {
