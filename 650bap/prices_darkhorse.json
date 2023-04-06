@@ -307,7 +307,7 @@
                 "name":"Black Painted Roof",
                 "foreverselected":true,
                 "requires":[["54C"]],
-                "incomp":["G1"],
+                "incomp":["G1","47W/85W","47W/85C"],
                 "nocost":true,
                 "option_code":""
             },
