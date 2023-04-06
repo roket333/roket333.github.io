@@ -179,9 +179,8 @@
                 "cost_base": "100A",
                 "includes":[["64F"]],
                 "inclstrict": false,
-                "i_cost": 0,
-                "r_cost": 0,
-                "hidden":[["99H"]],
+                "i_cost": 37459,
+                "r_cost": 39020,
                 "option_code": "P8U/101A"
             },
             {
