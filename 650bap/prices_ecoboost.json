@@ -176,7 +176,6 @@
                 "id": "101AC",
                 "type": "equip",
                 "name": "101A Equipment Group (Convertible)",
-                "cost_base": "100A",
                 "includes":[["64F"]],
                 "inclstrict": false,
                 "i_cost": 37459,
