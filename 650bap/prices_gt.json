@@ -412,6 +412,17 @@
                 "option_code": "50C"
             },
             {
+                "id":"L59",
+                "type":"option",
+                "name":"Gas Guzzler Tax",
+                "i_cost":1000,
+                "r_cost":1000,
+                "hidden":[["44U"]],
+                "cost_mod":[{"modid":"44U","i_cost":0,"r_cost":0}],
+                "foreverselected":true,
+                "option_code":"L59"
+            },
+            {
                 "id": "67J",
                 "type": "option",
                 "name": "GT Performance Package",
