@@ -395,7 +395,7 @@
                 "requires": [["401A", "401AC", "400A", "400AC"]],
                 "hidden":[["401A","401AC"]],
                 "incomp":["401A","401AC"],
-                "cost_mod": [{"modid": "44X", "i_cost": 1029, "r_cost": 1095},{"modid": "401A", "i_cost": 0, "r_cost": 0},{"modid": "401AC", "i_cost": 0, "r_cost": 0}],
+                "cost_mod": [{"modid": "401A", "i_cost": 0, "r_cost": 0},{"modid": "401AC", "i_cost": 0, "r_cost": 0}],
                 "i_cost":1029,
                 "r_cost":1095,
                 "option_code": "50C"
