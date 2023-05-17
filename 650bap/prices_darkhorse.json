@@ -139,8 +139,8 @@
                 "name": "700A Equipment Group",
                 "cost_base": "600A",
                 "includes":[["97B"]],
-                "i_cost": 2439,
-                "r_cost": 2595,
+                "i_cost": 3755,
+                "r_cost": 3995,
                 "option_code": "P8R/700A"
             }
         ]
@@ -238,8 +238,8 @@
                 "id": "64P",
                 "type": "wheel",
                 "name": "19\" X 10.5\" F, 19\" X 11\" R Carbon Fiber Wheels",
-                "i_cost": 7985,
-                "r_cost": 8495,
+                "i_cost": 8455,
+                "r_cost": 8995,
                 "requires":[["67P"]],
                 "option_code": "64P"
             }
@@ -284,8 +284,8 @@
                 "id":"67P",
                 "type":"option",
                 "name":"Dark Horse Handling Package",
-                "i_cost":4230,
-                "r_cost":4500,
+                "i_cost":4695,
+                "r_cost":4995,
                 "includes":[["64P","645"]],
                 "option_code":"67P"
             },
@@ -296,8 +296,8 @@
                 "requires":[["700A"]],
                 "includes":[["K1","G1","E1"]],
                 "inclstrict":true,
-                "i_cost":1175,
-                "r_cost":1250,
+                "i_cost":1410,
+                "r_cost":1500,
                 "option_code":"54C"
             },
             {
