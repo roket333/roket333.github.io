@@ -532,26 +532,6 @@
                 "name": "Front License Plate Bracket",
                 "nocost":true,
                 "option_code": "153"
-            },
-            {
-                "id": "17V",
-                "type":"option",
-                "name":"B&O Sound System Reduced Capacity Amplifier",
-                "requires":[["50C"],["200A","200AC"]],
-                "hidden":[["201A","201AC"]],
-                "i_cost":-94,
-                "r_cost":-100,
-                "option_code":"17V"
-            },
-            {
-                "id": "17V",
-                "type":"option",
-                "name":"B&O Sound System Reduced Capacity Amplifier",
-                "requires":[["201A","201AC"]],
-                "show":[["201A","201AC"]],
-                "i_cost":-94,
-                "r_cost":-100,
-                "option_code":"17V"
             }
         ]
     },
