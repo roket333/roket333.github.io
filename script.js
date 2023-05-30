@@ -223,3 +223,19 @@ function vincheck() {
     document.getElementById("vinresult").innerHTML = "Check bit invalid, corrected VIN<br>" + resultvin;
   }
 }
+
+function fppconvert() {
+  var startvalue = document.getElementById("fordpasspoints").value;
+  var resultvalue = 0;
+  var badvalue = false;
+  if(isNaN(startvalue)) {badvalue = true;}
+  if(!badvalue) {
+    resultvalue = (startvalue / 200);
+  }
+  if(badvalue) {
+    document.getElementById("fordpassdollars").innerHTML = "Not a number"
+  }
+  else if(!badvalue) {
+    document.getElementById("fordpassdollars").innerHTML = "Value: $" + resultvalue
+  }
+}
