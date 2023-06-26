@@ -139,6 +139,14 @@
         "content":"Here we go again, i've placed an order for a Mustang, this time a Dark Horse<br><img src=\"https://www.mustang7g.com/forums/attachments/1680646070678-png.561127/\" loading=\"lazy\" class=\"hugeimg\">",
         "edited":false,
         "edited_date":null,
+        "pinned":false
+    },
+    {
+        "title":"Dark Horse Build Date",
+        "date":"June 25th, 2023",
+        "content":"It's time! I've got a VIN and a build date! Let the countdown commence!!<br><div class=\"colortext\">Countdown to the build day<br><iframe class=\"colorimage\" src=\"https://free.timeanddate.com/countdown/i8brlgaf/n77/cf11/cm0/cu5/ct1/cs1/ca0/co0/cr0/ss0/cac000/cpc000/pct/tcfff/fs200/szw576/szh243/iso2023-07-31T00:00:00\" allowtransparency=\"true\" frameborder=\"0\" width=\"538\" height=\"69\"></iframe></div><br><br>Unfortunately, Ford's build and price is still a little weird and incomplete, so i can't show you how they say my Dark Horse will look. However, i've found pictures of my exact spec, and here they are!<br>Grabber Blue Metallic with the Handling Package and Grabber Blue brakes<br><img src=\"https://media.discordapp.net/attachments/345766847498420225/1119532983330811944/340310840_1191262811587445_3183804841843085748_n.jpg\" loading=\"lazy\" class=\"bigimg\"><img src=\"https://media.discordapp.net/attachments/345766847498420225/1119532983616020530/340156714_590861612998974_7097816564453768235_n.jpg\" loading=\"lazy\" class=\"bigimg\"><img src=\"https://media.discordapp.net/attachments/345766847498420225/1119532984052236288/340327503_3438696193065076_6916033947904512956_n.jpg\" loading=\"lazy\" class=\"bigimg\"><img src=\"https://media.discordapp.net/attachments/345766847498420225/1119532984278720522/340290606_5489685487799150_2224725779106825217_n.jpg\" loading=\"lazy\" class=\"bigimg\">",
+        "edited":false,
+        "edited_date":null,
         "pinned":true
     }
 ]
