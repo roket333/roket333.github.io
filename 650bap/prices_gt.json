@@ -64,7 +64,7 @@
             {
                 "id":"RH",
                 "type":"paint",
-                "name":"Splash Yellow Metallic",
+                "name":"Splash Yellow Metallic Tri-Coat",
                 "nocost":true,
                 "option_code": "RH"
             },
@@ -583,6 +583,13 @@
                 "i_cost":94,
                 "r_cost":100,
                 "option_code": "41H"
+            },
+            {
+                "id": "65U",
+                "type": "option",
+                "name": "Auto Stop/Start System",
+                "nocost": true,
+                "option_code": "65U"
             },
             {
                 "id": "153",
