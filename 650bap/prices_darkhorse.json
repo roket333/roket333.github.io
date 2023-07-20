@@ -256,6 +256,7 @@
                 "name":"Gas Guzzler Tax",
                 "i_cost":1300,
                 "r_cost":1300,
+                "cost_mod": [{"modid": "44U", "i_cost": 1000, "r_cost": 1000}],
                 "foreverselected":true,
                 "option_code":"L59"
             },
