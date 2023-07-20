@@ -65,7 +65,8 @@
                 "id":"RH",
                 "type":"paint",
                 "name":"Splash Yellow Metallic Tri-Coat",
-                "nocost":true,
+                "i_cost": 935,
+                "r_cost": 995,
                 "option_code": "RH"
             },
             {
