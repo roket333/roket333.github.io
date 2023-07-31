@@ -51,12 +51,19 @@ function newsplash() {
 function splashes() {
   fetch("./splashes.json").then((splashes) => { return splashes.json(); }).then((data) => {
     var random = Math.floor(Math.random() * (data.length + 1));
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
     //var random = 417;
     //get the json, then with the data, make a random number up to it's length, then set the HTML element with the id "splash" as a random line from the json data
     document.getElementById("splashbg").classList.remove("patbg");
     document.getElementById("splash").classList.remove("pattext");
     //remove the Peace and Tranquility stuff when getting a new splash
-    if (random == (data.length)) {
+    //console.log("Day: " + day + ", Month: " + month);
+    if (day == 5 && month == 9) {
+      var dc = Math.floor(Math.random() * 5)
+      if (dc == 1) {document.getElementById("splash").innerHTML = data[796]} else {document.getElementById("splash").innerHTML = data[random]}
+    } else if (random == (data.length)) {
       document.getElementById("splash").innerHTML = "Featuring " + (data.length + 1) + " splashes!"
       //this was a total pain to get working right
     } else if (random == 357) {
