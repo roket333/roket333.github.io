@@ -54,23 +54,32 @@ function splashes() {
     let date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
-    //var random = 417;
+    var tp = Math.floor(Math.random() * 5)
+    //var random = 800;
     //get the json, then with the data, make a random number up to it's length, then set the HTML element with the id "splash" as a random line from the json data
     document.getElementById("splashbg").classList.remove("patbg");
     document.getElementById("splash").classList.remove("pattext");
     //remove the Peace and Tranquility stuff when getting a new splash
     //console.log("Day: " + day + ", Month: " + month);
-    if (day == 5 && month == 9) {
-      var dc = Math.floor(Math.random() * 5)
-      if (dc == 1) {document.getElementById("splash").innerHTML = data[796]} else {document.getElementById("splash").innerHTML = data[random]}
-    } else if (random == (data.length)) {
+    //console.log(tp);
+    if (random == (data.length)) { //random ended up being the length of the splash list + 1, let's show this special splash showing how many there are
       document.getElementById("splash").innerHTML = "Featuring " + (data.length + 1) + " splashes!"
       //this was a total pain to get working right
-    } else if (random == 357) {
+    } 
+    else if (day == 5 && month == 9 && tp == 1) { //liar's day?
+      document.getElementById("splash").innerHTML = data[796];
+    } 
+    else if ((random == 800 || tp == 1) && day == 8 && month == 8) { //vore day splash which we should show if it's 8/8
+      document.getElementById("splash").innerHTML = data[800];
+    } 
+    else if ((random == 801 || tp == 1) && day == 31 && month == 3) { //trans day of visibility splash which should be shown on March 31st
+      document.getElementById("splash").innerHTML = data[801]
+    }
+    else if (random == 357) { //add an error to console if the splash is the one that says "no errors in console"
       console.error("nope, there's an error now!");
       document.getElementById("splash").innerHTML = data[random];
-      //add an error if the splash is "no errors in console"
-    } else if (random == 417) {
+    } 
+    else if (random == 417) { //it's time for Peace and Tranquility mode
       document.getElementById("splashbg").classList.add("patbg");
       document.getElementById("splash").classList.add("pattext");
       console.log("No one is around to help");
@@ -78,11 +87,8 @@ function splashes() {
       console.log("I need peace and tranquility");
       console.log("I don't have to prove myself to anyone");
       document.getElementById("splash").innerHTML = data[random];
-      //activate Peace and Tranquility background and text
-    } else if (random != 313) {
-      document.getElementById("splash").innerHTML = data[random];
-    } else splashes();
-    //special cases for splashes
+    } 
+    else if (random != 313) { document.getElementById("splash").innerHTML = data[random]; } else splashes(); //if "random" does not point to the splash that is not supposed to appear, work normally. note: this HAS to be last in order for things to work right
   });
 }
 
