@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Roket's Hub</title>
+    <link rel="stylesheet" href="./theme.css">
+    <meta name="author" content="Roket">
+    <meta name="description" content="A pretty cool website">
+    <!-- Open Graph Data stuff -->
+    <meta property="og:title" content="Roket's Hub">
+    <meta property="og:description" content="A pretty cool website">
+    <!-- Twitter stuff -->
+    <meta name="twitter:title" content="Roket's Hub">
+    <!-- Hopefully your browser supports png icons, else too bad, you don't get to see it -->
+    <!-- I'm not doing all that other icon stuff, screw Apple and their nonsense yet again -->
+    <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <script src="./mustangtools/mustangtools.js"></script>
+    <div class="biggertext">
+        <div class="center straybutton showcasecontainer">
+            <a class=colortext>Speedometer Correction (Tires)</a>
+            <br>
+            315/80R17 - ✅<br>37X12.5R17 - ❌
+            <br>
+            <div class="borderlessgrid doublewidegrid">
+                <p>Tire Width in MM:</p><input class="field2" id="tiresize_width" value="255" onkeypress="if(event.keyCode==13) tirecalc();">
+                <p>Tire Aspect Ratio:</p><input class="field2" id="tiresize_aspect" value="40" onkeypress="if(event.keyCode==13) tirecalc();">
+                <p>Wheel Diameter in IN:</p><input class="field2" id="tiresize_wdiam" value="19" onkeypress="if(event.keyCode==13) tirecalc();">
+            </div>
+            <button class="tgbutton" onclick="tirecalc()">Calculate</button>
+            <hr style="border: 3px solid #e5e5e5;">
+            Show results for
+            <div class="borderlessgrid doublewidegrid">
+                <button onclick="showoldtire()">2015-2019 Mustang</button>
+                <button onclick="shownewtire()">2020-2024 Mustang</button>
+            </div>
+            <div id="oldtlayout" style="display: none;">
+                <table class="center">
+                    <tr>
+                        <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
+                    </tr>
+                    <tr>
+                        <td>762-12-01</td><td>XXXX</td><td id="tiresize_result">XXXX</td><td>XXXX</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="newtlayout" style="display: none;">
+                <table class="center">
+                    <tr>
+                        <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
+                    </tr>
+                    <tr>
+                        <td>762-15-01</td><td>XXXX</td><td>XXXX</td><td id="tiresize_result_n1">XXXX</td>
+                    </tr>
+                    <tr>
+                        <td>762-15-02</td><td id="tiresize_result_n2">XXXX</td><td>XXXX</td><td>XXXX</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="center straybutton showcasecontainer">
+            <a class=colortext>Speedometer Correction (Differential)</a>
+            <br>
+            4.10 - ✅<br>4.10:1 - ❌
+            <div class="borderlessgrid doublewidegrid">
+                <p>Differential Ratio:</p><input class="field2" id="diffratio" value="3.55" onkeypress="if(event.keyCode==13) diffcalc();">
+            </div>
+            <button class="tgbutton" onclick="diffcalc()">Calculate</button>
+            <hr style="border: 3px solid #e5e5e5;">
+            Show results for
+            <div class="borderlessgrid doublewidegrid">
+                <button onclick="showolddiff()">2015-2019 Mustang</button>
+                <button onclick="shownewdiff()">2020-2024 Mustang</button>
+            </div>
+            <div id="olddlayout" style="display: none;">
+                <table class="center">
+                    <tr>
+                        <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
+                    </tr>
+                    <tr>
+                        <td>762-12-01</td><td id="diffcorrect1">XXXX</td><td>XXXX</td><td>XXXX</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="newdlayout" style="display: none;">
+                <table class="center">
+                    <tr>
+                        <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
+                    </tr>
+                    <tr>
+                        <td>762-15-01</td><td>XXXX</td><td id="diffcorrect2">XXXX</td><td>XXXX</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

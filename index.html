@@ -98,8 +98,7 @@
       <div class="aboutcontainer">
         <p class="bigtext">How did you make this site?</p>
         <hr style="border: 3px solid #e5e5e5;">
-        GitHub and coding knowledge, plus inspiration from a friend of mine who <a href="https://def-sa.github.io" target="_blank" rel="noopener noreferrer">also has a site you should check out</a><br>
-        just searching up stuff online also helped miles
+        GitHub and coding knowledge plus just searching up stuff online also helped miles
       </div>
       <div class="aboutcontainer">
         <p class="bigtext">Why do you do this stuff?</p>
@@ -154,28 +153,30 @@
     <div class="tabcontent" id="tabtools">
       <div class="maintext">
         Various tools i've made<br>
-        <div class="center straybutton showcasecontainer">
-        VIN Checker
-        <br>
-        <input class="field" id="vininput" value="" maxlength="17">
-        <button class="tgbutton" onclick="vincheck()">Check VIN</button>
-        <p id="vinresult">Result Here</p>
+        <div class="center straybutton">
+          <a href="./650bap.html" target="_blank" rel="noopener noreferrer">  
+            <button>Unofficial S650 Build and Price</button>  
+          </a>
         </div>
-        <br>
+        <div class="center straybutton">
+          <a href="./mustangtools.html" target="_blank" rel="noopener noreferrer">
+            <button>Various Mustang Tools and Utilities</button>
+          </a>
+        </div>
+        <div class="center straybutton showcasecontainer">
+          VIN Checker
+          <br>
+          <input class="field" id="vininput" value="" maxlength="17" onkeypress="if(event.keyCode==13) vincheck();">
+          <button class="tgbutton" onclick="vincheck()">Check VIN</button>
+          <p id="vinresult">Result Here</p>
+        </div>
         <div class="center straybutton showcasecontainer">
           Fordpass value
           <br>
-          <input class="field" id="fordpasspoints" value="0">
+          <input class="field" id="fordpasspoints" value="0" onkeypress="if(event.keyCode==13) fppconvert();">
           <button class="tgbutton" onclick="fppconvert()">Get Value</button>
           <p id="fordpassdollars">Result Here</p>
-          </div>
-          <div></div>
-          <div class="center straybutton">
-            <a href="./650bap.html" target="_blank" rel="noopener noreferrer">  
-              <button>Unofficial S650 Build and Price</button>  
-            </a>
-          </div>
-        <div></div>
+        </div>
       </div>
     </div>
 

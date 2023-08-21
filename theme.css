@@ -593,3 +593,41 @@ th, td {
 .selecteditem:active > label {
     color: #ffc100;
 }
+
+.borderlessgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, auto-fit);
+    grid-gap: 5px;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.doublewidegrid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5px;
+    min-width: 1fr;
+}
+
+.doublewidegrid > p {
+    margin: 5px;
+}
+
+.biggertext {
+    font-size:150%;
+}
+
+.field2 {
+    border: 5px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 4px 8px;
+    background-color: inherit;
+    font-family:prototype;
+    font-size: 100%;
+    text-align:center;
+    color:#e5e5e5;
+}

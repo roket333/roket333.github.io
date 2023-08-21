@@ -41,7 +41,7 @@ function getOptions(json, locationdiv) {
     //set "ready" to false to stop execution of everything, then clear out the location div to make sure everything will work right
     ready = false;
     document.getElementById(locationdiv).innerHTML = "";
-//get the json
+    //get the json
     fetch(json).then((jsondata) => { return jsondata.json(); }).then((data) => { 
     //for each group of data, make it in a new div
     data.forEach(group => {
