@@ -168,9 +168,9 @@
     {
         "title":"A Second Post!!!",
         "date":"August 17th, 2023",
-        "content":"oh boy! a second post in one day!<br>this will mainly cover a new update on my Dark Horse, it is built and awaiting shipment!<br>bonus stuff: i will likely be attending Vancoufur 2024",
-        "edited":false,
-        "edited_date":null,
+        "content":"oh boy! a second post in one day!<br>this will mainly cover a new update on my Dark Horse, it is built and awaiting shipment!<br>update as of 8/23, it's shipped with an estimated delivery of the week of 9/10<br><br>bonus stuff: i will likely be attending Vancoufur 2024",
+        "edited":true,
+        "edited_date":"August 23rd, 2023",
         "pinned":false
     }
 ]
