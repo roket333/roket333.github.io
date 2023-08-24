@@ -19,15 +19,16 @@
   <body>
     <script src="./mustangtools/mustangtools.js"></script>
     <div class="biggertext">
+        <!--Tire Speedometer Correction Tool-->
         <div class="center straybutton showcasecontainer">
             <a class=colortext>Speedometer Correction (Tires)</a>
-            <br>
+            <hr style="border: 3px solid #e5e5e5;">
             315/80R17 - ✅<br>37X12.5R17 - ❌
             <br>
             <div class="borderlessgrid doublewidegrid">
-                <p>Tire Width in MM:</p><input class="field2" id="tiresize_width" value="255" onkeypress="if(event.keyCode==13) tirecalc();">
-                <p>Tire Aspect Ratio:</p><input class="field2" id="tiresize_aspect" value="40" onkeypress="if(event.keyCode==13) tirecalc();">
-                <p>Wheel Diameter in IN:</p><input class="field2" id="tiresize_wdiam" value="19" onkeypress="if(event.keyCode==13) tirecalc();">
+                <p>Tire Width in MM:</p><input class="field" id="tiresize_width" value="255" onkeypress="if(event.keyCode==13) tirecalc();">
+                <p>Tire Aspect Ratio:</p><input class="field" id="tiresize_aspect" value="40" onkeypress="if(event.keyCode==13) tirecalc();">
+                <p>Wheel Diameter in IN:</p><input class="field" id="tiresize_wdiam" value="19" onkeypress="if(event.keyCode==13) tirecalc();">
             </div>
             <button class="tgbutton" onclick="tirecalc()">Calculate</button>
             <hr style="border: 3px solid #e5e5e5;">
@@ -60,12 +61,14 @@
                 </table>
             </div>
         </div>
+
+        <!--Differential Speedometer Correction Tool-->
         <div class="center straybutton showcasecontainer">
             <a class=colortext>Speedometer Correction (Differential)</a>
-            <br>
+            <hr style="border: 3px solid #e5e5e5;">
             4.10 - ✅<br>4.10:1 - ❌
             <div class="borderlessgrid doublewidegrid">
-                <p>Differential Ratio:</p><input class="field2" id="diffratio" value="3.55" onkeypress="if(event.keyCode==13) diffcalc();">
+                <p>Differential Ratio:</p><input class="field" id="diffratio" value="3.55" onkeypress="if(event.keyCode==13) diffcalc();">
             </div>
             <button class="tgbutton" onclick="diffcalc()">Calculate</button>
             <hr style="border: 3px solid #e5e5e5;">
@@ -91,6 +94,112 @@
                     </tr>
                     <tr>
                         <td>762-15-01</td><td>XXXX</td><td id="diffcorrect2">XXXX</td><td>XXXX</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--Module Address List-->
+        <div class="center straybutton showcasecontainer">
+            <a class="colortext">Module Address List</a>
+            <hr style="border: 3px solid #e5e5e5;">
+            <div id="modulelist">
+                <table class="center">
+                    <tr>
+                        <th>Short Name</th><th>Module Address</th><th>Full Name</th>
+                    </tr>
+                    <tr>
+                        <th>ABS</th><th>760</th><th>Anti-Lock Brake System</th>
+                    </tr>
+                    <tr>
+                        <th>ACM</th><th>727</th><th>Audio Front Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>APIM</th><th>7D0</th><th>Accessory Protocol Interface Module (SYNC)</th>
+                    </tr>
+                    <tr>
+                        <th>BCM</th><th>726</th><th>Body Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>BCMB</th><th>7B7</th><th>Body Control Module B</th>
+                    </tr>
+                    <tr>
+                        <th>BCMC</th><th>6F0</th><th>Body Control Module C</th>
+                    </tr>
+                    <tr>
+                        <th>CCM</th><th>764</th><th>Cruise Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>DDM</th><th>740</th><th>Driver Door Module</th>
+                    </tr>
+                    <tr>
+                        <th>DSM</th><th>744</th><th>Driver Front Seat Module</th>
+                    </tr>
+                    <tr>
+                        <th>DSP</th><th>783</th><th>Audio Digital Signal Processing Module</th>
+                    </tr>
+                    <tr>
+                        <th>GWM</th><th>716</th><th>Gateway Module</th>
+                    </tr>
+                    <tr>
+                        <th>HCM</th><th>734</th><th>Headlamp Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>HVAC</th><th>733</th><th>Heating, Ventilation, and Air Conditioning Module</th>
+                    </tr>
+                    <tr>
+                        <th>IPC</th><th>720</th><th>Instrument Panel Cluster</th>
+                    </tr>
+                    <tr>
+                        <th>IPMA</th><th>706</th><th>Image Processing Module A</th>
+                    </tr>
+                    <tr>
+                        <th>LDCMA</th><th>7F6</th><th>Lighting Driver Control Module A</th>
+                    </tr>
+                    <tr>
+                        <th>LDCMB</th><th>7F7</th><th>Lighting Driver Control Module B</th>
+                    </tr>
+                    <tr>
+                        <th>MRCMA</th><th>790</th><th>Movable Roof Control Module A</th>
+                    </tr>
+                    <tr>
+                        <th>MRCMB</th><th>7B0</th><th>Movable Roof Control Module B</th>
+                    </tr>
+                    <tr>
+                        <th>OCSM</th><th>765</th><th>Occupant Classification System Module</th>
+                    </tr>
+                    <tr>
+                        <th>PCM</th><th>7E0</th><th>Powertrain Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>PDM</th><th>741</th><th>Passenger Door Module</th>
+                    </tr>
+                    <tr>
+                        <th>PSCM</th><th>730</th><th>Power Steering Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>RCM</th><th>737</th><th>Restraints Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>RTM</th><th>751</th><th>Radio Transceiver Module</th>
+                    </tr>
+                    <tr>
+                        <th>SCCM</th><th>724</th><th>Steering Column Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>SODL</th><th>7C4</th><th>Side Obstacle Detection Control Module LH</th>
+                    </tr>
+                    <tr>
+                        <th>SODR</th><th>7C6</th><th>Side Obstacle Detection Control Module RH</th>
+                    </tr>
+                    <tr>
+                        <th>TCU</th><th>754</th><th>Telematics Control Unit Module</th>
+                    </tr>
+                    <tr>
+                        <th>VDM</th><th>721</th><th>Vehicle Dynamics Control Module</th>
+                    </tr>
+                    <tr>
+                        <th>WACM</th><th>725</th><th>Wireless Accessory Charging Module</th>
                     </tr>
                 </table>
             </div>

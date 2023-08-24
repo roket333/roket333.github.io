@@ -613,21 +613,16 @@ th, td {
     min-width: 1fr;
 }
 
-.doublewidegrid > p {
+.triplewidegrid {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 5px;
+    min-width: 1fr;
+}
+
+.doublewidegrid > p, .triplewidegrid > p {
     margin: 5px;
 }
 
 .biggertext {
     font-size:150%;
-}
-
-.field2 {
-    border: 5px solid #e5e5e5;
-    border-radius: 10px;
-    padding: 4px 8px;
-    background-color: inherit;
-    font-family:prototype;
-    font-size: 100%;
-    text-align:center;
-    color:#e5e5e5;
 }
