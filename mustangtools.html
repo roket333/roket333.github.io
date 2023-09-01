@@ -30,7 +30,7 @@
                 <p>Tire Aspect Ratio:</p><input class="field" id="tiresize_aspect" value="40" onkeypress="if(event.keyCode==13) tirecalc();">
                 <p>Wheel Diameter in IN:</p><input class="field" id="tiresize_wdiam" value="19" onkeypress="if(event.keyCode==13) tirecalc();">
             </div>
-            <button class="tgbutton" onclick="tirecalc()">Calculate</button>
+            <button onclick="tirecalc()">Calculate</button>
             <hr style="border: 3px solid #e5e5e5;">
             Show results for
             <div class="borderlessgrid doublewidegrid">
@@ -70,7 +70,7 @@
             <div class="borderlessgrid doublewidegrid">
                 <p>Differential Ratio:</p><input class="field" id="diffratio" value="3.55" onkeypress="if(event.keyCode==13) diffcalc();">
             </div>
-            <button class="tgbutton" onclick="diffcalc()">Calculate</button>
+            <button onclick="diffcalc()">Calculate</button>
             <hr style="border: 3px solid #e5e5e5;">
             Show results for
             <div class="borderlessgrid doublewidegrid">
@@ -98,8 +98,102 @@
                 </table>
             </div>
         </div>
+        <br>
+
+        <!--Custom Mode Total Customization-->
+        <div class="center straybutton showcasecontainer">
+            <a class="colortext">Full Custom Mode Customization (Non-Functional)</a>
+            <hr style="border: 3px solid #e5e5e5;">
+            <div>
+                <select id="hasmag" name="hasmag" onchange="checkmag()">
+                    <option value="0">No Magneride</option>
+                    <option value="1">Yes Magneride</option>
+                </select>
+                <select id="hasae" name="hasae" onchange="checkae()">
+                    <option value="0">No Active Exhaust</option>
+                    <option value="1">Yes Active Exhaust</option>
+                </select>
+                <select id="hasass" name="hasass" onchange="checkass()">
+                    <option value="0">No Auto StartStop</option>
+                    <option value="1">Yes Auto StartStop</option>
+                </select>
+                <div class="borderlessgrid quadwidegrid">
+                    <p>Profile Number:</p>
+                    <select id="slotnum" name="slotnum">
+                        <option value="0">Profile 1</option>
+                        <option value="1">Profile 2</option>
+                        <option value="2">Profile 3</option>
+                        <option value="3">Profile 4</option>
+                        <option value="4">Profile 5</option>
+                        <option value="5">Profile 6</option>
+                    </select>
+                    <p>Base Drive Mode:</p>
+                    <select id="basemode" name="basemode">
+                        <option value="0">Normal</option>
+                        <option value="1">Sport</option>
+                        <option value="2">Track</option>
+                        <option value="3">Drag</option>
+                        <option value="4">Slippery</option>
+                    </select>
+                    <p id="magsusp">Magneride Mode:</p>
+                    <select id="magsus" name="magsus">
+                        <option value="0">Normal</option>
+                        <option value="1">Sport</option>
+                        <option value="2">Track</option>
+                        <option value="3">Drag</option>
+                    </select>
+                    <p>Steering Mode:</p>
+                    <select id="steering" name="steering">
+                        <option value="0">Normal</option>
+                        <option value="1">Sport</option>
+                        <option value="2">Sport+</option>
+                        <option value="3">Track</option>
+                        <option value="4">Comfort</option>
+                    </select>
+                    <p>Traction Control:</p>
+                    <select id="traction" name="traction">
+                        <option value="0">On</option>
+                        <option value="1">Off</option>
+                    </select>
+                    <p id="actexhp">Active Exhaust Mode:</p>
+                    <select id="actexh" name="actexh">
+                        <option value="0">Normal</option>
+                        <option value="1">Sport</option>
+                        <option value="2">Track</option>
+                        <option value="3">Quiet</option>
+                    </select>
+                    <p id="assp">Auto StartStop:</p>
+                    <select id="ass" name="ass">
+                        <option value="0">On</option>
+                        <option value="1">Off</option>
+                    </select>
+                    <p>Cluster Theme:</p>
+                    <select id="cluster" name="cluster">
+                        <option value="0">Normal</option>
+                        <option value="1">Sport</option>
+                        <option value="2">Track</option>
+                        <option value="3">Calm</option>
+                        <option value="4">Foxbody</option>
+                    </select>
+                </div>
+                <hr style="border: 3px solid #e5e5e5;">
+                <div class="borderlessgrid"><button onclick="makecustommode()">Create Custom Mode</button></div>
+                <div id="custommoderesults" style="display: none;">
+                    <table class="center">
+                        <tr>
+                            <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
+                        </tr>
+                        <tr>
+                            <td>???-??-??</td><td>XXXX</td><td>XXXX</td><td>XXXX</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
 
         <!--Module Address List-->
+        <br>
         <div class="center straybutton showcasecontainer">
             <a class="colortext">Module Address List</a>
             <hr style="border: 3px solid #e5e5e5;">

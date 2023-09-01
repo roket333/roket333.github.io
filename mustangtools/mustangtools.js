@@ -1,4 +1,10 @@
 //show and hide the tables for the appropriate button pressed
+window.onload = function() {
+    checkmag();
+    checkae();
+    checkass();
+}
+
 function showoldtire() {
     document.getElementById("oldtlayout").style.display = "block";
     document.getElementById("newtlayout").style.display = "none";
@@ -17,6 +23,24 @@ function showolddiff() {
 function shownewdiff() {
     document.getElementById("olddlayout").style.display = "none";
     document.getElementById("newdlayout").style.display = "block";
+}
+
+function checkmag() {
+    magvalue = document.getElementById("hasmag").value;
+    if(magvalue == 0) {document.getElementById("magsus").style.display = "none"; document.getElementById("magsusp").style.display = "none"}
+    else if(magvalue == 1) {document.getElementById("magsus").style.display = "block"; document.getElementById("magsusp").style.display = "block"}
+}
+
+function checkae() {
+    magvalue = document.getElementById("hasae").value;
+    if(magvalue == 0) {document.getElementById("actexh").style.display = "none"; document.getElementById("actexhp").style.display = "none"}
+    else if(magvalue == 1) {document.getElementById("actexh").style.display = "block"; document.getElementById("actexhp").style.display = "block"}
+}
+
+function checkass() {
+    magvalue = document.getElementById("hasass").value;
+    if(magvalue == 0) {document.getElementById("ass").style.display = "none"; document.getElementById("assp").style.display = "none"}
+    else if(magvalue == 1) {document.getElementById("ass").style.display = "block"; document.getElementById("assp").style.display = "block"}
 }
 
 //calculate the tire value
@@ -44,4 +68,9 @@ function diffcalc() {
     var hexdiff = parseInt(intdiff).toString(16).padStart(4,0).toUpperCase(); //convert it to a number, then back to a string but now base16, pad it again, and make it uppercase
     document.getElementById("diffcorrect1").innerHTML = hexdiff; document.getElementById("diffcorrect2").innerHTML = hexdiff;
     //console.log("dec: " + decdiff + ", hex: " + hexdiff + ", int: " + intdiff);
+}
+
+//make the custom mode
+function makecustommode() {
+    document.getElementById("custommoderesults").style.display = "block"
 }
