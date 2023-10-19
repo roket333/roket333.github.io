@@ -45,7 +45,7 @@ function checkass() {
 
 //calculate the tire value
 function tirecalc() {
-    //calculate the tire circumference, multiply it by 0.96822, then convert it to hex
+    //calculate the tire circumference, multiply it by 0.967, then convert it to hex
     var tirewidth = document.getElementById("tiresize_width").value;
     var tireaspect = document.getElementById("tiresize_aspect").value / 100; //convert the aspect ratio into a tenths
     var wheeldiam = document.getElementById("tiresize_wdiam").value;

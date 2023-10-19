@@ -650,10 +650,26 @@ select, option {
 
 select:hover, option:hover {
     background-color: #707070;
+    transition: 0.3s;
 }
 
-select:active, option:active {
+select:active, option:active, select:checked, option:checked {
     background-color: #e5e5e5;
     color: #ffc100;
     border-color: #ffc100;
+    transition: 0.3s;
+}
+
+select optgroup {
+    font-style: normal;
+    background-color: #e5e5e5;
+    color: #ffc100;
+}
+
+.pushright {
+    justify-self: right;
+}
+
+.pushleft {
+    justify-self: left;
 }

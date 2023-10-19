@@ -55,7 +55,7 @@ function splashes() {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     var tp = Math.floor(Math.random() * 5)
-    //var random = 800;
+    //var random = 902;
     //get the json, then with the data, make a random number up to it's length, then set the HTML element with the id "splash" as a random line from the json data
     document.getElementById("splashbg").classList.remove("patbg");
     document.getElementById("splash").classList.remove("pattext");

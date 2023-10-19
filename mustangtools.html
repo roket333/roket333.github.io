@@ -43,7 +43,7 @@
                         <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
                     </tr>
                     <tr>
-                        <td>762-12-01</td><td>XXXX</td><td id="tiresize_result">XXXX</td><td>XXXX</td>
+                        <td>726-12-01</td><td>XXXX</td><td id="tiresize_result">XXXX</td><td>XXXX</td>
                     </tr>
                 </table>
             </div>
@@ -53,10 +53,10 @@
                         <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
                     </tr>
                     <tr>
-                        <td>762-15-01</td><td>XXXX</td><td>XXXX</td><td id="tiresize_result_n1">XXXX</td>
+                        <td>726-15-01</td><td>XXXX</td><td>XXXX</td><td id="tiresize_result_n1">XXXX</td>
                     </tr>
                     <tr>
-                        <td>762-15-02</td><td id="tiresize_result_n2">XXXX</td><td>XXXX</td><td>XXXX</td>
+                        <td>726-15-02</td><td id="tiresize_result_n2">XXXX</td><td>XXXX</td><td>XXXX</td>
                     </tr>
                 </table>
             </div>
@@ -83,7 +83,7 @@
                         <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
                     </tr>
                     <tr>
-                        <td>762-12-01</td><td id="diffcorrect1">XXXX</td><td>XXXX</td><td>XXXX</td>
+                        <td>726-12-01</td><td id="diffcorrect1">XXXX</td><td>XXXX</td><td>XXXX</td>
                     </tr>
                 </table>
             </div>
@@ -93,7 +93,7 @@
                         <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
                     </tr>
                     <tr>
-                        <td>762-15-01</td><td>XXXX</td><td id="diffcorrect2">XXXX</td><td>XXXX</td>
+                        <td>726-15-01</td><td>XXXX</td><td id="diffcorrect2">XXXX</td><td>XXXX</td>
                     </tr>
                 </table>
             </div>
@@ -117,9 +117,31 @@
                     <option value="0">No Auto StartStop</option>
                     <option value="1">Yes Auto StartStop</option>
                 </select>
+                <br>
+                <div class="borderlessgrid triplewidegrid">
+                    <p class="pushright">Presets:</p>
+                    <select id="presets" name="presets">
+                        <optgroup label="Ford Drive Modes">
+                            <!--format for values, 8 characters with "/" between them, either pointing to the desired value, or "D" to not change the current value-->
+                            <!--1st is profile number, 2nd is base drive mode, 3rd is magneride mode, 4th is steering, 5th is traction control, 6th is active exhaust, 7th is autostopstart, 8th is cluster theme-->
+                            <option value="D/0/0/D/0/0/0/D">Normal</option>
+                            <option value="D/1/1/2/0/1/1/1">Sport</option>
+                            <option value="D/2/2/3/1/2/1/2">Track</option>
+                            <option value="D/3/3/3/0/3/1/2">Drag</option>
+                            <option value="D/4/0/D/0/0/0/D">Slippery</option>
+                        </optgroup>
+                        <optgroup label="Custom Presets">
+                            <option value="D/4/D/D/0/D/0/D">10 Miles To E</option>
+                            <option value="D/1/2/3/0/2/1/1">Sport+</option>
+                            <option value="D/4/0/4/0/3/0/3">Chill</option>
+                        </optgroup>
+                    </select>
+                    <button class="pushleft">Apply Preset</button>
+                </div>
+                <hr style="border: 3px solid #e5e5e5;">
                 <div class="borderlessgrid quadwidegrid">
-                    <p>Profile Number:</p>
-                    <select id="slotnum" name="slotnum">
+                    <p class="pushright">Profile Number:</p>
+                    <select class="pushleft" id="slotnum" name="slotnum">
                         <option value="0">Profile 1</option>
                         <option value="1">Profile 2</option>
                         <option value="2">Profile 3</option>
@@ -127,48 +149,48 @@
                         <option value="4">Profile 5</option>
                         <option value="5">Profile 6</option>
                     </select>
-                    <p>Base Drive Mode:</p>
-                    <select id="basemode" name="basemode">
+                    <p class="pushright">Base Drive Mode:</p>
+                    <select class="pushleft" id="basemode" name="basemode">
                         <option value="0">Normal</option>
                         <option value="1">Sport</option>
                         <option value="2">Track</option>
                         <option value="3">Drag</option>
                         <option value="4">Slippery</option>
                     </select>
-                    <p id="magsusp">Magneride Mode:</p>
-                    <select id="magsus" name="magsus">
+                    <p class="pushright" id="magsusp">Magneride Mode:</p>
+                    <select class="pushleft" id="magsus" name="magsus">
                         <option value="0">Normal</option>
                         <option value="1">Sport</option>
                         <option value="2">Track</option>
                         <option value="3">Drag</option>
                     </select>
-                    <p>Steering Mode:</p>
-                    <select id="steering" name="steering">
+                    <p class="pushright">Steering Mode:</p>
+                    <select class="pushleft" id="steering" name="steering">
                         <option value="0">Normal</option>
                         <option value="1">Sport</option>
                         <option value="2">Sport+</option>
                         <option value="3">Track</option>
                         <option value="4">Comfort</option>
                     </select>
-                    <p>Traction Control:</p>
-                    <select id="traction" name="traction">
+                    <p class="pushright">Traction Control:</p>
+                    <select class="pushleft" id="traction" name="traction">
                         <option value="0">On</option>
                         <option value="1">Off</option>
                     </select>
-                    <p id="actexhp">Active Exhaust Mode:</p>
-                    <select id="actexh" name="actexh">
+                    <p class="pushright" id="actexhp">Active Exhaust Mode:</p>
+                    <select class="pushleft" id="actexh" name="actexh">
                         <option value="0">Normal</option>
                         <option value="1">Sport</option>
                         <option value="2">Track</option>
                         <option value="3">Quiet</option>
                     </select>
-                    <p id="assp">Auto StartStop:</p>
-                    <select id="ass" name="ass">
+                    <p class="pushright" id="assp">Auto StartStop:</p>
+                    <select class="pushleft" id="ass" name="ass">
                         <option value="0">On</option>
                         <option value="1">Off</option>
                     </select>
-                    <p>Cluster Theme:</p>
-                    <select id="cluster" name="cluster">
+                    <p class="pushright">Cluster Theme:</p>
+                    <select class="pushleft" id="cluster" name="cluster">
                         <option value="0">Normal</option>
                         <option value="1">Sport</option>
                         <option value="2">Track</option>
