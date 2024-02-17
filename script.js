@@ -48,18 +48,28 @@ function newsplash() {
   },250);
 }
 
-function splashes() {
+function splashes(override) {
   fetch("./splashes.json").then((splashes) => { return splashes.json(); }).then((data) => {
     var random = Math.floor(Math.random() * (data.length + 1));
     let date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
     var tp = Math.floor(Math.random() * 5)
-    //var random = 902;
+    if(override && !override.isNaN) {
+      var random = override
+    }
+    //var random = 944;
+    //var random = Math.floor((Math.random() * 3)+ 920)
+    //console.log(random)
     //get the json, then with the data, make a random number up to it's length, then set the HTML element with the id "splash" as a random line from the json data
     document.getElementById("splashbg").classList.remove("patbg");
     document.getElementById("splash").classList.remove("pattext");
-    //remove the Peace and Tranquility stuff when getting a new splash
+    document.getElementById("splashbg").classList.remove("fsfbg");
+    document.getElementById("splash").classList.remove("fsftext");
+    document.getElementById("splashbg").classList.remove("fsfps3bg");
+    document.getElementById("splash").classList.remove("fsfps3text");
+    document.getElementById("splash").classList.remove("bombplanted");
+    //remove the Peace and Tranquility and Free Speech Flag stuff when getting a new splash
     //console.log("Day: " + day + ", Month: " + month);
     //console.log(tp);
     if (random == (data.length)) { //random ended up being the length of the splash list + 1, let's show this special splash showing how many there are
@@ -88,6 +98,20 @@ function splashes() {
       console.log("I don't have to prove myself to anyone");
       document.getElementById("splash").innerHTML = data[random];
     } 
+    else if (random == 921) { //free speech flag time baybeee
+      document.getElementById("splashbg").classList.add("fsfbg");
+      document.getElementById("splash").classList.add("fsftext");
+      document.getElementById("splash").innerHTML = data[random];
+    }
+    else if (random == 922) { //free speech flag time baybeee
+      document.getElementById("splashbg").classList.add("fsfps3bg");
+      document.getElementById("splash").classList.add("fsfps3text");
+      document.getElementById("splash").innerHTML = data[random];
+    }
+    else if (random == 937) {
+      document.getElementById("splash").classList.add("bombplanted");
+      document.getElementById("splash").innerHTML = data[random];
+    }
     else if (random != 313) { document.getElementById("splash").innerHTML = data[random]; } else splashes(); //if "random" does not point to the splash that is not supposed to appear, work normally. note: this HAS to be last in order for things to work right
   });
 }
