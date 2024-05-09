@@ -32,15 +32,15 @@ function checkmag() {
 }
 
 function checkae() {
-    magvalue = document.getElementById("hasae").value;
-    if(magvalue == 0) {document.getElementById("actexh").style.display = "none"; document.getElementById("actexhp").style.display = "none"}
-    else if(magvalue == 1) {document.getElementById("actexh").style.display = "block"; document.getElementById("actexhp").style.display = "block"}
+    aevalue = document.getElementById("hasae").value;
+    if(aevalue == 0) {document.getElementById("actexh").style.display = "none"; document.getElementById("actexhp").style.display = "none"}
+    else if(aevalue == 1) {document.getElementById("actexh").style.display = "block"; document.getElementById("actexhp").style.display = "block"}
 }
 
 function checkass() {
-    magvalue = document.getElementById("hasass").value;
-    if(magvalue == 0) {document.getElementById("ass").style.display = "none"; document.getElementById("assp").style.display = "none"}
-    else if(magvalue == 1) {document.getElementById("ass").style.display = "block"; document.getElementById("assp").style.display = "block"}
+    assvalue = document.getElementById("hasass").value;
+    if(assvalue == 0) {document.getElementById("ass").style.display = "none"; document.getElementById("assp").style.display = "none"}
+    else if(assvalue == 1) {document.getElementById("ass").style.display = "block"; document.getElementById("assp").style.display = "block"}
 }
 
 //calculate the tire value
@@ -56,6 +56,8 @@ function tirecalc() {
     //console.log(finalcirc);
     var hexcirc = parseInt(finalcirc).toString(16).padStart(4,0).toUpperCase(); //convert the new circumference to an int, then convert it to base16, pad it, and make it uppercase
     document.getElementById("tiresize_result").innerHTML = hexcirc;
+    document.getElementById("tiresize_result_mm1").innerHTML = finalcirc;
+    document.getElementById("tiresize_result_mm2").innerHTML = finalcirc;
     document.getElementById("tiresize_result_n1").innerHTML = hexcirc.slice(0,2) + "XX";
     document.getElementById("tiresize_result_n2").innerHTML = hexcirc.slice(2,4) + "XX";
 }
