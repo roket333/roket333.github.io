@@ -2,6 +2,7 @@ window.onload = function() {
   splashes();
   document.getElementById("default").click();
   loadblogposts();
+  loaddevblogposts();
 
   //hide the loading screen and show the actual site
   document.getElementById("site").style.display = "block";
@@ -275,4 +276,93 @@ function fppconvert() {
   else if(!badvalue) {
     document.getElementById("fordpassdollars").innerHTML = "Value: $" + resultvalue
   }
+}
+
+function loaddevblogposts() {
+  var postDateString;
+  fetch("./devblog/posts.json")
+  .then((posts) => { return posts.json(); })
+  .then((data) => {
+    //get the json of blog posts
+
+    if (data.length == 0) {
+      let postdiv = document.createElement("div");
+      postdiv.classList.add("blogpost");
+      weird = document.createElement("p");
+      weird.classList.add("maintext");
+      weird.innerHTML = "This is weird and shouldn't be happening<br>There's either no blog posts or something has gone wrong"
+      postdiv.appendChild(weird);
+      document.getElementById("blogdevposts").appendChild(postdiv);
+      //so, somehow something weird happened and posts aren't working, so let's display this message in that case
+    } else {
+      data.forEach(post => {
+
+        postTitle = post.title; //title
+        postDate = post.date; //date it was posted
+        postEdited = post.edited; //was it edited?
+        postEditDate = post.edited_date; //date it was edited
+        postContent = post.content; //actual content of the post
+        postPinned = post.pinned; //is the post pinned to the top?
+        //for each post, get the title, date, weather or not it's been edited, edit date, and content
+
+        if (postTitle != undefined && postDate != undefined && postEdited != undefined && postContent != undefined) {
+
+          let postdiv = document.createElement("div");
+          if (postPinned) {
+            postdiv.classList.add("pinnedblogpost");
+          } else {
+            postdiv.classList.add("blogpost");
+          }
+          //make the actual post div and add the class "blogpost" to it unless it's pinned, then add "pinnedblogpost" so it can be colored
+
+          if (postEdited) {
+            postDateString = "Posted on " + postDate + ", edited on " + postEditDate
+          } else {
+            postDateString = "Posted on " + postDate
+          }
+          //get the post date ready, if it's been editied add that too
+
+          //if the post is pinned, add the text for it
+          if (postPinned) {
+            pinned = document.createElement("p");
+            pinned.classList.add("postdate");
+            pinned.innerHTML = "Pinned Post";
+          }
+          title = document.createElement("p");
+          title.classList.add("postitle");
+          title.innerHTML = postTitle;
+          date = document.createElement("p");
+          date.classList.add("postdate");
+          date.innerHTML = postDateString;
+          splitter = document.createElement("hr");
+          splitter.style.cssText += "border: 3px solid #e5e5e5;";
+          content = document.createElement("p");
+          content.classList.add("postcontent");
+          content.innerHTML = postContent;
+          //create all the text and assign it
+
+          //add the pinned text
+          if (postPinned) {
+            postdiv.appendChild(pinned); 
+          }
+          postdiv.appendChild(title);
+          postdiv.appendChild(date);
+          postdiv.appendChild(splitter);
+          postdiv.appendChild(content);
+          //add all the text we just made to the div
+
+          if (postPinned) {
+            document.getElementById("pinneddevposts").prepend(postdiv); 
+          } else {
+            document.getElementById("blogdevposts").prepend(postdiv);
+          }
+          //using prepend instead of append allows me to build posts.json in a way that makes sense
+          //add the post to the top of the div where they will all live happily ever after the end :)
+        } else {
+          console.error("There was a problem with one of the posts, so it is not displayed");
+          //some vital part of the blog post was not filled out, so instead of showing a broken post, let's just not show it and print this error to console
+        }
+      });
+    }
+  });
 }

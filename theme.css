@@ -94,6 +94,34 @@ a:visited, a:hover {
     100%{color: #ffc100;}
 }
 
+@keyframes colors {
+    /*making text go from amber to gold and back*/
+    0%{color: #ffc100;}
+    50%{color: #ffaa00;}
+    100%{color: #ffc100;}
+}
+
+@keyframes colorsbg {
+    /*making text go from amber to gold and back*/
+    0%{background-color: #ffc100;}
+    50%{background-color: #ffaa00;}
+    100%{background-color: #ffc100;}
+}
+
+@keyframes colorsborder {
+    /*making text go from amber to gold and back*/
+    0%{border-color: #ffc100;}
+    50%{border-color: #ffaa00;}
+    100%{border-color: #ffc100;}
+}
+
+@keyframes colorsbutton {
+    /*making text go from amber to gold and back*/
+    0%{color: #ffc100; border-color: #ffc100;}
+    50%{color: #ffaa00; border-color: #ffaa00;}
+    100%{color: #ffc100; border-color: #ffc100;}
+}
+
 .splash {
     /*container for the splash box*/
     border: 5px solid #e5e5e5;
@@ -146,7 +174,8 @@ a:visited, a:hover {
 }
 
 .tablist button.active {
-    color: #ffc100;
+    animation: colors 2s ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 .tablist button:hover {
@@ -155,8 +184,8 @@ a:visited, a:hover {
 
 .tablist button:active{
     background-color: #e5e5e5;
-    color: #ffc100;
-    border-color: #ffc100;
+    animation: colorsbutton 2s ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 .tabcontent {
@@ -481,8 +510,8 @@ th, td {
 
 .straybutton button:active {
     background-color: #e5e5e5;
-    color: #ffc100;
-    border-color: #ffc100;
+    animation: colorsbutton 2s ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 .field {
@@ -732,4 +761,47 @@ select optgroup {
 .bombplanted {
     animation: bombhasbeenplanted 1s ease;
     animation-iteration-count: infinite;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background-color: #3b3b3b;
+    border: 2.5px solid #e5e5e5;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    transition: 0.3s;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+    background-color: #707070;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    background-color: #707070;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+    background-color: #e5e5e5;
+    border-color: #ffc100;
+}
+
+input[type="range"]::-moz-range-progress {
+    animation: colorsbg 2s ease;
+    animation-iteration-count: infinite;
+    border: 2.5px solid #e5e5e5;
+    border-radius: 5px;
+    height: 10px;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #3b3b3b;
+    height: 10px;
+    border: 2.5px solid #e5e5e5;
+    border-radius: 5px;
 }

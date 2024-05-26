@@ -38,7 +38,8 @@
       <button class="tablinks" onclick="openTab(event, 'tabinfo')">Info</button>
       <button class="tablinks" onclick="openTab(event, 'tabprojects')">Projects</button>
       <button class="tablinks" onclick="openTab(event, 'tabworks')">Works</button>
-      <button class="tablinks" onclick="openTab(event, 'tabblog')">Blog</button>
+      <button class="tablinks" onclick="openTab(event, 'tabpersblog')">Personal Blog</button>
+      <button class="tablinks" onclick="openTab(event, 'tabdevblog')">Dev Blog</button>
       <button class="tablinks" onclick="openTab(event, 'tabtools')">Tools</button>
     </div>
     <!-- End of tabs -->
@@ -142,12 +143,21 @@
     </div>
 
     <!-- Blog tab -->
-    <div class="tabcontent" id="tabblog">
+    <div class="tabcontent" id="tabpersblog">
       <div class="maintext">
-        My blog<br>Here is where I will post stuff I want and keep people updated on what's happening
+        My Personal Blog<br>Here is where I will post stuff I want and keep people updated on what's happening
       </div>
       <div id="pinnedposts" class="center"></div>
       <div id="blogposts" class="center"></div>
+    </div>
+    
+    <!-- Blog tab -->
+    <div class="tabcontent" id="tabdevblog">
+      <div class="maintext">
+        My Development Blog<br>This is where I will post about any game development stuff
+      </div>
+      <div id="pinneddevposts" class="center"></div>
+      <div id="blogdevposts" class="center"></div>
     </div>
 
     <!-- Tools tab -->
