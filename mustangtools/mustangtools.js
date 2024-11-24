@@ -56,8 +56,8 @@ function tirecalc() {
     //console.log(finalcirc);
     var hexcirc = parseInt(finalcirc).toString(16).padStart(4,0).toUpperCase(); //convert the new circumference to an int, then convert it to base16, pad it, and make it uppercase
     document.getElementById("tiresize_result").innerHTML = hexcirc;
-    document.getElementById("tiresize_result_mm1").innerHTML = finalcirc;
-    document.getElementById("tiresize_result_mm2").innerHTML = finalcirc;
+    document.getElementById("tiresize_result_mm1").innerHTML = tirecirc;
+    document.getElementById("tiresize_result_mm2").innerHTML = tirecirc;
     document.getElementById("tiresize_result_n1").innerHTML = hexcirc.slice(0,2) + "XX";
     document.getElementById("tiresize_result_n2").innerHTML = hexcirc.slice(2,4) + "XX";
 }
