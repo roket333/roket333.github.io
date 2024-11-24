@@ -805,3 +805,7 @@ input[type="range"]::-moz-range-track {
     border: 2.5px solid #e5e5e5;
     border-radius: 5px;
 }
+
+.eightywidth {
+    width: 80%;
+}
