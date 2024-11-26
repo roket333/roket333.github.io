@@ -180,5 +180,13 @@
         "edited":false,
         "edited_date":null,
         "pinned":false
+    },
+    {
+        "title":"Guess this is the new norm, huh?",
+        "date":"November 25th, 2024",
+        "content":"once again, its been a long time since the last post. i guess this is just going to be the norm from now on. anyways, i've done a few updates to the site. the main thing is, it's now on a proper domain now! plus, it gives me a uniqe Bluesky handle. i also added social media links at the bottom of the page for everything. also side note, i will be attending Further Confusion 2025",
+        "edited":false,
+        "edited_date":null,
+        "pinned":false
     }
 ]
