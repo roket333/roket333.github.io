@@ -396,6 +396,28 @@ th, td {
     color:#e5e5e5;
 }
 
+.linklistfooter button {
+    /*change how the buttons in the list look*/
+    background-color: inherit;
+    border: 5px solid #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.3s;
+    margin: 0.1em;
+    width: 15%;
+
+    /*for some reason you need to re-define the font stuff on buttons, so here's that*/
+    font-family:prototype;
+    font-size:150%;
+    text-align:center;
+    color:#e5e5e5;
+}
+
+a:link {
+    text-decoration: none;
+}
+
 .linklist button:hover {
     background-color: #707070;
 }

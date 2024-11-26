@@ -3,6 +3,10 @@ window.onload = function() {
   document.getElementById("default").click();
   loadblogposts();
   loaddevblogposts();
+  if (document.referrer.includes("roket333.github.io")) {
+    // Display your special message
+    alert("You're visiting from the old GitHub Pages link!"); 
+  }
 
   //hide the loading screen and show the actual site
   document.getElementById("site").style.display = "block";
