@@ -1,0 +1,461 @@
+{
+    "released":true,
+    "data":
+    [
+    {
+        "articletype":"recall",
+        "releasedate":"November 30th, 2023",
+        "superseded":false,
+        "removed":false,
+        "articleid":"23S61",
+        "articlename":"Loose Brake Pedal Pivot Pin",
+        "affectedrangefrom":"6/7/23",
+        "affectedrangeto":"10/25/23",
+        "articledescription":"In some of the affected vehicles, the brake pedal pivot tube may not have been properly flared. Missing flares can cause the brake pedal pivot tube to become unseated, resulting in a loose brake pedal. A loose brake pedal can result in a degradation or loss of braking function, which can increase the risk of a crash.",
+        "recallnodrive":true,
+        "recalladvancenotice":false,
+        "recallhold":false,
+        "recallaffectedcount":60
+    },
+    {
+        "articletype":"recall",
+        "releasedate":"March 26th, 2024",
+        "superseded":false,
+        "removed":false,
+        "articleid":"24S19",
+        "articlename":"Damaged Fuel Line",
+        "affectedrangefrom":"2/2/24",
+        "affectedrangeto":"2/9/24",
+        "articledescription":"In some of the affected vehicles, the low-pressure fuel supply line may be cut or damaged. This damage can result in liquid fuel leakage in the engine compartment. A damaged fuel supply line can result in liquid fuel leakage in the engine compartment. Liquid fuel and/or vapor that accumulates near a sufficiently hot surface may ignite, resulting in an under-hood fire and increasing the risk of injury. If the leak progresses, it can result in a partial or complete loss of fuel flow to the high-pressure fuel pump. A complete loss of fuel flow can cause a loss of motive power, which can increase the risk of a crash",
+        "recalladvancenotice":false,
+        "recallaffectedcount":360,
+        "recallhold":false,
+        "recallnodrive":false
+    },
+    {
+        "articletype":"recall",
+        "releasedate":"May 28th, 2024",
+        "superseded":false,
+        "removed":false,
+        "affectedrangefrom":"1/30/24",
+        "affectedrangeto":"2/1/24",
+        "articledescription":"This is a proactive investigation program by Ford Motor Company to obtain field parts for evaluation. Ford is voluntarily conducting this program to evaluate the field performance and functionality of the obtained Left-Hand Engine Cylinder Heads. Parts obtained from this program must be returned to Ford for evaluation.",
+        "articleid":"24H01",
+        "articlename":"Harvest Program 24H01",
+        "recalladvancenotice":false,
+        "recallaffectedcount":11,
+        "recallhold":false,
+        "recallnodrive":false
+    },
+    {
+        "articletype":"recall",
+        "releasedate":"June 3rd, 2024",
+        "superseded":false,
+        "affectedrangefrom":"9/27/22",
+        "affectedrangeto":"5/23/24",
+        "articledescription":"In some of the affected vehicles, a hydraulic clutch line may not be properly retained to a locating stud on the dash panel. A line with improper retention may contact hot exhaust components and melt, leaking hydraulic fluid. A leaking clutch pressure line will not impact the volume of brake fluid in the brake system, so customers will not observe an impact to brake function. However, this condition can impact the brake fluid supply in the clutch and can result in an inability to change gears. Depending on the vehicle speed and gear, your engine may stall. A loss of motive power increases the risk of a crash. If leaked hydraulic fluid accumulates near a sufficiently hot surface, you may observe smoke and possibly experience an under-hood fire. An under-hood fire increases the risk of injury",
+        "articleid":"24S36",
+        "articlename":"Inspect Manual Transmission Line",
+        "recalladvancenotice":false,
+        "recallaffectedcount":8122,
+        "recallhold":false,
+        "recallnodrive":false,
+        "removed":false
+    },
+    {
+        "articletype":"recall",
+        "releasedate":"July 26th, 2024",
+        "superseded":false,
+        "affectedrangefrom":"11/15/23",
+        "affectedrangeto":"3/26/24",
+        "articledescription":"In the affected vehicles, the Auto Start-Stop feature is not properly configured in the Body Control Module (BCM). As a result, the Auto Start-Stop feature will not function as intended.",
+        "articleid":"24E05",
+        "articlename":"Body Control Module Configuration",
+        "recalladvancenotice":false,
+        "recallaffectedcount":5499,
+        "recallhold":false,
+        "recallnodrive":false,
+        "removed":false
+    },
+    {
+        "articletype":"recall",
+        "releasedate":"August 13th, 2024",
+        "articlename":"Inspect Rear Knuckle",
+        "articleid":"24S49",
+        "affectedrangefrom":"7/25/23",
+        "affectedrangeto":"11/15/23",
+        "articledescription":"The rear suspension in some of the affected vehicles may be built with a knuckle that contains a casting imperfection. This may result in the fracturing of the knuckle. A fractured knuckle may reduce vehicle lateral stiffness and result in significant toe-in or toe-out of the rear tire under braking or throttle application. Drivers may experience limited vehicle steering control as a result, increasing the risk of a crash.",
+        "recalladvancenotice":false,
+        "recallaffectedcount":4595,
+        "recallhold":false,
+        "recallnodrive":false,
+        "removed":false,
+        "superseded":false
+    },
+    {
+        "articletype":"recall",
+        "articlename":"Fuel Injector Missing O-Ring Support",
+        "affectedrangefrom":"10/21/23",
+        "affectedrangeto":"3/19/24",
+        "articledescription":"In all of the affected vehicles, a fuel injector is missing an O-ring support disc. A fuel injector missing an O-ring support disc may leak fuel. Customers may notice a fuel odor both inside and outside the vehicle and/or may experience difficulty starting their vehicle. If leaked fuel accumulates near a hot surface, customers may observe smoke and/or experience an under-hood fire. An under-hood fire increased the risk of injury.",
+        "articleid":"24S54",
+        "recalladvancenotice":false,
+        "recallaffectedcount":24,
+        "recallhold":false,
+        "recallnodrive":false,
+        "releasedate":"August 27th, 2024",
+        "removed":false,
+        "superseded":false
+    },
+    {
+        "articletype":"recall",
+        "articlename":"Black Instrument Panel Cluster (IPC) Screen",
+        "articleid":"24C35",
+        "releasedate":"October 29th, 2024",
+        "recalladvancenotice":true,
+        "recalladvancenoticedate":"Q1 2025",
+        "affectedrangefrom":"5/10/24",
+        "affectedrangeto":"8/20/24",
+        "articledescription":"The affected vehicles may not conform to the requirements specified by Federal Motor Vehicle Safety Standard (FMVSS) No. 101, 102, 108, 126, 135, 138 and 208. Customers may experience a black (i.e., non-functioning) Instrument Panel Cluster (IPC) screen while driving or upon vehicle start-up. This black IPC screen may occur randomly and persist until the next time the vehicle is turned on. A black IPC screen does not display vehicle speed, fuel level, engine status, and other critical safety information, increasing the risk of a crash.",
+        "recallaffectedcount":6192,
+        "recallhold":false,
+        "recallnodrive":false,
+        "removed":false,
+        "superseded":false
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "October 2nd, 2023",
+        "articleid": "23-2302",
+        "articlename": "Rear Bumper Cover To Quarter Panel Poor Fitment And/Or Excessive Body Gap",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit a condition where the rear bumper cover has poor fitment and/or excessive body gap where it meets the quarter panel. This may be due to incorrect installation and/or missing panel adhesive tape. To correct this condition, follow the Service Procedure to apply panel adhesive tape and re-install the rear bumper cover."
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "October 3rd, 2023",
+        "articleid": "23-2311",
+        "articlename": "Instrument Panel (IP) Topper Rub/Scratch/Buzz Noise From Right Front Passenger Side",
+        "articledescription": "Some 2024 Mustang vehicles built on or before 29-June-2023 may exhibit a rub/scratch/buzz noise coming from the right front passenger side of the IP topper. This may be due to contact between the IP topper contacting sheet metal by the defroster grille. To correct the condition, follow the Service Procedure to remove the windshield and apply flock tape to the leading edge of the IP topper."
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "October 4th, 2023",
+        "articleid": "23-2314",
+        "articlename": "Illuminated Malfunction Indicator Lamp (MIL) With DTCs P0300 And/Or P0316 Stored In The PCM",
+        "articledescription": "Some 2024 Mustang vehicles equipped with a 2.3L EcoBoost engine may exhibit an illuminated MIL with diagnostic trouble codes (DTC) P0300 (Random Misfire Detected: No Sub Type Information) and/or P0316 (Misfire Detected On Startup (First 1000 Revolutions): No Sub Type Information) stored in the powertrain control module (PCM). The vehicle may also run rough during a cold start. This may be due to the software in the PCM. To correct this condition, perform the Service Procedure below to reprogram the PCM using the latest software level of the Ford Diagnosis and Repair System (FDRS) diagnostic scan tool."
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "October 26th, 2023",
+        "articleid": "23-2334",
+        "articlename": "Sagging Headliner/Gap - Weatherstrip/Headliner Overlap",
+        "articledescription": "Some 2018-2024 Mustang coupe vehicles may exhibit a sagging headliner or gap where the headliner meets the upper door weatherstrip. This may be due to an outward bent door frame moulding not allowing the weatherstrip to overlap the headliner properly. To correct this condition, follow the Service Procedure to replace the door frame moulding."
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "November 21st, 2023",
+        "articleid": "23-2369",
+        "articlename": "Illuminated Malfunction Indicator Lamp (MIL) With Diagnostic Trouble Code (DTC) P0101 And/Or P010B In The PCM - Built On Or Before 05-Oct-2023",
+        "articledescription": "Some 2024 Mustang vehicles built on or before 5-Oct-2023 and equipped with a 5.0L engine may exhibit an illuminated MIL with DTC P0101 (Mass or Volume Air Flow Sensor 'A' Circuit Range/Performance: No Sub Type Information) and/or P010B (Mass or Volume Air Flow Sensor 'B' Circuit Range/Performance: No Sub Type Information) in the powertrain control module (PCM). This may be due to the software level of the PCM. To correct this condition, perform the Service Procedure below to reprogram the PCM to the latest software level via the Ford Diagnosis and Repair System (FDRS)."
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "February 23rd, 2024",
+        "articleid": "24-2047",
+        "articlename": "Quiet Start Inoperative During Remote Start Event",
+        "articledescription": "Some 2024 Mustang vehicle's quiet start feature may be inoperative during a remote start event. This may be due to the software level of the powertrain control module (PCM). To correct this condition, perform the Service Procedure below to reprogram the PCM to the latest software level using the Ford Diagnosis and Repair System (FDRS)."
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "March 12th, 2024",
+        "articleid": "24-2071",
+        "articlename": "Intermittent Distance To Empty (DTE) Drops To Zero",
+        "articledescription": "Some 2024 Mustang vehicles equipped with a manual transmission may exhibit an intermittent DTE reading that drops to 0 with the fuel level displaying near 25% capacity. This may be due to the software level of the PCM. To correct this condition, perform the Service Procedure below to reprogram the PCM to the latest software level using the FDRS."
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "March 25th, 2024",
+        "articleid": "24-2090",
+        "articlename": "Water Entry Into The Front Foot Wells",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit water entry into the front foot wells. This may be due to a missed body sealer application at the factory. To correct the condition, follow the Service Procedure to apply additional body sealer."
+    },
+    {
+        "articletype": "tsb",
+        "releasedate": "May 7th, 2024",
+        "articleid": "24-2129",
+        "articlename": "Various SYNC4 Concerns",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit at least one of the following symptoms: rear parking aid camera displaying while in drive, \"Lap Timer Results\" greyed out and not available and new lap timer session does not start at Lap 1 when a lap timer session is stopped, \"Check Rear Seat For Occupants Alert/Alarm\" on for a brief period, My Mustang hard button - no response on the vehicle's center display screen when the hard button is pressed. This may be due to the software in the APIM. To correct the condition, follow the Service Procedure to reprogram the APIM using the latest level of the FDRS scan tool."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "August 24th, 2023",
+        "articleid": "51882",
+        "articlename": "My Mustang Hard Button - No Response On The Center Display Screen When The Hard Button Is Pressed",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit no response on the center display screen after pressing the My Mustang hard button. The hard button should navigate from any sub menu to the My Mustang home screen. The My Mustang home screen can be accessed by selecting: Features >> My Mustang. This may be due to the SYNC module (APIM) software. Replacement of the APIM will not resolve this condition. Inform customers that engineering is currently working on a solution for this condition and will be released via Ford Power-Up software updates delivered over-the-air (OTA) expected in Q1 2024. Software will update automatically if vehicle connectivity is enabled in the vehicle’s settings. Schedule a service visit for customers who have disabled vehicle connectivity or who report that they did not receive the update in Q1 2024. Monitor OASIS for additional information.",
+        "superseded": true,
+        "supersedingarticle": "TSB 24-2129",
+        "removed":true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "August 24th, 2023",
+        "articleid": "51883",
+        "articlename": "Check Rear Seat For Occupants Alert/Alarm ON For A Brief Period",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit a Check Rear Seat For Occupants pop up message on the center display screen and audible alarm for a brief period of time when the ignition is switched to OFF. This may be due to the accessory protocol interface module (APIM) software. Replacement or reprogramming of the APIM will not resolve this condition. Inform customers that engineering is currently working on a solution for this condition and will be released via Ford Power-Up software updates delivered over-the-air (OTA) expected in Q1 2024. Software will update automatically if vehicle connectivity is enabled in the vehicle’s settings. Schedule a service visit for customers who have disabled vehicle connectivity or who report that they did not receive the update in Q1 2024. Monitor OASIS for additional information.",
+        "superseded": true,
+        "supersedingarticle": "TSB 24-2129",
+        "removed":true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "August 24th, 2023",
+        "articleid": "51884",
+        "articlename": "DTC U211B:87 Setting In The Anti-Lock Brake System (ABS) Module When A Diagnostic Self Test Is Performed",
+        "articledescription": "Some 2024 Mustang vehicles may set diagnostic trouble code (DTC) U211B:87 (Control Module Message Authentication: Missing Message) in the ABS module during a diagnostic self-test. This may be due to the modules DTC sensitivity during vehicle key-on/start-up. Replacement or reprogramming of the ABS module may not resolve this condition. U211B:87 should be ignored if: no other DTCs are present, no warning indicators are illuminated while the engine is running, and no noticeable symptoms are present. No further service action is required.",
+        "superseded": true,
+        "supersedingarticle": "SSM 52242",
+        "removed":true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "August 29th, 2023",
+        "articleid": "51896",
+        "articlename": "Lap Timer Results Greyed Out And Not Available And New Lap Timer Session Does Not Start At Lap 1 When A Lap Timer Session Is Stopped",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit a condition where a new lap timer session does not start at lap 1, the lap timer results are not available and/or the lap timer results button is not selectable. This may be due to the SYNC module (APIM) software. Replacement or reprogramming the APIM will not resolve this condition. Inform the customers that engineering is currently working on a solution for this condition and will be released via Ford Power-Up software updates delivered Q1 2024. Software will update automatically if vehicle connectivity is enabled in the vehicle’s settings. Schedule a service visit for customers who have disabled vehicle connectivity or who report that they did not receive the update in Q1 2024. Monitor OASIS for additional information.",
+        "superseded": true,
+        "supersedingarticle": "TSB 24-2129",
+        "removed":true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "August 29th, 2023",
+        "articleid": "51898",
+        "articlename": "DTC U3000:49 Setting In The Driver Seat Module (DSM)",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit a diagnostic trouble code (DTC) U3000:49 (Control Module: Internal Electronic Failure) in the DSM with no symptoms present. This may be due to the DSM software. Replacement of the DSM will not resolve this concern. DTC U3000:49 can be cleared and ignored if the power seat functions are working properly and no other DTCs are present in the DSM. Engineering is currently working on a solution and software update is expected in Q1 2024. Continue to monitor OASIS for additional information."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "October 16th, 2023",
+        "articleid": "51992",
+        "articlename": "DTC C1018 Stored In The ABS Module",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit a diagnostic trouble code (DTC) C1018 (Regenerative Braking: Signal Calculation Failure) stored in the anti-lock brake system (ABS) module with no symptoms present. DTC C1018 should be ignored and no further service action is required. Replacement or reprogramming of the ABS module will not address this DTC."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "October 23rd, 2023",
+        "articleid": "52006",
+        "articlename": "Inoperative A/C System",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit an inoperative air conditioning (a/c) system. Diagnostic trouble codes (DTCs) B3A1B (A/C System pressure too high) and/or P0534 (A/C Refrigerant System 'A' Charge Loss) may be set within the powertrain control module (PCM). This condition is currently under investigation by engineering. For vehicles that meet this criteria, submit a Report a Vehicle Concern (if no help is needed) or a submit a Technical Support Request (if help is needed). In the report, include as much information as possible about the vehicle symptom including high and low side a/c system pressures, a/c pressure transducer PID readings, the amount of refrigerant that was recovered from the vehicle (only if refrigerant recovery was required), and anything else found during the diagnosis that would be helpful to the investigation. Attach screen shots, images and/or videos that will help show what was found.",
+        "removed":true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "October 23rd, 2023",
+        "articleid": "52007",
+        "articlename": "Inoperative A/C System With Or Without Diagnostic Trouble Code (DTC) P0534 - Built On Or Before 12-Oct-2023",
+        "articledescription": "Some 2024 Mustang vehicles equipped with a 2.3L EcoBoost engine and built on or before 12-Oct-2023 may exhibit an inoperative air conditioning system (A/C). This may be due to a refrigerant leak coming from the receiver/drier upper cap on the condenser. If a refrigerant leak is suspected, inspect the receiver/drier upper cap on the condenser for a refrigerant leak and repair as necessary using causal part number 19712 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual. If the receiver/drier upper cap is not leaking, continue with normal diagnostics found in the Workshop Manual, Section 412-00.",
+        "superseded": true,
+        "supersedingarticle": "SSM 52367",
+        "removed":true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "October 30th, 2023",
+        "articleid": "52026",
+        "articlename": "Illuminated Malfunction Indicator Lamp (MIL) With Diagnostic Trouble Code (DTC) P059F - Active Grille Shutter (AGS) Vane Loose/Detached",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit an illuminated MIL with DTC P059F (Active Grille Air Shutter 'A' Performance/Stuck Off) stored in the powertrain control module (PCM). This may be due to a loose and/or detached vane on the active grille shutter from the factory. To correct this concern, replace the active grille shutter. Refer to Workshop Manual (WSM) Section 501-02 Front End Body Panels > Removal and Installation > Active Grille Shutter."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "November 17th, 2023",
+        "articleid": "52077",
+        "articlename": "Pre-Collision Assist Not Available Message Displayed In the Instrument Panel Cluster (IPC) With Diagnostic Trouble Code (DTC) U023A After A Remote Start",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit a Pre-Collision Assist Not Available message and a Pre-Collision Assist Not Available indicator displayed in the IPC with DTC U023A (Lost Communication With Image Processing Module A: No Sub Type Information) stored in the steering column control module (SCCM) after the vehicle is remote started. The message and indicator should go away and normal operation of the pre-collision system should resume once the vehicle is shut down and then restarted using the push button start. This may be due to a low power mode issue with image processing module A (IPMA).",
+        "removed":true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "December 19th, 2023",
+        "articleid": "52142",
+        "articlename": "Intermittent No Crank/No Start Condition With Various Lost Communication DTCs Stored In Various Modules And Multiple Illuminated Warning Indicators Displayed In The IPC",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit an intermittent no crank/no start condition with various loss of communication diagnostic trouble codes (DTCs) stored in various modules and multiple illuminated warning indicators such as: anti-lock brake system (ABS) warning indicator, parking brake (red) indicator, brake warning indicator, parking brake (yellow) warning indicator and/or parking brake (red) indicator and/or stability-traction control indicator displayed in the instrumental panel cluster (IPC). To correct the condition, reprogram the ABS module using the latest software level of the Ford Diagnosis and Repair System (FDRS) diagnostic scan tool. For claiming, use the causal part number 2005 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual.",
+        "superseded": true,
+        "supersedingarticle": "SSM 52286",
+        "removed": true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "January 4th, 2024",
+        "articleid": "52159",
+        "articlename": "Pre-Collision Assist Not Available Message Displayed In the Instrument Panel Cluster (IPC) With Diagnostic Trouble Code (DTC) U023A After A Remote Start",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit a Pre-Collision Assist Not Available message and a Pre-Collision Assist Not Available indicator displayed in the IPC with DTC U023A stored in the steering column control module (SCCM) after the vehicle is remote started. This may be due to incorrect configuration data being present in the Image Processing Module A (IPMA). To correct the condition, download and run the IPMA – Image Processing Module A (IPMA) Configuration application using the Ford Diagnosis and Repair System (FDRS) diagnostic scan tool. For claiming, use causal part 14G647 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "February 8th, 2024",
+        "articleid": "52242",
+        "articlename": "DTC U211B:87 Setting In The Anti-Lock Brake System (ABS) Module When A Diagnostic Self Test Is Performed",
+        "articledescription": "Some 2024 Mustang vehicles may set diagnostic trouble code (DTC) U211B:87 (Control Module Message Authentication: Missing Message) in the ABS module during a diagnostic self-test. This may be due to the ABS module's DTC sensitivity during vehicle key-on/start-up. To correct the condition, reprogram the ABS module using the latest software level of the Ford Diagnosis and Repair System (FDRS) diagnostic scan tool. For claiming, use the causal part number 2005 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual.",
+        "superseded": true,
+        "supersedingarticle": "SSM 52589",
+        "removed": true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "February 12th, 2024",
+        "articleid": "52248",
+        "articlename": "Rear Lamps - Clear Protective Film Service Kit Is Now Available",
+        "articledescription": "Some 2024 Mustang vehicles are equipped with a clear protective film layer affixed to the top surface of the rear lamps. This protective film layer helps reduce incremental signs of contact and should not be removed/discarded. In the event the clear protective film layer were to become damaged or inadvertently removed, service kit (PR3Z-13420-C) has been released to help address this condition. Follow the instruction sheet included with service kit (PR3Z-13420-C) for proper installation/adhesion of the clear protective film layer to the rear lamp substrate. For claiming, use causal part 13404/13405 and M-time."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "February 26th, 2024",
+        "articleid": "52286",
+        "articlename": "Intermittent No Crank/No Start Condition With Various Lost Communication DTCs Stored In Various Modules And Multiple Illuminated Warning Indicators Displayed In The IPC - Built On And Before 08-Feb-2024",
+        "articledescription": "Some 2024 Mustang vehicles built on and before 08-Feb-2024 may exhibit an intermittent no crank/no start condition with various loss of communication diagnostic trouble codes (DTCs) stored in various modules and multiple illuminated warning indicators such as: anti-lock brake system (ABS) warning indicator, parking brake (red) indicator, brake warning indicator, parking brake (yellow) warning indicator and/or parking brake (red) indicator and/or stability-traction control indicator displayed in the instrumental panel cluster (IPC). To correct the condition, reprogram the ABS module using the latest software level of the Ford Diagnosis and Repair System (FDRS) diagnostic scan tool. For claiming, use the causal part number 2005 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual.",
+        "superseded": true,
+        "supersedingarticle": "SSM 52716",
+        "removed": true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "March 6th, 2024",
+        "articleid": "52334",
+        "articlename": "Tick Tap And/Or Typewriter Noise At Idle - Workshop Manual (WSM) Update",
+        "articledescription": "Some 2011-2024 Mustang and F-150 vehicles equipped with a 5.0L engine may exhibit a tick tap and/or typewriter ticking noise at idle after an engine oil change. It is often referred to as typewriter noise because of its similarity to the sound of a mechanical typewriter. The noise in question may be heard on some engines when engine temperatures reach 150°F (65°C) or higher and engine speed is at idle up to approximately 1700 RPM. It can typically be heard at the front wheel well and is often isolated to the transmission bell housing or oil pan area. The typewriter noise tick rate can be faster or slower and is not detrimental to the engine function or durability and has no short or long term effects on the engine. This an operating characteristic of the 5.0L engine and no repairs should be attempted.<br><br>Video of the noise:<br><embed src=\"https://players.brightcove.net/5803674275001/default_default/index.html?videoId=6319980220112\"></embed>"
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "March 18th, 2024",
+        "articleid": "52367",
+        "articlename": "Inoperative A/C System With Or Without Diagnostic Trouble Code (DTC) P0534 - Built On Or Before 12-Jan-2024",
+        "articledescription": "Some 2024 Mustang vehicles built on or before 12-Jan-2024 and equipped with a 2.3L EcoBoost engine may exhibit an inoperative air conditioning system (A/C). This may be due to a refrigerant leak coming from the receiver/drier upper cap on the condenser. If a refrigerant leak is suspected, inspect the receiver/drier upper cap on the condenser for a refrigerant leak. If a refrigerant leak is found, replace the receiver/drier cap and desiccant bag following the Workshop Manual (WSM), Section 412-00. For claiming, use causal part number 19C836 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "March 28th, 2024",
+        "articleid": "52398",
+        "articlename": "Ticking Noise Coming From The Front Seats When The Heated and Cooled Seat Feature Is In Use",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit a ticking noise coming from the front seats when the heated and cooled seat feature is in use. This may be due to the seat backrest blower motor fan contacting the housing. To correct this condition, replace the front backrest blower motor with the updated version (service part number PU5Z-18D507-B). For claiming, use causal part 18D507 and applicable labor operation in Section 12 of the Service Labor Time Standards (SLTS) Manual."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "April 9th, 2024",
+        "articleid": "52428",
+        "articlename": "Ting/Pop/Clunk/Click Noise From Rear When Accelerating Or Applying Brakes",
+        "articledescription": "Some 2018-2024 Mustang vehicles built on 04-Dec-2017 and through 01-Oct-2023 may exhibit a ting, pop, clunk, or click noise from the rear wheel hub when accelerating, applying brakes, or when shifting between drive/reverse (torque reversals). This condition may be caused by stick/slip between the hub and halfshaft interface during the torque reversals creating the ting, pop, clunk, or click noise. To correct the condition, refer to the Workshop Manual (WSM) to replace the halfshaft and hub assembly of the suspected side.",
+        "removed": true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "April 10th, 2024",
+        "articleid": "52440",
+        "articlename": "Inoperative Auto Start-Stop",
+        "articledescription": "Some 2024 Mustang GT vehicles built on 15-Nov-2023 and through 26-Mar-2024 may exhibit an inoperative auto start-stop feature. This may be due to the body control module (BCM) configuration. Engineering is currently working on a solution for this condition that is expected June 2024. Replacement or reprogramming of the BCM will not resolve this condition. Monitor OASIS for additional information and schedule service appointments for customers once the repair becomes available.",
+        "superseded": true,
+        "supersedingarticle": "SSM 52469",
+        "removed": true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "April 16th, 2024",
+        "articleid": "52449",
+        "articlename": "Instrument Panel Cluster (IPC) Display Screen Cracked",
+        "articledescription": "Some 2024 Mustang vehicles equipped with a mid-series instrument panel cluster display screen (minor feature code HCAAT) may exhibit a crack on the lower left-hand corner of the IPC display screen. To confirm a vehicle is built with a certain minor feature code, review the build information by double-clicking the vehicle identification number (VIN) in the upper left corner in the Professional Technician System (PTS) website. This crack will be internal and cannot be felt. If the crack cannot be felt, this is a warrantable condition and the IPC display screen must be replaced. Refer to Workshop Manual (WSM), Section 413-01. For claiming, use causal part 10D885 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "April 22nd, 2024",
+        "articleid": "52465",
+        "articlename": "ACM Programming Failure",
+        "articledescription": "Some 2023-2024 Mustang Mach-E/Corsair and 2024 Mustang vehicles may exhibit an audio control module (ACM) programming failure with a message displayed in the Ford Diagnosis and Repair System (FDRS) scan tool indicating Procedure Unsuccessful-Flash Software Failed To Flash. This may be due to the ACM programming routine. To correct this condition, download and click the refresh icon located next to the run icon to update the ACM - Programmable Module Installation (PMI) app. For claiming, use causal part 18C869 and applicable labor operations in Section 11 of the Service Labor Time Standards (SLTS) Manual."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "April 23rd, 2024",
+        "articleid": "52469",
+        "articlename": "Inoperative Auto Start-Stop",
+        "articledescription": "Some 2024 Mustang GT vehicles built on 15-Nov-2023 and through 26-Mar-2024 may exhibit an inoperative auto start-stop feature. This may be due to the body control module (BCM) software. To correct this concern, reprogram the BCM using the latest software level of the Ford Diagnosis and Repair System (FDRS) diagnostic scan tool. For claiming, use causal part 15604 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual. Vehicles built on or before 14-Nov-2023 are not equipped with auto start-stop and the Workshop Manual (WSM) is in the process of being updated with this information.",
+        "superseded": true,
+        "supersedingarticle": "Recall 24E05",
+        "removed": true
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "May 29th, 2024",
+        "articleid": "52574",
+        "articlename": "Intermittent Symptoms After All Available Software Updates Performed - Awareness of Solutions Being Developed",
+        "articledescription": "Some vehicles equipped with SYNC4 may exhibit one or more of the following symptoms after all currently available accessory protocol interface module (APIM) software updates have been performed.\n- General system performance, stability, and intermittent system reboots.\n- Intermittent Wireless CarPlay or Android Auto function.\n- Phone related concerns with intermittent No Audio or Static.\n- Navigation/global positioning system (GPS) related concerns through CarPlay and Android Auto.\n- Alexa function consistency and stability.\n\nThese symptoms may be due to the software in the APIM. Replacing the APIM will not resolve these symptoms for the customer. Before returning the vehicle to the customer, review the procedures within Workshop Manual, Section 415-00 and ensure the latest APIM software is installed. Refer to General Service Bulletin (GSB) 23-7146 for help determining the latest available level of software."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "June 5th, 2024",
+        "articleid": "52589",
+        "articlename": "DTC U211B:87 Setting In The Anti-Lock Brake System (ABS) Module When A Diagnostic Self Test Is Performed",
+        "articledescription": "Some 2024 Mustang vehicles built on or before 10-Feb-2024 may set diagnostic trouble code (DTC) U211B:87 in the ABS module during a diagnostic self-test. This may be due to the modules DTC sensitivity during vehicle key-on/start-up. Replacement or reprogramming of the ABS module may not resolve this condition. U211B:87 should be ignored if no other DTCs are present, no warning indicators are illuminated while the engine is running, and no noticeable symptoms are present. No further service action is required."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "June 19th, 2024",
+        "articleid": "52630",
+        "articlename": "Misfire With Diagnostic Trouble Code (DTC) P0301, P0302, P0303, And/Or P0304 Stored In The PCM",
+        "articledescription": "Some 2023-2024 Escape/Corsair vehicles equipped with a 1.5L or 2.0L EcoBoost engine, 2024 Mustang vehicles equipped with a 2.3L EcoBoost engine, and 2024 Nautilus vehicles may exhibit an engine misfire condition with diagnostic trouble codes (DTC) P0301, P0302, P0303 and/or P0304 set in the powertrain control module (PCM). If the codes are stored in the PCM, remove and inspect the condition of all the spark plugs. If all spark plugs are found to be free of damage, replacement of the spark plugs is not necessary."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "July 12th, 2024",
+        "articleid": "52716",
+        "articlename": "Intermittent No Crank/No Start Condition With Various Lost Communication DTCs Stored In Various Modules And Multiple Illuminated Warning Indicators Displayed In The IPC",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit an intermittent no crank/no start condition with various loss of communication diagnostic trouble codes (DTCs) stored in various modules and multiple illuminated warning indicators such as: anti-lock brake system (ABS) warning indicator, parking brake (red) indicator, brake warning indicator, parking brake (yellow) warning indicator and/or parking brake (red) indicator and/or stability-traction control indicator displayed in the instrumental panel cluster (IPC)."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "September 4th, 2024",
+        "articleid": "52853",
+        "articlename": "IPC On-Demand DTC Self-Test Failures",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit an instrument panel cluster (IPC) concern where an IPC self-test may be required. When performing the IPC On-Demand DTC self-test, a 'Test could not be started. Module programming may have failed' message may show and the IPC will be color coded as purple in the Ford Diagnosis and Repair System (FDRS) scan tool."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "September 19th, 2024",
+        "articleid": "52926",
+        "articlename": "Illuminated MIL With DTCs P0300, P0302 And P0308 Stored In The Powertrain Control Module (PCM)",
+        "articledescription": "Some 2024 Mustang Dark Horse™ vehicles equipped with a manual transmission may exhibit an illuminated malfunction indicator lamp (MIL) with diagnostic trouble codes (DTCs) P0300, P0302 and P0308 stored in the powertrain control module (PCM) from extended high speed or racetrack operation. This may be due to the software within the PCM."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "September 27th, 2024",
+        "articleid": "52980",
+        "articlename": "One Passive Key Does Not Start The Vehicle, RKE Button Functionality Works",
+        "articledescription": "Some vehicles may exhibit one passive key that is unable to start the vehicle or activate the passive entry feature; however, all remote keyless entry (RKE) physical button functionality works correctly and the second passive key will have full/correct functionality."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "September 27th, 2024",
+        "articleid": "52967",
+        "articlename": "Passive Key Will Not Program",
+        "articledescription": "Some of the following vehicles may exhibit a condition where the passive key will not program to the vehicles:\n* 2024 F-150 non-Lightning\n* 2023-2024 F-Super Duty\n* 2025 Explore/Aviator\n* 2024 Nautilus\n* 2024 Mustang vehicles built on or after 31-May-2024\n* 2024 Bronco vehicles built on or after 01-June-2024\n\nIf a key does not program, rotate the key 180 degrees in the passive key backup starting location versus what is recommended in the Owners Manual Section > \"Starting and Stopping the Engine - Accessing the Passive Key Backup Position\" and then reattempt programing. If the key still does not program, refer to Workshop Manual (WSM), Section 419-01 for normal diagnostics."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "October 4th, 2024",
+        "articleid": "53022",
+        "articlename": "Air Conditioning (A/C) Blows Warm - Various Refrigerant Leak Points",
+        "articledescription": "Some 2024 Mustang vehicles may exhibit the A/C system blowing warm. This may be due to a leak in the system causing low or no refrigerant. All vehicles are verified as filled with refrigerant at the plant and the A/C refrigerant system contains dye from the plant to help identify the source of leaks. If a vehicle exhibits a low/no refrigerant condition during a pre-delivery inspection (PDI) or if the vehicle has returned to the dealership with this condition after a prior repair attempt, the vehicle is leaking refrigerant. Recharging the system without identifying and correcting the source of the leak will not correct the concern. Before normal Workshop Manual (WSM) diagnostics, check these possible sources first: A/C condenser assembly receiver drier cap, all A/C line connections, and both A/C service ports (with the service port caps properly secured). If no leaks are found in these locations, refer to WSM, Section 412-00 for normal A/C refrigerant leak diagnosis. Use the \"Submit Global Concern Report (GCR)\" link at the upper right of the OASIS report to submit a report with photos attached (if possible) if an A/C leak is found."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "October 10th, 2024",
+        "articleid": "53040",
+        "articlename": "Transmission Seal Kit Availability",
+        "articledescription": "While performing a transmission repair on some 2012-2024 Ford and Lincoln vehicles, a transmission seal kit may be on backorder due to supply chain interruptions. If a seal kit is on backorder, refer to the Parts Catalog for the individual components needed to complete the repair before pursuing a next-level assembly. Refer to the Warranty and Policy Manual, Section 3 for servicing the next level assembly."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "October 28th, 2024",
+        "articleid": "53088",
+        "articlename": "Intermittent Symptoms After All Available Software Updates Performed - Awareness Of Solutions Being Developed",
+        "articledescription": "Some vehicles equipped with SYNC4 may exhibit one or more of the following symptoms after all currently available accessory protocol interface module (APIM) software updates have been performed.\n- General system performance, stability, and intermittent system reboots.\n- Intermittent Wireless CarPlay or Android Auto function.\n- Phone related concerns with intermittent No Audio or Static.\n- Navigation/global positioning system (GPS) related concerns through CarPlay and Android Auto.\n- Alexa function consistency and stability.\n\nThese symptoms may be due to the software in the APIM. Replacing the APIM will not resolve these symptoms for the customer. Before returning the vehicle to the customer, review the procedures within Workshop Manual, Section 415-00 and ensure the latest APIM software is installed. Refer to General Service Bulletin (GSB) 23-7146 for help determining the latest available level of software.\n\nIMPORTANT: some module software updates will only display as available on Ford Diagnosis and Repair System (FDRS) after prerequisite modules are updated. This may require the technician to update certain modules multiple times during the service visit, before the latest APIM software is accessible in FDRS.\n\nIf symptoms continue after latest APIM software has been installed, inform customers that Ford is working on additional software enhancements which are expected to be delivered over-the-air (OTA) by late Q4 2024 on F-150, F-150 Lightning, Mustang Mach-E, Mustang, Escape, Corsair, Expedition, Navigator, Bronco, Mustang, and 2023-2024 F-Super Duty. Software will update automatically if vehicle connectivity is enabled in the vehicle's settings. Schedule a service visit for customers who have disabled vehicle connectivity or who report that they did not receive the update in late Q4 2024. Monitor OASIS for additional information."
+    }
+    ]
+}
