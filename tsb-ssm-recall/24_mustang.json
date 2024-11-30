@@ -263,7 +263,8 @@
         "releasedate": "October 30th, 2023",
         "articleid": "52026",
         "articlename": "Illuminated Malfunction Indicator Lamp (MIL) With Diagnostic Trouble Code (DTC) P059F - Active Grille Shutter (AGS) Vane Loose/Detached",
-        "articledescription": "Some 2024 Mustang vehicles may exhibit an illuminated MIL with DTC P059F (Active Grille Air Shutter 'A' Performance/Stuck Off) stored in the powertrain control module (PCM). This may be due to a loose and/or detached vane on the active grille shutter from the factory. To correct this concern, replace the active grille shutter. Refer to Workshop Manual (WSM) Section 501-02 Front End Body Panels > Removal and Installation > Active Grille Shutter."
+        "articledescription": "Some 2024 Mustang vehicles may exhibit an illuminated MIL with DTC P059F (Active Grille Air Shutter 'A' Performance/Stuck Off) stored in the powertrain control module (PCM). This may be due to a loose and/or detached vane on the active grille shutter from the factory. To correct this concern, replace the active grille shutter. Refer to Workshop Manual (WSM) Section 501-02 Front End Body Panels > Removal and Installation > Active Grille Shutter.",
+        "removed":true
     },
     {
         "articletype": "ssm",
@@ -271,7 +272,9 @@
         "articleid": "52077",
         "articlename": "Pre-Collision Assist Not Available Message Displayed In the Instrument Panel Cluster (IPC) With Diagnostic Trouble Code (DTC) U023A After A Remote Start",
         "articledescription": "Some 2024 Mustang vehicles may exhibit a Pre-Collision Assist Not Available message and a Pre-Collision Assist Not Available indicator displayed in the IPC with DTC U023A (Lost Communication With Image Processing Module A: No Sub Type Information) stored in the steering column control module (SCCM) after the vehicle is remote started. The message and indicator should go away and normal operation of the pre-collision system should resume once the vehicle is shut down and then restarted using the push button start. This may be due to a low power mode issue with image processing module A (IPMA).",
-        "removed":true
+        "removed":true,
+        "superseded":true,
+        "supersedingarticle":"SSM 52159"
     },
     {
         "articletype": "ssm",
@@ -329,7 +332,10 @@
         "releasedate": "March 18th, 2024",
         "articleid": "52367",
         "articlename": "Inoperative A/C System With Or Without Diagnostic Trouble Code (DTC) P0534 - Built On Or Before 12-Jan-2024",
-        "articledescription": "Some 2024 Mustang vehicles built on or before 12-Jan-2024 and equipped with a 2.3L EcoBoost engine may exhibit an inoperative air conditioning system (A/C). This may be due to a refrigerant leak coming from the receiver/drier upper cap on the condenser. If a refrigerant leak is suspected, inspect the receiver/drier upper cap on the condenser for a refrigerant leak. If a refrigerant leak is found, replace the receiver/drier cap and desiccant bag following the Workshop Manual (WSM), Section 412-00. For claiming, use causal part number 19C836 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual."
+        "articledescription": "Some 2024 Mustang vehicles built on or before 12-Jan-2024 and equipped with a 2.3L EcoBoost engine may exhibit an inoperative air conditioning system (A/C). This may be due to a refrigerant leak coming from the receiver/drier upper cap on the condenser. If a refrigerant leak is suspected, inspect the receiver/drier upper cap on the condenser for a refrigerant leak. If a refrigerant leak is found, replace the receiver/drier cap and desiccant bag following the Workshop Manual (WSM), Section 412-00. For claiming, use causal part number 19C836 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual.",
+        "removed":true,
+        "superseded":true,
+        "supersedingarticle":"SSM 53022"
     },
     {
         "articletype": "ssm",
@@ -385,7 +391,8 @@
         "releasedate": "May 29th, 2024",
         "articleid": "52574",
         "articlename": "Intermittent Symptoms After All Available Software Updates Performed - Awareness of Solutions Being Developed",
-        "articledescription": "Some vehicles equipped with SYNC4 may exhibit one or more of the following symptoms after all currently available accessory protocol interface module (APIM) software updates have been performed.\n- General system performance, stability, and intermittent system reboots.\n- Intermittent Wireless CarPlay or Android Auto function.\n- Phone related concerns with intermittent No Audio or Static.\n- Navigation/global positioning system (GPS) related concerns through CarPlay and Android Auto.\n- Alexa function consistency and stability.\n\nThese symptoms may be due to the software in the APIM. Replacing the APIM will not resolve these symptoms for the customer. Before returning the vehicle to the customer, review the procedures within Workshop Manual, Section 415-00 and ensure the latest APIM software is installed. Refer to General Service Bulletin (GSB) 23-7146 for help determining the latest available level of software."
+        "articledescription": "Some vehicles equipped with SYNC4 may exhibit one or more of the following symptoms after all currently available accessory protocol interface module (APIM) software updates have been performed.\n- General system performance, stability, and intermittent system reboots.\n- Intermittent Wireless CarPlay or Android Auto function.\n- Phone related concerns with intermittent No Audio or Static.\n- Navigation/global positioning system (GPS) related concerns through CarPlay and Android Auto.\n- Alexa function consistency and stability.\n\nThese symptoms may be due to the software in the APIM. Replacing the APIM will not resolve these symptoms for the customer. Before returning the vehicle to the customer, review the procedures within Workshop Manual, Section 415-00 and ensure the latest APIM software is installed. Refer to General Service Bulletin (GSB) 23-7146 for help determining the latest available level of software.",
+        "removed":true
     },
     {
         "articletype": "ssm",
@@ -399,7 +406,10 @@
         "releasedate": "June 19th, 2024",
         "articleid": "52630",
         "articlename": "Misfire With Diagnostic Trouble Code (DTC) P0301, P0302, P0303, And/Or P0304 Stored In The PCM",
-        "articledescription": "Some 2023-2024 Escape/Corsair vehicles equipped with a 1.5L or 2.0L EcoBoost engine, 2024 Mustang vehicles equipped with a 2.3L EcoBoost engine, and 2024 Nautilus vehicles may exhibit an engine misfire condition with diagnostic trouble codes (DTC) P0301, P0302, P0303 and/or P0304 set in the powertrain control module (PCM). If the codes are stored in the PCM, remove and inspect the condition of all the spark plugs. If all spark plugs are found to be free of damage, replacement of the spark plugs is not necessary."
+        "articledescription": "Some 2023-2024 Escape/Corsair vehicles equipped with a 1.5L or 2.0L EcoBoost engine, 2024 Mustang vehicles equipped with a 2.3L EcoBoost engine, and 2024 Nautilus vehicles may exhibit an engine misfire condition with diagnostic trouble codes (DTC) P0301, P0302, P0303 and/or P0304 set in the powertrain control module (PCM). If the codes are stored in the PCM, remove and inspect the condition of all the spark plugs. If all spark plugs are found to be free of damage, replacement of the spark plugs is not necessary.",
+        "removed":true,
+        "superseded":true,
+        "supersedingarticle":"TSB 24-2384"
     },
     {
         "articletype": "ssm",
@@ -413,14 +423,17 @@
         "releasedate": "September 4th, 2024",
         "articleid": "52853",
         "articlename": "IPC On-Demand DTC Self-Test Failures",
-        "articledescription": "Some 2024 Mustang vehicles may exhibit an instrument panel cluster (IPC) concern where an IPC self-test may be required. When performing the IPC On-Demand DTC self-test, a 'Test could not be started. Module programming may have failed' message may show and the IPC will be color coded as purple in the Ford Diagnosis and Repair System (FDRS) scan tool."
+        "articledescription": "Some 2024 Mustang vehicles may exhibit an instrument panel cluster (IPC) concern where an IPC self-test may be required. When performing the IPC On-Demand DTC self-test, a 'Test could not be started. Module programming may have failed' message may show and the IPC will be color coded as purple in the Ford Diagnosis and Repair System (FDRS) scan tool.",
+        "removed":true,
+        "superseded":true,
+        "supersedingarticle":"SSM 53108 and SSM 53109"
     },
     {
         "articletype": "ssm",
         "releasedate": "September 19th, 2024",
         "articleid": "52926",
         "articlename": "Illuminated MIL With DTCs P0300, P0302 And P0308 Stored In The Powertrain Control Module (PCM)",
-        "articledescription": "Some 2024 Mustang Dark Horse™ vehicles equipped with a manual transmission may exhibit an illuminated malfunction indicator lamp (MIL) with diagnostic trouble codes (DTCs) P0300, P0302 and P0308 stored in the powertrain control module (PCM) from extended high speed or racetrack operation. This may be due to the software within the PCM."
+        "articledescription": "Some 2024 Mustang Dark Horse™ vehicles equipped with a manual transmission may exhibit an illuminated malfunction indicator lamp (MIL) with diagnostic trouble codes (DTCs) P0300, P0302 and P0308 stored in the powertrain control module (PCM) from extended high speed or racetrack operation (driving the vehicle and allowing the engine to hit maximum engine speed, several times and in a short period). This may be due to the software within the PCM. Normal driving conditions will not induce this condition. Component replacement and/or module reprogramming may not correct the concern. Inform customers that they can continue to drive the vehicle and engineering is currently working on a solution for this condition that is expected in January 2025. Monitor OASIS for updates."
     },
     {
         "articletype": "ssm",
@@ -456,6 +469,34 @@
         "articleid": "53088",
         "articlename": "Intermittent Symptoms After All Available Software Updates Performed - Awareness Of Solutions Being Developed",
         "articledescription": "Some vehicles equipped with SYNC4 may exhibit one or more of the following symptoms after all currently available accessory protocol interface module (APIM) software updates have been performed.\n- General system performance, stability, and intermittent system reboots.\n- Intermittent Wireless CarPlay or Android Auto function.\n- Phone related concerns with intermittent No Audio or Static.\n- Navigation/global positioning system (GPS) related concerns through CarPlay and Android Auto.\n- Alexa function consistency and stability.\n\nThese symptoms may be due to the software in the APIM. Replacing the APIM will not resolve these symptoms for the customer. Before returning the vehicle to the customer, review the procedures within Workshop Manual, Section 415-00 and ensure the latest APIM software is installed. Refer to General Service Bulletin (GSB) 23-7146 for help determining the latest available level of software.\n\nIMPORTANT: some module software updates will only display as available on Ford Diagnosis and Repair System (FDRS) after prerequisite modules are updated. This may require the technician to update certain modules multiple times during the service visit, before the latest APIM software is accessible in FDRS.\n\nIf symptoms continue after latest APIM software has been installed, inform customers that Ford is working on additional software enhancements which are expected to be delivered over-the-air (OTA) by late Q4 2024 on F-150, F-150 Lightning, Mustang Mach-E, Mustang, Escape, Corsair, Expedition, Navigator, Bronco, Mustang, and 2023-2024 F-Super Duty. Software will update automatically if vehicle connectivity is enabled in the vehicle's settings. Schedule a service visit for customers who have disabled vehicle connectivity or who report that they did not receive the update in late Q4 2024. Monitor OASIS for additional information."
+    },
+    {
+        "articletype":"ssm",
+        "releasedate":"November 5th, 2024",
+        "articleid":"53108",
+        "articlename":"IPC Self-Test Failures - Built On And Before 09-May-2024",
+        "articledescription":"Some 2024 Mustang vehicles built on and before 09-May-2024 may exhibit an instrument panel cluster (IPC) concern where an IPC self-test may be required. When performing the IPC self-test, a \"Test could not be started. Module programming may have failed\" message may show and the IPC will be color-coded as purple in the Ford Diagnosis and Repair System (FDRS) scan tool. To aid in diagnosing customer concerns, diagnostic trouble codes (DTCs) can be retrieved via the All-Continuous Memory DTC (ALL-CMDTC) self-test and normal Workshop Manual (WSM) diagnostics should be performed to address any DTCs present. The self-test communication error will not set any DTCs or affect vehicle operation and if this message is received, IPC replacement or reprogramming will not correct the self-test communication error."
+    },
+    {
+        "articletype":"ssm",
+        "releasedate":"November 5th, 2024",
+        "articleid":"53109",
+        "articlename":"IPC Self-Test Failures - Built On 10-May-2024 And Through 28-Aug-2024",
+        "articledescription":"Some 2024 Mustang vehicles built on 10-May-2024 and through 28-Aug-2024 may exhibit an instrument panel cluster (IPC) concern where an IPC self-test may be required. When performing the IPC self-test, a \"Test could not be started. Module programming may have failed\" message may show and the IPC will be color-coded as purple in the Ford Diagnosis and Repair System (FDRS) scan tool. To aid in diagnosing customer concerns, diagnostic trouble codes (DTCs) can be retrieved via the All-Continuous Memory DTC (ALL-CMDTC) self-test and normal Workshop Manual (WSM) diagnostics should be performed to address any DTCs present. The self-test communication error will not set any DTCs or affect vehicle operation and if this message is received, IPC replacement or reprogramming will not correct the self-test communication error. Inform customers that engineering is currently working on a solution for this condition and will be released via a software update delivered over-the-air (OTA) expected in Q1 2025. Software will update automatically if vehicle connectivity is enabled in the vehicle’s settings. Schedule a service visit for customers who have disabled vehicle connectivity or who report that they did not receive the update in Q1 2025. Monitor OASIS for additional information."
+    },
+    {
+        "articletype":"ssm",
+        "releasedate":"November 20th, 2024",
+        "articleid":"53160",
+        "articlename":"Various Driver Assistance Feature Warning Messages Displayed In The Instrument Panel Cluster (IPC), Various Invalid Data/Lost Communication Diagnostic Trouble Codes (DTCs) Stored In Various Modules",
+        "articledescription":"Some 2024 Mustang vehicles equipped with driver assistance features with minor feature codes FBFAB and FBFAC may exhibit driver assistance feature warning messages displayed in the IPC. Additionally, some modules may store invalid data/lost communication related DTCs. The image processing module A (IPMA) should not store these DTCs. To confirm a vehicle is built with a certain minor feature code, review the build information by double-clicking the vehicle identification number (VIN) in the upper left corner in the Professional Technician System (PTS). This condition may be due to the software in the IPMA, causing it to not communicate on the network. To restore communication and functionality, download and run the \"IPMA - Image Processing Module A (IPMA) Recovery\" app in the Ford Diagnosis and Repair System (FDRS) scan tool. Once IPMA communication has been restored, download and run the \"IPMA - Image Processing Module (IPMA) Alignment\" app, recheck DTCs and confirm that all warning messages are cleared from the IPC. If these steps correct the condition, release the vehicle back to the customer. Advisethe customers that a permanent repair to prevent recurrence is expected to be available to dealers by the end of Q1 2025 and schedule a service visit at this time. This software update is also expected to be delivered to vehicles over-the-air (OTA) starting at the end of Q1 2025. Software will update automatically if vehicle connectivity is enabled in the vehicle's settings. If the IPMA still does not communicate on the network after performing the recovery app, continue with normal diagnosis. Refer to the Workshop Manual (WSM), Section 419-07 > Lane Keeping System > Diagnosis and Testing."
+    },
+    {
+        "articletype":"tsb",
+        "releasedate":"November 22nd, 2024",
+        "articleid":"24-2384",
+        "articlename":"Misfire With DTCs P0301, P0302, P0303, And/Or P0304 Stored In The PCM",
+        "articledescription":"Some 2023-2025 Escape/Corsair vehicles equipped with a 1.5L or 2.0L EcoBoost engine, 2024 Mustang vehicles equipped with a 2.3L EcoBoost engine, 2024-2025 Nautilus, and 2025 Explorer vehicles equipped with a 2.3L EcoBoost engine may exhibit an engine misfire condition with DTCs P0301, P0302, P0303 and/or P0304 set in the PCM. To correct this condition, follow the Service Procedure to diagnose the vehicle."
     }
     ]
 }
