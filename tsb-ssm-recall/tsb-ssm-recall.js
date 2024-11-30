@@ -1,6 +1,16 @@
+
+results = []
+allarticles = []
+
 function loadData(json){
+    let recallsection = false;
+    let ssmsection = false;
+    let tsbsection = false;
     fetch(json).then((jsondata) => { return jsondata.json(); }).then((data) => {
-        if(data.released != true) {alert("This vehicle has not been released yet!");}
+        if(data.released != true) {
+            alert("This vehicle has not been released yet!");
+            return;
+        }
         else{
             //reset everything when a vehicle that is released is selected*
             document.getElementById("recall").innerHTML = "";
@@ -10,7 +20,7 @@ function loadData(json){
             document.getElementById("tsb").innerHTML = "";
             document.getElementById("tsb").style.display = "none";
             if(data.data.length <= 0) {
-                alert("This vehicle has no articles")
+                alert("This vehicle has no articles");
             }
             if(data.data.length > 0) {
                 data.data.forEach(article => {
@@ -34,13 +44,16 @@ function loadData(json){
                     let recallholddate = article.recallholddate //string
                     let recallaffectedcount = article.recallaffectedcount //number
 
-
                     //assemble the article
                     let newdiv = document.createElement("div"); 
-                    newdiv.classList.add("blogpost");
+                    //newdiv.classList.add("blogpost");
+                    newdiv.classList.add("article");
+                    datalist = target + " " + articleid + " " + articlename
 
                     splitter = document.createElement("hr");
                     splitter.style.cssText += "border: 3px solid #e5e5e5;";
+                    splitter2 = document.createElement("hr");
+                    splitter2.style.cssText += "border: 3px solid #e5e5e5;";
 
                     titletext = articleid + " - " + articlename
                     title = document.createElement("p");
@@ -101,7 +114,6 @@ function loadData(json){
                         hold.innerHTML = holdtext;
                         newdiv.appendChild(hold);
                     }
-                    newdiv.appendChild(splitter);
                     if(superseded) {
                         supersededtext = "Superseded by " + supersedingarticle
                         superseded = document.createElement("p");
@@ -131,12 +143,42 @@ function loadData(json){
                         newdiv.appendChild(description)
                     }
 
-                    //div done, add it to the parent div and ensure the parent div is set to be visibl
-                    document.getElementById(target).appendChild(newdiv)
+                    linebreak = document.createElement("br");
+                    if(target == "recall" && recallsection == false) {
+                        recallsection = true
+                        sectionname = document.createElement("p");
+                        sectionname.classList.add("titletext");
+                        sectionname.innerHTML = "Recalls"
+                        document.getElementById(target).appendChild(linebreak);
+                        document.getElementById(target).appendChild(sectionname);
+                        document.getElementById(target).appendChild(splitter2);
+                    } else if(target == "ssm" && ssmsection == false) {
+                        ssmsection = true
+                        sectionname = document.createElement("p");
+                        sectionname.classList.add("titletext");
+                        sectionname.innerHTML = "SSMs"
+                        document.getElementById(target).appendChild(linebreak);
+                        document.getElementById(target).appendChild(sectionname);
+                        document.getElementById(target).appendChild(splitter2);
+                    } else if(target == "tsb" && tsbsection == false) {
+                        tsbsection = true
+                        sectionname = document.createElement("p");
+                        sectionname.classList.add("titletext");
+                        sectionname.innerHTML = "TSBs"
+                        document.getElementById(target).appendChild(linebreak);
+                        document.getElementById(target).appendChild(sectionname);
+                        document.getElementById(target).appendChild(splitter2);
+                    }
+                    //div done, add it to the parent div and ensure the parent div is set to be visible
+                    document.getElementById(target).appendChild(newdiv);
                     document.getElementById(target).style.display = "block";
-
+                    document.getElementById(target).appendChild(splitter);
                 })
             }
         }
     })
+}
+
+function searcharticles() {
+    allarticles += document.getElementsByClassName(document.getElementById("searchbox"))
 }
