@@ -433,7 +433,10 @@
         "releasedate": "September 19th, 2024",
         "articleid": "52926",
         "articlename": "Illuminated MIL With DTCs P0300, P0302 And P0308 Stored In The Powertrain Control Module (PCM)",
-        "articledescription": "Some 2024 Mustang Dark Horse™ vehicles equipped with a manual transmission may exhibit an illuminated malfunction indicator lamp (MIL) with diagnostic trouble codes (DTCs) P0300, P0302 and P0308 stored in the powertrain control module (PCM) from extended high speed or racetrack operation (driving the vehicle and allowing the engine to hit maximum engine speed, several times and in a short period). This may be due to the software within the PCM. Normal driving conditions will not induce this condition. Component replacement and/or module reprogramming may not correct the concern. Inform customers that they can continue to drive the vehicle and engineering is currently working on a solution for this condition that is expected in January 2025. Monitor OASIS for updates."
+        "articledescription": "Some 2024 Mustang Dark Horse™ vehicles equipped with a manual transmission may exhibit an illuminated malfunction indicator lamp (MIL) with diagnostic trouble codes (DTCs) P0300, P0302 and P0308 stored in the powertrain control module (PCM) from extended high speed or racetrack operation (driving the vehicle and allowing the engine to hit maximum engine speed, several times and in a short period). This may be due to the software within the PCM. Normal driving conditions will not induce this condition. Component replacement and/or module reprogramming may not correct the concern. Inform customers that they can continue to drive the vehicle and engineering is currently working on a solution for this condition that is expected in January 2025. Monitor OASIS for updates.",
+        "removed":true,
+        "superseded":true,
+        "supersedingarticle":"SSM 53215"
     },
     {
         "articletype": "ssm",
@@ -497,6 +500,20 @@
         "articleid":"24-2384",
         "articlename":"Misfire With DTCs P0301, P0302, P0303, And/Or P0304 Stored In The PCM",
         "articledescription":"Some 2023-2025 Escape/Corsair vehicles equipped with a 1.5L or 2.0L EcoBoost engine, 2024 Mustang vehicles equipped with a 2.3L EcoBoost engine, 2024-2025 Nautilus, and 2025 Explorer vehicles equipped with a 2.3L EcoBoost engine may exhibit an engine misfire condition with DTCs P0301, P0302, P0303 and/or P0304 set in the PCM. To correct this condition, follow the Service Procedure to diagnose the vehicle."
+    },
+    {
+        "articletype": "ssm",
+        "releasedate": "November 22nd, 2024",
+        "articleid": "53215",
+        "articlename": "Illuminated MIL With DTCs P0300, P0302 And P0308 Stored In The Powertrain Control Module (PCM)",
+        "articledescription": "Some 2024 Mustang Dark Horse™ vehicles equipped with a manual transmission may exhibit an illuminated malfunction indicator lamp (MIL) with diagnostic trouble codes (DTCs) P0300, P0302 and P0308 stored in the powertrain control module (PCM) from extended high speed or racetrack operation (driving the vehicle and allowing the engine to hit maximum engine speed, several times and in a short period). Normal driving conditions will not induce this condition. To correct the condition, download and run the \"PCM - Powertrain Control Module (PCM) Misfire Monitor Profile Correction Learn\" app in the Ford Diagnosis and Repair System (FDRS) scan tool. Use the \"Submit Global Concern Report (GCR)\" link at the upper right of the OASIS report to submit if a vehicle comes in for this condition. For claiming, use causal part 12A650 and applicable labor operations in Section 10 of the Service Labor Time Standards (SLTS) Manual."
+    },
+    {
+        "articletype":"tsb",
+        "releasedate":"December 12th, 2024",
+        "articleid":"24-2422",
+        "articlename":"Luggage Compartment Scuff Plate To Luggage Compartment Side Trim Panel Gap",
+        "articledescription":"Some 2024 Mustang vehicles may exhibit the luggage compartment scuff plate with a gap near the right or left luggage compartment side trim panel. This may be due to the luggage compartment scuff plate installation. To correct the condition, follow the Service Procedure to replace the luggage compartment scuff plate."
     }
     ]
 }

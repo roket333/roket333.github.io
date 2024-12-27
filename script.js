@@ -3,10 +3,6 @@ window.onload = function() {
   document.getElementById("default").click();
   loadblogposts();
   loaddevblogposts();
-  if (document.referrer.includes("roket333.github.io")) {
-    // Display your special message
-    alert("You're visiting from the old GitHub Pages link!"); 
-  }
 
   //hide the loading screen and show the actual site
   document.getElementById("site").style.display = "block";
@@ -16,31 +12,85 @@ window.onload = function() {
 function myFunction() {
   var x = document.getElementById("navbar");
   if (x.className === "topnav") {
-    x.className += " responsive";
+      x.className += " responsive";
   } else {
-    x.className = "topnav";
+      x.className = "topnav";
   }
 }
 
 function openTab(event, tab) {
-  var i,tabcont,tablinks
+  var i, tabContents, tablinks;
 
-  //hide everything with the class "tabcontent"
-  tabcont = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcont.length; i++) {
-    tabcont[i].style.display = "none";
+  // Get all tab contents
+  tabContents = document.getElementsByClassName("tabcontent");
+
+  // Ensure the tab exists and has the correct class
+  var tabContent = document.getElementById(tab);
+  if (!tabContent || !tabContent.classList.contains("tabcontent")) {
+      return; // Exit if the tab is invalid
   }
 
-  //get all elements with the class "tablinks" and remove the class "active"
+  if(tab == "fursuitlinks") {
+    document.getElementById("linklistfooter").style.display = "none";
+  } else {
+    document.getElementById("linklistfooter").style.display = "block";
+  }
+
+  // Hide all tab contents
+  for (i = 0; i < tabContents.length; i++) {
+      tabContents[i].style.display = "none";
+  }
+
+  // Show the current tab content
+  tabContent.style.display = "block";
+
+  // Update active states for visible buttons
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
 
-  //show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tab).style.display = "block";
-  event.currentTarget.className += " active";
+  if (event && event.currentTarget.style.display !== "none") {
+      event.currentTarget.className += " active";
+  }
+
+  // Update the URL hash
+  history.replaceState(null, null, `#${tab}`);
 }
+
+function handleHashChange() {
+  var hash = window.location.hash.substring(1); // Remove the '#' from the hash
+  if (hash) {
+      // Ensure the hash corresponds to a valid tab
+      var tabContent = document.getElementById(hash);
+      if (tabContent && tabContent.classList.contains("tabcontent")) {
+          openTab(null, hash);
+      } else {
+          console.warn(`Hash "${hash}" does not correspond to a valid tab.`);
+      }
+  }
+}
+
+// Event listener for hash changes
+window.addEventListener("hashchange", (event) => {
+  event.preventDefault(); // Prevent default scrolling
+  handleHashChange();
+});
+
+// Initialize tabs on page load based on URL hash
+document.addEventListener("DOMContentLoaded", () => {
+  var initialHash = window.location.hash.substring(1);
+  if (initialHash) {
+      handleHashChange(); // Display the tab based on the hash
+  } else {
+      // Default to the first visible tab
+      var defaultTabButton = document.querySelector(".tablinks:not([style*='display: none'])");
+      if (defaultTabButton) {
+          openTab({ currentTarget: defaultTabButton }, defaultTabButton.getAttribute("data-tab"));
+      }
+  }
+});
+
 
 function newsplash() {
   //when the new splash button is pressed, remove any "spinning" that might be on it, ask for a new splash, then make it speen
@@ -55,13 +105,31 @@ function newsplash() {
 
 function splashes(override) {
   fetch("./splashes.json").then((splashes) => { return splashes.json(); }).then((data) => {
-    var random = Math.floor(Math.random() * (data.length + 1));
+
+    // Retrieve existing cookies
+    let random = getCookie("random");
+    let oldrandom1 = getCookie("oldrandom1");
+    let oldrandom2 = getCookie("oldrandom2");
+
+    // Shift the values correctly
+    setCookie("oldrandom2", oldrandom1, 7); // Move oldrandom1 to oldrandom2
+    setCookie("oldrandom1", random, 7);    // Move random to oldrandom1
+
+    // Generate a new random number
+    random = Math.floor(Math.random() * (data.length + 1));
+    //random = 621
+    setCookie("random", random, 7); // Store the new random number
+
+    random = getCookie("random");
+    oldrandom1 = getCookie("oldrandom1");
+    oldrandom2 = getCookie("oldrandom2");
+
     let date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
     var tp = Math.floor(Math.random() * 5)
     if(override && !override.isNaN) {
-      var random = override
+      random = override
     }
     //var random = 944;
     //var random = Math.floor((Math.random() * 3)+ 920)
@@ -77,17 +145,22 @@ function splashes(override) {
     //remove the Peace and Tranquility and Free Speech Flag stuff when getting a new splash
     //console.log("Day: " + day + ", Month: " + month);
     //console.log(tp);
+
+    //if the criteria matches, we should end the function at that if statement, hence why this is an else-if chain
     if (random == (data.length)) { //random ended up being the length of the splash list + 1, let's show this special splash showing how many there are
       document.getElementById("splash").innerHTML = "Featuring " + (data.length + 1) + " splashes!"
       //this was a total pain to get working right
     } 
-    else if (day == 5 && month == 9 && tp == 1) { //liar's day?
+    else if (random == oldrandom1 && oldrandom1 == oldrandom2) { //lots of work involving cookies just to make the "oh baby a triple" splash work
+      document.getElementById("splash").innerHTML = data[1240];
+    }
+    else if (day == 5 && month == 9 && (tp == 1 && random == 796)) { //liar's day?
       document.getElementById("splash").innerHTML = data[796];
     } 
-    else if ((random == 800 || tp == 1) && day == 8 && month == 8) { //vore day splash which we should show if it's 8/8
+    else if ((random == 800 && tp == 1) && day == 8 && month == 8) { //vore day splash which we should show if it's 8/8
       document.getElementById("splash").innerHTML = data[800];
     } 
-    else if ((random == 801 || tp == 1) && day == 31 && month == 3) { //trans day of visibility splash which should be shown on March 31st
+    else if ((random == 801 && tp == 1) && day == 31 && month == 3) { //trans day of visibility splash which should be shown on March 31st
       document.getElementById("splash").innerHTML = data[801]
     }
     else if (random == 357) { //add an error to console if the splash is the one that says "no errors in console"
@@ -113,11 +186,12 @@ function splashes(override) {
       document.getElementById("splash").classList.add("fsfps3text");
       document.getElementById("splash").innerHTML = data[random];
     }
-    else if (random == 937) {
+    else if (random == 937) { //rush b
       document.getElementById("splash").classList.add("bombplanted");
       document.getElementById("splash").innerHTML = data[random];
     }
-    else if (random != 313) { document.getElementById("splash").innerHTML = data[random]; } else splashes(); //if "random" does not point to the splash that is not supposed to appear, work normally. note: this HAS to be last in order for things to work right
+    //this splash is not one that gets some special effects, and this line is the default behavior
+    else if (random != 313) { document.getElementById("splash").innerHTML = data[random]; } else splashes(); //check if "random" is not 313. if that passes, just display the text as normal. if it fails, "random" is 313 and we have to re-roll
   });
 }
 
@@ -369,4 +443,22 @@ function loaddevblogposts() {
       });
     }
   });
+}
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Convert days to milliseconds
+  const expires = "expires=" + date.toUTCString();
+  document.cookie = `${name}=${value};${expires};path=/`;
+}
+
+function getCookie(name) {
+  const cookies = document.cookie.split(";"); // Split cookies into individual key-value pairs
+  for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim(); // Remove leading/trailing spaces
+      if (cookie.startsWith(name + "=")) {
+          return parseFloat(cookie.substring(name.length + 1)); // Parse as a number
+      }
+  }
+  return null; // Return null if the cookie is not found
 }

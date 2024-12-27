@@ -34,13 +34,12 @@
 
     <!-- Tabs -->
     <div class="tablist center">
-      <button class="tablinks" id="default" onclick="openTab(event, 'tabhome')">Home</button>
-      <button class="tablinks" onclick="openTab(event, 'tabinfo')">Info</button>
-      <button class="tablinks" onclick="openTab(event, 'tabprojects')">Projects</button>
-      <!--<button class="tablinks" onclick="openTab(event, 'tabworks')">Works</button>-->
-      <button class="tablinks" onclick="openTab(event, 'tabpersblog')">Personal Blog</button>
-      <button class="tablinks" onclick="openTab(event, 'tabdevblog')">Dev Blog</button>
-      <button class="tablinks" onclick="openTab(event, 'tabtools')">Tools</button>
+      <button class="tablinks" id="default" onclick="openTab(event, 'home')">Home</button>
+      <button class="tablinks" onclick="openTab(event, 'info')">Info</button>
+      <button class="tablinks" onclick="openTab(event, 'projects')">Projects</button>
+      <button class="tablinks" onclick="openTab(event, 'blog_personal')">Personal Blog</button>
+      <button class="tablinks" onclick="openTab(event, 'blog_development')">Dev Blog</button>
+      <button class="tablinks" onclick="openTab(event, 'tools')">Tools</button>
     </div>
     <!-- End of tabs -->
 
@@ -52,7 +51,7 @@
 
     <!-- Tab content -->
     <!-- Home tab -->
-    <div class="tabcontent" id="tabhome">
+    <div class="tabcontent" id="home">
       <div class="maintext">
         Welcome to my site!<br>
         Click on one of the tabs to see their content!
@@ -60,7 +59,7 @@
     </div>
 
     <!-- Info tab -->
-    <div class="tabcontent" id="tabinfo">
+    <div class="tabcontent" id="info">
       <div class="maintext">
         About me
       </div>
@@ -117,7 +116,7 @@
     </div>
 
     <!-- Projects tab -->
-    <div class="tabcontent" id="tabprojects">
+    <div class="tabcontent" id="projects">
       <div class="maintext">
         Projects
       </div>
@@ -129,21 +128,16 @@
     </div>
 
     <!-- Works tab -->
-    <div class="tabcontent" id="tabworks">
+    <div class="tabcontent" id="works">
       <div class="maintext">
         Works
       </div>
       <div class="showcasecontainer">
-        <p>Note: these are old renders, new works coming soon-ish</p>
-        <img loading="lazy" class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769461708185610/botwswordrender.png">
-        <img loading="lazy" class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769475402588180/testofstrengthshrine.png">
-        <img loading="lazy" class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769491684880464/nullspace.png">
-        <img loading="lazy" class="showimage" src="https://cdn.discordapp.com/attachments/895769112070991902/895769504800448582/minecraft.png">
       </div>
     </div>
 
     <!-- Blog tab -->
-    <div class="tabcontent" id="tabpersblog">
+    <div class="tabcontent" id="blog_personal">
       <div class="maintext">
         My Personal Blog<br>Here is where I will post stuff I want and keep people updated on what's happening
       </div>
@@ -152,7 +146,7 @@
     </div>
     
     <!-- Blog tab -->
-    <div class="tabcontent" id="tabdevblog">
+    <div class="tabcontent" id="blog_development">
       <div class="maintext">
         My Development Blog<br>This is where I will post about any game development stuff
       </div>
@@ -161,7 +155,7 @@
     </div>
 
     <!-- Tools tab -->
-    <div class="tabcontent" id="tabtools">
+    <div class="tabcontent" id="tools">
       <div class="maintext">
         Various tools i've made<br>
         <div class="center straybutton">
@@ -196,13 +190,147 @@
       </div>
     </div>
 
+    <!-- Hidden tab -->
+    <div class="tabcontent" id="fursuitlinks">
+      <div><br>
+        <div class="maintext">Hello! You probably got here from scanning the thing on my fursuit!<br>Welcome to my website!</div>
+      <br></div>
+      <div class="linklist">
+        <a>  
+          <button onclick="openTab(null, 'fursuitspecs')">Fursuit Tech Specs and Info</button>
+        </a><br>
+        <a class="tgbutton" href="https://t.me/roket_gamer" target="_blank" rel="noopener noreferrer">  
+          <button>Telegram</button>  
+        </a><br>
+        <a class="twbutton" href="https://twitter.com/new_roket_gamer" target="_blank" rel="noopener noreferrer">  
+          <button>Twitter</button>  
+        </a><br>
+        <a class="bsbutton" href="https://bsky.app/profile/roketgamer.dev" target="_blank" rel="noopener noreferrer">  
+          <button>Bluesky</button>  
+        </a><br>
+        <a class="ytbutton" href="https://www.youtube.com/c/roketgamer333" target="_blank" rel="noopener noreferrer">  
+          <button>YouTube</button>  
+        </a><br>
+        <a class="stbutton" href="https://steamcommunity.com/id/RoketGamer" target="_blank" rel="noopener noreferrer">  
+          <button>Steam</button>  
+        </a><br>
+      </div>
+    </div>
+
+    <!-- Hidden tab -->
+    <div class="tabcontent" id="fursuitspecs">
+      <div><br>
+        <div class="linklist">
+          <a>  
+            <button onclick="openTab(null, 'fursuitlinks')">Back</button>
+          </a>
+      </div>
+      <br>
+        <div class="maintext">Fursuit tech specs<br>Notice: Fursuit is incomplete, specs may change
+
+        <table class="center">
+          <tr>
+            <th>Main Computer</th>
+            <th>Beelink SER9 HX 370 (Graphics and Visuals)<br>Arduino UNO R4 WiFi (Sensors and Motors)<br></th>
+          </tr>
+        <tbody>
+          <tr>
+            <td>Displays</td>
+            <td>Dual 90hz 1080x1200 (Exterior)<br>2x 90hz 2160x2160 (Interior)<br></td>
+          </tr>
+          <tr>
+            <td>Cameras</td>
+            <td>2x ELP USB 3.0 IMX415</td>
+          </tr>
+          <tr>
+            <td>Batteries</td>
+            <td>2x Sharge Shargeek 170</td>
+          </tr>
+          <tr>
+            <td>Sensors</td>
+            <td>2x Adafruit Precision Temperature and Humidity Sensor<br>2x Adafruit VOC and eCO2 Sensor<br>Adafruit Pressure Sensor<br>2x Adafruit Light Sensor<br>Sparkfun Pulse Oximeter and Heart Rate Sensor<br>Adafruit 8-Channel I2C Multiplexer</td>
+          </tr>
+          <tr>
+            <td>Controls</td>
+            <td>BrainBit Headband (Ears, Eye Movement, Tail)<br>Adafruit Light Sensor (Iris Dilation)<br>2x Adafruit 16-Channel PWM Driver (Ears, Tail, Eyelids)</td>
+          </tr>
+          <tr>
+            <td>Ventilation</td>
+            <td>2x Noctua A4x20 5V PWM</td>
+          </tr>
+        </tbody>
+        </table>
+        <br><br>
+        Anticipated FAQ<br>
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">What is this?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          this is a fursuit that i have created myself.<br>my best description is<br>"VR headset in a fursuit head with animatronic parts"
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">How does it work?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          hidden in the fursuit head are two cameras i placed to give me vision accurate to how the real character would see.<br>
+          the image from those cameras gets displayed to two high resolution and high framereate displays in the head that i see.<br>
+          some info such as heartrate, blood oxygen levels, inside humidity and temp, and other stuff gets overlaid so i know what is going on
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">How long did it take to make?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          as of now, the fursuit is incomplete. as you see it now, its more of a plastic head with exposed electronics and tail.<br>
+          i've been dreaming about it since August 2024 or so, and actually started working on it in late November 2024
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">How do you breathe in there?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          i just breathe normally, like any fursuiter does
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">Wont all the CO2 inside make it hard to breathe?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          inside the head, i have a VOC and eCO2 sensor. this will detect and record the VOCs from 0 to 60,000 parts per billion, and estimate the CO2 from 400 to 60,000 parts per million.<br>
+          the reason why i went with the CO2 estimator instead of a dedicated module for it is it just made more sense given the use case. less expensive, smaller, larger reading range.<br>
+          when CO2 levels get dangerously high inside the head, it will warn me, and at a certain point, urge me to take off the head immediately<br>
+          it will also let me know if the air coming in the nose is high CO2 as well
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">Dont you overheat in that?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          dont get me wrong, it gets very warm in here. however, i have a ventilation system consisting of two fans that take in air through the fursuit's nose.<br>
+          that air then passes over some sensors to get information about it, then goes through one of the fans.<br>
+          one fan uses the air to cool the computers inside, and the other pushes the air through vents to help keep me cool.<br>
+          having the head base not be 100% solid and have holes in it also helps
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">How do you hear?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          my hearing in this is impaired for sure, but the ears are functional. sound can travel down the ears and into my actual ears.<br>
+          think those horns old people use in cartoons to hear better
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">What parts did you make yourself?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          i designed and 3d printed nearly all the parts. the only things i really didnt make are the computers, screens, sensors, and motors
+        </div>
+        <div class="aboutcontainer">
+          <p class="bigtext">What software are you using?</p>
+          <hr style="border: 3px solid #e5e5e5;">
+          for both the internal and external displays, i am using Unity. i needed to use some game engine because i dont know how to write a program from scratch.<br>
+          plus, the BrainBit used for ears, eyes, and tail movement has an API for Unity, so it makes moving the eyes easier
+        </div>
+      </div>
+    </div>
+
     <!-- End of tab content-->
 
+    <br>
     <div class="footer center">
       Proudly made by Roket 🏳‍🌈<br>
     </div>
     <br><br>
-    <div class="footer center linklist">
+    <div class="footer center linklist narrow" id="linklistfooter">
+      <div class="maintext">You can also find me on</div>
       <a class="tgbutton" href="https://t.me/roket_gamer" target="_blank" rel="noopener noreferrer">  
         <button>Telegram</button>  
       </a>
