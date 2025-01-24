@@ -18,20 +18,57 @@ function myFunction() {
   }
 }
 
+function handleHashChange() {
+  var hash = window.location.hash.substring(1); // Remove the '#' from the hash
+  if (hash) {
+      // Ensure the hash corresponds to a valid tab
+      var tabContent = document.getElementById(hash);
+      if (tabContent && tabContent.classList.contains("tabcontent")) {
+          openTab(null, hash); // Open the tab without triggering a click event
+      } else {
+          console.warn(`Hash "${hash}" does not correspond to a valid tab.`);
+      }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Check the URL hash when the page loads
+  const initialHash = window.location.hash.substring(1); // Remove the '#' from the hash
+
+  if (initialHash) {
+      // If there is a hash, try to load the corresponding tab
+      const tabContent = document.getElementById(initialHash);
+      if (tabContent && tabContent.classList.contains("tabcontent")) {
+          openTab(null, initialHash); // Open the tab corresponding to the hash
+      } else {
+          console.warn(`Hash "${initialHash}" does not match a valid tab.`);
+          loadDefaultTab(); // Fall back to default tab if hash is invalid
+      }
+  } else {
+      loadDefaultTab(); // Load the default tab if no hash is present
+  }
+});
+
+// Handle hash changes when the user navigates
+window.addEventListener("hashchange", () => {
+  const hash = window.location.hash.substring(1); // Remove the '#' from the hash
+  const tabContent = document.getElementById(hash);
+
+  if (tabContent && tabContent.classList.contains("tabcontent")) {
+      openTab(null, hash); // Open the tab corresponding to the hash
+  } else {
+      console.warn(`Hash "${hash}" does not match a valid tab.`);
+  }
+});
+
 function openTab(event, tab) {
-  var i, tabContents, tablinks;
+  let i, tabContents, tablinks;
 
   // Get all tab contents
   tabContents = document.getElementsByClassName("tabcontent");
 
-  if(tab == "fursuitlinks") {
-    document.getElementById("linklistfooter").style.display = "none";
-  } else {
-    document.getElementById("linklistfooter").style.display = "block";
-  }
-
   // Ensure the tab exists and has the correct class
-  var tabContent = document.getElementById(tab);
+  const tabContent = document.getElementById(tab);
   if (!tabContent || !tabContent.classList.contains("tabcontent")) {
       console.warn(`Tab "${tab}" is not valid.`);
       return; // Exit if the tab is invalid
@@ -51,46 +88,24 @@ function openTab(event, tab) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
 
-  if (event && event.currentTarget.style.display !== "none") {
+  if (event && event.currentTarget) {
       event.currentTarget.className += " active";
   }
 
-  // Update the URL hash
+  // Update the URL hash without causing a page scroll
   history.replaceState(null, null, `#${tab}`);
 }
 
-function handleHashChange() {
-  var hash = window.location.hash.substring(1); // Remove the '#' from the hash
-  if (hash) {
-      // Ensure the hash corresponds to a valid tab
-      var tabContent = document.getElementById(hash);
-      if (tabContent && tabContent.classList.contains("tabcontent")) {
-          openTab(null, hash); // Open the tab without triggering a click event
-      } else {
-          console.warn(`Hash "${hash}" does not correspond to a valid tab.`);
-      }
+function loadDefaultTab() {
+  // Default to the first visible tab
+  const defaultTabButton = document.querySelector(".tablinks:not([style*='display: none'])");
+  if (defaultTabButton) {
+      openTab({ currentTarget: defaultTabButton }, defaultTabButton.getAttribute("data-tab"));
+  } else {
+      console.warn("No default tab found.");
   }
 }
 
-// Initialize tabs on page load based on URL hash
-document.addEventListener("DOMContentLoaded", () => {
-  var initialHash = window.location.hash.substring(1);
-  if (initialHash) {
-      handleHashChange(); // Display the tab based on the hash
-  } else {
-      // Default to the first tab
-      var defaultTabButton = document.querySelector(".tablinks:not([style*='display: none'])");
-      if (defaultTabButton) {
-          openTab({ currentTarget: defaultTabButton }, defaultTabButton.getAttribute("data-tab"));
-      }
-  }
-});
-
-// Event listener for hash changes
-window.addEventListener("hashchange", (event) => {
-  event.preventDefault(); // Prevent default scrolling
-  handleHashChange();
-});
 
 
 function newsplash() {
