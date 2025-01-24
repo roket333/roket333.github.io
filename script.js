@@ -1,6 +1,6 @@
 window.onload = function() {
   splashes();
-  document.getElementById("default").click();
+  //document.getElementById("default").click();
   loadblogposts();
   loaddevblogposts();
 
@@ -32,22 +32,18 @@ function handleHashChange() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Check the URL hash when the page loads
-  const initialHash = window.location.hash.substring(1); // Remove the '#' from the hash
+  // Check if there's a hash in the URL
+  let initialHash = window.location.hash.substring(1);
 
   if (initialHash) {
-      // If there is a hash, try to load the corresponding tab
-      const tabContent = document.getElementById(initialHash);
-      if (tabContent && tabContent.classList.contains("tabcontent")) {
-          openTab(null, initialHash); // Open the tab corresponding to the hash
-      } else {
-          console.warn(`Hash "${initialHash}" does not match a valid tab.`);
-          loadDefaultTab(); // Fall back to default tab if hash is invalid
-      }
+      // If there is a hash, handle it like normal
+      handleHashChange();
   } else {
-      loadDefaultTab(); // Load the default tab if no hash is present
+      // No hash? Default to "home"
+      document.getElementById("default").click();
   }
 });
+
 
 // Handle hash changes when the user navigates
 window.addEventListener("hashchange", () => {
@@ -95,18 +91,6 @@ function openTab(event, tab) {
   // Update the URL hash without causing a page scroll
   history.replaceState(null, null, `#${tab}`);
 }
-
-function loadDefaultTab() {
-  // Default to the first visible tab
-  const defaultTabButton = document.querySelector(".tablinks:not([style*='display: none'])");
-  if (defaultTabButton) {
-      openTab({ currentTarget: defaultTabButton }, defaultTabButton.getAttribute("data-tab"));
-  } else {
-      console.warn("No default tab found.");
-  }
-}
-
-
 
 function newsplash() {
   //when the new splash button is pressed, remove any "spinning" that might be on it, ask for a new splash, then make it speen
