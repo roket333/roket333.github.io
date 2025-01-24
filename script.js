@@ -24,16 +24,17 @@ function openTab(event, tab) {
   // Get all tab contents
   tabContents = document.getElementsByClassName("tabcontent");
 
-  // Ensure the tab exists and has the correct class
-  var tabContent = document.getElementById(tab);
-  if (!tabContent || !tabContent.classList.contains("tabcontent")) {
-      return; // Exit if the tab is invalid
-  }
-
   if(tab == "fursuitlinks") {
     document.getElementById("linklistfooter").style.display = "none";
   } else {
     document.getElementById("linklistfooter").style.display = "block";
+  }
+
+  // Ensure the tab exists and has the correct class
+  var tabContent = document.getElementById(tab);
+  if (!tabContent || !tabContent.classList.contains("tabcontent")) {
+      console.warn(`Tab "${tab}" is not valid.`);
+      return; // Exit if the tab is invalid
   }
 
   // Hide all tab contents
@@ -64,18 +65,12 @@ function handleHashChange() {
       // Ensure the hash corresponds to a valid tab
       var tabContent = document.getElementById(hash);
       if (tabContent && tabContent.classList.contains("tabcontent")) {
-          openTab(null, hash);
+          openTab(null, hash); // Open the tab without triggering a click event
       } else {
           console.warn(`Hash "${hash}" does not correspond to a valid tab.`);
       }
   }
 }
-
-// Event listener for hash changes
-window.addEventListener("hashchange", (event) => {
-  event.preventDefault(); // Prevent default scrolling
-  handleHashChange();
-});
 
 // Initialize tabs on page load based on URL hash
 document.addEventListener("DOMContentLoaded", () => {
@@ -83,12 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (initialHash) {
       handleHashChange(); // Display the tab based on the hash
   } else {
-      // Default to the first visible tab
+      // Default to the first tab
       var defaultTabButton = document.querySelector(".tablinks:not([style*='display: none'])");
       if (defaultTabButton) {
           openTab({ currentTarget: defaultTabButton }, defaultTabButton.getAttribute("data-tab"));
       }
   }
+});
+
+// Event listener for hash changes
+window.addEventListener("hashchange", (event) => {
+  event.preventDefault(); // Prevent default scrolling
+  handleHashChange();
 });
 
 
