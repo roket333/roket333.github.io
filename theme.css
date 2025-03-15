@@ -832,6 +832,10 @@ input[type="range"]::-moz-range-track {
     width: 80%;
 }
 
+.tenwidth {
+    width: 10%;
+}
+
 .border {
     border: 5px solid #e5e5e5;
     border-radius: 10px;

@@ -462,3 +462,8 @@ function getCookie(name) {
   }
   return null; // Return null if the cookie is not found
 }
+
+function playYippee() {
+  const audio = new Audio('./assets/audio/yippee.mp3');
+  audio.play();
+}

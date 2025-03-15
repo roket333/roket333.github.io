@@ -514,6 +514,34 @@
         "articleid":"24-2422",
         "articlename":"Luggage Compartment Scuff Plate To Luggage Compartment Side Trim Panel Gap",
         "articledescription":"Some 2024 Mustang vehicles may exhibit the luggage compartment scuff plate with a gap near the right or left luggage compartment side trim panel. This may be due to the luggage compartment scuff plate installation. To correct the condition, follow the Service Procedure to replace the luggage compartment scuff plate."
+    },
+    {
+        "articletype":"ssm",
+        "releasedate":"January 17th, 2025",
+        "articleid":"53305",
+        "articlename":"Whine Noise From Bellhousing/Front Of Fluid Pan At Idle And/Or While Driving",
+        "articledescription":"Some 2017-2025 Ford and Lincoln vehicles equipped with a 10R60/10R80/10R80 MHT/10R100 transmission may exhibit a whine noise at idle and/or while driving. This may be identified as coming from the bellhousing and the front of the transmission fluid pan. The whine noise may become louder when the transmission is at operating temperature and may increase with engine revolutions per minute (RPM) in the park (P) position. A small amount of whine noise is considered to be characteristic of the 10R60/10R80/10R80 MHT/10R100 transmissions due to the offset gear drivetrain in the front support and has no effect on durability."
+    },
+    {
+        "articletype":"ssm",
+        "releasedate":"February 3rd, 2025",
+        "articleid":"53347",
+        "articlename":"Upper Loadspace Trim Panel Breaking When Operating The Convertible Top",
+        "articledescription":"Some 2024 Mustang vehicles equipped with a convertible top may exhibit the upper loadspace trim panel cracking while operating the convertible top. This may be due to the upper loadspace trim panel. To correct this condition, replace the upper loadspace trim panel. A new updated part is available for the right (service part number PR3Z-7631004-BC) and left (service part number PR3Z-7631005-BC) upper loadspace trim panels. For claiming, use causal part 7631005 and applicable labor operations in Section 12 of the Service Labor Time Standards (SLTS) Manual."
+    },
+    {
+        "articletype":"tsb",
+        "releasedate":"February 25th, 2025",
+        "articleid":"25-2055",
+        "articlename":"General System Performance, Stability, And Intermittent System Reboot, Intermittent Wireless CarPlay Or Android Auto Function, Phone Related Concerns With Intermittent No Audio Or Static, Navigation/Global Positioning System (GPS) Related Concerns Through CarPlay And Android Auto, Alexa Function Consistency And Stability",
+        "articledescription":"Some of the vehicles listed in the Model statement above may exhibit at least one of the following conditions:<br>General system performance/stability/intermittent system reboot<br>Intermittent wireless Apple CarPlay or Android Auto function<br>Phone related concerns with intermittent no audio or static<br>Navigation/GPS related concerns through Apple CarPlay and Android Auto<br>Alexa function consistency and stability<br>This may be due to a concern with the software in the APIM.<br>NOTE: The APIM software update that addresses the symptom listed in this bulletin may have been sent via a software update delivered OTA to connected vehicles that have automatic updates enabled through the center display screen. Enter the VIN in PTS and check the OTA Dashboard under the Connected Vehicle tab for OTA update history. If an update to the APIM has successfully completed recently and the customer is reporting the symptoms are no longer present, this article may not apply.<br>For vehicles that meet all of the criteria in the Issue and Model statements, follow the Service Procedure to reprogram the APIM."
+    },
+    {
+        "articletype":"tsb",
+        "releasedate":"March 7th, 2025",
+        "articleid":"25-2074",
+        "articlename":"Misfire With DTC(s) P0301, P0302, P0303, And/Or P0304 Stored In The PCM",
+        "articledescription":"Issue: Some of the vehicles listed in the Model statement above may exhibit an engine misfire condition with DTCs P0301, P0302, P0303 and/or P0304 set in the PCM.<br>Action: For vehicles that meet all of the criteria in the Issue and Model statements, follow the Service Procedure to diagnose the vehicle."
     }
     ]
 }
