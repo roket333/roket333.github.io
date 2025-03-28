@@ -112,12 +112,10 @@
         "articlename":"Black Instrument Panel Cluster (IPC) Screen",
         "articleid":"24C35",
         "releasedate":"October 29th, 2024",
-        "recalladvancenotice":true,
-        "recalladvancenoticedate":"Q1 2025",
         "affectedrangefrom":"5/10/24",
         "affectedrangeto":"8/20/24",
         "articledescription":"The affected vehicles may not conform to the requirements specified by Federal Motor Vehicle Safety Standard (FMVSS) No. 101, 102, 108, 126, 135, 138 and 208. Customers may experience a black (i.e., non-functioning) Instrument Panel Cluster (IPC) screen while driving or upon vehicle start-up. This black IPC screen may occur randomly and persist until the next time the vehicle is turned on. A black IPC screen does not display vehicle speed, fuel level, engine status, and other critical safety information, increasing the risk of a crash.",
-        "recallaffectedcount":6192,
+        "recallaffectedcount":6193,
         "recallhold":false,
         "recallnodrive":false,
         "removed":false,
@@ -542,6 +540,28 @@
         "articleid":"25-2074",
         "articlename":"Misfire With DTC(s) P0301, P0302, P0303, And/Or P0304 Stored In The PCM",
         "articledescription":"Issue: Some of the vehicles listed in the Model statement above may exhibit an engine misfire condition with DTCs P0301, P0302, P0303 and/or P0304 set in the PCM.<br>Action: For vehicles that meet all of the criteria in the Issue and Model statements, follow the Service Procedure to diagnose the vehicle."
+    },
+    {
+        "articletype":"recall",
+        "releasedate":"March 20th, 2025",
+        "articleid":"25B07",
+        "articlename":"Summer Tire Inspection",
+        "affectedrangefrom":"2024 MY - 10/2/24, 2025 MY - 10/24/24",
+        "affectedrangeto":"2024 MY - 11/4/24, 2025 MY - 10/30/24",
+        "articledescription":"Certain 2024-2025 Model Year Mustang Dark Horse Vehicles Equipped with Summer Only Tires may develop cracks visible to the customer if driven during cold temperatures less than 19 degrees Fahrenheit (-7 degrees Celsius). The customer will be able to safely use the vehicle.",
+        "recallaffectedcount":81
+    },
+    {
+        "articletype":"recall",
+        "releasedate":"March 20th, 2025",
+        "articleid":"25S19",
+        "articlename":"Transmission Main Control Valve Body Replacement",
+        "affectedrangefrom":"12/19/24",
+        "affectedrangeto":"2/3/25",
+        "articledescription":"On all of the affected vehicles, some inner dimensions of the transmission main valve body do not meet the engineering print specifications, and the driver may experience no reverse motion when the gear selector is placed in reverse. The vehicle may move forward while the gear selector is placed in the reverse or neutral position. The Malfunction Indicator Light (MIL) and Wrench light will illuminate when this malfunction occurs. Unexpected vehicle motion can increase the risk of a crash.",
+        "recallaffectedcount":269,
+        "recalladvancenotice":true,
+        "recalladvancenoticedate":"Q2 2025"
     }
     ]
 }

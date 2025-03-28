@@ -21,18 +21,37 @@
     <script src="./mustangtools/mustangtools.js"></script>
     <div class="biggertext">
         <!--Tire Speedometer Correction Tool-->
-        <div class="center straybutton showcasecontainer">
+        I personally recommend just taking the resulting tire size values and putting them in FORScan's easy mode BCM menu<br>
+        <div class="center straybutton showcasecontainer" id="tiresizetool">
             <a class=colortext>Speedometer Correction (Tires)</a>
             <hr style="border: 3px solid #e5e5e5;">
-            315/80R17 - ✅<br>37X12.5R17 - ❌
-            <br>
             <div class="borderlessgrid doublewidegrid">
-                <p>Tire Width in MM:</p><input class="field" id="tiresize_width" value="255" onkeypress="if(event.keyCode==13) tirecalc();">
+                <button onclick="showmettire()">Metric Tires<br>(315/80R17)</button>
+                <button onclick="showimptire()">Imperial Tires<br>(37x12.5R17)</button>
+            </div>
+            <div style="display: none;" class="borderlessgrid doublewidegrid" id="tiresizeimp">
+                <p>Tire Diameter in inches:</p><input class="field" id="tiresize_tirediam_imp" value="37" onkeypress="if(event.keyCode==13) tirecalc();">
+                <p>Tire Width in inches:</p><input class="field" id="tiresize_tirewidth_imp" value="12.5" onkeypress="if(event.keyCode==13) tirecalc();">
+                <p>Wheel Diameter in inches:</p><input class="field" id="tiresize_wdiam_imp" value="17" onkeypress="if(event.keyCode==13) tirecalc();">
+            </div>
+            <div style="display: grid;" class="borderlessgrid doublewidegrid" id="tiresizemet">
+                <p>Tire Width in mm:</p><input class="field" id="tiresize_width" value="255" onkeypress="if(event.keyCode==13) tirecalc();">
                 <p>Tire Aspect Ratio:</p><input class="field" id="tiresize_aspect" value="40" onkeypress="if(event.keyCode==13) tirecalc();">
-                <p>Wheel Diameter in IN:</p><input class="field" id="tiresize_wdiam" value="19" onkeypress="if(event.keyCode==13) tirecalc();">
+                <p>Wheel Diameter in inches:</p><input class="field" id="tiresize_wdiam" value="19" onkeypress="if(event.keyCode==13) tirecalc();">
             </div>
             <button onclick="tirecalc()">Calculate</button>
             <hr style="border: 3px solid #e5e5e5;">
+            
+            <div>
+                <table class="center">
+                    <tr>
+                        <th colspan="3">Tire Circumference in mm:</th><th id="tiresize_result"></th>
+                    </tr>
+                </table>
+                <p class="errortext" id="tiretoobig1" style="display: none;">Notice: Your BCM may not support a tire over 2270mm<br>May vary depending on vehicle</p>
+                <p class="errortext" id="tiretoobig2" style="display: none;">Notice: Your BCM likely does not support a tire over 2750mm<br>May vary depending on vehicle</p>
+                <p class="errortext" id="tiretoobig3" style="display: none;">Notice: Your BCM very likely does not support a tire over 2960mm<br>May vary depending on vehicle</p>
+            </div>
             Show results for
             <div class="borderlessgrid doublewidegrid">
                 <button onclick="showoldtire()">2015-2019 Mustang</button>
@@ -41,21 +60,15 @@
             <div id="oldtlayout" style="display: none;">
                 <table class="center">
                     <tr>
-                        <th colspan="3">Tire Circumference in MM:</th><th id="tiresize_result_mm1"></th>
-                    </tr>
-                    <tr>
                         <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
                     </tr>
                     <tr>
-                        <td>726-12-01</td><td>XXXX</td><td id="tiresize_result">XXXX</td><td>XXXX</td>
+                        <td>726-12-01</td><td>XXXX</td><td id="tiresize_result_old">XXXX</td><td>XXXX</td>
                     </tr>
                 </table>
             </div>
             <div id="newtlayout" style="display: none;">
                 <table class="center">
-                    <tr>
-                        <th colspan="3">Tire Circumference in MM:</th><th id="tiresize_result_mm2"></th>
-                    </tr>
                     <tr>
                         <th>Address</th><th colspan="3">Value (X = leave as-is)</th>
                     </tr>
@@ -108,7 +121,7 @@
         <br>
 
         <!--Custom Mode Total Customization-->
-        <div class="center straybutton showcasecontainer">
+        <!--<div class="center straybutton showcasecontainer">
             <a class="colortext">Full Custom Mode Customization (Non-Functional)</a>
             <hr style="border: 3px solid #e5e5e5;">
             <div>
@@ -128,10 +141,10 @@
                 <div class="borderlessgrid triplewidegrid">
                     <p class="pushright">Presets:</p>
                     <select id="presets" name="presets">
-                        <optgroup label="Ford Drive Modes">
+                        <optgroup label="Ford Drive Modes">-->
                             <!--format for values, 8 characters with "/" between them, either pointing to the desired value, or "D" to not change the current value-->
                             <!--1st is profile number, 2nd is base drive mode, 3rd is magneride mode, 4th is steering, 5th is traction control, 6th is active exhaust, 7th is autostopstart, 8th is cluster theme-->
-                            <option value="D/0/0/D/0/0/0/D">Normal</option>
+        <!--                    <option value="D/0/0/D/0/0/0/D">Normal</option>
                             <option value="D/1/1/2/0/1/1/1">Sport</option>
                             <option value="D/2/2/3/1/2/1/2">Track</option>
                             <option value="D/3/3/3/0/3/1/2">Drag</option>
@@ -218,7 +231,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div>-->
         
 
         <!--Module Address List-->
