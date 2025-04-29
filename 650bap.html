@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
-    <link rel="stylesheet" href="./theme.css">
+    <link id="themesource" rel="stylesheet" href="./theme.css">
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <meta name="theme-color" content="#ffc100">
@@ -17,10 +17,12 @@
     <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
-  <body>
+  <body class="innershadow">
+    <p class="titletext jserror">This site requires Javascript to work</p>
+  <div class="site">
     <script src="./650bap/650bap.js"></script>
     <div id="checkbox_container"><p class="biggertext errortext">Notice: No Longer Updated, Use Ford's Build and Price</p></div>
-    <div class="topbar">
+    <div class="topbar  shadow">
       <div class="center straybutton">
         <button onclick="getOptions('./650bap/prices_ecoboost.json','checkbox_container')">2024 Mustang EcoBoost</button>  
       </div>
@@ -33,5 +35,6 @@
     </div>
     <div id="checkbox_container"><p class="bigtext reallybig">Welcome! Select a button at the top to get started!</p></div>
     <div id="final_costs" class="costarea"></div>
+  </div>
   </body>
 </html>

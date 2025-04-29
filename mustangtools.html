@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
-    <link rel="stylesheet" href="./theme.css">
+    <link id="themesource" rel="stylesheet" href="./theme.css">
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <meta name="theme-color" content="#ffc100">
@@ -17,14 +17,16 @@
     <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
-  <body>
+  <body class="innershadow">
+    <p class="titletext jserror">This site requires Javascript to work</p>
+  <div class="site">
     <script src="./mustangtools/mustangtools.js"></script>
     <div class="biggertext">
         <!--Tire Speedometer Correction Tool-->
         I personally recommend just taking the resulting tire size values and putting them in FORScan's easy mode BCM menu<br>
-        <div class="center straybutton showcasecontainer" id="tiresizetool">
+        <div class="center straybutton showcasecontainer shadow" id="tiresizetool">
             <a class=colortext>Speedometer Correction (Tires)</a>
-            <hr style="border: 3px solid #e5e5e5;">
+            <hr class="mainhr">
             <div class="borderlessgrid doublewidegrid">
                 <button onclick="showmettire()">Metric Tires<br>(315/80R17)</button>
                 <button onclick="showimptire()">Imperial Tires<br>(37x12.5R17)</button>
@@ -40,7 +42,7 @@
                 <p>Wheel Diameter in inches:</p><input class="field" id="tiresize_wdiam" value="19" onkeypress="if(event.keyCode==13) tirecalc();">
             </div>
             <button onclick="tirecalc()">Calculate</button>
-            <hr style="border: 3px solid #e5e5e5;">
+            <hr class="mainhr">
             
             <div>
                 <table class="center">
@@ -83,15 +85,15 @@
         </div>
 
         <!--Differential Speedometer Correction Tool-->
-        <div class="center straybutton showcasecontainer">
+        <div class="center straybutton showcasecontainer shadow">
             <a class=colortext>Speedometer Correction (Differential)</a>
-            <hr style="border: 3px solid #e5e5e5;">
+            <hr class="mainhr">
             4.10 - ✅<br>4.10:1 - ❌
             <div class="borderlessgrid doublewidegrid">
                 <p>Differential Ratio:</p><input class="field" id="diffratio" value="3.55" onkeypress="if(event.keyCode==13) diffcalc();">
             </div>
             <button onclick="diffcalc()">Calculate</button>
-            <hr style="border: 3px solid #e5e5e5;">
+            <hr class="mainhr">
             Show results for
             <div class="borderlessgrid doublewidegrid">
                 <button onclick="showolddiff()">2015-2019 Mustang</button>
@@ -121,9 +123,9 @@
         <br>
 
         <!--Custom Mode Total Customization-->
-        <!--<div class="center straybutton showcasecontainer">
+        <!--<div class="center straybutton showcasecontainer shadow">
             <a class="colortext">Full Custom Mode Customization (Non-Functional)</a>
-            <hr style="border: 3px solid #e5e5e5;">
+            <hr class="mainhr">
             <div>
                 <select id="hasmag" name="hasmag" onchange="checkmag()">
                     <option value="0">No Magneride</option>
@@ -158,7 +160,7 @@
                     </select>
                     <button class="pushleft">Apply Preset</button>
                 </div>
-                <hr style="border: 3px solid #e5e5e5;">
+                <hr class="mainhr">
                 <div class="borderlessgrid quadwidegrid">
                     <p class="pushright">Profile Number:</p>
                     <select class="pushleft" id="slotnum" name="slotnum">
@@ -218,7 +220,7 @@
                         <option value="4">Foxbody</option>
                     </select>
                 </div>
-                <hr style="border: 3px solid #e5e5e5;">
+                <hr class="mainhr">
                 <div class="borderlessgrid"><button onclick="makecustommode()">Create Custom Mode</button></div>
                 <div id="custommoderesults" style="display: none;">
                     <table class="center">
@@ -236,9 +238,9 @@
 
         <!--Module Address List-->
         <br>
-        <div class="center straybutton showcasecontainer">
+        <div class="center straybutton showcasecontainer shadow">
             <a class="colortext">Module Address List</a>
-            <hr style="border: 3px solid #e5e5e5;">
+            <hr class="mainhr">
             <div id="modulelist">
                 <table class="center">
                     <tr>
@@ -341,5 +343,6 @@
             </div>
         </div>
     </div>
+  </div>
   </body>
 </html>

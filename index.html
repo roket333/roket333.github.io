@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
-    <link rel="stylesheet" href="./theme.css">
+    <link id="themesource" rel="stylesheet" href="./theme.css">
     <script src="./script.js"></script>
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
@@ -17,36 +17,38 @@
     <!-- I'm not doing all that other icon stuff, screw Apple and their nonsense yet again -->
     <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
   </head>
-  <body>
+  <body class="innershadow fill">
     <div class="loading center" style="display: block;"id="loading">
         <div class="center">
             <p class="titletext">Roket's Hub</p>
-            <img class="loadingspinthing" src="./assets/images/loadingcircle.png">
+            <img class="loadingspinthing shadow" src="./assets/images/loadingcircle.png">
             <p class="titletext">Loading Page...</p>
             <p class="titletext longloading">This is taking longer than usual</p>
+            <p class="titletext jserror">This site requires Javascript to work</p>
         </div>
     </div>
     <div class="site center"style="display: none;"id="site">
-    <div class="icon center">
+    <div class="icon center shadow">
       <p class="titletext">Roket's Hub</p>
-      <a href="./index.html"> <img loading="lazy" class="mainimg" src="./assets/images/icon.gif" alt="Roket's icon" title="This bird won't leave me alone!"> </a>
+      <a href="./index.html"> <img loading="lazy" class="mainimg shadow" src="./assets/images/icon.gif" alt="Roket's icon" title="This bird won't leave me alone!"> </a>
     </div>
-
     <!-- Tabs -->
     <div class="tablist center">
-      <button class="tablinks" id="default" onclick="openTab(event, 'home')">Home</button>
-      <button class="tablinks" onclick="openTab(event, 'info')">Info</button>
-      <button class="tablinks" onclick="openTab(event, 'projects')">Projects</button>
-      <button class="tablinks" onclick="openTab(event, 'blog_personal')">Personal Blog</button>
-      <button class="tablinks" onclick="openTab(event, 'blog_development')">Dev Blog</button>
-      <button class="tablinks" onclick="openTab(event, 'tools')">Tools</button>
-      <button class="tablinks" onclick="openTab(event, 'products')">Products</button>
+      <button class="tablinks shadow" id="default" onclick="openTab(event, 'home')">Home</button>
+      <button class="tablinks shadow" onclick="openTab(event, 'info')">Info</button>
+      <button class="tablinks shadow" onclick="openTab(event, 'projects')">Projects</button>
+      <button class="tablinks shadow" disabled="true" onclick="openTab(event, 'creations')">Creations</button>
+      <button class="tablinks shadow" onclick="openTab(event, 'blog_personal')">Personal Blog</button>
+      <button class="tablinks shadow" onclick="openTab(event, 'blog_development')">Dev Blog</button>
+      <button class="tablinks shadow" onclick="openTab(event, 'tools')">Tools</button>
+      <!-- <button class="tablinks shadow" disabled="true" onclick="openTab(event, 'products')">Products</button> -->
     </div>
     <!-- End of tabs -->
+     
 
-    <div class="splash center" id="splashbg">
+    <div class="splash center shadow" id="splashbg">
       <p class="splashtext center" id="splash"></p>
-      <hr style="border: 3px solid #e5e5e5;">
+      <hr class="mainhr">
       <a onclick="newsplash()"><img class="refresh" id="refreshbutton" src="./assets/images/refresh.png" alt="get new splash"></a>
     </div>
 
@@ -64,52 +66,52 @@
       <div class="maintext">
         About me
       </div>
-      <div class="aboutcontainer">
+      <div class="aboutcontainer shadow">
         <p class="bigtext">Who are you?</p>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         i'm roket<br>
         i come from the Grand Canyon State, Arizona
       </div>
-      <div class="aboutcontainer">
+      <div class="aboutcontainer shadow">
         <p class="bigtext">What do you do?</p>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         i do a fair bit of stuff<br>
         programming, 3d modeling, game modding, and asset ripping are mostly it
       </div>
-      <div class="aboutcontainer">
+      <div class="aboutcontainer shadow">
         <p class="bigtext">What do you know?</p>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         a bit about space<br>
         a bit about cars/vehicles<br>
         some programming (C#, Java, Javascript, HTML, HLSL, CSS, Lua, Python, and more i probably forgot)<br>
         i also know a little about sound design
       </div>
-      <div class="aboutcontainer">
+      <div class="aboutcontainer shadow">
         <p class="bigtext">How do you do this stuff?</p>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         a wide variety of tools, but mostly...<br>
         Blender, Paint.net, Visual Studio Code, Brackets, Fusion 360, Aseprite, Unreal Engine, Unity<br>
         plus more
       </div>
-      <div class="aboutcontainer">
+      <div class="aboutcontainer shadow">
         <p class="bigtext">What games do you play?</p>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         tons of them, but mainly...<br>
         Team Fortress 2, The Legend of Zelda: Breath of the Wild, Minecraft Java Edition, Pavlov VR, Hot Wheels Unleashed, and more
       </div>
-      <div class="aboutcontainer">
+      <div class="aboutcontainer shadow">
         <p class="bigtext">How did you make this site?</p>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         GitHub and coding knowledge plus just searching up stuff online also helped miles
       </div>
-      <div class="aboutcontainer">
+      <div class="aboutcontainer shadow">
         <p class="bigtext">Why do you do this stuff?</p>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         because i want to and that's really it
       </div>
-      <div class="aboutcontainer">
+      <div class="aboutcontainer shadow">
         <p class="bigtext">A jack of all trades is a master of none</p>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         lots of people have forgotten the second part of that phrase, so here it is<br>
         <i>...but oftentimes better than a master of one</i><br>
         i may do a lot of stuff and im not perfect at any of them, but it feels good to be able to help people with multiple things if need be
@@ -120,20 +122,31 @@
     <div class="tabcontent" id="projects">
       <div class="maintext">
         Projects
-      </div>
-      <div class="genericcontainer">
-        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2425352188" target="_blank" rel="noopener noreferrer">collection of Pavlov VR maps i've made</a><br>
-        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1565655484" target="_blank" rel="noopener noreferrer">Steam VR backround of Null Space</a><br>
-        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1602680042" target="_blank" rel="noopener noreferrer">Kaleidoscopic Collision war paint on the TF2 workshop</a>
+        <div class="center straybutton">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1565655484" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow">SteamVR Null Space Background</button>  
+          </a>
+        </div>
+        <div class="center straybutton">
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1602680042" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow">TF2 Kaleidoscopic Collision War Paint</button>  
+          </a>
+        </div>
+        <div class="center straybutton">
+          <a href="" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow" disabled="true">Mustang Azureus Project</button>  
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- Works tab -->
-    <div class="tabcontent" id="works">
+    <!-- Creations tab -->
+    <div class="tabcontent" id="creations">
       <div class="maintext">
-        Works
+        Creations
       </div>
-      <div class="showcasecontainer">
+      <div class="showcasecontainer shadow">
+        Nothing here yet
       </div>
     </div>
 
@@ -157,34 +170,39 @@
 
     <!-- Tools tab -->
     <div class="tabcontent" id="tools">
-      <div class="maintext">
+      <div class="maintext ">
         Various tools i've made<br>
         <div class="center straybutton">
           <a href="./650bap.html" target="_blank" rel="noopener noreferrer">  
-            <button>Unofficial S650 Build and Price</button>  
+            <button class="shadow">Unofficial S650 Build and Price</button>  
           </a>
         </div>
         <div class="center straybutton">
           <a href="./mustangtools.html" target="_blank" rel="noopener noreferrer">
-            <button>Various Mustang Tools and Utilities</button>
+            <button class="shadow">Various Mustang Tools and Utilities</button>
           </a>
         </div>
         <div class="center straybutton">
           <a href="./tsb-ssm-recalls.html" target="_blank" rel="noopener noreferrer">  
-            <button>Ford TSB, SSM, and Recall list</button>  
+            <button class="shadow">Ford TSB, SSM, and Recall List</button>  
           </a>
         </div>
-        <div class="center straybutton showcasecontainer">
+        <div class="center straybutton">
+          <a href="./theme_preview.html" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow">Theme Preview Page</button>  
+          </a>
+        </div>
+        <div class="center straybutton showcasecontainer shadow twentywidth">
           VIN Checker (North America)
           <br>
-          <input class="field" id="vininput" value="" maxlength="17" onkeypress="if(event.keyCode==13) vincheck();">
+          <input class="field" id="vininput" value="" maxlength="17" onkeypress="if(event.keyCode==13) vincheck();"><br>
           <button class="tgbutton" onclick="vincheck()">Check VIN</button>
           <p id="vinresult">Result Here</p>
         </div>
-        <div class="center straybutton showcasecontainer">
+        <div class="center straybutton showcasecontainer shadow twentywidth">
           Fordpass value
           <br>
-          <input class="field" id="fordpasspoints" value="0" onkeypress="if(event.keyCode==13) fppconvert();">
+          <input class="field" id="fordpasspoints" value="0" onkeypress="if(event.keyCode==13) fppconvert();"><br>
           <button class="tgbutton" onclick="fppconvert()">Get Value</button>
           <p id="fordpassdollars">Result Here</p>
         </div>
@@ -198,20 +216,8 @@
       <br></div>
       <div class="linklist">
         <a>  
-          <button onclick="openTab(null, 'fursuitspecs')">Fursuit Tech Specs and Info</button>
-        </a><br>
-        <a class="tgbutton" href="https://t.me/roket_gamer" target="_blank" rel="noopener noreferrer">  
-          <button>Telegram</button>
-        </a><br>
-        <a class="bsbutton" href="https://bsky.app/profile/roketgamer.dev" target="_blank" rel="noopener noreferrer">  
-          <button>Bluesky</button>  
-        </a><br>
-        <a class="ytbutton" href="https://www.youtube.com/c/roketgamer333" target="_blank" rel="noopener noreferrer">  
-          <button>YouTube</button>  
-        </a><br>
-        <a class="stbutton" href="https://steamcommunity.com/id/RoketGamer" target="_blank" rel="noopener noreferrer">  
-          <button>Steam</button>  
-        </a><br>
+          <button class=" shadow" onclick="openTab(null, 'fursuitspecs')">Fursuit Tech Specs and Info</button>
+        </a>
       </div>
     </div>
 
@@ -220,13 +226,13 @@
       <div><br>
         <div class="linklist">
           <a>  
-            <button onclick="openTab(null, 'fursuitlinks')">Back</button>
+            <button class=" shadow" onclick="openTab(null, 'fursuitlinks')">Back</button>
           </a>
       </div>
       <br>
         <div class="maintext">Fursuit tech specs<br>Notice: Fursuit is incomplete, specs may change
 
-        <table class="center">
+        <table class="center shadow">
           <tr>
             <th>Main Computer</th>
             <th>Beelink SER9 HX 370 (Graphics and Visuals)<br>Arduino UNO R4 WiFi (Sensors and Motors)<br></th>
@@ -261,59 +267,59 @@
         <br><br>
         Anticipated FAQ<br>
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">What is this?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           this is a fursuit that i have created myself.<br>my best description is<br>"VR headset in a fursuit head with animatronic parts"
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">How does it work?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           hidden in the fursuit head are two cameras i placed to give me vision accurate to how the real character would see.<br>
           the image from those cameras gets displayed to two high resolution and high framereate displays in the head that i see.<br>
           some info such as heartrate, blood oxygen levels, inside humidity and temp, and other stuff gets overlaid so i know what is going on
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">How long did it take to make?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           as of now, the fursuit is incomplete. as you see it now, its more of a plastic head with exposed electronics and tail.<br>
           i've been dreaming about it since August 2024 or so, and actually started working on it in late November 2024
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">How do you breathe in there?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           i just breathe normally, like any fursuiter does
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Wont all the CO2 inside make it hard to breathe?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           inside the head, i have a VOC and eCO2 sensor. this will detect and record the VOCs from 0 to 60,000 parts per billion, and estimate the CO2 from 400 to 60,000 parts per million.<br>
           the reason why i went with the CO2 estimator instead of a dedicated module for it is it just made more sense given the use case. less expensive, smaller, larger reading range.<br>
           when CO2 levels get dangerously high inside the head, it will warn me, and at a certain point, urge me to take off the head immediately<br>
           it will also let me know if the air coming in the nose is high CO2 as well
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Dont you overheat in that?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           dont get me wrong, it gets very warm in here. however, i have a ventilation system consisting of two fans that take in air through the fursuit's nose.<br>
           that air then passes over some sensors to get information about it, then goes through one of the fans.<br>
           one fan uses the air to cool the computers inside, and the other pushes the air through vents to help keep me cool.<br>
           having the head base not be 100% solid and have holes in it also helps
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">How do you hear?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           my hearing in this is impaired for sure, but the ears are functional. sound can travel down the ears and into my actual ears.<br>
           think those horns old people use in cartoons to hear better
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">What parts did you make yourself?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           i designed and 3d printed nearly all the parts. the only things i really didnt make are the computers, screens, sensors, and motors
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">What software are you using?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           for both the internal and external displays, i am using Unity. i needed to use some game engine because i dont know how to write a program from scratch.<br>
           plus, the BrainBit used for ears, eyes, and tail movement has an API for Unity, so it makes moving the eyes easier
         </div>
@@ -325,77 +331,77 @@
       <div>
         <div class="maintext">Things I make and sell</div>
         <br><br>
-        <hr style="border: 3px solid #e5e5e5;">
+        <hr class="mainhr">
         <div class="maintext">Open Cool Treats<br>Fans for fursuiters in the shape of various treats and foods</div>
 
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">What is this?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           Open Cool Treats is an idea for a line of fans designed primarily for fursuiters, though anyone can use them. They are shaped after various treats and foods, so that fursuiters can cool off with a photogenic prop<br>The actual product itself is completely open source and free to download the code and models for, for those that feel comfortable doing programming and soldering<br>Or, for those who prefer a ready-to-go product, custom pre-assembled ones will be for sale. They come in two levels, "Plus" and "Premium"<br>It is currently still in the prototype phase, with an unknown time of completion, but I think it will be a nice product for fursuiters
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">What is the difference between the Plus and Premium versions?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           Firstly, I just want to clarify that the differences between the two versions are purely internal. There will be no external designs exclusive to one version or the other. I do not belive this is fair to anyone.<br>Plus is for those who just want a simple fan prop, without any fancy extras. It will be the more affordable version and be powered by a 9V battery and a switch to turn it on and off.<br>Premium has additional nice to have features, as well as a longer battery life. Premium will be offered with a 2,200 mAh, 4,400 mAh, 6,600 mAh, and 10,000 mAh capacity lithium ion battery<br>Both versions will achieve the same goal of cooling off a fursuiter with a fan, so if you just want that, Plus is what you want. If you want longer battery life, variable fan speed, and rotational activation of the fan, Premium is what you want.<br>Both versions will be able to have an upgrade that adds a second fan, but be aware of the impact that will have on runtime!
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">How much are the different versions?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           If you 3D print and build it yourself, the cost is just materials. The models and instructions will be free forever.<br>Pricing for pre-assembled ones depends on the version, battery capacity, and if you requested a custom design.<br>My current goal is to have the Plus version go for $50 USD or less, and have the Premium version go for $140 USD or less, neither option accounting for custom designs.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Why do the different versions cost what they do?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           Cost of materials, mainly. I am using off-the-shelf parts for everything but the case, which is custom. To give an idea of the costs, on the premium models, the battery charger controller alone is about $20.<br>It's probably overkill, but I would rather have the extra capability and safety and not use it. I would much rather use the more expensive but more quality parts, rather than dig through the bargain bin.<br>I would never want to risk anyone's safety, especially when it comes to lithium ion batteries.<br>It was also important to me that it used parts already out there, that way people are actually able to build their own, and brings the "open" part to life. That immediately eliminated custom PCBs, because I dont want to be the sole provider of certain parts for this.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">What upgrades are there?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           There is a dual fan upgrade, which adds a second fan. I am also potentially planning a Noctua fan upgrade, but only if I can actually determine whether or not it is quieter than the currently planned fan.<br>There is also an upgrade for custom color schemes, though it's only $5
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">What is the expected battery life?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           Note that these are estimates based on theoretical power usage. No actual testing has been done on battery life yet.<br>On a Plus version, it depends on what kind of 9V battery you use. Assuming constant running time, an alkaline battery should last 4 to 5 hours, and a lithium battery 9 to 10 hours. Half those runtimes for the dual fan versions.<br>On a Premium version, it further varies depending on the battery size and fan speed setting. The estimated worst runtime is a dual fan version with a bunch of unrealistic overhead on max speed with the 2200mAh battery, being just shy of 2.5 hours.<br>The same assumptions with the 4400mAh, 6600mAh, and 10000mAh batteries result in 4.9, 7.3, and 11.1 hour runtimes respectively. Again, this is worst case, and is frankly completely unrealistic.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Can I upgrade my Plus to a Premium or downgrade my Premium to a Plus?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           At this point in time, my goal is to have both versions use the same models aside from the plate where the buttons are. Time will tell if this is realistically possible, but hopefully the final answer is yes
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Can I assemble and sell Open Cool Treats using your models?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           I would prefer if you didn't do that, because then that means you are using my work for your own profit. I worked hard to make my own designs.<br>Please also do not steal and sell someone else's models without their permission.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Can I make my own models that use your instructions for assembly?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           You absolutely can! Please just credit me for the instructions, bill of materials, and code. You can even sell Open Cool Treats that use your own models if you want, and dont have to pay me a cent for royalties or anything like that. Just please do not try to say that they're endorsed by me or that I had any involvement in your design.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Where did you come up with this idea?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           While at Further Confusion 2025, I saw people in line to use the elevator at the Hilton hotel, and noticed some of the fursuiters with those fan boxes in their mouth.<br>It got me thinking about them, but the idea really sprouted when later in the convention, I saw one in the shape of a popsicle. From there, I just kept developing it in my head until I could get home and work on the idea properly.<br>I did some brief searching to see if there was something like this out there already, and the ones I saw lacked some features and physical looks that I thought would be cool, so I started working on my own version too.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Why should I go for your fan and not someone else's?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           I dont know how others have made their fans. They could even just be existing necklace fans but in a different case. But mine is open source and 100% transparent. Able to be assembled by yourself, and a full, comprehensive list of parts and materials, along with my justifications on why I chose what I did.<br>If you buy a pre-assembled one, you are getting a product assembled by hand and finished with love out of Arizona, and supporting an individual that loves to tinker and make stuff, supports open source content, and enjoys experimenting and sharing the gained knowledge for all.<br>Additionally, this one is made out of PETG, a more durable and heat resistant material than most others that are printed out of PLA. PETG softens at a 15C/59F higher temp than PLA, and is not nearly as brittle, meaning it doesn't shatter like PLA does.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">You are stealing my or someone else's idea!</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           I know this is not a 100% original idea, but I promise that every feature and style is one that I thought of on my own. Additionally, every non-electronic part is one of my own design and making, unless I say otherwise.<br>If you feel that I have stolen something, and you are the creator of that something, please get in contact with me at one of my social media links below.<br>I do wish to talk about it and dispel any possible misunderstandings. I dont want bad blood.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">Why are you doing this?</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           Because fursuiters no doubt want to stay cool, but shoving a rectangle into their suit's mouth might break the magic for some. I can't really remember the last time I saw a non-infant sapient creature shoving an inedible object into its mouth.<br>Disguising it as treats or food makes it much less likely to break the magic, while still allowing fursuiters to not overheat. It also gives the fursuiter a prop to do whatever they want with.
         </div>
-        <div class="aboutcontainer">
+        <div class="aboutcontainer shadow">
           <p class="bigtext">There's something that I don't understand</p>
-          <hr style="border: 3px solid #e5e5e5;">
+          <hr class="mainhr">
           If something here is hard to understand or confusing, please contact me at one of my social media links below. I am more than happy to clarify anything. It also lets me know if I need to re-word something to be less confusing.
         </div>
       </div>
@@ -404,11 +410,17 @@
     <!-- End of tab content-->
 
     <br>
-    <div class="footer center">
+    <div class="footer center shadow">
       Proudly made by Roket 🏳‍🌈<br>
+      <hr class="mainhr">
+      Website Theme
+      <select class="" id="theme" onchange="updateTheme(this.value)">
+        <option value="0">Sagittarius</option>
+        <option value="1">Pixl</option>
+      </select>
     </div>
     <br><br>
-    <div class="footer center linklist narrow" id="linklistfooter">
+    <div class="footer center linklist narrow shadow" id="linklistfooter">
       <div class="maintext">You can also find me on</div>
       <a class="tgbutton" href="https://t.me/roket_gamer" target="_blank" rel="noopener noreferrer">  
         <button>Telegram</button>  

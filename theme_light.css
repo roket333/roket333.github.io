@@ -1,0 +1,1062 @@
+html {
+    /*set the background color to a nice grey*/
+    background:#e5e5e5;
+    scrollbar-width:thin;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+@font-face {
+    font-family: "prototype"; /*really cool font if someone doesn't have it*/
+    src: url("./assets/fonts/prototype.ttf");
+}
+
+@font-face {
+    font-family: "minecraftmodern"; /*splash font*/
+    src: url("./assets/fonts/minecraft-modern.ttf");
+}
+
+body {
+    /*set the font and it's size, alignment, and color*/
+    font-family:prototype;
+    font-size:120%;
+    text-align:center;
+    color:#3b3b3b;
+    margin:0;
+    padding:1em;
+    min-height:calc(100vh - 2em)
+}
+
+a:link, a:active {
+    color:#ff00ff
+}
+
+a:visited, a:hover {
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.maintext {
+    /*size of anything marked "maintext"*/
+    font-size:150%;
+}
+
+.mainimg {
+    /*main image's width and rounding radius*/
+    width:250px;
+    border-radius:10px;
+}
+
+.refresh {
+    width: 64px;
+}
+
+.titletext {
+    font-size: 250%;
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+    margin: 0.5em;
+}
+
+.splashtext {
+    /*various stuff for the splash text*/
+    font-size: 140%;
+    font-family: minecraftmodern;
+    color:#ff00ff;
+    min-height: 30px;
+
+    animation: scale 1.25s ease-in-out;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes scale {
+    /*keyframes for the splash text animation*/
+    0%{transform: scale(0.8);}
+    50%{transform: scale(1.0);}
+    100%{transform: scale(0.8);}
+}
+
+.spinning {
+    animation: rotate 0.25s ease-in-out;
+    animation-iteration-count: 1;
+}
+
+@keyframes rotate {
+    /*rotating the splash refresh button*/
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+
+@keyframes colors {
+    /*making text go from amber to gold and back*/
+    0%{color: #ff0000;}
+    33%{color: #00ff00;}
+    66%{color: #0000ff;}
+    100%{color: #ff0000;}
+}
+
+@keyframes colorsbg {
+    /*making text go from amber to gold and back*/
+    0%{background-color: #ff0000;}
+    33%{background-color: #00ff00;}
+    66%{background-color: #0000ff;}
+    100%{background-color: #ff0000;}
+}
+
+@keyframes colorsborder {
+    /*making text go from amber to gold and back*/
+    0%{border-color: #ff0000;}
+    33%{border-color: #00ff00;}
+    66%{border-color: #0000ff;}
+    100%{border-color: #ff0000;}
+}
+
+@keyframes colorsbutton {
+    /*making text go from amber to gold and back*/
+    0%{color: #ff0000; border-color: #ff0000;}
+    33%{color: #00ff00; border-color: #00ff00;}
+    66%{color: #0000ff; border-color: #0000ff;}
+    100%{color: #ff0000; border-color: #ff0000;}
+}
+
+.splash {
+    /*container for the splash box*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    min-width: 550px;
+    max-width: 90%;
+    padding-left: 30px;
+    padding-right: 30px;
+    display:inline-block;
+}
+
+.icon {
+    /*container for the icon*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    min-width: 260px;
+    padding: 10px;
+    margin: 0.5em;
+    display:inline-block;
+}
+
+.footer {
+    /*container for the footer*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    min-width: 260px;
+    max-width: 90%;
+    padding: 10px;
+    display:inline-block;
+}
+
+.tablist {
+    margin: 0.25em;
+}
+
+.tablist button {
+    /*change how the buttons on the tabs look*/
+    /*background-color: inherit;*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.3s;
+
+    /*for some reason you need to re-define the font stuff on buttons, so here's that*/
+    font-family:prototype;
+    font-size:150%;
+    text-align:center;
+    color:#3b3b3b;
+}
+
+.tablist button.active {
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.tablist button:hover {
+    background-color: #919191;
+}
+
+.tablist button:active{
+    background-color: #3b3b3b;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.tabcontent {
+    display: none;
+}
+
+.blogpost {
+    /*container for blog posts*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    min-width: 90%;
+    max-width: 90%;
+    padding: 10px;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display:inline-block;
+}
+
+.pinnedblogpost {
+    /*container for blog posts*/
+    border: 5px solid;
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+    border-radius: 10px;
+    min-width: 90%;
+    max-width: 90%;
+    padding: 10px;
+    margin: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    display:inline-block;
+}
+
+.aboutcontainer {
+    /*container for info boxes*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1em;
+    min-width: 60%;
+    display:inline-block;
+    max-width: 60%;
+}
+
+.bigtext, .postitle {
+    font-size: 120%;
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+    margin: 0.5em;
+}
+
+.postitle {
+    font-size: 150%;
+}
+
+.postdate {
+    font-size: 130%;
+    margin: 0.5em;
+    color: #3b3b3b;
+}
+
+.postcontent {
+    color: #3b3b3b;
+}
+
+.showcasecontainer {
+    /*container for works showcases*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1em;
+    justify-content: center;
+    display:inline-block;
+    max-width: 90%;
+}
+
+.genericcontainer {
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1em;
+    justify-content: center;
+    display:inline-block;
+    max-width: 90%;
+}
+
+.showimage {
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+th, td {
+    border: 5px solid #3b3b3b;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.patbg {
+    animation: pat 9s linear, patscroll 6s linear;
+    animation-iteration-count: infinite;
+    transition: 0.3s;
+    background-image: url("./assets/images/patbg.png");
+    background-blend-mode:lighten;
+}
+
+.pattext {
+    transition: 0.3s;
+    text-shadow: -5px -5px #FF3838AA, 5px 5px #8383FFAA;
+    color: #ffffff;
+}
+
+@keyframes pat {
+    /*Peace and Tranquility*/
+    0%{background-color: #ff0000;}
+    16.6%{background-color: #ffff00;}
+    33.2%{background-color: #00ff00;}
+    49.8%{background-color: #00ffff;}
+    66.4%{background-color: #0000ff;}
+    83%{background-color: #ff00ff;}
+    100%{background-color: #ff0000;}
+}
+
+@keyframes patscroll {
+    /*Peace and Tranquility background scroll*/
+    0%{background-position: 0 0;}
+    100%{background-position: 0 512px;}
+}
+
+.center {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.hugeimg {
+    max-width: 1024px;
+}
+
+.bigimg {
+ max-width: 512px;
+}
+
+.medimg {
+ max-width: 256px;
+}
+
+.smallimg {
+ max-width: 128px;
+}
+
+.colortext {
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.colorimage {
+    animation: colors2 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.loadingspinthing {
+    width: 10%;
+    animation: loadingspin 20s ease-in-out, colors2 8s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loadingspin {
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(-36000deg);}
+    100%{transform: rotate( 36000deg);}
+}
+
+@keyframes colors2 {
+    /*making text go from amber to gold and back*/
+    0%{filter: brightness(0) saturate(100%) invert(26%) sepia(92%) saturate(6874%) hue-rotate(358deg) brightness(109%) contrast(128%);}
+    33%{filter: brightness(0) saturate(100%) invert(68%) sepia(86%) saturate(5057%) hue-rotate(87deg) brightness(127%) contrast(119%);}
+    66%{filter: brightness(0) saturate(100%) invert(8%) sepia(95%) saturate(7483%) hue-rotate(247deg) brightness(99%) contrast(143%);}
+    100%{filter: brightness(0) saturate(100%) invert(26%) sepia(92%) saturate(6874%) hue-rotate(358deg) brightness(109%) contrast(128%);}
+}
+
+.longloading {
+    animation: loadfadein 21s linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes loadfadein {
+    0%{filter: opacity(0%);}
+    95.2%{filter: opacity(0%);}
+    100%{filter: opacity(100%);}
+}
+
+.linklist button {
+    /*change how the buttons in the list look*/
+    /*background-color: inherit;*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.3s;
+    margin: 0.1em;
+    min-width: 30%;
+
+    /*for some reason you need to re-define the font stuff on buttons, so here's that*/
+    font-family:prototype;
+    font-size:150%;
+    text-align:center;
+    color:#3b3b3b;
+}
+
+.linklistfooter button {
+    /*change how the buttons in the list look*/
+    /*background-color: inherit;*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.3s;
+    margin: 0.1em;
+    width: 15%;
+
+    /*for some reason you need to re-define the font stuff on buttons, so here's that*/
+    font-family:prototype;
+    font-size:150%;
+    text-align:center;
+    color:#3b3b3b;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.linklist button:hover {
+    background-color: #919191;
+}
+
+.linklist button:active {
+    background-color: #3b3b3b;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/*Telegram button*/
+.tgbutton button {
+    border: 5px solid #0084ff;
+    color:#0084ff;
+}
+
+.tgbutton button:hover {
+    background-color: #919191;
+}
+
+.tgbutton button:active {
+    background-color: #0084ff;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/*Twitter button*/
+.twbutton button {
+    border: 5px solid #00ddff;
+    color:#00ddff;
+}
+
+.twbutton button:hover {
+    background-color: #919191;
+}
+
+.twbutton button:active {
+    background-color: #00ddff;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/*Bluesky button*/
+.bsbutton button {
+    border: 5px solid #0085ff;
+    color:#0085ff;
+}
+
+.bsbutton button:hover {
+    background-color: #919191;
+}
+
+.bsbutton button:active {
+    background-color: #0085ff;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/*Youtube button*/
+.ytbutton button {
+    border: 5px solid #ff0000;
+    color:#ff0000;
+}
+
+.ytbutton button:hover {
+    background-color: #919191;
+}
+
+.ytbutton button:active {
+    background-color: #ff0000;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/*Steam button*/
+.stbutton button {
+    border: 5px solid #002a52;
+    color:#002a52;
+}
+
+.stbutton button:hover {
+    background-color: #919191;
+}
+
+.stbutton button:active {
+    background-color: #002a52;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.straybutton button {
+    /*change how the buttons in the list look*/
+    /*background-color: inherit;*/
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.3s;
+    margin: 0.1em;
+    min-width: 20%;
+
+    /*for some reason you need to re-define the font stuff on buttons, so here's that*/
+    font-family:prototype;
+    font-size: 100%;
+    text-align:center;
+    color:#3b3b3b;
+}
+
+.straybutton button:hover {
+    background-color: #919191;
+}
+
+.straybutton button:active {
+    background-color: #3b3b3b;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.field {
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 4px 8px;
+    background-color: inherit;
+    font-family:prototype;
+    font-size: 100%;
+    text-align:center;
+    color:#3b3b3b;
+    max-width: 80%;
+}
+
+.bapitem {
+    font-size:80%;
+    padding: 5px;
+    margin: 5px;
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    grid-row: span 1;
+    grid-column: span 1;
+    min-width: 270px;
+    max-width: 270px;
+    min-height: 150px;
+    max-height: 150px;
+    box-sizing:border-box;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.bapitem input {
+    height: 20px;
+    width: 20px;
+}
+
+.bapgroup {
+    font-size:150%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 5px;
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.bapgroup > p:first-child {
+    grid-column: 1 / -1;
+  }
+
+.selecteditem {
+    border: 5px solid;
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+    transition: 0.3s;
+}
+
+.notalloweditem {
+    border:5px solid #a70000;
+    transition: 0.3s;
+}
+
+.costarea {
+    font-size:150%;
+}
+
+.itemcosts {
+    font-size: 80%;
+}
+
+.hidden {
+    display: none;
+}
+
+.topbar {
+    font-size:250%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 5px;
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.reallybig {
+    font-size: 300%;
+}
+
+.buttoncc {
+    cursor:pointer;
+}
+
+.bapitem > label,.bapitem > label > input {
+    cursor: pointer;
+}
+
+.bapitem:hover {
+    background-color: #919191;
+}
+
+.bapitem:active {
+    background-color: #3b3b3b;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.selecteditem > label {
+    color:#3b3b3b;
+}
+
+.selecteditem:active > label {
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.borderlessgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, auto-fit);
+    grid-gap: 5px;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.doublewidegrid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5px;
+    min-width: 1fr;
+}
+
+.triplewidegrid {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 5px;
+    min-width: 1fr;
+}
+
+.quadwidegrid {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 5px;
+    min-width: 1fr;
+}
+
+.doublewidegrid > p, .triplewidegrid > p, .quadwidegrid > p {
+    margin: 5px;
+}
+
+.biggertext {
+    font-size:150%;
+}
+
+select, option {
+    background-color: #e5e5e5;
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: 0.3s;
+    margin: 0.1em;
+    min-width: 30%;
+    font-family:prototype;
+    font-size: 100%;
+    text-align:center;
+    color:#3b3b3b;
+}
+
+select:hover {
+    background-color: #919191;
+    transition: 0.3s;
+}
+
+select:active, option:active, select:checked, option:checked {
+    background-color: #e5e5e5;
+    animation: colorsbutton 8s ease-in-out;
+    animation-iteration-count: infinite;
+    transition: 0.3s;
+}
+
+select optgroup {
+    font-style: normal;
+    background-color: #3b3b3b;
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.pushright {
+    justify-self: right;
+}
+
+.pushleft {
+    justify-self: left;
+}
+
+@keyframes error {
+    0%{color: #ff0000;}
+    50%{color: #751a1a;}
+    100%{color: #ff0000;}
+}
+
+.errortext {
+    animation: error 2s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.fsfbg {
+    transition: 0.3s;
+    background-image: url("./assets/images/fsfbg.png");
+    background-size: contain;
+}
+
+.fsftext {
+    transition: 0.3s;
+    color: #ffffff;
+}
+
+.fsfps3bg {
+    transition: 0.3s;
+    background-image: url("./assets/images/fsfps3bg.png");
+    background-size: contain;
+}
+
+.fsfps3text {
+    transition: 0.3s;
+    color: #000;
+}
+
+@keyframes bombhasbeenplanted {
+    0%{color: #ffff55;}
+    10%{color: #ff0000;}
+    100%{color: #ffff55;}
+}
+
+.bombplanted {
+    animation: bombhasbeenplanted 1s ease;
+    animation-iteration-count: infinite;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background-color: #e5e5e5;
+    border: 2.5px solid #3b3b3b;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    transition: 0.3s;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+    background-color: #919191;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    background-color: #919191;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+    background-color: #3b3b3b;
+    animation: colorsborder 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+input[type="range"]::-moz-range-progress {
+    animation: colorsbg 8s ease;
+    animation-iteration-count: infinite;
+    border: 2.5px solid #3b3b3b;
+    border-radius: 5px;
+    height: 10px;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #e5e5e5;
+    height: 10px;
+    border: 2.5px solid #3b3b3b;
+    border-radius: 5px;
+}
+
+/* chrome/safari/edge - not as fully featured as firefox */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #e5e5e5;
+    border: 2.5px solid #3b3b3b;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    transition: 0.3s;
+    margin-top: -7px;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    background-color: #919191;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    background-color: #919191;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+    background-color: #3b3b3b;
+    animation: colorsborder 5s ease-in-out infinite;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #e5e5e5;
+    height: 10px;
+    border: 2.5px solid #3b3b3b;
+    border-radius: 5px;
+}
+
+.eightywidth {
+    width: 80%;
+}
+
+.tenwidth {
+    width: 10%;
+}
+
+.border {
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.blue {
+    color:#477eff
+}
+
+.narrow {
+    width: 25%;
+}
+
+@keyframes fps {
+    0%{width: 20%; border-color: #f00;}
+    25%{width: 80%; border-color: #00f;}
+    50%{width: 50%; border-color: #f00;}
+    75%{width: 30%; border-color: #00f;}
+    100%{width: 20%; border-color: #f00;}
+}
+
+.fpsbox {
+    border: 5px solid #3b3b3b;
+    border-radius: 10px;
+    height: 50px;
+    text-align: center;
+}
+
+.fifteenfps {
+    animation: fps 5s steps(15);
+    animation-iteration-count: infinite;
+}
+
+.twentyfourfps {
+    animation: fps 5s steps(24);
+    animation-iteration-count: infinite;
+}
+
+.thirtyfps {
+    animation: fps 5s steps(30);
+    animation-iteration-count: infinite;
+}
+
+.sixtyfps {
+    animation: fps 5s steps(60);
+    animation-iteration-count: infinite;
+}
+
+.ninetyfps {
+    animation: fps 5s steps(90);
+    animation-iteration-count: infinite;
+}
+
+.onehundredfps {
+    animation: fps 5s steps(100);
+    animation-iteration-count: infinite;
+}
+
+.onetwentyfps {
+    animation: fps 5s steps(120);
+    animation-iteration-count: infinite;
+}
+
+.onefourtyfourfps {
+    animation: fps 5s steps(144);
+    animation-iteration-count: infinite;
+}
+
+.twofourtyfps {
+    animation: fps 5s steps(240);
+    animation-iteration-count: infinite;
+}
+
+.mainhr {
+    border: 2.5px solid #3b3b3b;
+    border-radius: 5px;
+}
+
+.refresh {
+    filter: brightness(0%);
+}
+
+.shadow {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.innershadow {
+    box-shadow: inset 0 0 300px 30px rgba(0, 0, 0, 0.3);
+}
+
+.thirtywidth {
+    width: 30%;
+}
+
+.fifteenwidth {
+    width: 15%;
+}
+
+.twentywidth {
+    width: 20%;
+}
+
+.slidermarks {
+    display: grid;
+}
+
+.slidertick {
+    text-align: center;
+}
+
+:root {
+    --min-width: 2ch;
+  }
+
+  .dynamicwidthgrid {
+    grid-template-columns: repeat(auto-fit, minmax(2ch, 1fr));
+  }
+
+  .eightywidthminus20px {
+    margin-left: var(--labels-margin);
+    margin-right: var(--labels-margin);
+}
+
+.jserror {
+    display: none;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    font: inherit;
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid #3b3b3b;
+    transition: 0.3s;
+}
+
+input[type="radio"] {
+    border-radius: 10px;
+}
+
+input[type="checkbox"] {
+    border-radius: 5px;
+}
+
+input[type="radio"]:checked, input[type="checkbox"]:checked, input[type="radio"]:checked:hover, input[type="checkbox"]:checked:hover {
+    animation: colorsbutton 5s ease-in-out;
+    animation-iteration-count: infinite;
+    background: #3b3b3b;
+}
+
+input[type="radio"]:disabled, input[type="checkbox"]:disabled, input[type="radio"]:disabled:hover, input[type="checkbox"]:disabled:hover, input[type="radio"]:disabled:active, input[type="checkbox"]:disabled:active {
+    background: inherit;
+    animation: dead;
+    border-color: #919191;
+    color: #919191;
+}
+
+input[type="radio"]:hover, input[type="checkbox"]:hover {
+    background: #707070;
+}
+
+input[type="radio"]:active, input[type="checkbox"]:active {
+    animation: colorsborder 5s ease-in-out;
+    animation-iteration-count: infinite;
+    background: #3b3b3b;
+}
+
+button:disabled, button:disabled:active, button:disabled:hover {
+    background: inherit;
+    animation: dead;
+    border-color: #919191;
+    color: #919191;
+}
+
+@keyframes dead {
+    0%{color: #919191; border-color: #919191;}
+}
+
+.noborder {
+    border: none;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
-    <link rel="stylesheet" href="./theme.css">
+    <link id="themesource" rel="stylesheet" href="./theme.css">
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <meta name="theme-color" content="#ffc100">
@@ -17,7 +17,9 @@
     <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
-  <body>
+  <body class="innershadow">
+    <p class="titletext jserror">This site requires Javascript to work</p>
+    <div class="site">
     <script src="./tsb-ssm-recall/tsb-ssm-recall.js"></script>
     <div class="titletext">Select a vehicle below to see its recalls, SSMs, and TSBs</div>
     <div class="topbar">
@@ -29,5 +31,6 @@
     <div class="blogposts" id="recall" style="display: none;"></div><br>
     <div class="blogposts" id="ssm" style="display: none;"></div><br>
     <div class="blogposts" id="tsb" style="display: none;"></div><br>
+    </div>
   </body>
 </html>

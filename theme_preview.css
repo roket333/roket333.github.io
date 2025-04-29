@@ -1,0 +1,19 @@
+.setup {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.left { grid-area: 1 / 1 / 2 / 2; width: 50vw; height: 100vh;}
+.right { grid-area: 1 / 2 / 2 / 3; width: 50vw; height: 100vh;}
+
+body {
+    margin: 0;
+}
+
+iframe {
+    border: 0;
+}

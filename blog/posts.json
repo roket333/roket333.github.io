@@ -188,5 +188,13 @@
         "edited":false,
         "edited_date":null,
         "pinned":false
+    },
+    {
+        "title":"A Major Site Update",
+        "date":"April 26th, 2025",
+        "content":"this is the first post of 2025? yeah, not gonna be mentioning time between posts anymore<br>anyways, straight to business<br>the website has gotten a pretty big visual update, with the star of the show being the introduction of themes! there has also been some visibility and readability improvements. if you want to see both themes side by side, you can go to the \"Tools\" tab and click on the \"Theme Preview Page\" button. users who are not using javascript are no longer able to use the website due to just how much depends on it, they will see big text that reads \"This site requires Javascript to work\" and nothing else will be visible. i also did some minor updates that i though were a thing but apparently were not, most notably just how many things did not have the animated colors when they should've, as well as greyed out things that are disabled. i also re-formatted the \"Projects\" tab to be consistent with the style of the site. that tab has been untouched since October 9th, 2021. i also updated the tire size tool in the Mustang tools a while ago to support imperial sizing of tires as well as plainly display the calculated circumference. finally, the \"Works\" tab has been renamed \"Creations\", and is currently disabled, but will return eventually<br>lastly, Further Confusion 2025 went great! had a wonderful time at the convention and had a blast doing the road trip, adaptive cruise control made it soooo easy<br>anyways, see you all next time!",
+        "edited":false,
+        "edited_date":null,
+        "pinned":false
     }
 ]

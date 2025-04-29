@@ -1,4 +1,24 @@
+var style = 0
+var targetselect = document.getElementById("theme")
+
 window.onload = function() {
+  style = parseInt(getCookie("theme"));
+    if(style === null || isNaN(style)) {
+        let darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+        if (darkThemeMq.matches) {
+            setCookie("theme", 0, 621)
+            style = 0;
+            changeTheme();
+        } else {
+            setCookie("theme", 1, 621)
+            style = 1;
+            changeTheme();
+        }
+    } else {
+        changeTheme();
+        
+    } 
+    
   splashes();
   //document.getElementById("default").click();
   loadblogposts();
@@ -7,6 +27,22 @@ window.onload = function() {
   //hide the loading screen and show the actual site
   document.getElementById("site").style.display = "block";
   document.getElementById("loading").style.display = "none";
+}
+
+function updateTheme(themeid) {
+  setCookie("theme", themeid, 621);
+  changeTheme();
+}
+
+function changeTheme() {
+  targetselect = document.getElementById("theme")
+  style = parseInt(getCookie("theme"));
+  targetselect.value = style
+  if(style == 0) {
+      document.getElementById("themesource").setAttribute("href", "./theme_dark.css")
+  } else if (style == 1) {
+      document.getElementById("themesource").setAttribute("href", "./theme_light.css")
+  }
 }
 
 function myFunction() {
@@ -230,6 +266,7 @@ function loadblogposts() {
         if (postTitle != undefined && postDate != undefined && postEdited != undefined && postContent != undefined) {
 
           let postdiv = document.createElement("div");
+          postdiv.classList.add("shadow");
           if (postPinned) {
             postdiv.classList.add("pinnedblogpost");
           } else {
@@ -257,7 +294,7 @@ function loadblogposts() {
           date.classList.add("postdate");
           date.innerHTML = postDateString;
           splitter = document.createElement("hr");
-          splitter.style.cssText += "border: 3px solid #e5e5e5;";
+          splitter.classList.add("mainhr");
           content = document.createElement("p");
           content.classList.add("postcontent");
           content.innerHTML = postContent;
@@ -386,6 +423,7 @@ function loaddevblogposts() {
         if (postTitle != undefined && postDate != undefined && postEdited != undefined && postContent != undefined) {
 
           let postdiv = document.createElement("div");
+          postdiv.classList.add("shadow");
           if (postPinned) {
             postdiv.classList.add("pinnedblogpost");
           } else {
@@ -413,7 +451,7 @@ function loaddevblogposts() {
           date.classList.add("postdate");
           date.innerHTML = postDateString;
           splitter = document.createElement("hr");
-          splitter.style.cssText += "border: 3px solid #e5e5e5;";
+          splitter.classList.add("mainhr");
           content = document.createElement("p");
           content.classList.add("postcontent");
           content.innerHTML = postContent;
