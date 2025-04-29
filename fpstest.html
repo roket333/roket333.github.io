@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
-    <link rel="stylesheet" href="./theme.css">
+    <link id="themesource" rel="stylesheet" href="./theme.css">
+    <script src="./404script.js"></script>
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <meta name="theme-color" content="#ffc100">
@@ -17,7 +18,9 @@
     <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
-<body>
+<body class="innershadow">
+  <p class="titletext jserror">This site requires Javascript to work</p>
+  <div class="site">
     <div class="straybutton">
         <a href="./index.html"><button>Return to Main Page</button></a>
     </div>
@@ -31,5 +34,16 @@
     <div class="fpsbox onetwentyfps">120 FPS</div>
     <div class="fpsbox onefourtyfourfps">144 FPS</div>
     <div class="fpsbox twofourtyfps">240 FPS</div>
+    <br><br>
+    <div class="footer center shadow">
+        Proudly made by Roket 🏳‍🌈<br>
+        <hr class="mainhr">
+      Website Theme
+      <select class="" id="theme" onchange="updateTheme(this.value)">
+        <option value="0">Sagittarius</option>
+        <option value="1">Pixl</option>
+      </select>
+        </div>
+        </div> 
 </body>
 </html>

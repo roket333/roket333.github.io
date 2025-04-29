@@ -16,6 +16,60 @@ var ready = false;
 var finalcostsset = false;
 var optioncodeslist = "";
 
+var style = 0
+
+window.onload = function() {
+  style = parseInt(getCookie("theme"));
+    if(style === null || isNaN(style)) {
+        let darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+        if (darkThemeMq.matches) {
+            setCookie("theme", 0, 621)
+            style = 0;
+            changeTheme();
+        } else {
+            setCookie("theme", 1, 621)
+            style = 1;
+            changeTheme();
+        }
+    } else {
+        changeTheme();
+        
+    } 
+}
+
+function updateTheme(themeid) {
+  setCookie("theme", themeid, 621);
+  changeTheme();
+}
+
+function changeTheme() {
+  targetselect = document.getElementById("theme")
+  style = parseInt(getCookie("theme"));
+  if(style == 0) {
+      document.getElementById("themesource").setAttribute("href", "./theme_dark.css")
+  } else if (style == 1) {
+      document.getElementById("themesource").setAttribute("href", "./theme_light.css")
+  }
+}
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Convert days to milliseconds
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = `${name}=${value};${expires};path=/`;
+  }
+  
+  function getCookie(name) {
+    const cookies = document.cookie.split(";"); // Split cookies into individual key-value pairs
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim(); // Remove leading/trailing spaces
+        if (cookie.startsWith(name + "=")) {
+            return parseFloat(cookie.substring(name.length + 1)); // Parse as a number
+        }
+    }
+    return null; // Return null if the cookie is not found
+  }
+
 function repeat() {
     if(ready == true) {
         boxlist();
@@ -48,6 +102,7 @@ function getOptions(json, locationdiv) {
         let hackno = 0;
         let groupdiv = document.createElement("div"); //make the div that contains the group of options
         groupdiv.classList.add("bapgroup");
+        groupdiv.classList.add("shadow");
         groupdiv.setAttribute("id", group.group_id);
         one_choice = group.one_choice //does this group only allow one choice?
         groupdiv.setAttribute("one_choice", one_choice);
@@ -61,6 +116,7 @@ function getOptions(json, locationdiv) {
             let biglabel = document.createElement("label");
             let itemdiv = document.createElement("div"); //make the div that contains this specific item
             itemdiv.classList.add("bapitem");
+            itemdiv.classList.add("shadow");
             itemdiv.setAttribute("hackno", hackno); //stupid hack to make later stuff work in the right order, it's supremely stupid and i hate it
             itemdiv.setAttribute("id", item.id);
             let box = document.createElement("input");

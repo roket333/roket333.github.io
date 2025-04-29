@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roket's Hub</title>
+    <link rel="stylesheet" href="../theme.css">
+    <meta name="author" content="Roket">
+    <meta name="description" content="A pretty cool website">
+    <meta name="theme-color" content="#ffc100">
+    <!-- Open Graph Data stuff -->
+    <meta property="og:title" content="Roket's Hub">
+    <meta property="og:description" content="A pretty cool website">
+    <!-- Twitter stuff -->
+    <meta name="twitter:title" content="Roket's Hub">
+    <!-- Hopefully your browser supports png icons, else too bad, you don't get to see it -->
+    <!-- I'm not doing all that other icon stuff, screw Apple and their nonsense yet again -->
+    <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
+    <script>
+        // Function to retrieve a query parameter's value
+        function getQueryParam(param) {
+          const params = new URLSearchParams(window.location.search);
+          return params.get(param);
+        }
+    
+        // Load the appropriate stylesheet based on the theme query parameter
+        window.addEventListener('DOMContentLoaded', function() {
+          const theme = getQueryParam('theme') || 'default';
+          const linkElem = document.createElement('link');
+          linkElem.setAttribute('rel', 'stylesheet');
+          
+          if (theme === 'theme1') {
+            linkElem.setAttribute('href', '../theme_dark.css');
+          } else if (theme === 'theme2') {
+            linkElem.setAttribute('href', '../theme_light.css');
+          } else {
+            // Optionally handle a default theme or error
+            linkElem.setAttribute('href', 'default.css');
+          }
+          document.head.appendChild(linkElem);
+        });
+      </script>
+  </head>
+    <body class="innershadow">
+        <div>
+            <p class="errortext" id="browserwarning">This website has been developed for Firefox primarily. I have done my best to port things to other browsers, but some things may be missing. Said missing things are purely visual.</p>
+            Every border is 5px solid with a 10px radius, except sliders and horizontal rules which have those halved<br>
+            Shadows are also 100% manually defined in order to be able to make exceptions where appropriate
+            <div class="straybutton bigtext"><button class="shadow">Highly pressable</button><button class="shadow">Button, also has unique looks for hover and press</button><button class="shadow" disabled="true">No press >:(</button></div>
+            <hr class="mainhr">
+            <span class="reallybig">"Really Big"</span><br>
+            <span class="titletext">"Title Text"</span>
+            <span class="biggertext">"Bigger Text"</span>
+            <span class="bigtext">"Big Text"/"Blog Post Title"</span>
+            <span>Normal Text</span>
+            <span class="colortext">"Color Text"</span><br>
+            <div class="pinnedblogpost">"Pinned Blog Post"</div><br><div class="blogpost">"Blog Post"</div><br>
+            <div class="showcasecontainer">"Showcase Container"</div><div class="genericcontainer">"Generic Container"</div><br><div class="aboutcontainer">"About Container"</div><br>
+            <hr class="mainhr">
+            <div class="">
+                <!-- this is the single most horrible hack on the website to get the labels working.
+                 but in the grand sceme of web design, its probably not that bad.
+                 the labels use a grid with a fake "eightywidth" that is really just a margin left and right of 10% minus 20 pixels, hence the name.
+                 actually, no, i take it back. the build and price tool has the worst code.
+                 i dont even remember what most of it does.
+                 i blame every web brower for making do this hack, because labels and sliders in general are just terribly supported.-->
+                <label for="sliderdemo">Slider Demo</label><br>
+                <input type="range" id="sliderdemo" name="sliderdemo" class="eightywidth" min="0" max="12" step="1" value="0">
+
+                <div class="center dynamicwidthgrid slidermarks eightywidthminus20px" id="dynamicgrid">
+                    <span class="slidertick">None</span>
+                    <span class="slidertick">A</span>
+                    <span class="slidertick">B</span>
+                    <span class="slidertick">C</span>
+                    <span class="slidertick">D</span>
+                    <span class="slidertick">E</span>
+                    <span class="slidertick">F</span>
+                    <span class="slidertick">G</span>
+                    <span class="slidertick">H</span>
+                    <span class="slidertick">I</span>
+                    <span class="slidertick">J</span>
+                    <span class="slidertick">K</span>
+                    <span class="slidertick">L</span>
+                </div>
+                <script>
+                    //this was a headache to get working
+                    function adjustLabelsMargins() {
+                        //get the actual slider and labels
+                        const slider = document.getElementById("sliderdemo");
+                        const labels = document.getElementById("dynamicgrid");
+                        
+                        //now lets get the left margin on the slider and its total width
+                        const sliderBB = slider.getBoundingClientRect();
+                        const sliderLeft = sliderBB.left;
+                        const sliderWidth = sliderBB.width;
+                        
+                        //finally, determine the actual margin we should use
+                        const labelLength = labels.children.length;
+                        const cellWidth = (sliderWidth / labelLength); //now we have the width of each individual cell
+                        const gridWidth = ((sliderWidth) * labelLength) / (labelLength - 1);
+                        const marginLeft = sliderLeft - 7 - (gridWidth / (2 * labelLength));
+                        labels.style.setProperty('--labels-margin', `${marginLeft}px`);
+                    }
+                    window.addEventListener('load', adjustLabelsMargins);
+                    window.addEventListener('resize', adjustLabelsMargins);
+                </script>
+                Note to web devs: dont do this. slider labels are terribly supported everywhere and doing this took me a full day of PAIN. These arent even labels, these are technically spans in a grid. You can get sliders to have ticks at specified values except on Firefox (even though Mozilla's wiki says it does support the ticks? i've never seen them...)
+                <div class="borderlessgrid doublewidegrid">
+                    <div>
+                        Tables
+                        <table class="center">
+                            <tr>
+                                <th class="noborder"></th><th>Column A</th><th>Column B</th><th>Column C</th>
+                            </tr>
+                            <tr>
+                                <th>Row 1</th><th>A1</th><th>B1</th><th>C1</th>
+                            </tr>
+                            <tr>
+                                <th>Row 2</th><th>A2</th><th>B2</th><th>C2</th>
+                            </tr>
+                            <tr>
+                                <th>Row 3</th><th>A3</th><th>B3</th><th>C3</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="borderlessgrid doublewidegrid">
+                        <div>
+                            Radio Buttons
+                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                                <input type="radio" name="demoradio">
+                                Radio 1
+                            </label>
+                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                                <input type="radio" name="demoradio">
+                                Radio 2
+                            </label>
+                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                                <input type="radio" name="demoradio" disabled="">
+                                Radio 3<br>Disabled
+                            </label>
+                        </div>
+                        <div>
+                            Checkboxes
+                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                                <input type="checkbox">
+                                Checkbox 1
+                            </label>
+                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                                <input type="checkbox">
+                                Checkbox 2
+                            </label>
+                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                                <input type="checkbox" disabled="">
+                                Checkbox 3<br>Disabled
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
