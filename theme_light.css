@@ -30,7 +30,8 @@ body {
 }
 
 a:link, a:active {
-    color:#ff00ff
+    animation: colors 8s ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 a:visited, a:hover {
@@ -165,6 +166,8 @@ a:visited, a:hover {
     cursor: pointer;
     padding: 4px 8px;
     transition: 0.3s;
+    margin-top: 4px;
+    margin-bottom: 4px;
 
     /*for some reason you need to re-define the font stuff on buttons, so here's that*/
     font-family:prototype;
