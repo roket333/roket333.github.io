@@ -190,14 +190,17 @@ function splashes(override) {
     else if (random == oldrandom1 && oldrandom1 == oldrandom2) { //lots of work involving cookies just to make the "oh baby a triple" splash work
       document.getElementById("splash").innerHTML = data[1240];
     }
-    else if (day == 5 && month == 9 && (tp == 1 && random == 796)) { //liar's day?
+    else if (tp == 1 && day == 5 && month == 9) { //liar's day?
       document.getElementById("splash").innerHTML = data[796];
     } 
-    else if ((random == 800 && tp == 1) && day == 8 && month == 8) { //vore day splash which we should show if it's 8/8
+    else if (tp == 1 && day == 8 && month == 8) { //vore day splash which we should show if it's 8/8
       document.getElementById("splash").innerHTML = data[800];
     } 
-    else if ((random == 801 && tp == 1) && day == 31 && month == 3) { //trans day of visibility splash which should be shown on March 31st
+    else if (tp == 1 && day == 31 && month == 3) { //trans day of visibility splash which should be shown on March 31st
       document.getElementById("splash").innerHTML = data[801]
+    }
+    else if(random == 1411 || (tp == 1 && month == 6)) { //project6gr splash
+      document.getElementById("splash").innerHTML = data[1411]
     }
     else if (random == 357) { //add an error to console if the splash is the one that says "no errors in console"
       console.error("nope, there's an error now!");
