@@ -164,7 +164,7 @@ function splashes(override) {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     var tp = Math.floor(Math.random() * 5)
-    var p6gr = Math.floor(Math.random() * 10)
+    //var p6gr = Math.floor(Math.random() * 10)
     if(override && !override.isNaN) {
       random = override
     }
@@ -200,8 +200,11 @@ function splashes(override) {
     else if (tp == 1 && day == 31 && month == 3) { //trans day of visibility splash which should be shown on March 31st
       document.getElementById("splash").innerHTML = data[801]
     }
-    else if(random == 1411 || (p6gr == 1 && month == 6)) { //project6gr splash
+    /*else if(random == 1411 || (p6gr == 1 && month == 6)) { //project6gr splash
       document.getElementById("splash").innerHTML = data[1411]
+    }*/
+    else if (tp == 1 && month == 6) { //pride month!
+      document.getElementById("splash").innerHTML = data[1412]
     }
     else if (random == 357) { //add an error to console if the splash is the one that says "no errors in console"
       console.error("nope, there's an error now!");
