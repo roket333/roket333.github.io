@@ -1059,3 +1059,25 @@ button:disabled, button:disabled:active, button:disabled:hover {
 .noborder {
     border: none;
 }
+
+@keyframes idiot_anim_l {
+    66%{transform: rotate(0deg);}
+    90%{transform: rotate(-92deg);}
+    100%{transform: rotate(-90deg);}
+}
+
+@keyframes idiot_anim_r {
+    66%{transform: rotate(0deg);}
+    90%{transform: rotate(92deg);}
+    100%{transform: rotate(90deg);}
+}
+
+.idiot_l {
+    animation: idiot_anim_l 1.5s ease-in-out forwards;
+    animation-iteration-count: 1;
+}
+
+.idiot_r {
+    animation: idiot_anim_r 1.5s ease-in-out forwards;
+    animation-iteration-count: 1;
+}

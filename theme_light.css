@@ -30,12 +30,12 @@ body {
 }
 
 a:link, a:active {
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
 a:visited, a:hover {
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -56,7 +56,7 @@ a:visited, a:hover {
 
 .titletext {
     font-size: 250%;
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
     margin: 0.5em;
 }
@@ -93,34 +93,30 @@ a:visited, a:hover {
 
 @keyframes colors {
     /*making text go from amber to gold and back*/
-    0%{color: #ff0000;}
-    33%{color: #00ff00;}
-    66%{color: #0000ff;}
-    100%{color: #ff0000;}
+    0%{color: #0f66f0;}
+    50%{color: #0f4ff0;}
+    100%{color: #0f66f0;}
 }
 
 @keyframes colorsbg {
     /*making text go from amber to gold and back*/
-    0%{background-color: #ff0000;}
-    33%{background-color: #00ff00;}
-    66%{background-color: #0000ff;}
-    100%{background-color: #ff0000;}
+    0%{background-color: #0f66f0;}
+    50%{background-color: #0f4ff0;}
+    100%{background-color: #0f66f0;}
 }
 
 @keyframes colorsborder {
     /*making text go from amber to gold and back*/
-    0%{border-color: #ff0000;}
-    33%{border-color: #00ff00;}
-    66%{border-color: #0000ff;}
-    100%{border-color: #ff0000;}
+    0%{border-color: #0f66f0;}
+    50%{border-color: #0f4ff0;}
+    100%{border-color: #0f66f0;}
 }
 
 @keyframes colorsbutton {
     /*making text go from amber to gold and back*/
-    0%{color: #ff0000; border-color: #ff0000;}
-    33%{color: #00ff00; border-color: #00ff00;}
-    66%{color: #0000ff; border-color: #0000ff;}
-    100%{color: #ff0000; border-color: #ff0000;}
+    0%{color: #0f66f0; border-color: #0f66f0;}
+    50%{color: #0f4ff0; border-color: #0f4ff0;}
+    100%{color: #0f66f0; border-color: #0f66f0;}
 }
 
 .splash {
@@ -177,7 +173,7 @@ a:visited, a:hover {
 }
 
 .tablist button.active {
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -187,7 +183,7 @@ a:visited, a:hover {
 
 .tablist button:active{
     background-color: #3b3b3b;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -211,7 +207,7 @@ a:visited, a:hover {
 .pinnedblogpost {
     /*container for blog posts*/
     border: 5px solid;
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
     border-radius: 10px;
     min-width: 90%;
@@ -236,7 +232,7 @@ a:visited, a:hover {
 
 .bigtext, .postitle {
     font-size: 120%;
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
     margin: 0.5em;
 }
@@ -342,18 +338,18 @@ th, td {
 }
 
 .colortext {
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
 .colorimage {
-    animation: colors2 8s ease-in-out;
+    animation: colors2 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
 .loadingspinthing {
     width: 10%;
-    animation: loadingspin 20s ease-in-out, colors2 8s linear;
+    animation: loadingspin 20s ease-in-out, colors2 2s linear;
     animation-iteration-count: infinite;
 }
 
@@ -365,10 +361,9 @@ th, td {
 
 @keyframes colors2 {
     /*making text go from amber to gold and back*/
-    0%{filter: brightness(0) saturate(100%) invert(26%) sepia(92%) saturate(6874%) hue-rotate(358deg) brightness(109%) contrast(128%);}
-    33%{filter: brightness(0) saturate(100%) invert(68%) sepia(86%) saturate(5057%) hue-rotate(87deg) brightness(127%) contrast(119%);}
-    66%{filter: brightness(0) saturate(100%) invert(8%) sepia(95%) saturate(7483%) hue-rotate(247deg) brightness(99%) contrast(143%);}
-    100%{filter: brightness(0) saturate(100%) invert(26%) sepia(92%) saturate(6874%) hue-rotate(358deg) brightness(109%) contrast(128%);}
+    0%{filter: brightness(0) saturate(100%) invert(21%) sepia(68%) saturate(4753%) hue-rotate(215deg) brightness(105%) contrast(88%);}
+    50%{filter: brightness(0) saturate(100%) invert(15%) sepia(84%) saturate(7491%) hue-rotate(229deg) brightness(105%) contrast(88%);}
+    100%{filter: brightness(0) saturate(100%) invert(21%) sepia(68%) saturate(4753%) hue-rotate(215deg) brightness(105%) contrast(88%);}
 }
 
 .longloading {
@@ -428,7 +423,7 @@ a:link {
 
 .linklist button:active {
     background-color: #3b3b3b;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -444,7 +439,7 @@ a:link {
 
 .tgbutton button:active {
     background-color: #0084ff;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -460,7 +455,7 @@ a:link {
 
 .twbutton button:active {
     background-color: #00ddff;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -476,7 +471,7 @@ a:link {
 
 .bsbutton button:active {
     background-color: #0085ff;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -492,7 +487,7 @@ a:link {
 
 .ytbutton button:active {
     background-color: #ff0000;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -508,7 +503,7 @@ a:link {
 
 .stbutton button:active {
     background-color: #002a52;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -536,7 +531,7 @@ a:link {
 
 .straybutton button:active {
     background-color: #3b3b3b;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -598,7 +593,7 @@ a:link {
 
 .selecteditem {
     border: 5px solid;
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
     transition: 0.3s;
 }
@@ -654,7 +649,7 @@ a:link {
 
 .bapitem:active {
     background-color: #3b3b3b;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -663,7 +658,7 @@ a:link {
 }
 
 .selecteditem:active > label {
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -728,7 +723,7 @@ select:hover {
 
 select:active, option:active, select:checked, option:checked {
     background-color: #e5e5e5;
-    animation: colorsbutton 8s ease-in-out;
+    animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
     transition: 0.3s;
 }
@@ -736,7 +731,7 @@ select:active, option:active, select:checked, option:checked {
 select optgroup {
     font-style: normal;
     background-color: #3b3b3b;
-    animation: colors 8s ease-in-out;
+    animation: colors 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -782,9 +777,9 @@ select optgroup {
 }
 
 @keyframes bombhasbeenplanted {
-    0%{color: #ffff55;}
+    0%{color: #ff00ff;}
     10%{color: #ff0000;}
-    100%{color: #ffff55;}
+    100%{color: #ff00ff;}
 }
 
 .bombplanted {
@@ -817,12 +812,12 @@ input[type="range"]:focus::-moz-range-thumb {
 
 input[type="range"]:active::-moz-range-thumb {
     background-color: #3b3b3b;
-    animation: colorsborder 8s ease-in-out;
+    animation: colorsborder 2s ease-in-out;
     animation-iteration-count: infinite;
 }
 
 input[type="range"]::-moz-range-progress {
-    animation: colorsbg 8s ease;
+    animation: colorsbg 2s ease;
     animation-iteration-count: infinite;
     border: 2.5px solid #3b3b3b;
     border-radius: 5px;
@@ -1062,4 +1057,26 @@ button:disabled, button:disabled:active, button:disabled:hover {
 
 .noborder {
     border: none;
+}
+
+@keyframes idiot_anim_l {
+    66%{transform: rotate(0deg);}
+    90%{transform: rotate(-92deg);}
+    100%{transform: rotate(-90deg);}
+}
+
+@keyframes idiot_anim_r {
+    66%{transform: rotate(0deg);}
+    90%{transform: rotate(92deg);}
+    100%{transform: rotate(90deg);}
+}
+
+.idiot_l {
+    animation: idiot_anim_l 1.5s ease-in-out forwards;
+    animation-iteration-count: 1;
+}
+
+.idiot_r {
+    animation: idiot_anim_r 1.5s ease-in-out forwards;
+    animation-iteration-count: 1;
 }
