@@ -37,7 +37,7 @@
       <button class="tablinks shadow" id="default" onclick="openTab(event, 'home')">Home</button>
       <button class="tablinks shadow" onclick="openTab(event, 'info')">Info</button>
       <button class="tablinks shadow" onclick="openTab(event, 'projects')">Projects</button>
-      <button class="tablinks shadow" disabled="true" onclick="openTab(event, 'creations')">Creations</button>
+      <button class="tablinks shadow" onclick="openTab(event, 'creations')">Creations</button>
       <button class="tablinks shadow" onclick="openTab(event, 'blog_personal')">Personal Blog</button>
       <button class="tablinks shadow" onclick="openTab(event, 'blog_development')">Dev Blog</button>
       <button class="tablinks shadow" onclick="openTab(event, 'tools')">Tools</button>
@@ -133,8 +133,8 @@
           </a>
         </div>
         <div class="center straybutton">
-          <a href="" target="_blank" rel="noopener noreferrer">  
-            <button class="shadow" disabled="true">Mustang Azureus Project</button>  
+          <a href="https://www.mustang7g.com/forums/threads/rokets-dark-horse-azureus-project.157647/" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow">Mustang Azureus Project</button>  
           </a>
         </div>
       </div>
@@ -144,9 +144,26 @@
     <div class="tabcontent" id="creations">
       <div class="maintext">
         Creations
-      </div>
-      <div class="showcasecontainer shadow">
-        Nothing here yet
+        <div class="center straybutton">
+          <a href="https://makerworld.com/en/@roketgamer" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow">My MakerWorld Creations</button>  
+          </a>
+        </div>
+        <div class="center straybutton">
+          <a href="./theme_preview.html" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow">Theme Preview Page</button>  
+          </a>
+        </div>
+        <div class="center straybutton">
+          <a href="./my_characters.html" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow" disabled="true">My Characters</button>  
+          </a>
+        </div>
+        <div class="center straybutton">
+          <a href="./ambrosia/ambrosia_shared_universe.html" target="_blank" rel="noopener noreferrer">  
+            <button class="shadow" disabled="true">My World and Characters<br>The Ambrosia Shared Universe Project</button>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -185,11 +202,6 @@
         <div class="center straybutton">
           <a href="./tsb-ssm-recalls.html" target="_blank" rel="noopener noreferrer">  
             <button class="shadow">Ford TSB, SSM, and Recall List</button>  
-          </a>
-        </div>
-        <div class="center straybutton">
-          <a href="./theme_preview.html" target="_blank" rel="noopener noreferrer">  
-            <button class="shadow">Theme Preview Page</button>  
           </a>
         </div>
         <div class="center straybutton showcasecontainer shadow twentywidth">
@@ -326,6 +338,20 @@
       </div>
     </div>
 
+    <div class="tabcontent" id="splashdebug">
+      <div><br>
+        <div class="maintext">Splash Debug<br>since you can't open dev console on mobile
+      <br>
+        <div class="center straybutton showcasecontainer shadow twentywidth">
+          Splash Debug
+          <br>
+          <input class="field" id="splashdebuginput" value="" onkeypress="if(event.keyCode==13) splashdebug();"><br>
+          <button class="tgbutton" onclick="splashdebug()">Get Splash</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Products tab -->
     <div class="tabcontent" id="products">
       <div>
@@ -415,8 +441,8 @@
       <hr class="mainhr">
       Website Theme
       <select class="" id="theme" onchange="updateTheme(this.value)">
-        <option value="0">Sagittarius</option>
-        <option value="1">Pixl</option>
+        <option value="0">Dark</option>
+        <option value="1">Light</option>
       </select>
     </div>
     <br><br>

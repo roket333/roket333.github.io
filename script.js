@@ -164,9 +164,11 @@ function splashes(override) {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     var tp = Math.floor(Math.random() * 5)
+    let overridden = false;
     //var p6gr = Math.floor(Math.random() * 10)
     if(override && !override.isNaN) {
       random = override
+      overridden = true
     }
     //var random = 944;
     //var random = Math.floor((Math.random() * 3)+ 920)
@@ -179,6 +181,9 @@ function splashes(override) {
     document.getElementById("splashbg").classList.remove("fsfps3bg");
     document.getElementById("splash").classList.remove("fsfps3text");
     document.getElementById("splash").classList.remove("bombplanted");
+    document.getElementById("splashbg").classList.remove("idiot_l");
+    document.getElementById("splashbg").classList.remove("idiot_r");
+    document.getElementById("splash").classList.remove("shadow");
     //remove the Peace and Tranquility and Free Speech Flag stuff when getting a new splash
     //console.log("Day: " + day + ", Month: " + month);
     //console.log(tp);
@@ -191,19 +196,25 @@ function splashes(override) {
     else if (random == oldrandom1 && oldrandom1 == oldrandom2) { //lots of work involving cookies just to make the "oh baby a triple" splash work
       document.getElementById("splash").innerHTML = data[1240];
     }
+    else if (overridden == false && ((random == 800 && !(day == 8 && month == 8))|| (random == 801 && !(day == 31 && month == 3)) || /*(random == 1435 && !(day == 25 && month == 6)) ||*/ (random == 1412 && !(month == 6)))) { //prevent the special date-specific splashes from being randomly picked not on the special days
+      splashes();
+    }
     else if (tp == 1 && day == 5 && month == 9) { //liar's day?
       document.getElementById("splash").innerHTML = data[796];
     } 
-    else if (tp == 1 && day == 8 && month == 8) { //vore day splash which we should show if it's 8/8
+    else if (tp == 1 && day == 8 && month == 8) { //vore day splash which we should show if it's 8/8 - SPECIAL
       document.getElementById("splash").innerHTML = data[800];
     } 
-    else if (tp == 1 && day == 31 && month == 3) { //trans day of visibility splash which should be shown on March 31st
+    else if (tp == 1 && day == 31 && month == 3) { //trans day of visibility splash which should be shown on March 31st - SPECIAL
       document.getElementById("splash").innerHTML = data[801]
+    }
+    else if (tp == 1 && day == 25 && month == 6) { //deport back to Norway
+      document.getElementById("splash").innerHTML = data[1435]
     }
     /*else if(random == 1411 || (p6gr == 1 && month == 6)) { //project6gr splash
       document.getElementById("splash").innerHTML = data[1411]
     }*/
-    else if (tp == 1 && month == 6) { //pride month!
+    else if (tp == 1 && month == 6) { //pride month! - SPECIAL
       document.getElementById("splash").innerHTML = data[1412]
     }
     else if (random == 357) { //add an error to console if the splash is the one that says "no errors in console"
@@ -219,6 +230,12 @@ function splashes(override) {
       console.log("I don't have to prove myself to anyone");
       document.getElementById("splash").innerHTML = data[random];
     } 
+    else if (random == 674) { //rotated idiot time. also, yes i know the splash box gets overlaid over everything when it's rotated. i really don't care and actually think it adds to the comedic value
+      randomidiot = Math.round(Math.random());
+      if(randomidiot == 0) {document.getElementById("splashbg").classList.add("idiot_l");} //which way is the idiot getting rotated?
+      else {document.getElementById("splashbg").classList.add("idiot_r");}
+      document.getElementById("splash").innerHTML = data[random];
+    }
     else if (random == 921) { //free speech flag time baybeee
       document.getElementById("splashbg").classList.add("fsfbg");
       document.getElementById("splash").classList.add("fsftext");
@@ -511,4 +528,9 @@ function getCookie(name) {
 function playYippee() {
   const audio = new Audio('./assets/audio/yippee.mp3');
   audio.play();
+}
+
+function splashdebug() {
+  var splashtoget = document.getElementById("splashdebuginput").value;
+  splashes(splashtoget);
 }
