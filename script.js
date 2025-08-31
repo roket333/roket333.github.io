@@ -163,6 +163,7 @@ function splashes(override) {
     let date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
+    let year = date.getFullYear();
     var tp = Math.floor(Math.random() * 5)
     let overridden = false;
     //var p6gr = Math.floor(Math.random() * 10)
@@ -196,7 +197,7 @@ function splashes(override) {
     else if (random == oldrandom1 && oldrandom1 == oldrandom2) { //lots of work involving cookies just to make the "oh baby a triple" splash work
       document.getElementById("splash").innerHTML = data[1240];
     }
-    else if (overridden == false && ((random == 800 && !(day == 8 && month == 8))|| (random == 801 && !(day == 31 && month == 3)) || /*(random == 1435 && !(day == 25 && month == 6)) ||*/ (random == 1412 && !(month == 6)))) { //prevent the special date-specific splashes from being randomly picked not on the special days
+    else if (overridden == false && ((random == 800 && !(day == 8 && month == 8))|| (random == 801 && !(day == 31 && month == 3)) || /*(random == 1435 && !(day == 25 && month == 6)) ||*/ (random == 1412 && !(month == 6))|| (random == 1481 && !(day == 30 && month == 2 && year == 1712))|| (random == 1482 && !(day == 30 && month == 2 && year == 1951)))) { //prevent the special date-specific splashes from being randomly picked not on the special days
       splashes();
     }
     else if (tp == 1 && day == 5 && month == 9) { //liar's day?
@@ -217,10 +218,15 @@ function splashes(override) {
     else if (tp == 1 && month == 6) { //pride month! - SPECIAL
       document.getElementById("splash").innerHTML = data[1412]
     }
-    else if (random == 357) { //add an error to console if the splash is the one that says "no errors in console"
-      console.error("nope, there's an error now!");
-      document.getElementById("splash").innerHTML = data[random];
-    } 
+    else if (tp == 1 && month == 2 && day == 30 && year == 1712) { //february 30th?!
+      document.getElementById("splash").innerHTML = data[1481]
+    }
+    else if (tp == 1 && month == 2 && day == 30 && year == 1951) { //it's the end of the world
+      document.getElementById("splash").innerHTML = data[1482]
+    }
+    else if (tp == 1 && month == 8 && day == 18) {
+      document.getElementById("splash").innerHTML = data[1487]
+    }
     else if (random == 417) { //it's time for Peace and Tranquility mode
       document.getElementById("splashbg").classList.add("patbg");
       document.getElementById("splash").classList.add("pattext");
@@ -250,6 +256,10 @@ function splashes(override) {
       document.getElementById("splash").classList.add("bombplanted");
       document.getElementById("splash").innerHTML = data[random];
     }
+    else if (random == 1478) { //add an error to console if the splash is the one that says "no errors in console"
+      console.error("nope, there's an error now!");
+      document.getElementById("splash").innerHTML = data[random];
+    } 
     //this splash is not one that gets some special effects, and this line is the default behavior
     else if (random != 313) { document.getElementById("splash").innerHTML = data[random]; } else splashes(); //check if "random" is not 313. if that passes, just display the text as normal. if it fails, "random" is 313 and we have to re-roll
   });
