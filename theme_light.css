@@ -1080,3 +1080,9 @@ button:disabled, button:disabled:active, button:disabled:hover {
     animation: idiot_anim_r 1.5s ease-in-out forwards;
     animation-iteration-count: 1;
 }
+
+.swatch {
+    width: 100px;
+    height: 100px;
+    margin: 0
+}
