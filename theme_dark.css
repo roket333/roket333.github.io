@@ -692,7 +692,13 @@ a:link {
     min-width: 1fr;
 }
 
-.doublewidegrid > p, .triplewidegrid > p, .quadwidegrid > p {
+.decwidegrid {
+    grid-template-columns: repeat(10, 1fr);
+    margin: 5px;
+    min-width: 1fr;
+}
+
+.doublewidegrid > p, .triplewidegrid > p, .quadwidegrid > p , .decwidegrid > p{
     margin: 5px;
 }
 
@@ -716,9 +722,13 @@ select, select option {
     color:#e5e5e5;
 }
 
-select:hover {
+select:hover, select option:focus {
     background-color: #707070;
     transition: 0.3s;
+}
+
+select option:hover {
+    background-color: #3b3b3b;
 }
 
 select:active, select option:active, select:checked, select option:checked {
@@ -726,6 +736,14 @@ select:active, select option:active, select:checked, select option:checked {
     animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
     transition: 0.3s;
+}
+
+select:disabled, select option:disabled, select:disabled:hover, select option:disabled:hover {
+    background: #3b3b3b;
+    animation: dead;
+    border-color: #707070;
+    color: #707070;
+    cursor: not-allowed;
 }
 
 select optgroup {
@@ -976,27 +994,6 @@ input[type="range"]::-webkit-slider-runnable-track {
 .twentywidth {
     width: 20%;
 }
-  
-.slidermarks {
-    display: grid;
-}
-
-.slidertick {
-    text-align: center;
-}
-
-:root {
-    --min-width: 2ch;
-  }
-
-  .dynamicwidthgrid {
-    grid-template-columns: repeat(auto-fit, minmax(2ch, 1fr));
-  }
-
-.eightywidthminus20px {
-    margin-left: var(--labels-margin);
-    margin-right: var(--labels-margin);
-}
 
 .jserror {
     display: none;
@@ -1022,7 +1019,7 @@ input[type="checkbox"] {
     border-radius: 5px;
 }
 
-input[type="radio"]:checked, input[type="checkbox"]:checked, input[type="radio"]:checked:hover, input[type="checkbox"]:checked:hover {
+input[type="radio"]:checked, input[type="checkbox"]:checked, input[type="radio"]:checked:hover, input[type="checkbox"]:checked:hover, input[type="radio"]:disabled:checked, input[type="checkbox"]:disabled:checked {
     animation: colorsbutton 2s ease-in-out;
     animation-iteration-count: infinite;
     background: #e5e5e5;
@@ -1033,6 +1030,14 @@ input[type="radio"]:disabled, input[type="checkbox"]:disabled, input[type="radio
     animation: dead;
     border-color: #707070;
     color: #707070;
+    cursor: not-allowed;
+}
+
+input[type="radio"]:disabled:hover:checked, input[type="checkbox"]:disabled:hover:checked {
+    animation: colorsbutton 2s ease-in-out;
+    animation-iteration-count: infinite;
+    background: #e5e5e5;
+    cursor: not-allowed;
 }
 
 input[type="radio"]:hover, input[type="checkbox"]:hover {
@@ -1050,6 +1055,7 @@ button:disabled, button:disabled:active, button:disabled:hover {
     animation: dead;
     border-color: #707070;
     color: #707070;
+    cursor: not-allowed;
 }
 
 @keyframes dead {
@@ -1086,4 +1092,102 @@ button:disabled, button:disabled:active, button:disabled:hover {
     width: 100px;
     height: 100px;
     margin: 0
+}
+
+.doublecheckboxgridleft {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.doublecheckboxgridright {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.greedyleftgrid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 5px 0;
+}
+
+.greedyrightgrid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 5px 0;
+}
+
+.flexbox-v {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexbox-h {
+    display: flex;
+    flex-direction: row;
+}
+
+.nopadding {
+    padding: 0%;
+}
+
+.nomargin {
+    margin: 0%;
+}
+
+.lefttenspacer {
+    margin-left: 10%;
+}
+
+.righttenspacer {
+    margin-right: 10%;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.slider-labels {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    height: 24px;
+}
+
+.slider-labels span {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.slider-labels span::before {
+    content: "";
+    position: absolute;
+    top: -7.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 5px;
+    background: #e5e5e5;
+    border: 2.5px solid #e5e5e5;
+    border-radius: 5px;
+}
+
+@keyframes errorborder {
+    0%{border: #ff0000;}
+    50%{border: #ff3333;}
+    100%{border: #ff0000;}
 }

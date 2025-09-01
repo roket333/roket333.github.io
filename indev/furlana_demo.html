@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roket's Hub</title>
+    <link id="themesource" rel="stylesheet" href="../theme.css">
+    <script src="./fldemo.js"></script>
+    <meta name="author" content="Roket">
+    <meta name="description" content="A pretty cool website">
+    <meta name="theme-color" content="#ffc100">
+    <!-- Open Graph Data stuff -->
+    <meta property="og:title" content="Roket's Hub">
+    <meta property="og:description" content="A pretty cool website">
+    <!-- Twitter stuff -->
+    <meta name="twitter:title" content="Roket's Hub">
+    <!-- Hopefully your browser supports png icons, else too bad, you don't get to see it -->
+    <!-- I'm not doing all that other icon stuff, screw Apple and their nonsense yet again -->
+    <link rel="icon" href="../assets/images/icon_still.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+<body class="innershadow">
+  <p class="titletext jserror">This site requires Javascript to work</p>
+  <div class="site">
+    <div class="blogpost">
+        <label class="biggertext">Upper Body</label><br>
+        <hr class="mainhr"><br>
+        <label class="">Breasts</label><br>
+        <div class="greedyleftgrid eightywidth lefttenspacer">
+            <div class="slider-container">
+                <input type="range" id="breastsize" class="fullwidth" min="0" max="12" step="1" value="0" onchange="determineValidity()">
+                <div class="slider-labels" id="breastsize-labels"></div>
+            </div>
+            <script>generateLabels("breastsize", ["None","A","B","C","D","E","F","G","H","I","J","K","L"], 12.5, 2);</script>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Nipples
+                    <input type="checkbox" id="nipples" onchange="determineValidity()">
+                </label>
+            </div>
+        </div>
+        <hr class="mainhr">
+        <div class="borderlessgrid quadwidegrid">
+            <div>
+                <label class="doublecheckboxgridright">
+                    Belly Button
+                    <input type="checkbox" id="bellybutton" onchange="determineValidity()">
+                </label>
+            </div>
+            <div>
+                <label class="">Torso Shape</label><br>
+                <select class="fullwidth" id="torsoshape" onchange="determineValidity()">
+                    <option value="0">Feminine Curvy</option>
+                    <option value="1" selected>Masculine Straight</option>
+                </select>
+            </div>
+            <div>
+                <label class="">Abdominal Muscles</label><br>
+                <select class="fullwidth" id="abs" onchange="determineValidity()">
+                    <option value="0">No Visible Abs</option>
+                    <option value="1">Visible Linea Alba</option>
+                    <option value="2">Visible Six Pack</option>
+                </select>
+            </div>
+            <div>
+                <label class="">Claws/Nails</label><br>
+                <select class="fullwidth" id="claws" onchange="determineValidity()">
+                    <option value="0">Claws Retracted</option>
+                    <option value="1">Claws Extended</option>
+                    <option value="2">Nails</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="blogpost">
+        <label class="biggertext">Lower Body</label><br>
+        <hr class="mainhr">
+        <div class="borderlessgrid decwidegrid">
+            <div>
+                <label class="">Penis Type</label><br>
+                <select class="fullwidth" id="penis" onchange="determineValidity()">
+                    <option value="0">None</option>
+                    <option value="1">Humanoid</option>
+                    <option value="2" selected>Canine</option>
+                    <option value="3">Feline</option>
+                    <option value="4">Equine</option>
+                    <option value="5">Tapering</option>
+                </select>
+            </div>
+            <div>
+                <label class="">Penis Connection to Body</label><br>
+                <select class="fullwidth" id="interface" onchange="determineValidity()">
+                    <option hidden value="-1">Disabled</option>
+                    <option value="0">Direct (Humanoid)</option>
+                    <option value="1">Slit (Reptile)</option>
+                    <option value="2" selected>Sheath (Canine)</option>
+                </select>
+            </div>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Knot
+                    <input type="checkbox" id="knot" onchange="determineValidity()">
+                </label>
+            </div>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Barbs/Spines
+                    <input type="checkbox" id="barbs" onchange="determineValidity()">
+                </label>
+            </div>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Medial Ring
+                    <input type="checkbox" id="medialring" onchange="determineValidity()">
+                </label>
+            </div>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Foreskin
+                    <input type="checkbox" id="foreskin" onchange="determineValidity()">
+                </label>
+            </div>
+            <div>
+                <label class="">Balls</label><br>
+                <select class="fullwidth" id="balls" onchange="determineValidity()">
+                    <option hidden value="-1">Disabled</option>
+                    <option value="0">None</option>
+                    <option value="1" selected>Normal</option>
+                    <option value="2">Large</option>
+                </select>
+            </div>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Flaccid
+                    <input type="checkbox" id="flaccid">
+                </label>
+            </div>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Vulva
+                    <input type="checkbox" id="vulva" onchange="determineValidity()">
+                </label>
+            </div>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Partially Exposed<br>Inner Labia
+                    <input type="checkbox" id="labia" onchange="determineValidity()">
+                </label>
+            </div>
+        </div>
+    </div>
+        <br>
+    <div class="footer center shadow">
+        Proudly made by Roket 🏳‍🌈<br>
+        <hr class="mainhr">
+      Website Theme
+      <select class="" id="theme" onchange="updateTheme(this.value)">
+        <option value="0">Dark</option>
+        <option value="1">Light</option>
+      </select>
+        </div> 
+</body>
+</html>
