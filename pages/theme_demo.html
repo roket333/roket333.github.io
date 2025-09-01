@@ -41,7 +41,6 @@
       </script>
   </head>
     <body class="innershadow">
-        <div>
             <p class="errortext" id="browserwarning">This website has been developed for Firefox primarily. I have done my best to port things to other browsers, but some things may be missing. Said missing things are purely visual.</p>
             Every border is 5px solid with a 10px radius, except sliders and horizontal rules which have those halved<br>
             Shadows are also 100% manually defined in order to be able to make exceptions where appropriate
@@ -56,54 +55,39 @@
             <div class="pinnedblogpost">"Pinned Blog Post"</div><br><div class="blogpost">"Blog Post"</div><br>
             <div class="showcasecontainer">"Showcase Container"</div><div class="genericcontainer">"Generic Container"</div><br><div class="aboutcontainer">"About Container"</div><br>
             <hr class="mainhr">
-            <div class="">
-                <!-- this is the single most horrible hack on the website to get the labels working.
-                 but in the grand sceme of web design, its probably not that bad.
-                 the labels use a grid with a fake "eightywidth" that is really just a margin left and right of 10% minus 20 pixels, hence the name.
-                 actually, no, i take it back. the build and price tool has the worst code.
-                 i dont even remember what most of it does.
-                 i blame every web brower for making do this hack, because labels and sliders in general are just terribly supported.-->
+            <div class="eightywidth lefttenspacer">
                 <label for="sliderdemo">Slider Demo</label><br>
-                <input type="range" id="sliderdemo" name="sliderdemo" class="eightywidth" min="0" max="12" step="1" value="0">
-
-                <div class="center dynamicwidthgrid slidermarks eightywidthminus20px" id="dynamicgrid">
-                    <span class="slidertick">None</span>
-                    <span class="slidertick">A</span>
-                    <span class="slidertick">B</span>
-                    <span class="slidertick">C</span>
-                    <span class="slidertick">D</span>
-                    <span class="slidertick">E</span>
-                    <span class="slidertick">F</span>
-                    <span class="slidertick">G</span>
-                    <span class="slidertick">H</span>
-                    <span class="slidertick">I</span>
-                    <span class="slidertick">J</span>
-                    <span class="slidertick">K</span>
-                    <span class="slidertick">L</span>
-                </div>
+                <input type="range" id="sliderdemo" class="fullwidth" min="0" max="12" step="1" value="0">
+                <div class="slider-labels" id="sliderdemo-labels"></div>
+            </div>
                 <script>
-                    //this was a headache to get working
-                    function adjustLabelsMargins() {
-                        //get the actual slider and labels
-                        const slider = document.getElementById("sliderdemo");
-                        const labels = document.getElementById("dynamicgrid");
+                    function generateLabels(sliderId, labels, endoffset = 12.5, leftoffset = 0) {
+                        //get and define the parts we need, then empty them
+                        const slider = document.getElementById(sliderId);
+                        const labelContainer = document.getElementById(sliderId + "-labels");
+                        labelContainer.innerHTML = ""; //make the html blank just in case we are doing this multiple times to a slider for some reason
+                    
+                        const minvalue  = slider.min; //minimum value of the slider
+                        const maxvalue  = slider.max; //maximum value of the slider
+                        const sliderstep = slider.step || 1; //the step size of the slider, defaults to 1 if none is found
+                        const positioncount = Math.floor((maxvalue - minvalue) / sliderstep) + 1; //find how many labels there will be
+                        const gapcount = Math.max(1, positioncount - 1); //find out how many gaps there will be, but never return less than 1 to prevent dividing by 0 issues later
+                    
+                        //for each item in the array of labels, run through and make them into actual labels
+                        for (let i = 0; i < positioncount; i++) {
+                            const span = document.createElement("span");
+                            const frac = i / gapcount;
                         
-                        //now lets get the left margin on the slider and its total width
-                        const sliderBB = slider.getBoundingClientRect();
-                        const sliderLeft = sliderBB.left;
-                        const sliderWidth = sliderBB.width;
-                        
-                        //finally, determine the actual margin we should use
-                        const labelLength = labels.children.length;
-                        const cellWidth = (sliderWidth / labelLength); //now we have the width of each individual cell
-                        const gridWidth = ((sliderWidth) * labelLength) / (labelLength - 1);
-                        const marginLeft = sliderLeft - 7 - (gridWidth / (2 * labelLength));
-                        labels.style.setProperty('--labels-margin', `${marginLeft}px`);
+                            //calculate the spacing of each label, then put it on the labels
+                            span.style.left = `calc(${endoffset}px + (100% - ${endoffset * 2}px) * ${frac} + ${leftoffset}px)`;
+                            span.textContent = labels && labels[i] ? labels[i] : (min + i * sliderstep);
+                            
+                            //finally, append the label span to the label container
+                            labelContainer.appendChild(span);
+                        }
                     }
-                    window.addEventListener('load', adjustLabelsMargins);
-                    window.addEventListener('resize', adjustLabelsMargins);
+                    generateLabels("sliderdemo", ["None","A","B","C","D","E","F","G","H","I","J","K","L"], 12, 2);
                 </script>
-                Note to web devs: dont do this. slider labels are terribly supported everywhere and doing this took me a full day of PAIN. These arent even labels, these are technically spans in a grid. You can get sliders to have ticks at specified values except on Firefox (even though Mozilla's wiki says it does support the ticks? i've never seen them...)
                 <div class="borderlessgrid doublewidegrid">
                     <div>
                         Tables
@@ -125,30 +109,30 @@
                     <div class="borderlessgrid doublewidegrid">
                         <div>
                             Radio Buttons
-                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                            <label class="borderlessgrid doublecheckboxgridleft genericcontainer">
                                 <input type="radio" name="demoradio">
                                 Radio 1
                             </label>
-                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                            <label class="borderlessgrid doublecheckboxgridleft genericcontainer">
                                 <input type="radio" name="demoradio">
                                 Radio 2
                             </label>
-                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                            <label class="borderlessgrid doublecheckboxgridleft genericcontainer">
                                 <input type="radio" name="demoradio" disabled="">
                                 Radio 3<br>Disabled
                             </label>
                         </div>
                         <div>
                             Checkboxes
-                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                            <label class="borderlessgrid doublecheckboxgridleft genericcontainer">
                                 <input type="checkbox">
                                 Checkbox 1
                             </label>
-                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                            <label class="borderlessgrid doublecheckboxgridleft genericcontainer">
                                 <input type="checkbox">
                                 Checkbox 2
                             </label>
-                            <label class="borderlessgrid doublewidegrid genericcontainer">
+                            <label class="borderlessgrid doublecheckboxgridleft genericcontainer">
                                 <input type="checkbox" disabled="">
                                 Checkbox 3<br>Disabled
                             </label>
@@ -156,6 +140,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </body>
 </html>
