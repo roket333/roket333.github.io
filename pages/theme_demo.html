@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
-    <link id="themesource" rel="stylesheet" href="/theme.css">
+    <link rel="stylesheet" href="/theme.css">
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <meta name="theme-color" content="#ffc100">
@@ -29,11 +29,9 @@
           linkElem.setAttribute('rel', 'stylesheet');
           
           if (theme === 'theme1') {
-            const cssPath = window.location.origin + "/theme_dark.css";
-            document.getElementById("themesource").setAttribute("href", cssPath);
+            linkElem.setAttribute('href', '../theme_dark.css');
           } else if (theme === 'theme2') {
-            const cssPath = window.location.origin + "/theme_light.css";
-            document.getElementById("themesource").setAttribute("href", cssPath);
+            linkElem.setAttribute('href', '../theme_light.css');
           }
           document.head.appendChild(linkElem);
         });
