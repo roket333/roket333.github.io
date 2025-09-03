@@ -39,9 +39,11 @@ function changeTheme() {
   style = parseInt(getCookie("theme"));
   targetselect.value = style
   if(style == 0) {
-      document.getElementById("themesource").setAttribute("href", "/theme_dark.css")
+    const cssPath = window.location.origin + "/theme_dark.css";
+    document.getElementById("themesource").setAttribute("href", cssPath);
   } else if (style == 1) {
-      document.getElementById("themesource").setAttribute("href", "/theme_light.css")
+    const cssPath = window.location.origin + "/theme_light.css";
+    document.getElementById("themesource").setAttribute("href", cssPath);
   }
 }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
-    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="/theme.css">
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <meta name="theme-color" content="#ffc100">
@@ -14,7 +14,7 @@
     <meta name="twitter:title" content="Roket's Hub">
     <!-- Hopefully your browser supports png icons, else too bad, you don't get to see it -->
     <!-- I'm not doing all that other icon stuff, screw Apple and their nonsense yet again -->
-    <link rel="icon" href="./assets/images/icon_still.png" type="image/png">
+    <link rel="icon" href="/assets/images/icon_still.png" type="image/png">
     <script>
         // Function to retrieve a query parameter's value
         function getQueryParam(param) {
@@ -29,12 +29,11 @@
           linkElem.setAttribute('rel', 'stylesheet');
           
           if (theme === 'theme1') {
-            linkElem.setAttribute('href', '/theme_dark.css');
+            const cssPath = window.location.origin + "/theme_dark.css";
+            document.getElementById("themesource").setAttribute("href", cssPath);
           } else if (theme === 'theme2') {
-            linkElem.setAttribute('href', '/theme_light.css');
-          } else {
-            // Optionally handle a default theme or error
-            linkElem.setAttribute('href', 'default.css');
+            const cssPath = window.location.origin + "/theme_light.css";
+            document.getElementById("themesource").setAttribute("href", cssPath);
           }
           document.head.appendChild(linkElem);
         });
