@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
+    <link rel="stylesheet" href="/theme.css">
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
     <meta name="theme-color" content="#ffc100">
@@ -14,29 +15,29 @@
     <!-- Hopefully your browser supports png icons, else too bad, you don't get to see it -->
     <!-- I'm not doing all that other icon stuff, screw Apple and their nonsense yet again -->
     <link rel="icon" href="/assets/images/icon_still.png" type="image/png">
+    <script>
+        // Function to retrieve a query parameter's value
+        function getQueryParam(param) {
+          const params = new URLSearchParams(window.location.search);
+          return params.get(param);
+        }
+    
+        // Load the appropriate stylesheet based on the theme query parameter
+        window.addEventListener('DOMContentLoaded', function() {
+          const theme = getQueryParam('theme') || 'default';
+          const linkElem = document.createElement('link');
+          linkElem.setAttribute('rel', 'stylesheet');
+          
+          if (theme === 'theme1') {
+            linkElem.setAttribute('href', '/theme_dark.css');
+          } else if (theme === 'theme2') {
+            linkElem.setAttribute('href', '/theme_light.css');
+          }
+          document.head.appendChild(linkElem);
+        });
+    </script>
   </head>
     <body class="innershadow">
-        <script>
-            // Function to retrieve a query parameter's value
-            function getQueryParam(param) {
-              const params = new URLSearchParams(window.location.search);
-              return params.get(param);
-            }
-        
-            // Load the appropriate stylesheet based on the theme query parameter
-            window.addEventListener('DOMContentLoaded', function() {
-              const theme = getQueryParam('theme') || 'default';
-              const linkElem = document.createElement('link');
-              linkElem.setAttribute('rel', 'stylesheet');
-              
-              if (theme === 'theme1') {
-                linkElem.setAttribute('href', '/theme_dark.css');
-              } else if (theme === 'theme2') {
-                linkElem.setAttribute('href', '/theme_light.css');
-              }
-              document.head.appendChild(linkElem);
-            });
-          </script>
             <p class="errortext" id="browserwarning">This website has been developed for Firefox primarily. I have done my best to port things to other browsers, but some things may be missing. Said missing things are purely visual.</p>
             Every border is 5px solid with a 10px radius, except sliders and horizontal rules which have those halved<br>
             Shadows are also 100% manually defined in order to be able to make exceptions where appropriate
