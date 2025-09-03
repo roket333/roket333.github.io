@@ -95,29 +95,43 @@ function setCookie(name, value, days) {
     const foreskin = document.getElementById("foreskin");
     const balls = document.getElementById("balls");
     const flaccid = document.getElementById("flaccid");
+    const sheathed = document.getElementById("flaccid2");
     const vulva = document.getElementById("vulva");
     const labia = document.getElementById("labia");
 
+    //some shortcuts
     const penistype = penis.value;
     const crotchtype = interface.value;
 
+    //messages
     const needs_knot = document.getElementById("needs_knot");
     const flaccid_no = document.getElementById("flaccid_no");
+    const sheathed_no = document.getElementById("sheathed_no");
     const foreskin_no = document.getElementById("foreskin_no");
     const direct_no = document.getElementById("direct_no");
     const penis_no = document.getElementById("penis_no");
+    const nipples_no = document.getElementById("nipples_no");
+    const needs_vulva = document.getElementById("needs_vulva");
+    const flop = document.getElementById("flop");
+    const hide = document.getElementById("hide");
 
+    //hide the messages by default
     needs_knot.style.display = "none";
     flaccid_no.style.display = "none";
+    sheathed_no.style.display = "none";
     foreskin_no.style.display = "none";
     direct_no.style.display = "none";
     penis_no.style.display = "none";
+    nipples_no.style.display = "none";
+    needs_vulva.style.display = "none";
 
     if(breastsize.value == 0) {
       nipples.disabled = true;
       nipples.checked = false;
+      nipples_no.style.display = "block"
     } else {
       nipples.disabled = false;
+      nipples_no.style.display = "none"
     }
 
     if(penistype == 0) { //no penis? disable everything penis related and set dropdowns to -1
@@ -135,6 +149,8 @@ function setCookie(name, value, days) {
       balls.value = -1
       flaccid.disabled = true;
       flaccid.checked = false;
+      sheathed.disabled = true;
+      sheathed.checked = false;
 
       needs_knot.style.display = "none";
       flaccid_no.style.display = "none";
@@ -224,25 +240,39 @@ function setCookie(name, value, days) {
       penis_no.style.display = "none";
 
     }
-    else {penistype = 0}
+    else {penistype = 0} //fallback. if unknown penis type, treat it like none
 
-    if(interface.value != 0) {
-      flaccid.checked = false;
+    if(interface.value != 0) { //if the interface is not humanoid
       flaccid.disabled = true;
-
-      if(penistype != 0) {
-        flaccid_no.style.display = "block";
+      sheathed.disabled = false;
+      if(flaccid.checked) {
+        sheathed.checked = true;
       }
-    } else {
+      flaccid.checked = false;
+      
+      hide.style.display = "block";
+      flop.style.display = "none";
+    } else { //if the interface is humanoid
       flaccid.disabled = false;
-
-      flaccid_no.style.display = "none";
+      sheathed.disabled = true;
+      if(sheathed.checked) {
+        flaccid.checked = true;
+      }
+      sheathed.checked = false;
+      hide.style.display = "none";
+      flop.style.display = "block"
     }
 
-    if(vulva.checked) {
+    if(vulva.checked) { //enable and disable the exposed labia option
       labia.disabled = false;
     } else {
       labia.disabled = true;
       labia.checked = false;
+    }
+
+    if(labia.checked) { //show the message that this requires the vulva option
+      needs_vulva.style.display = "block";
+    } else {
+      needs_vulva.style.display = "none";
     }
   }
