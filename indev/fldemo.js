@@ -1,6 +1,5 @@
 var style = 0;
 var targetselect = document.getElementById("theme");
-var firstload = false;
 
 window.onload = function() {
   determineValidity();
@@ -102,6 +101,18 @@ function setCookie(name, value, days) {
     const penistype = penis.value;
     const crotchtype = interface.value;
 
+    const needs_knot = document.getElementById("needs_knot");
+    const flaccid_no = document.getElementById("flaccid_no");
+    const foreskin_no = document.getElementById("foreskin_no");
+    const direct_no = document.getElementById("direct_no");
+    const penis_no = document.getElementById("penis_no");
+
+    needs_knot.style.display = "none";
+    flaccid_no.style.display = "none";
+    foreskin_no.style.display = "none";
+    direct_no.style.display = "none";
+    penis_no.style.display = "none";
+
     if(breastsize.value == 0) {
       nipples.disabled = true;
       nipples.checked = false;
@@ -124,6 +135,13 @@ function setCookie(name, value, days) {
       balls.value = -1
       flaccid.disabled = true;
       flaccid.checked = false;
+
+      needs_knot.style.display = "none";
+      flaccid_no.style.display = "none";
+      foreskin_no.style.display = "none";
+      direct_no.style.display = "none";
+      penis_no.style.display = "block";
+      
     }
     else if(penistype == 1 || penistype == 3 || penistype == 4) { //humanoid, feline, and equine penis
       if(crotchtype == -1) {
@@ -143,6 +161,13 @@ function setCookie(name, value, days) {
       }
 
       foreskin.disabled = false;
+
+      needs_knot.style.display = "none";
+      flaccid_no.style.display = "none";
+      foreskin_no.style.display = "none";
+      direct_no.style.display = "none";
+      penis_no.style.display = "none";
+
     }
     else if(penistype == 2) { //canine penis
       if(crotchtype == 0 || crotchtype == -1) { //deselect the direct inteface and disable it
@@ -164,6 +189,13 @@ function setCookie(name, value, days) {
 
       foreskin.checked = false;
       foreskin.disabled = true;
+
+      needs_knot.style.display = "block";
+      flaccid_no.style.display = "none";
+      foreskin_no.style.display = "block";
+      direct_no.style.display = "block";
+      penis_no.style.display = "none";
+
     }
     else if(penistype == 5) { //tapering penis
       if(crotchtype == -1) {
@@ -184,14 +216,27 @@ function setCookie(name, value, days) {
 
       foreskin.checked = false;
       foreskin.disabled = true;
+
+      needs_knot.style.display = "none";
+      flaccid_no.style.display = "none";
+      foreskin_no.style.display = "block";
+      direct_no.style.display = "none";
+      penis_no.style.display = "none";
+
     }
     else {penistype = 0}
 
     if(interface.value != 0) {
       flaccid.checked = false;
       flaccid.disabled = true;
+
+      if(penistype != 0) {
+        flaccid_no.style.display = "block";
+      }
     } else {
       flaccid.disabled = false;
+
+      flaccid_no.style.display = "none";
     }
 
     if(vulva.checked) {
