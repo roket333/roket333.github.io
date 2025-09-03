@@ -244,16 +244,21 @@ function setCookie(name, value, days) {
 
     if(interface.value != 0) { //if the interface is not humanoid
       flaccid.disabled = true;
-      sheathed.disabled = false;
+      if(penistype != 0) {
+        sheathed.disabled = false;
+      }
       if(flaccid.checked) {
         sheathed.checked = true;
       }
       flaccid.checked = false;
-      
-      hide.style.display = "block";
-      flop.style.display = "none";
+      if(interface.value != -1) { //if the penis is set to disabled, keep the previous "flaccid" or "sheathed" text. this does introduce a bug where both show up if the page is refreshed while the penis is disabled
+        hide.style.display = "block";
+        flop.style.display = "none";
+      }
     } else { //if the interface is humanoid
-      flaccid.disabled = false;
+      if(penistype != 0) {
+        flaccid.disabled = false;
+      }
       sheathed.disabled = true;
       if(sheathed.checked) {
         flaccid.checked = true;
