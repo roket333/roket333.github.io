@@ -22,10 +22,23 @@ window.onload = function() {
   splashes();
   //document.getElementById("default").click();
   loadblogposts();
+  showVersion();
 
   //hide the loading screen and show the actual site
   document.getElementById("site").style.display = "block";
   document.getElementById("loading").style.display = "none";
+}
+
+function showVersion() {
+  fetch("./version.json")
+    .then(res => res.json())
+    .then(data => {
+      const majorversion = data.version_major;
+      const minorversion = data.version_minor;
+      const versionEl = document.getElementById("version");
+      versionEl.innerHTML = "V" + majorversion + " revision " + minorversion;
+    })
+    .catch(err => console.error("Could not load version.json:", err));
 }
 
 function updateTheme(themeid) {
