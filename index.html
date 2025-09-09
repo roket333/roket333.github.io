@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Roket's Hub</title>
     <link id="themesource" rel="stylesheet" href="./theme.css">
+    <link rel="preload" href="/theme_dark.css" as="style">
+    <link rel="preload" href="/theme_light.css" as="style">
     <script src="./script.js"></script>
     <meta name="author" content="Roket">
     <meta name="description" content="A pretty cool website">
@@ -39,7 +41,6 @@
       <button class="tablinks shadow" onclick="openTab(event, 'projects')">Projects</button>
       <button class="tablinks shadow" onclick="openTab(event, 'creations')">Creations</button>
       <button class="tablinks shadow" onclick="openTab(event, 'blog_personal')">Personal Blog</button>
-      <button class="tablinks shadow" onclick="openTab(event, 'blog_development')">Dev Blog</button>
       <button class="tablinks shadow" onclick="openTab(event, 'tools')">Tools</button>
       <!-- <button class="tablinks shadow" disabled="true" onclick="openTab(event, 'products')">Products</button> -->
     </div>
@@ -174,15 +175,6 @@
       </div>
       <div id="pinnedposts" class="center"></div>
       <div id="blogposts" class="center"></div>
-    </div>
-    
-    <!-- Blog tab -->
-    <div class="tabcontent" id="blog_development">
-      <div class="maintext">
-        My Development Blog<br>This is where I will post about any game development stuff
-      </div>
-      <div id="pinneddevposts" class="center"></div>
-      <div id="blogdevposts" class="center"></div>
     </div>
 
     <!-- Tools tab -->
@@ -444,6 +436,8 @@
         <option value="0">Dark</option>
         <option value="1">Light</option>
       </select>
+      <hr class="mainhr">
+      <span id="version"></span>
     </div>
     <br><br>
     <div class="footer center linklist narrow shadow" id="linklistfooter">
