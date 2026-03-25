@@ -23,6 +23,7 @@
 <body class="innershadow">
   <p class="titletext jserror">This site requires Javascript to work</p>
   <div class="site">
+    <div id="checkbox_container"><p class="biggertext errortext">Notice: Only works properly on desktop</p></div>
     <div class="blogpost biggertext">
         <label class="bigtext">Upper Body</label><br>
         <hr class="mainhr">
@@ -76,7 +77,7 @@
     <div class="blogpost biggertext">
         <label class="bigtext">Lower Body</label><br>
         <hr class="mainhr">
-        <div class="borderlessgrid decwidegrid">
+        <div class="borderlessgrid elevenwidegrid">
             <div>
                 <label class="">Penis Type</label><br>
                 <select class="fullwidth" id="penis" onchange="determineValidity()">
@@ -150,6 +151,12 @@
                 <label class="doublecheckboxgridright">
                     Partially Exposed<br>Inner Labia
                     <input type="checkbox" id="labia" onchange="determineValidity()">
+                </label>
+            </div>
+            <div>
+                <label class="doublecheckboxgridright">
+                    Tailmaw
+                    <input type="checkbox" id="tailmaw" onchange="determineValidity()">
                 </label>
             </div>
         </div>

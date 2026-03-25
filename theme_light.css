@@ -699,7 +699,13 @@ a:link {
     min-width: 1fr;
 }
 
-.doublewidegrid > p, .triplewidegrid > p, .quadwidegrid > p , .decwidegrid > p{
+.elevenwidegrid {
+    grid-template-columns: repeat(11, 1fr);
+    margin: 5px;
+    min-width: 1fr;
+}
+
+.doublewidegrid > p, .triplewidegrid > p, .quadwidegrid > p , .decwidegrid > p, .elevenwidegrid > p{
     margin: 5px;
 }
 
