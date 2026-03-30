@@ -1196,3 +1196,24 @@ button:disabled, button:disabled:active, button:disabled:hover {
     50%{border: #751a1a;}
     100%{border: #ff0000;}
 }
+
+.flickerbox1 {
+    animation: flicker 16.67ms infinite steps(2, jump-none);
+    animation-iteration-count: infinite;
+}
+.flickerbox2 {
+    animation: flicker2 16.67ms infinite steps(2, jump-none);
+    animation-iteration-count: infinite;
+}
+
+@keyframes flicker {
+    0%   { visibility: visible; }
+    50%  { visibility: hidden; }
+    100% { visibility: visible; }
+  }
+
+  @keyframes flicker2 {
+    0%   { visibility: hidden; }
+    50%  { visibility: visible; }
+    100% { visibility: hidden; }
+  }
