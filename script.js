@@ -178,7 +178,8 @@ function splashes(override) {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
-    var tp = Math.floor(Math.random() * 5)
+    var tp = Math.floor(Math.random() * 5); //generates 0-4 - effectively a 20% chance
+    var tpr = Math.floor(Math.random() * 20); //generates 0-19 - effectively a 5% chance
     let overridden = false;
     //var p6gr = Math.floor(Math.random() * 10)
     if(override && !override.isNaN) {
@@ -238,8 +239,11 @@ function splashes(override) {
     else if (tp == 1 && month == 2 && day == 30 && year == 1951) { //it's the end of the world
       document.getElementById("splash").innerHTML = data[1482]
     }
-    else if (tp == 1 && month == 8 && day == 18) {
+    else if (tp == 1 && month == 8 && day == 18) { //fuck Bloomberg
       document.getElementById("splash").innerHTML = data[1487]
+    }
+    else if (tpr == 1 && month == 4 && day == 11) { //bopolini day, promote his site
+      document.getElementById("splash").innerHTML = data[1531]
     }
     else if (random == 417) { //it's time for Peace and Tranquility mode
       document.getElementById("splashbg").classList.add("patbg");
