@@ -507,6 +507,23 @@ a:link {
     animation-iteration-count: infinite;
 }
 
+/*Instagram button*/
+.igbutton button {
+    border: 5px solid #ff3aba;
+    color: #ff3aba
+}
+
+.igbutton button:hover {
+    background-color: #707070;
+}
+
+.igbutton button:active {
+    background-color: #ff3aba;
+    animation: colorsbutton 2s ease-in-out;
+    animation-iteration-count: infinite;
+
+}
+
 .straybutton button {
     /*change how the buttons in the list look*/
     /*background-color: inherit;*/

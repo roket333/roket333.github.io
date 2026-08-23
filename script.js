@@ -179,7 +179,7 @@ function splashes(override) {
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
     var tp = Math.floor(Math.random() * 5); //generates 0-4 - effectively a 20% chance
-    var tpr = Math.floor(Math.random() * 20); //generates 0-19 - effectively a 5% chance
+    var tpz = Math.floor(Math.random() * 50); //generates 0-49 - effectively a 2% chance
     let overridden = false;
     //var p6gr = Math.floor(Math.random() * 10)
     if(override && !override.isNaN) {
@@ -242,7 +242,7 @@ function splashes(override) {
     else if (tp == 1 && month == 8 && day == 18) { //fuck Bloomberg
       document.getElementById("splash").innerHTML = data[1487]
     }
-    else if (tpr == 1 && month == 4 && day == 11) { //bopolini day, promote his site
+    else if (tpz == 1 && month == 4 && day == 11) { //doggo day, promote his site
       document.getElementById("splash").innerHTML = data[1531]
     }
     else if (random == 417) { //it's time for Peace and Tranquility mode
@@ -288,173 +288,102 @@ function lowerVolume() {
   patmusic.volume = 0.3;
 }
 
-//just for clarification, i made the original "loadblogposts", but ChatGPT helped me upgrade it to use my new cdn. no more full site updates just to publish a new blog post!
-//for those worried about me using AI for code, just know that i don't enjoy having it hand-hold development, either, but it's teaching me stuff, and i'm learning new stuff from it which i may use on my own in the future
-//i will never fully rely on AI to make everything for me, because that's boring and unethical
-//this is a big thing for me to learn, because of the upcoming ambrosia shared universe! it's gonna be a huge wiki-like thing, which i really can't do correctly through GitHub Pages, so i decided i needed to do a cdn. i then figured that since i already want to do a cdn, i might as well do the blog that way since it'll benefit too
 function loadblogposts() {
-  const MAP_URL = "https://cdn.roketgamer.dev/blog_personal/posts_map.json";
-  const COOKIE_NAME = "blog_posts_ts";
-  const THROTTLE_SECONDS = 30 * 60; // 30 minutes
-  const LS_TS_KEY = "blog_posts_cache_ts";
-  const LS_DATA_KEY = "blog_posts_cache_data";
-  let postDateString;
+  var postDateString;
+  fetch("./blog/post_index.json")
+  .then((response) => { return response.json(); })
+  .then((filenames) => {
+    //get the list of all blog posts
 
-  //this is all my original function. since this is now a lot more complex, it's now a helper function
-  function renderPosts(posts) {
-    if (!Array.isArray(posts) || posts.length === 0) {
+    const postRequests = filenames.map(filename => 
+      fetch(`./blog/posts/${filename}`).then(res => res.json())
+    );
+    console.log(postRequests)
+    return Promise.all(postRequests);
+  })
+  .then((data) => {
+
+    if (data.length == 0) {
       let postdiv = document.createElement("div");
       postdiv.classList.add("blogpost");
-      let weird = document.createElement("p");
+      weird = document.createElement("p");
       weird.classList.add("maintext");
-      weird.innerHTML = "This is weird and shouldn't be happening<br>There's either no blog posts or something has gone wrong";
+      weird.innerHTML = "This is weird and shouldn't be happening<br>There's either no blog posts or something has gone wrong"
       postdiv.appendChild(weird);
       document.getElementById("blogposts").appendChild(postdiv);
-      return;
-    }
+      //so, somehow something weird happened and posts aren't working, so let's display this message in that case
+    } else {
+      data.forEach(post => {
 
-    posts.forEach(post => {
-      if (!post) return;
+        postTitle = post.title; //title
+        postDate = post.date; //date it was posted
+        postEdited = post.edited; //was it edited?
+        postEditDate = post.edited_date; //date it was edited
+        postContent = post.content; //actual content of the post
+        postPinned = post.pinned; //is the post pinned to the top?
+        //for each post, get the title, date, weather or not it's been edited, edit date, and content
 
-      let postTitle = post.title;
-      let postDate = post.date;
-      let postEdited = post.edited;
-      let postEditDate = post.edited_date; 
-      let postContent = post.content;
-      let postPinned = post.pinned;
+        if (postTitle != undefined && postDate != undefined && postEdited != undefined && postContent != undefined) {
 
-      if (postTitle != undefined && postDate != undefined && postEdited != undefined && postContent != undefined) {
-        let postdiv = document.createElement("div");
-        postdiv.classList.add("shadow");
-        if (postPinned) {
-          postdiv.classList.add("pinnedblogpost");
+          let postdiv = document.createElement("div");
+          postdiv.classList.add("shadow");
+          if (postPinned) {
+            postdiv.classList.add("pinnedblogpost");
+          } else {
+            postdiv.classList.add("blogpost");
+          }
+          //make the actual post div and add the class "blogpost" to it unless it's pinned, then add "pinnedblogpost" so it can be colored
+
+          if (postEdited) {
+            postDateString = "Posted on " + postDate + ", edited on " + postEditDate
+          } else {
+            postDateString = "Posted on " + postDate
+          }
+          //get the post date ready, if it's been editied add that too
+
+          //if the post is pinned, add the text for it
+          if (postPinned) {
+            pinned = document.createElement("p");
+            pinned.classList.add("postdate");
+            pinned.innerHTML = "Pinned Post";
+          }
+          title = document.createElement("p");
+          title.classList.add("postitle");
+          title.innerHTML = postTitle;
+          date = document.createElement("p");
+          date.classList.add("postdate");
+          date.innerHTML = postDateString;
+          splitter = document.createElement("hr");
+          splitter.classList.add("mainhr");
+          content = document.createElement("p");
+          content.classList.add("postcontent");
+          content.innerHTML = postContent;
+          //create all the text and assign it
+
+          //add the pinned text
+          if (postPinned) {
+            postdiv.appendChild(pinned); 
+          }
+          postdiv.appendChild(title);
+          postdiv.appendChild(date);
+          postdiv.appendChild(splitter);
+          postdiv.appendChild(content);
+          //add all the text we just made to the div
+
+          if (postPinned) {
+            document.getElementById("pinnedposts").prepend(postdiv); 
+          } else {
+            document.getElementById("blogposts").prepend(postdiv);
+          }
+          //using prepend instead of append allows me to build posts.json in a way that makes sense
+          //add the post to the top of the div where they will all live happily ever after the end :)
         } else {
-          postdiv.classList.add("blogpost");
+          console.error("There was a problem with one of the posts, so it is not displayed");
+          //some vital part of the blog post was not filled out, so instead of showing a broken post, let's just not show it and print this error to console
         }
-
-        if (postEdited) {
-          postDateString = "Posted on " + postDate + ", edited on " + postEditDate;
-        } else {
-          postDateString = "Posted on " + postDate;
-        }
-
-        if (postPinned) {
-          let pinned = document.createElement("p");
-          pinned.classList.add("postdate");
-          pinned.innerHTML = "Pinned Post";
-          postdiv.appendChild(pinned);
-        }
-
-        let title = document.createElement("p");
-        title.classList.add("postitle");
-        title.innerHTML = postTitle;
-
-        let date = document.createElement("p");
-        date.classList.add("postdate");
-        date.innerHTML = postDateString;
-
-        let splitter = document.createElement("hr");
-        splitter.classList.add("mainhr");
-
-        let content = document.createElement("p");
-        content.classList.add("postcontent");
-        content.innerHTML = postContent;
-
-        postdiv.appendChild(title);
-        postdiv.appendChild(date);
-        postdiv.appendChild(splitter);
-        postdiv.appendChild(content);
-
-        if (postPinned) {
-          document.getElementById("pinnedposts").prepend(postdiv);
-        } else {
-          document.getElementById("blogposts").prepend(postdiv);
-        }
-      } else {
-        console.error("There was a problem with one of the posts, so it is not displayed");
-      }
-    });
-  }
-
-  //let's try to get the posts from the cache if we are being throttled from fetching the posts from the cdn
-  function tryRenderFromCache() {
-    try {
-      const cached = localStorage.getItem(LS_DATA_KEY);
-      if (!cached) return false;
-      const posts = JSON.parse(cached);
-      renderPosts(posts);
-      return true;
-    } catch (e) {
-      return false;
+      });
     }
-  }
-
-  //this is how we ensure someone who has already fetched the posts doesn't keep sending requests. stuff all the posts in local storage. it's all text, so it's not much taken space
-  function saveCache(ts, posts) {
-    try {
-      localStorage.setItem(LS_TS_KEY, String(ts));
-      localStorage.setItem(LS_DATA_KEY, JSON.stringify(posts));
-    } catch (e) {
-    }
-  }
-
-  //finally, let's get the map of all the posts
-  fetch(MAP_URL)
-    .then(r => r.json())
-    .then(async (arr) => {
-      if (!Array.isArray(arr) || arr.length < 1) { //if our retrieved array is not an array or the length is less than 1, then let's throw an error in console
-        console.error("posts_map.json malformed");
-        // last resort: try cache
-        if (!tryRenderFromCache()) {
-          renderPosts([]); //this forces the message where the blog posts had something wrong
-        }
-        return;
-      }
-
-      const mapTs = parseInt(arr[0], 10) || 0; //unix timestamp
-      const lastTs = getCookie(COOKIE_NAME);  //the last timestamp that the data was accessed, if ever
-
-      const withinWindow = (lastTs !== null) && ((mapTs - lastTs) < THROTTLE_SECONDS); //if there is no last timestamp or it's been more than 30 minutes, go ahead and access the map and get all the posts from the cdn again
-
-      if (withinWindow) {
-        // Don’t re-fetch from CDN; render from local cache if possible.
-        if (tryRenderFromCache()) return;
-
-        // If no cache exists yet, do a one-time fetch anyway so page still works.
-        // (We do NOT update the cookie here; cookie stays as-is.)
-        console.debug("No local cache; performing one-time fetch despite throttle.");
-      } else {
-        // Update cookie to current map timestamp (e.g., keep for 7 days)
-        setCookie(COOKIE_NAME, mapTs, 1);
-      }
-
-      const keys = arr.slice(1);
-      if (keys.length === 0) {
-        renderPosts([]);
-        return;
-      }
-
-      // Fetch all post JSONs in parallel (cache at browser/edge will soften load)
-      const posts = await Promise.all(
-        keys.map(k => fetch(`https://cdn.roketgamer.dev/${k}`, { cache: "force-cache" })
-          .then(r => r.ok ? r.json() : null)
-          .catch(() => null))
-      );
-
-      const validPosts = posts.filter(Boolean);
-      // Save for future refreshes during the 30-min window
-      saveCache(mapTs, validPosts);
-
-      // Render to DOM
-      renderPosts(validPosts);
-    })
-    .catch(err => {
-      console.error("Failed to load posts map:", err);
-      // Fallback to cached render if network failed
-      if (!tryRenderFromCache()) {
-        renderPosts([]);
-      }
-    });
+  });
 }
 
 
