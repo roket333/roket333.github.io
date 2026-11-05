@@ -132,6 +132,7 @@ function tirecalc() {
     document.getElementById("tiresize_result_n2").innerHTML = hexcirc.slice(2,4) + "XX";
 
     document.getElementById("tiresize_result").innerHTML = tirecirc;
+    document.getElementById("tiresize_result2").innerHTML = finalcirc
     tiretoobig1 = document.getElementById("tiretoobig1");
     tiretoobig2 = document.getElementById("tiretoobig2");
     tiretoobig3 = document.getElementById("tiretoobig3");
